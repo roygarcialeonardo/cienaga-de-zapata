@@ -151,10 +151,23 @@ async function ghImagen(file){
 }
 
 /* ---------- Vía CMS ---------- */
-async function fileToB64(file){
-  const buf=await file.arrayBuffer(); const b=new Uint8Array(buf); let s="";
-  for(let i=0;i<b.length;i+=0x8000)s+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));
-  return btoa(s);
+/* Optimiza la imagen como en Mercado Ciénega: máx. 880px (tamaño de las
+   tarjetas del sitio) y exporta en WebP (o JPEG) para que pese poco. */
+async function optimizarImagen(file){
+  const bmp = await createImageBitmap(file);
+  const MAXL = 880;
+  const sc = Math.min(1, MAXL/Math.max(bmp.width, bmp.height));
+  const w = Math.max(1, Math.round(bmp.width*sc));
+  const h = Math.max(1, Math.round(bmp.height*sc));
+  const c = document.createElement("canvas"); c.width = w; c.height = h;
+  c.getContext("2d").drawImage(bmp, 0, 0, w, h);
+  let blob = await new Promise(r=>c.toBlob(r, "image/webp", 0.8));
+  let ext = "webp";
+  if(!blob){ blob = await new Promise(r=>c.toBlob(r, "image/jpeg", 0.82)); ext = "jpg"; }
+  const buf = await blob.arrayBuffer(); const b = new Uint8Array(buf); let s = "";
+  for(let i=0;i<b.length;i+=0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i+0x8000));
+  const base = (file.name||"imagen").replace(/\.[a-z0-9]+$/i, "").replace(/[^a-z0-9]+/gi, "-");
+  return {nombre: base + "." + ext, base64: btoa(s)};
 }
 
 /* ---------- Formulario ---------- */
@@ -199,7 +212,9 @@ function formPost(p){
       if(usaCMS()){
         let imgPath=p.imagen;
         if(nuevoFile){
-          const up=await cmsApi("uploadImage",{nombre:nuevoFile.name, base64:await fileToB64(nuevoFile)});
+          msg.textContent="⏳ Optimizando imagen…";
+          const opt=await optimizarImagen(nuevoFile);
+          const up=await cmsApi("uploadImage",{nombre:opt.nombre, base64:opt.base64});
           if(!up.ok)throw new Error("subir imagen"); imgPath=up.path;
         }
         const post={id:p.id||null, pagina, titulo, imagen:imgPath||"img/hero-humedal.webp",
