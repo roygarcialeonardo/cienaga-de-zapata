@@ -27,14 +27,23 @@ async function cargar(){
       <div style="margin-top:.8rem"><button class="btn btn-sol" type="submit" id="cbtn">Publicar comentario</button>
       <span id="cstat" style="margin-left:.8rem;font-size:.9rem"></span></div>
     </form>`;
+  const esAdmin = ()=> !!(window.CZAdmin && window.CZAdmin.dentro && window.CZAdmin.dentro());
   const pintar = items=>{
     document.getElementById("clist").innerHTML = items.length ? items.map(c=>`
       <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.2rem;margin-bottom:.8rem">
         <b style="color:var(--amarillo)">${esc(c.nombre)}</b>
         <span style="opacity:.55;font-size:.8rem"> · ${esc(c.fecha)}</span>
+        ${esAdmin()?`<button data-fila="${c.fila}" class="cdel" title="Borrar comentario" style="float:right;background:none;border:none;cursor:pointer;font-size:1.1rem">🗑️</button>`:""}
         <p style="margin-top:.4rem">${esc(c.mensaje)}</p>
       </div>`).join("")
       : "<p style='opacity:.7'>Aún no hay comentarios. ¡Sé el primero! 👇</p>";
+    if(esAdmin()) document.querySelectorAll(".cdel").forEach(b=>b.onclick=async()=>{
+      if(!confirm("¿Borrar este comentario?")) return;
+      try{
+        const j = await fetch(cms(),{method:"POST",body:JSON.stringify({action:"deleteComment",fila:b.dataset.fila,session:localStorage.getItem("cz_admin_session")||""})}).then(r=>r.json());
+        if(j.ok){ const j2 = await api("getComments",{pagina}); pintar(j2.ok?j2.items:[]); }
+      }catch(e){}
+    });
   };
   try{ const j = await api("getComments",{pagina}); pintar(j.ok?j.items:[]); }
   catch(e){ pintar([]); }
