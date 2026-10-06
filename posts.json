@@ -1440,5 +1440,23 @@
   ],
   "fecha": "2026-10-06",
   "fijo": true
+ },
+ {
+  "id": "p1791254109539",
+  "pagina": "lugares",
+  "titulo": "Prueba",
+  "imagen": "img/1791254104815-900.jpg",
+  "alt": "Prueba",
+  "cuerpo": [
+   "prueba"
+  ],
+  "datos": [
+   [
+    "prueba",
+    ""
+   ]
+  ],
+  "fecha": "2026-10-06",
+  "fijo": false
  }
 ]
