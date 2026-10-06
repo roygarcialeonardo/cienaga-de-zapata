@@ -17,199 +17,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --selva:#06231a; --selva2:#0a3524; --turquesa:#00e0c6; --turquesa-d:#00b3a0;
-  --naranja:#ff7a1a; --rosa:#ff4d8d; --amarillo:#ffc93c; --crema:#fff9ee; --tinta:#10231b;
-  --radio:22px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',system-ui,sans-serif;background:var(--selva);color:#f2f7f4;overflow-x:hidden;line-height:1.6}
-h1,h2,h3,.display{font-family:'Bricolage Grotesque','Outfit',sans-serif;line-height:1.05;letter-spacing:-.02em}
-img{max-width:100%;display:block}
-a{color:inherit}
-.wrap{max-width:1200px;margin:0 auto;padding:0 1.25rem}
-section{padding:5.5rem 0;position:relative}
-/* ---------- NAV ---------- */
-nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  background:rgba(6,35,26,.72);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-in{max-width:1200px;margin:0 auto;padding:.8rem 1.25rem;display:flex;align-items:center;gap:1rem}
-.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.15rem;text-decoration:none}
-.logo .mark{width:2.3rem;height:2.3rem;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;
-  background:conic-gradient(from 40deg,var(--turquesa),var(--amarillo),var(--naranja),var(--rosa),var(--turquesa))}
-.nav-links{margin-left:auto;display:flex;gap:1.1rem;font-weight:600;font-size:.92rem}
-.nav-links a{text-decoration:none;opacity:.85;transition:.2s}
-.nav-links a:hover{opacity:1;color:var(--amarillo)}
-.btn{display:inline-block;text-decoration:none;font-weight:800;padding:.85rem 1.7rem;border-radius:999px;transition:.25s;border:none;cursor:pointer;font-size:1rem}
-.btn-sol{background:linear-gradient(135deg,var(--amarillo),var(--naranja));color:#3a1c00;box-shadow:0 8px 24px rgba(255,122,26,.35)}
-.btn-sol:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 12px 30px rgba(255,122,26,.5)}
-.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
-.btn-ghost:hover{background:rgba(255,255,255,.2)}
-@media(max-width:860px){.nav-links{display:none}}
-/* ---------- HERO ---------- */
-.hero{min-height:100svh;display:flex;align-items:flex-end;padding:7rem 0 4rem;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('img/hero-humedal.webp') center/cover;transform:scale(1.08);animation:heroZoom 18s ease-in-out infinite alternate}
-@keyframes heroZoom{to{transform:scale(1.18)}}
-.hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,35,26,.55) 0%,rgba(6,35,26,.15) 40%,rgba(6,35,26,.92) 100%)}
-.hero-in{position:relative;z-index:2;width:100%}
-.kicker{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,224,198,.14);border:1px solid rgba(0,224,198,.5);
-  color:#a7fff4;font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1rem;border-radius:999px;margin-bottom:1.2rem}
-.hero h1{font-size:clamp(2.8rem,8vw,6.2rem);font-weight:800;color:#fff;max-width:14ch}
-.hero h1 .grad{background:linear-gradient(92deg,var(--amarillo) 10%,var(--naranja) 45%,var(--rosa) 90%);
-  -webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{font-size:clamp(1.05rem,2.4vw,1.4rem);max-width:44ch;margin:1.2rem 0 2rem;color:#e8f5ef;opacity:.94}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
-.hero-badges{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.2rem}
-.hbadge{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
-  padding:.5rem .95rem;border-radius:999px;font-size:.86rem;font-weight:600;backdrop-filter:blur(6px)}
-.scroll-hint{position:absolute;right:1.5rem;bottom:1.5rem;z-index:2;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.7;writing-mode:vertical-rl}
-/* ---------- MARQUESINA ---------- */
-.marquee{background:linear-gradient(90deg,var(--naranja),var(--rosa),var(--naranja));overflow:hidden;padding:.9rem 0;transform:rotate(-1.2deg) scale(1.02)}
-.marquee-track{display:flex;gap:2.5rem;white-space:nowrap;animation:mq 26s linear infinite;font-weight:800;font-size:1.05rem;color:#2b1200;letter-spacing:.04em}
-@keyframes mq{to{transform:translateX(-50%)}}
-/* ---------- STATS ---------- */
-.stats{background:var(--selva)}
-.sec-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:.6rem}
-.sec-title .grad{background:linear-gradient(92deg,var(--turquesa),var(--amarillo));-webkit-background-clip:text;background-clip:text;color:transparent}
-.sec-sub{opacity:.78;max-width:62ch;margin-bottom:2.8rem;font-size:1.08rem}
-.grid-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
-.stat{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);
-  border-radius:var(--radio);padding:1.6rem 1.2rem;text-align:center;transition:.25s}
-.stat:hover{transform:translateY(-5px);border-color:var(--turquesa)}
-.stat b{display:block;font-family:'Bricolage Grotesque';font-size:clamp(1.9rem,4vw,2.7rem);color:var(--amarillo)}
-.stat span{font-size:.9rem;opacity:.8}
-/* ---------- LUGARES ---------- */
-.lugares{background:var(--crema);color:var(--tinta)}
-.lugares .sec-sub{color:#3d554a}
-.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
-.chip{border:2px solid #0a3524;background:transparent;color:#0a3524;font-weight:700;padding:.5rem 1.15rem;border-radius:999px;cursor:pointer;font-size:.92rem;transition:.2s;font-family:inherit}
-.chip.on,.chip:hover{background:#0a3524;color:#fff}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem}
-.card{background:#fff;border-radius:var(--radio);overflow:hidden;box-shadow:0 10px 30px rgba(16,35,27,.1);transition:.3s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-7px) rotate(-.4deg);box-shadow:0 20px 45px rgba(16,35,27,.18)}
-.card .ph{height:210px;overflow:hidden;position:relative}
-.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.card:hover .ph img{transform:scale(1.08)}
-.card .tag{position:absolute;top:.9rem;left:.9rem;background:rgba(6,35,26,.85);color:#fff;font-size:.75rem;font-weight:800;
-  letter-spacing:.08em;text-transform:uppercase;padding:.35rem .8rem;border-radius:999px}
-.card .body{padding:1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
-.card h3{font-size:1.35rem}
-.card p{font-size:.95rem;color:#43584d;flex:1}
-.card .dato{display:flex;align-items:center;gap:.5rem;font-size:.86rem;font-weight:700;color:#0a6e5c}
-.card.hide{display:none}
-/* ---------- OLVIDADOS ---------- */
-.olvidados{background:linear-gradient(180deg,#0a1f33,var(--selva));overflow:hidden}
-.olvidados .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;pointer-events:none}
-.orb1{width:420px;height:420px;background:var(--rosa);top:-120px;right:-120px}
-.orb2{width:360px;height:360px;background:var(--turquesa);bottom:-100px;left:-100px}
-.secreto{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1rem}
-@media(max-width:760px){.secreto{grid-template-columns:1fr}}
-.secreto article{background:rgba(255,255,255,.05);border:1px dashed rgba(0,224,198,.4);border-radius:var(--radio);padding:1.5rem;transition:.25s;position:relative}
-.secreto article:hover{background:rgba(0,224,198,.09);transform:translateY(-4px)}
-.secreto .num{position:absolute;top:1rem;right:1.2rem;font-family:'Bricolage Grotesque';font-size:2.2rem;font-weight:800;color:rgba(0,224,198,.25)}
-.secreto h3{font-size:1.2rem;margin-bottom:.4rem;color:var(--amarillo);padding-right:3rem}
-.secreto p{font-size:.94rem;opacity:.85}
-.secreto .misterio{display:inline-block;margin-top:.7rem;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--turquesa)}
-/* ---------- FAUNA ---------- */
-.fauna{background:var(--selva2)}
-.fauna-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
-.animal{border-radius:var(--radio);overflow:hidden;position:relative;height:320px;cursor:pointer}
-.animal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.animal:hover img{transform:scale(1.1)}
-.animal .info{position:absolute;inset:auto 0 0 0;padding:2.5rem 1.2rem 1.2rem;background:linear-gradient(180deg,transparent,rgba(4,20,14,.92))}
-.animal h3{font-size:1.25rem;color:#fff}
-.animal .curio{font-size:.86rem;color:var(--amarillo);font-weight:600;max-height:0;overflow:hidden;transition:max-height .4s,margin .4s}
-.animal:hover .curio{max-height:6rem;margin-top:.4rem}
-/* ---------- ACTIVIDADES ---------- */
-.actividades{background:var(--crema);color:var(--tinta)}
-.act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem}
-.act{background:#fff;border-radius:var(--radio);padding:1.8rem 1.5rem;box-shadow:0 8px 24px rgba(16,35,27,.08);transition:.25s;border-top:5px solid var(--turquesa)}
-.act:nth-child(2n){border-top-color:var(--naranja)} .act:nth-child(3n){border-top-color:var(--rosa)} .act:nth-child(4n){border-top-color:var(--amarillo)}
-.act:hover{transform:translateY(-6px)}
-.act .ico{font-size:2.4rem;margin-bottom:.7rem}
-.act h3{font-size:1.15rem;margin-bottom:.4rem}
-.act p{font-size:.92rem;color:#43584d}
-/* ---------- CULTURA ---------- */
-.cultura{background:#12071f;color:#f5ecff}
-.timeline{position:relative;margin-top:1rem;padding-left:2rem;border-left:3px solid rgba(255,77,141,.4)}
-.tl-item{position:relative;padding:0 0 2.2rem .8rem}
-.tl-item::before{content:'';position:absolute;left:-2.65rem;top:.2rem;width:1.1rem;height:1.1rem;border-radius:50%;
-  background:var(--rosa);box-shadow:0 0 0 5px rgba(255,77,141,.2)}
-.tl-item:nth-child(2n)::before{background:var(--amarillo);box-shadow:0 0 0 5px rgba(255,201,60,.2)}
-.tl-item:nth-child(3n)::before{background:var(--turquesa);box-shadow:0 0 0 5px rgba(0,224,198,.2)}
-.tl-item .year{font-family:'Bricolage Grotesque';font-weight:800;color:var(--amarillo);font-size:1.05rem;letter-spacing:.06em}
-.tl-item h3{font-size:1.3rem;margin:.2rem 0 .4rem}
-.tl-item p{opacity:.82;max-width:60ch}
-/* ---------- GASTRO ---------- */
-.gastro{background:linear-gradient(135deg,#3a1200,#7a2a00);color:#ffeeda}
-.platos{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem}
-.plato{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--radio);padding:1.6rem;transition:.25s}
-.plato:hover{background:rgba(255,255,255,.12);transform:translateY(-5px)}
-.plato .ico{font-size:2.2rem}
-.plato h3{margin:.6rem 0 .3rem;font-size:1.15rem;color:var(--amarillo)}
-.plato p{font-size:.9rem;opacity:.85}
-/* ---------- LLEGAR ---------- */
-.llegar{background:var(--crema);color:var(--tinta)}
-.llegar-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-@media(max-width:760px){.llegar-grid{grid-template-columns:1fr}}
-.panel{background:#fff;border-radius:var(--radio);padding:2rem;box-shadow:0 8px 24px rgba(16,35,27,.08)}
-.panel h3{font-size:1.3rem;margin-bottom:1rem;color:#0a3524}
-.ruta{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px dashed #cfe0d6;font-weight:600}
-.ruta:last-child{border:none}
-.ruta b{color:#0a6e5c}
-.tips li{margin-bottom:.7rem;list-style:none;display:flex;gap:.6rem}
-.tips li::before{content:'✔';color:#0a6e5c;font-weight:800}
-/* ---------- FAQ ---------- */
-.faq{background:var(--selva)}
-.faq-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;margin-bottom:.8rem;overflow:hidden}
-.faq-q{width:100%;background:none;border:none;color:#fff;font-family:inherit;font-size:1.05rem;font-weight:700;text-align:left;
-  padding:1.2rem 1.4rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q .plus{font-size:1.5rem;color:var(--turquesa);transition:.3s;flex:none}
-.faq-item.open .faq-q .plus{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-a p{padding:0 1.4rem 1.3rem;opacity:.85}
-/* ---------- CTA / FOOTER ---------- */
-.cta-final{background:linear-gradient(120deg,var(--selva2),#123);text-align:center;overflow:hidden}
-.cta-final .big{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;margin-bottom:1rem}
-.cta-final .big .grad{background:linear-gradient(92deg,var(--turquesa),var(--amarillo),var(--rosa));-webkit-background-clip:text;background-clip:text;color:transparent}
-footer{background:#04150f;padding:3rem 0 2rem;font-size:.9rem}
-.foot-grid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
-/* ---------- GALERÍA ---------- */
-.galeria{background:#04150f;overflow:hidden}
-.gal-track{display:flex;gap:1rem;overflow-x:auto;padding:1rem .5rem 1.5rem;scroll-snap-type:x mandatory;scrollbar-width:thin}
-.gal-track figure{flex:0 0 min(78vw,380px);scroll-snap-align:center;border-radius:var(--radio);overflow:hidden;position:relative;height:260px;margin:0}
-.gal-track img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.gal-track figure:hover img{transform:scale(1.07)}
-.gal-track figcaption{position:absolute;inset:auto 0 0 0;padding:1.6rem 1rem .9rem;background:linear-gradient(180deg,transparent,rgba(4,20,14,.9));font-weight:700;font-size:.92rem}
-/* ---------- MAPA ---------- */
-.mapa{border-radius:var(--radio);overflow:hidden;margin-top:1.4rem;border:1px solid #d7e5db}
-.mapa iframe{width:100%;height:340px;border:0;display:block}
-/* ---------- COMPARTIR / WHATSAPP ---------- */
-.share-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
-.share-btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:800;padding:.8rem 1.5rem;border-radius:999px;font-size:.95rem;transition:.25s}
-.share-wa{background:#25d366;color:#062b16}
-.share-fb{background:#1877f2;color:#fff}
-.share-copy{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;font-family:inherit}
-.share-btn:hover{transform:translateY(-2px)}
-.wa-float{position:fixed;right:1.2rem;bottom:1.2rem;z-index:60;width:3.6rem;height:3.6rem;border-radius:50%;
-  background:#25d366;display:grid;place-items:center;box-shadow:0 10px 28px rgba(37,211,102,.45);transition:.25s;text-decoration:none}
-.wa-float:hover{transform:scale(1.1)}
-.wa-float svg{width:2rem;height:2rem;fill:#fff}
-/* ---------- REVEAL ---------- */
-.rv{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
-.rv.vis{opacity:1;transform:none}
-.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
-</style>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 <nav>
   <div class="nav-in">
     <a class="logo" href="#inicio"><span class="mark">🌿</span> Ciénaga de Zapata</a>
     <div class="nav-links">
-      <a href="#lugares">Lugares</a><a href="#secretos">Secretos</a><a href="#fauna">Fauna</a>
-      <a href="#actividades">Actividades</a><a href="#cultura">Historia</a><a href="#llegar">Cómo llegar</a>
+      <a href="lugares.html">Lugares</a><a href="secretos.html">Secretos</a><a href="fauna-flora.html">Fauna</a>
+      <a href="actividades.html">Actividades</a><a href="historia.html">Historia</a><a href="guia.html">Guía</a>
     </div>
   </div>
 </nav>
@@ -221,8 +37,8 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
     <h1 class="rv rv-d1">El corazón <span class="grad">verde</span> de Cuba te está esperando</h1>
     <p class="lead rv rv-d2">La Ciénaga de Zapata, en Matanzas: el humedal más grande del Caribe insular. Cocodrilos, cenotes cristalinos, playas vírgenes y rincones que casi nadie conoce… hasta ahora.</p>
     <div class="hero-cta rv rv-d3">
-      <a class="btn btn-sol" href="#lugares">Explorar lugares 🗺️</a>
-      <a class="btn btn-ghost" href="#secretos">Descubrir secretos 🤫</a>
+      <a class="btn btn-sol" href="lugares.html">Explorar lugares 🗺️</a>
+      <a class="btn btn-ghost" href="secretos.html">Descubrir secretos 🤫</a>
     </div>
     <div class="hero-badges rv rv-d3">
       <span class="hbadge">🐊 Cocodrilo cubano</span><span class="hbadge">🐦 Zunzuncito</span>
@@ -304,6 +120,8 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
       </article>
     </div>
   </div>
+<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="lugares.html">Ver guía completa de lugares →</a></div>
+  </div>
 </section>
 <section class="olvidados" id="secretos">
   <div class="orb orb1"></div><div class="orb orb2"></div>
@@ -342,6 +160,7 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
         <p>Proyecto comunitario y escuela de arte en la zona de Playa Larga: teatro, música y cultura hechos por y para los cenagueros. Un referente cultural poco difundido que vale la pena apoyar.</p>
         <span class="misterio">🎭 Arte comunitario</span></article>
     </div>
+    <div style="text-align:center;margin-top:2.2rem"><a class="btn btn-sol" href="secretos.html">Ver los 10 secretos →</a></div>
   </div>
 </section>
 
@@ -364,8 +183,9 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
         <div class="info"><h3>🌅 258 especies de aves</h3><p class="curio">Gallinuela de Santo Tomás, ferminia, cotorra cubana… varias con el hábitat más restringido del mundo.</p></div></div>
     </div>
   </div>
+<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="fauna-flora.html">Enciclopedia de fauna y flora →</a></div>
+  </div>
 </section>
-
 <section class="galeria">
   <div class="wrap">
     <h2 class="sec-title rv">La Ciénaga en <span class="grad">imágenes</span></h2>
@@ -385,8 +205,9 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
     <figure><img src="img/sendero-manglar.webp" alt="Sendero de manglar" loading="lazy"><figcaption>🌿 Sendero entre manglares</figcaption></figure>
     <figure><img src="img/amanecer-laguna.webp" alt="Amanecer en la laguna" loading="lazy"><figcaption>🌅 Amanecer en la laguna</figcaption></figure>
   </div>
+<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="actividades.html">Ver actividades y servicios →</a></div>
+  </div>
 </section>
-
 <section class="actividades" id="actividades">
   <div class="wrap">
     <h2 class="sec-title rv">Qué <span class="grad">hacer</span> aquí</h2>
@@ -400,8 +221,9 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
       <div class="act rv rv-d2"><div class="ico">🛶</div><h3>Kayak y lancha</h3><p>Navega canales entre manglares, la Laguna del Tesoro y el río Hatiguanico al amanecer: pura magia.</p></div>
     </div>
   </div>
+<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="historia.html">Historia completa →</a></div>
+  </div>
 </section>
-
 <section class="cultura" id="cultura">
   <div class="wrap">
     <h2 class="sec-title rv">Una tierra con <span class="grad">historia</span></h2>
@@ -419,6 +241,8 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
         <p>La UNESCO la declara Reserva de la Biosfera (2000) y sitio Ramsar (2001). Hoy aspira a ser Patrimonio Mundial: el reconocimiento que este gigante merece.</p></div>
     </div>
   </div>
+<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="gastronomia.html">Guía gastronómica →</a></div>
+  </div>
 </section>
 <section class="gastro">
   <div class="wrap">
@@ -433,8 +257,9 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
       <div class="plato rv rv-d2"><div class="ico">🏡</div><h3>Finca Fiesta Campesina</h3><p>Parada agroturística en la entrada de la ciénaga con el restaurante "El Canelo" de comida criolla.</p></div>
     </div>
   </div>
+<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="guia.html">Guía del viajero completa →</a></div>
+  </div>
 </section>
-
 <section class="llegar" id="llegar">
   <div class="wrap">
     <h2 class="sec-title rv">Cómo <span class="grad">llegar</span></h2>

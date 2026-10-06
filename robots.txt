@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://roygarcialeonardo.github.io/cienaga-de-zapata/sitemap.xml
