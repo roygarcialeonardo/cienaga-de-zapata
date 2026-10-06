@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ciénaga de Zapata · El corazón verde de Cuba</title>
 <meta name="description" content="Descubre la Ciénaga de Zapata en Matanzas, Cuba: el humedal más grande del Caribe. Playas, cenotes, cocodrilos, aves endémicas y rincones que casi nadie conoce.">
+<meta property="og:title" content="Ciénaga de Zapata · El corazón verde de Cuba 🌿">
+<meta property="og:description" content="El humedal más grande del Caribe te espera: cenotes cristalinos, cocodrilos, el ave más pequeña del mundo y rincones que casi nadie conoce.">
+<meta property="og:image" content="https://roygarcialeonardo.github.io/cienaga-de-zapata/img/hero-humedal.webp">
+<meta property="og:url" content="https://roygarcialeonardo.github.io/cienaga-de-zapata/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TouristDestination","name":"Ciénaga de Zapata","description":"El humedal más grande del Caribe insular, Reserva de la Biosfera UNESCO en Matanzas, Cuba.","address":{"@type":"PostalAddress","addressRegion":"Matanzas","addressCountry":"CU"}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
@@ -167,6 +176,27 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(14px);-webki
 footer{background:#04150f;padding:3rem 0 2rem;font-size:.9rem}
 .foot-grid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
+/* ---------- GALERÍA ---------- */
+.galeria{background:#04150f;overflow:hidden}
+.gal-track{display:flex;gap:1rem;overflow-x:auto;padding:1rem .5rem 1.5rem;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.gal-track figure{flex:0 0 min(78vw,380px);scroll-snap-align:center;border-radius:var(--radio);overflow:hidden;position:relative;height:260px;margin:0}
+.gal-track img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal-track figure:hover img{transform:scale(1.07)}
+.gal-track figcaption{position:absolute;inset:auto 0 0 0;padding:1.6rem 1rem .9rem;background:linear-gradient(180deg,transparent,rgba(4,20,14,.9));font-weight:700;font-size:.92rem}
+/* ---------- MAPA ---------- */
+.mapa{border-radius:var(--radio);overflow:hidden;margin-top:1.4rem;border:1px solid #d7e5db}
+.mapa iframe{width:100%;height:340px;border:0;display:block}
+/* ---------- COMPARTIR / WHATSAPP ---------- */
+.share-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
+.share-btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:800;padding:.8rem 1.5rem;border-radius:999px;font-size:.95rem;transition:.25s}
+.share-wa{background:#25d366;color:#062b16}
+.share-fb{background:#1877f2;color:#fff}
+.share-copy{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;font-family:inherit}
+.share-btn:hover{transform:translateY(-2px)}
+.wa-float{position:fixed;right:1.2rem;bottom:1.2rem;z-index:60;width:3.6rem;height:3.6rem;border-radius:50%;
+  background:#25d366;display:grid;place-items:center;box-shadow:0 10px 28px rgba(37,211,102,.45);transition:.25s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:2rem;height:2rem;fill:#fff}
 /* ---------- REVEAL ---------- */
 .rv{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
 .rv.vis{opacity:1;transform:none}
@@ -336,6 +366,27 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
   </div>
 </section>
 
+<section class="galeria">
+  <div class="wrap">
+    <h2 class="sec-title rv">La Ciénaga en <span class="grad">imágenes</span></h2>
+    <p class="sec-sub rv">Desliza y enamórate. Cada rincón tiene una historia que contar.</p>
+  </div>
+  <div class="gal-track rv">
+    <figure><img src="img/hero-humedal.webp" alt="Humedal al atardecer" loading="lazy"><figcaption>🌅 El humedal al atardecer</figcaption></figure>
+    <figure><img src="img/laguna-guama.webp" alt="Aldea taína" loading="lazy"><figcaption>🛖 Aldea taína de Guamá</figcaption></figure>
+    <figure><img src="img/cueva-peces.webp" alt="Cueva de los Peces" loading="lazy"><figcaption>💎 Cueva de los Peces</figcaption></figure>
+    <figure><img src="img/cocodrilo-cubano.webp" alt="Cocodrilo cubano" loading="lazy"><figcaption>🐊 Cocodrilo cubano</figcaption></figure>
+    <figure><img src="img/zunzuncito.webp" alt="Zunzuncito" loading="lazy"><figcaption>🐦 Zunzuncito, el ave más pequeña del mundo</figcaption></figure>
+    <figure><img src="img/tocororo.webp" alt="Tocororo" loading="lazy"><figcaption>🇨🇺 Tocororo, ave nacional</figcaption></figure>
+    <figure><img src="img/flamencos-salinas.webp" alt="Flamencos" loading="lazy"><figcaption>🦩 Flamencos en las Salinas</figcaption></figure>
+    <figure><img src="img/manati.webp" alt="Manatí" loading="lazy"><figcaption>🐋 Manatí del Hatiguanico</figcaption></figure>
+    <figure><img src="img/playa-giron.webp" alt="Playa Girón" loading="lazy"><figcaption>🏖️ Playa Girón</figcaption></figure>
+    <figure><img src="img/buceo-arrecife.webp" alt="Buceo" loading="lazy"><figcaption>🪸 Buceo en Bahía de Cochinos</figcaption></figure>
+    <figure><img src="img/sendero-manglar.webp" alt="Sendero de manglar" loading="lazy"><figcaption>🌿 Sendero entre manglares</figcaption></figure>
+    <figure><img src="img/amanecer-laguna.webp" alt="Amanecer en la laguna" loading="lazy"><figcaption>🌅 Amanecer en la laguna</figcaption></figure>
+  </div>
+</section>
+
 <section class="actividades" id="actividades">
   <div class="wrap">
     <h2 class="sec-title rv">Qué <span class="grad">hacer</span> aquí</h2>
@@ -396,6 +447,7 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
         <div class="ruta"><span>La Boca → Playa Larga</span><b>11 km</b></div>
         <div class="ruta"><span>La Boca → Playa Girón</span><b>45 km</b></div>
         <p style="margin-top:1rem;font-size:.92rem;color:#43584d">Por la Autopista Nacional hasta el entronque del Central Australia (km 142). Hay ómnibus Viazul con paradas en Playa Larga y Playa Girón, y excursiones organizadas (jeep safari 4x4) desde La Habana y Varadero.</p>
+        <div class="mapa"><iframe title="Mapa de la Ciénaga de Zapata" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-82.4%2C21.85%2C-80.85%2C22.65&amp;layer=mapnik&amp;marker=22.25%2C-81.62"></iframe></div>
       </div>
       <div class="panel rv rv-d1">
         <h3>💡 Consejos de cenaguero</h3>
@@ -432,9 +484,16 @@ footer .nota{opacity:.6;max-width:60ch;margin-top:1rem;font-size:.82rem}
   <div class="wrap">
     <h2 class="big rv">La Ciénaga no se cuenta.<br><span class="grad">Se vive.</span></h2>
     <p class="rv" style="opacity:.85;max-width:52ch;margin:0 auto 2rem">Comparte esta página con quien ame la naturaleza. Cada visita consciente ayuda a proteger este tesoro para las próximas generaciones. 🌿</p>
-    <div class="rv"><a class="btn btn-sol" href="#inicio">Volver arriba ⬆️</a></div>
+    <div class="share-row rv">
+      <a class="share-btn share-wa" href="https://wa.me/?text=%F0%9F%8C%BF%20Descubre%20la%20Ci%C3%A9naga%20de%20Zapata%2C%20el%20coraz%C3%B3n%20verde%20de%20Cuba%3A%20https%3A%2F%2Froygarcialeonardo.github.io%2Fcienaga-de-zapata%2F" target="_blank" rel="noopener">📱 WhatsApp</a>
+      <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froygarcialeonardo.github.io%2Fcienaga-de-zapata%2F" target="_blank" rel="noopener">📘 Facebook</a>
+      <button class="share-btn share-copy" id="copyLink">🔗 Copiar enlace</button>
+    </div>
   </div>
 </section>
+
+<a class="wa-float" href="https://wa.me/?text=%F0%9F%8C%BF%20Descubre%20la%20Ci%C3%A9naga%20de%20Zapata%2C%20el%20coraz%C3%B3n%20verde%20de%20Cuba%3A%20https%3A%2F%2Froygarcialeonardo.github.io%2Fcienaga-de-zapata%2F" target="_blank" rel="noopener" title="Compartir por WhatsApp" aria-label="Compartir por WhatsApp">
+<svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.6 6.1 1.6h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.6 1.1 1.2-4.4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C5.7 9.3 10 5 16 5s10.3 4.3 10.3 10c0 5.7-4.6 9.8-10.3 9.8zm5.6-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.8-1-2.4-.3-.6-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.4c.2.2 2.3 3.6 5.6 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2 .1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></a>
 
 <footer>
   <div class="wrap">
@@ -479,6 +538,13 @@ document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
 }));
 // Subtle parallax on hero
 addEventListener('scroll',()=>{const h=document.querySelector('.hero-bg');if(h)h.style.translate=`0 ${scrollY*.18}px`},{passive:true});
+// Copy link
+const cp=document.getElementById('copyLink');
+if(cp)cp.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(location.href);cp.textContent='✅ ¡Enlace copiado!'}
+  catch(e){cp.textContent='🔗 '+location.href}
+  setTimeout(()=>cp.textContent='🔗 Copiar enlace',2200);
+});
 </script>
 </body>
 </html>
