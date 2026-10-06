@@ -6,11 +6,11 @@ const OWNER = "roygarcialeonardo", REPO = "cienaga-de-zapata";
 const GH_API = `https://api.github.com/repos/${OWNER}/${REPO}/contents`;
 const LS_TOK = "cz_admin_token";
 window.CZAdmin = {};
-let gidToken = null, gidEmail = "";
+let adminSession = localStorage.getItem("cz_admin_session")||"", adminEmail = localStorage.getItem("cz_admin_email")||"";
 const EN_PAGINA = (typeof PAGINA!=="undefined") ? PAGINA : null;
 
 function cfg(){ return window.CZ_CONFIG||{}; }
-function usaCMS(){ return !!(cfg().CMS_URL && cfg().GOOGLE_CLIENT_ID); }
+function usaCMS(){ return !!(cfg().CMS_URL); }
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function tok(){ return localStorage.getItem(LS_TOK)||""; }
 
@@ -39,41 +39,58 @@ function abrirModal(html){document.getElementById("modalBox").innerHTML=html;
 function cerrarModal(){document.getElementById("modalVeil").classList.remove("on");}
 
 function onFloat(){
-  if(gidToken || tok()){ entrar(); return; }
-  if(usaCMS()) loginGoogle(); else loginToken();
+  if((usaCMS() && adminSession) || (!usaCMS() && tok())){ entrar(); return; }
+  if(usaCMS()) loginEmail(); else loginToken();
 }
 
-/* ----- Login con Google ----- */
-function loginGoogle(){
+/* ----- Login con código al correo ----- */
+function loginEmail(){
   abrirModal(`<h3>🔐 Acceso administrador</h3>
-    <p style="opacity:.85;font-size:.95rem;margin-bottom:1rem">Entra con tu cuenta de Google. Solo los correos autorizados pueden administrar.</p>
-    <div id="gbtn"></div>
-    <div class="row"><button class="btn btn-ghost" id="gCancel">Cancelar</button></div>
-    <p id="gMsg" style="margin-top:.8rem;font-size:.9rem"></p>`);
-  document.getElementById("gCancel").onclick=cerrarModal;
-  const render=()=>{
-    if(!window.google || !google.accounts){ setTimeout(render, 300); return; }
-    google.accounts.id.initialize({client_id: cfg().GOOGLE_CLIENT_ID,
-      callback: onGoogleCred, auto_select:false});
-    google.accounts.id.renderButton(document.getElementById("gbtn"),
-      {theme:"filled_blue", size:"large", width:280, text:"signin_with", locale:"es"});
+    <p style="opacity:.85;font-size:.95rem;margin-bottom:.5rem">Escribe tu correo de Google y te enviamos un código de acceso.</p>
+    <label>Correo</label>
+    <input type="text" id="emIn" placeholder="tucorreo@gmail.com" autocomplete="email">
+    <div class="row"><button class="btn btn-sol" id="emOk">Enviar código</button>
+    <button class="btn btn-ghost" id="emNo">Cancelar</button></div>
+    <p id="emMsg" style="margin-top:.8rem;font-size:.9rem"></p>`);
+  document.getElementById("emNo").onclick=cerrarModal;
+  document.getElementById("emOk").onclick=async()=>{
+    const em=document.getElementById("emIn").value.trim().toLowerCase();
+    const msg=document.getElementById("emMsg");
+    if(!em||em.indexOf("@")<0){msg.textContent="✍️ Escribe un correo válido.";return;}
+    msg.textContent="⏳ Enviando código…";
+    try{
+      const j=await cmsApi("requestCode",{email:em});
+      if(j.ok){ pedirCodigo(em); }
+      else{ msg.textContent="❌ Este correo no está autorizado."; }
+    }catch(e){ msg.textContent="❌ Error de conexión."; }
   };
-  render();
 }
-async function onGoogleCred(resp){
-  gidToken = resp.credential;
-  try{ gidEmail = JSON.parse(atob(gidToken.split(".")[1])).email || ""; }catch(e){}
-  // verificar contra el CMS
-  const msg=document.getElementById("gMsg"); msg.textContent="⏳ Verificando…";
-  try{
-    const j = await cmsApi("checkAuth", {});
-    if(j && j._auth_ok){ cerrarModal(); entrar(); }
-    else{ gidToken=null; msg.textContent="❌ Este correo no está autorizado."; }
-  }catch(e){ gidToken=null; msg.textContent="❌ No se pudo verificar. Revisa tu conexión."; }
+function pedirCodigo(em){
+  abrirModal(`<h3>🔐 Revisa tu correo</h3>
+    <p style="opacity:.85;font-size:.95rem">Enviamos un código de 6 dígitos a <b>${esc(em)}</b> (válido 10 minutos).</p>
+    <label>Código</label>
+    <input type="text" id="cdIn" placeholder="123456" inputmode="numeric" maxlength="6">
+    <div class="row"><button class="btn btn-sol" id="cdOk">Entrar</button>
+    <button class="btn btn-ghost" id="cdNo">Cancelar</button></div>
+    <p id="cdMsg" style="margin-top:.8rem;font-size:.9rem"></p>`);
+  document.getElementById("cdNo").onclick=cerrarModal;
+  document.getElementById("cdOk").onclick=async()=>{
+    const code=document.getElementById("cdIn").value.trim();
+    const msg=document.getElementById("cdMsg"); msg.textContent="⏳ Verificando…";
+    try{
+      const j=await cmsApi("verifyCode",{email:em, code});
+      if(j.ok&&j.session){
+        adminSession=j.session; adminEmail=j.email||em;
+        localStorage.setItem("cz_admin_session",adminSession);
+        localStorage.setItem("cz_admin_email",adminEmail);
+        cerrarModal(); entrar();
+      }else{ msg.textContent="❌ Código inválido o vencido."; }
+    }catch(e){ msg.textContent="❌ Error de conexión."; }
+  };
 }
 async function cmsApi(action, data){
   const r = await fetch(cfg().CMS_URL, {method:"POST",
-    body: JSON.stringify(Object.assign({action, idToken: gidToken}, data||{}))});
+    body: JSON.stringify(Object.assign({action, session: adminSession}, data||{}))});
   return r.json();
 }
 
@@ -98,12 +115,14 @@ function loginToken(){
 function entrar(){
   document.body.classList.add("admin");
   document.getElementById("adminBar").classList.add("on");
-  if(gidEmail) document.getElementById("adminWho").textContent = "Admin: "+gidEmail;
+  if(adminEmail) document.getElementById("adminWho").textContent = "Admin: "+adminEmail;
   location.reload();
 }
 function salir(){
-  gidToken=null; gidEmail="";
+  adminSession=""; adminEmail="";
   localStorage.removeItem(LS_TOK);
+  localStorage.removeItem("cz_admin_session");
+  localStorage.removeItem("cz_admin_email");
   document.body.classList.remove("admin");
   document.getElementById("adminBar").classList.remove("on");
   location.reload();
@@ -230,7 +249,7 @@ async function leerTodos(){
 
 document.addEventListener("DOMContentLoaded",()=>{
   montarUI();
-  if(gidToken||tok()){document.body.classList.add("admin");
+  if((usaCMS()&&adminSession)||(!usaCMS()&&tok())){document.body.classList.add("admin");
     document.getElementById("adminBar").classList.add("on");}
 });
 })();
