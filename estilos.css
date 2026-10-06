@@ -280,3 +280,9 @@ body.admin .ficha{position:relative}
   padding:.35rem .7rem;font-size:.8rem;font-weight:700;cursor:pointer}
 .tool-btn.del{border-color:var(--rosa)}
 .img-preview{max-width:100%;border-radius:10px;margin-top:.5rem;max-height:180px;object-fit:cover}
+
+/* Indicador de conexión con el CMS */
+.conn-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;padding:.28rem .65rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;margin-left:auto;white-space:nowrap}
+.conn-dot{width:.65rem;height:.65rem;border-radius:50%;display:inline-block;flex:none;background:#ef4444;box-shadow:0 0 8px #ef4444}
+.conn-dot.conn-green{background:#22c55e;box-shadow:0 0 8px #22c55e}
+@media(max-width:860px){.conn-badge{font-size:.65rem;padding:.22rem .55rem}}

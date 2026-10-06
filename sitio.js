@@ -66,5 +66,27 @@ function nombrePag(p){
           "historia":"Historia","gastronomia":"Gastronomía","guia":"Guía"}[p]||p;
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); });
+document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); chequearConn(); });
+
+/* ---------- Indicador de conexión con el CMS ---------- */
+function pintarConn(ok){
+  const d=document.getElementById("connDot"), t=document.getElementById("connText");
+  if(!d||!t) return;
+  d.className="conn-dot"+(ok?" conn-green":"");
+  t.textContent=ok?"Conectado":"Sin conexión";
+  const b=document.getElementById("connBadge");
+  if(b) b.title=ok?"Conexión con el servidor establecida":"Sin conexión con el servidor";
+}
+async function chequearConn(){
+  const url=(window.CZ_CONFIG||{}).CMS_URL||"";
+  if(!url){ pintarConn(false); return; }
+  try{
+    const ctl=new AbortController();
+    const to=setTimeout(()=>ctl.abort(),15000);
+    const r=await fetch(url,{method:"POST",body:JSON.stringify({action:"getComments",pagina:"__ping__"}),signal:ctl.signal});
+    clearTimeout(to);
+    const j=await r.json();
+    pintarConn(!!(j&&j.ok));
+  }catch(e){ pintarConn(false); }
+}
 })();
