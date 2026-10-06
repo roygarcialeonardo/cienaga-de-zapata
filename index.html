@@ -208,6 +208,14 @@
 <div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="actividades.html">Ver actividades y servicios →</a></div>
   </div>
 </section>
+<section class="novedades">
+  <div class="wrap">
+    <h2 class="sec-title rv">🌟 <span class="grad">Novedades</span> de la Ciénaga</h2>
+    <p class="sec-sub rv">Lo último publicado: nuevos rincones, datos y descubrimientos.</p>
+    <div class="nov-grid cards" id="novedades"></div>
+  </div>
+</section>
+
 <section class="actividades" id="actividades">
   <div class="wrap">
     <h2 class="sec-title rv">Qué <span class="grad">hacer</span> aquí</h2>
@@ -305,6 +313,14 @@
   </div>
 </section>
 
+<section class="faq" id="experiencias" style="background:#0a1f33">
+  <div class="wrap">
+    <h2 class="sec-title rv">💬 Experiencias de <span class="grad">viajeros</span></h2>
+    <p class="sec-sub rv">¿Ya visitaste la Ciénaga? Cuéntanos tu experiencia, sube tus fotos y ayuda a otros viajeros. 👇</p>
+    <div id="giscus-box" class="rv"></div>
+  </div>
+</section>
+
 <section class="cta-final">
   <div class="wrap">
     <h2 class="big rv">La Ciénaga no se cuenta.<br><span class="grad">Se vive.</span></h2>
@@ -335,6 +351,8 @@
   </div>
 </footer>
 
+<script src="sitio.js"></script>
+<script src="admin.js"></script>
 <script>
 // Reveal on scroll
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
