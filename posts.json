@@ -1842,5 +1842,1381 @@
   "categoria": "Guías",
   "fecha": "2026-10-12",
   "fijo": false
+ },
+ {
+  "id": "s-hs-1",
+  "pagina": "servicios",
+  "titulo": "Hostal la Cubania",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal la Cubania",
+  "cuerpo": [
+   "Alojamiento familiar en Caletón, Playa Larga, en pleno corazón de la Ciénaga de Zapata. Anai te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Anai"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-2",
+  "pagina": "servicios",
+  "titulo": "Casa Yosvany Hostal",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Yosvany Hostal",
+  "cuerpo": [
+   "Un rincón acogedor en Playa Larga para vivir la Ciénaga como un local. Yosvany, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yosvany"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-3",
+  "pagina": "servicios",
+  "titulo": "Villa Yami",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Villa Yami",
+  "cuerpo": [
+   "Hospedaje tranquilo en Mario López, Playa Larga, cerca de los mejores puntos de la zona. Yamir te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yamir"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-4",
+  "pagina": "servicios",
+  "titulo": "Casa Tati",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Tati",
+  "cuerpo": [
+   "Casa de renta en Buena Ventura, Playa Larga con ambiente familiar y trato cercano. Tati, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Buena Ventura, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Tati"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-5",
+  "pagina": "servicios",
+  "titulo": "Casa Yosmel",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Yosmel",
+  "cuerpo": [
+   "Refugio cómodo en El Caletón, Playa Larga para explorar la Ciénaga de Zapata sin prisa. Yosmel te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "El Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yosmel"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-6",
+  "pagina": "servicios",
+  "titulo": "Hostal las Olas",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal las Olas",
+  "cuerpo": [
+   "Estancia agradable en Batey Caletón, Ciénaga de Zapata, perfecta para viajeros que buscan autenticidad. Yanet, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Batey Caletón, Ciénaga de Zapata"
+   ],
+   [
+    "Anfitrión",
+    "Yanet"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-7",
+  "pagina": "servicios",
+  "titulo": "Hostal la Perla",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal la Perla",
+  "cuerpo": [
+   "Alojamiento en Playa Larga donde te sentirás como en casa desde el primer día. Kenia te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Kenia"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-8",
+  "pagina": "servicios",
+  "titulo": "Villa La Isla",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Villa La Isla",
+  "cuerpo": [
+   "Casa particular en Playa Larga, ideal para descansar después de un día entre playas y humedales. Yunior, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yunior"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-9",
+  "pagina": "servicios",
+  "titulo": "Hostal Brisas del Mar",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal Brisas del Mar",
+  "cuerpo": [
+   "Alojamiento familiar en Avenida Los Toros, Playa Larga, en pleno corazón de la Ciénaga de Zapata. Yadian te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Avenida Los Toros, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yadian"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-10",
+  "pagina": "servicios",
+  "titulo": "Casa Anabel",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Anabel",
+  "cuerpo": [
+   "Un rincón acogedor en Entronque Playa Larga para vivir la Ciénaga como un local. Anabel, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Anabel"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-11",
+  "pagina": "servicios",
+  "titulo": "Casa Las Cuevas",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Las Cuevas",
+  "cuerpo": [
+   "Hospedaje tranquilo en Poblado Mario López, Playa Larga, cerca de los mejores puntos de la zona. Juan Carlos te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Poblado Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Juan Carlos"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-12",
+  "pagina": "servicios",
+  "titulo": "Casa Aida",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Aida",
+  "cuerpo": [
+   "Casa de renta en Caletón, Playa Larga con ambiente familiar y trato cercano. Aida, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Aida"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-13",
+  "pagina": "servicios",
+  "titulo": "Villa Rosa",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Villa Rosa",
+  "cuerpo": [
+   "Refugio cómodo en Entronque, Playa Larga para explorar la Ciénaga de Zapata sin prisa. Rosa te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Rosa"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-14",
+  "pagina": "servicios",
+  "titulo": "Casa Elida",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Elida",
+  "cuerpo": [
+   "Estancia agradable en Ciénaga de Zapata, Playa Larga, perfecta para viajeros que buscan autenticidad. Elida, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Ciénaga de Zapata, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Elida"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-15",
+  "pagina": "servicios",
+  "titulo": "Casa de Maikel",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa de Maikel",
+  "cuerpo": [
+   "Alojamiento en Mario López, calle 5, Playa Larga donde te sentirás como en casa desde el primer día. Maikel te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López, calle 5, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Maikel"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-16",
+  "pagina": "servicios",
+  "titulo": "Casa la Amistad",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa la Amistad",
+  "cuerpo": [
+   "Casa particular en Caletón, Playa Larga, ideal para descansar después de un día entre playas y humedales. Aidee, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Aidee"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-17",
+  "pagina": "servicios",
+  "titulo": "Hostal los Cocos",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal los Cocos",
+  "cuerpo": [
+   "Alojamiento familiar en Caletón, Playa Larga, en pleno corazón de la Ciénaga de Zapata. Daymara te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Daymara"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-18",
+  "pagina": "servicios",
+  "titulo": "El Rincón de Ale",
+  "imagen": "img/playa-giron.webp",
+  "alt": "El Rincón de Ale",
+  "cuerpo": [
+   "Un rincón acogedor en Ciénaga de Zapata, Playa Larga para vivir la Ciénaga como un local. Alejandro, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Ciénaga de Zapata, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Alejandro"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-19",
+  "pagina": "servicios",
+  "titulo": "Casa Yoan",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Yoan",
+  "cuerpo": [
+   "Hospedaje tranquilo en Entronque, Playa Larga, cerca de los mejores puntos de la zona. Yoan te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yoan"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-20",
+  "pagina": "servicios",
+  "titulo": "Hostal Punta Perdiz",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal Punta Perdiz",
+  "cuerpo": [
+   "Casa de renta en Entronque Playa Larga con ambiente familiar y trato cercano. Onelbi, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Onelbi"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-21",
+  "pagina": "servicios",
+  "titulo": "Villa el Descanso del Mar",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Villa el Descanso del Mar",
+  "cuerpo": [
+   "Refugio cómodo en Playa Larga para explorar la Ciénaga de Zapata sin prisa. Arianny te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Arianny"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-22",
+  "pagina": "servicios",
+  "titulo": "Casa Zobeida",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Zobeida",
+  "cuerpo": [
+   "Estancia agradable en Playa Larga, perfecta para viajeros que buscan autenticidad. Zobeida, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Zobeida"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-23",
+  "pagina": "servicios",
+  "titulo": "El Edén de Pepe y Yadira",
+  "imagen": "img/playa-giron.webp",
+  "alt": "El Edén de Pepe y Yadira",
+  "cuerpo": [
+   "Alojamiento en Caletón, Playa Larga donde te sentirás como en casa desde el primer día. Yadian te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yadian"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-24",
+  "pagina": "servicios",
+  "titulo": "Casa El Paraíso",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa El Paraíso",
+  "cuerpo": [
+   "Casa particular en Poblado de Caletón, Playa Larga, ideal para descansar después de un día entre playas y humedales. Mayuli, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Poblado de Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Mayuli"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-25",
+  "pagina": "servicios",
+  "titulo": "Casa Mary",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Mary",
+  "cuerpo": [
+   "Alojamiento familiar en Soplillar, Playa Larga, en pleno corazón de la Ciénaga de Zapata. Mary te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Soplillar, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Mary"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-26",
+  "pagina": "servicios",
+  "titulo": "Casa del Mar",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa del Mar",
+  "cuerpo": [
+   "Un rincón acogedor en Caletón, Playa Larga para vivir la Ciénaga como un local. Mary, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Mary"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-27",
+  "pagina": "servicios",
+  "titulo": "Hostal El Faro",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal El Faro",
+  "cuerpo": [
+   "Hospedaje tranquilo en Entronque de Playa Larga, cerca de los mejores puntos de la zona. Yosvany te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque de Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yosvany"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-28",
+  "pagina": "servicios",
+  "titulo": "Casa Ivón «El Delfín»",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Ivón «El Delfín»",
+  "cuerpo": [
+   "Casa de renta en Playa Girón con ambiente familiar y trato cercano. Ivon, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Girón"
+   ],
+   [
+    "Anfitrión",
+    "Ivon"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-29",
+  "pagina": "servicios",
+  "titulo": "Casa de Yadira",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa de Yadira",
+  "cuerpo": [
+   "Refugio cómodo en Caletón, Playa Larga para explorar la Ciénaga de Zapata sin prisa. Yadira te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yadira"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-30",
+  "pagina": "servicios",
+  "titulo": "Villa Las Hermanas",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Villa Las Hermanas",
+  "cuerpo": [
+   "Estancia agradable en Playa Larga, perfecta para viajeros que buscan autenticidad. Atención familiar y ambiente relajado en plena naturaleza."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-31",
+  "pagina": "servicios",
+  "titulo": "White House (Ramiro y Vivian)",
+  "imagen": "img/playa-giron.webp",
+  "alt": "White House (Ramiro y Vivian)",
+  "cuerpo": [
+   "Alojamiento en Entronque, Playa Larga donde te sentirás como en casa desde el primer día. Yadian te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yadian"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-32",
+  "pagina": "servicios",
+  "titulo": "Casa Zuleida y Viñola",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Zuleida y Viñola",
+  "cuerpo": [
+   "Casa particular en Playa Larga, ideal para descansar después de un día entre playas y humedales. Zuleida, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Zuleida"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-33",
+  "pagina": "servicios",
+  "titulo": "Quiñones House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Quiñones House",
+  "cuerpo": [
+   "Alojamiento familiar en Playa Larga, en pleno corazón de la Ciénaga de Zapata. Maitee te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Maitee"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-34",
+  "pagina": "servicios",
+  "titulo": "Hostal Esther",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal Esther",
+  "cuerpo": [
+   "Un rincón acogedor en Caletón, Playa Larga para vivir la Ciénaga como un local. Esther, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Esther"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-35",
+  "pagina": "servicios",
+  "titulo": "Ameris House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Ameris House",
+  "cuerpo": [
+   "Hospedaje tranquilo en Playa Larga, cerca de los mejores puntos de la zona. Ameris te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Ameris"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-36",
+  "pagina": "servicios",
+  "titulo": "Casa Luminosa de Janet Irasema",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Luminosa de Janet Irasema",
+  "cuerpo": [
+   "Casa de renta en Caletón, Playa Larga con ambiente familiar y trato cercano. Janet Irasema, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Janet Irasema"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-37",
+  "pagina": "servicios",
+  "titulo": "Hostal Arenas de Río",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal Arenas de Río",
+  "cuerpo": [
+   "Refugio cómodo en Caletón, Playa Larga para explorar la Ciénaga de Zapata sin prisa. Lucia te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Lucia"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-38",
+  "pagina": "servicios",
+  "titulo": "Casa Mebi and Roger",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Mebi and Roger",
+  "cuerpo": [
+   "Estancia agradable en Mario López, Playa Larga, perfecta para viajeros que buscan autenticidad. Onelbi, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Onelbi"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-39",
+  "pagina": "servicios",
+  "titulo": "Casa Mercy and Lazaro",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Mercy and Lazaro",
+  "cuerpo": [
+   "Alojamiento en Entronque Playa Larga donde te sentirás como en casa desde el primer día. Maria Mercedes te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Maria Mercedes"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-40",
+  "pagina": "servicios",
+  "titulo": "Casa Orlairis and Chichi",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Orlairis and Chichi",
+  "cuerpo": [
+   "Casa particular en Mario López, Playa Larga, ideal para descansar después de un día entre playas y humedales. Alberto, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Alberto"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-41",
+  "pagina": "servicios",
+  "titulo": "Cairo House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Cairo House",
+  "cuerpo": [
+   "Alojamiento familiar en Playa Larga, en pleno corazón de la Ciénaga de Zapata. Nieves te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Nieves"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-42",
+  "pagina": "servicios",
+  "titulo": "Biki House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Biki House",
+  "cuerpo": [
+   "Un rincón acogedor en Playa Larga para vivir la Ciénaga como un local. Antonio, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Antonio"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-43",
+  "pagina": "servicios",
+  "titulo": "Grand Canyon House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Grand Canyon House",
+  "cuerpo": [
+   "Hospedaje tranquilo en Playa Larga, cerca de los mejores puntos de la zona. Yurisan te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yurisan"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-44",
+  "pagina": "servicios",
+  "titulo": "Odalis House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Odalis House",
+  "cuerpo": [
+   "Casa de renta en Buenaventura, Playa Larga con ambiente familiar y trato cercano. Odalis, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Buenaventura, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Odalis"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-45",
+  "pagina": "servicios",
+  "titulo": "Hostal El Rey",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal El Rey",
+  "cuerpo": [
+   "Refugio cómodo en Caletón, Playa Larga para explorar la Ciénaga de Zapata sin prisa. Randy te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Randy"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-46",
+  "pagina": "servicios",
+  "titulo": "Casa Amalfi",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Amalfi",
+  "cuerpo": [
+   "Estancia agradable en Playa Larga, perfecta para viajeros que buscan autenticidad. Maiyumi, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Maiyumi"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-47",
+  "pagina": "servicios",
+  "titulo": "Maria Elena House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Maria Elena House",
+  "cuerpo": [
+   "Alojamiento en Ciénaga de Zapata, Playa Larga donde te sentirás como en casa desde el primer día. María Elena te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Ciénaga de Zapata, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "María Elena"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-48",
+  "pagina": "servicios",
+  "titulo": "House Isidro",
+  "imagen": "img/playa-giron.webp",
+  "alt": "House Isidro",
+  "cuerpo": [
+   "Casa particular en Entronque Playa Larga, ideal para descansar después de un día entre playas y humedales. Esperanza Anabel, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Esperanza Anabel"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-49",
+  "pagina": "servicios",
+  "titulo": "Casa Miriam y Raúl",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Miriam y Raúl",
+  "cuerpo": [
+   "Alojamiento familiar en Playa Larga, en pleno corazón de la Ciénaga de Zapata. Miriam De La Caridad te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Miriam De La Caridad"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-50",
+  "pagina": "servicios",
+  "titulo": "Casa Albertico-Daymara",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Albertico-Daymara",
+  "cuerpo": [
+   "Un rincón acogedor en Playa Larga para vivir la Ciénaga como un local. Alberto, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Alberto"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-51",
+  "pagina": "servicios",
+  "titulo": "Amanecer en Bahía",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Amanecer en Bahía",
+  "cuerpo": [
+   "Hospedaje tranquilo en Buena Ventura, Playa Larga, cerca de los mejores puntos de la zona. Mileidis te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Buena Ventura, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Mileidis"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-52",
+  "pagina": "servicios",
+  "titulo": "Lianky House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Lianky House",
+  "cuerpo": [
+   "Casa de renta en Mario López, calle 5, Playa Larga con ambiente familiar y trato cercano. Lianky, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López, calle 5, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Lianky"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-53",
+  "pagina": "servicios",
+  "titulo": "Casa Lucie",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Lucie",
+  "cuerpo": [
+   "Refugio cómodo en Playa Larga, Ciénaga de Zapata para explorar la Ciénaga de Zapata sin prisa. Anne te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga, Ciénaga de Zapata"
+   ],
+   [
+    "Anfitrión",
+    "Anne"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-54",
+  "pagina": "servicios",
+  "titulo": "Montemar",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Montemar",
+  "cuerpo": [
+   "Estancia agradable en Entronque de Playa Larga, perfecta para viajeros que buscan autenticidad. Mirta, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque de Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Mirta"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-55",
+  "pagina": "servicios",
+  "titulo": "Casa Aileen y Yosvany",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Aileen y Yosvany",
+  "cuerpo": [
+   "Alojamiento en Entronque, Playa Larga donde te sentirás como en casa desde el primer día. Aileen te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Aileen"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-56",
+  "pagina": "servicios",
+  "titulo": "Cuba Casa Carmen (Bahía de Cochinos)",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Cuba Casa Carmen (Bahía de Cochinos)",
+  "cuerpo": [
+   "Casa particular en Batey Mario López, Playa Larga, ideal para descansar después de un día entre playas y humedales. Daily, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Batey Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Daily"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-57",
+  "pagina": "servicios",
+  "titulo": "Magali House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Magali House",
+  "cuerpo": [
+   "Alojamiento familiar en Mario López, Playa Larga, en pleno corazón de la Ciénaga de Zapata. Magali te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Magali"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-58",
+  "pagina": "servicios",
+  "titulo": "Casa Esmerida",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Esmerida",
+  "cuerpo": [
+   "Un rincón acogedor en Mario López, Playa Larga para vivir la Ciénaga como un local. Esmerida, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Esmerida"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-59",
+  "pagina": "servicios",
+  "titulo": "Ebenezer House",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Ebenezer House",
+  "cuerpo": [
+   "Hospedaje tranquilo en Matanzas, cerca de los mejores puntos de la zona. Osnary te espera con una sonrisa y los mejores consejos para recorrer la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Matanzas"
+   ],
+   [
+    "Anfitrión",
+    "Osnary"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hs-60",
+  "pagina": "servicios",
+  "titulo": "House Nature",
+  "imagen": "img/playa-giron.webp",
+  "alt": "House Nature",
+  "cuerpo": [
+   "Casa de renta en Poblado Mario López, Playa Larga con ambiente familiar y trato cercano. Alberto, su anfitrión, conoce la zona como nadie y te ayuda a organizar el día."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Poblado Mario López, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Alberto"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
  }
 ]
