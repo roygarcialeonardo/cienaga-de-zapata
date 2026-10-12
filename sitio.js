@@ -11,27 +11,18 @@ async function getPosts(){
   return r.json();
 }
 
-function fichaHTML(p, admin){
-  const paras = p.cuerpo.map(t=>`<p>${esc(t)}</p>`).join("");
-  const datos = (p.datos||[]).map(d=>`<li><b>${esc(d[0])}:</b> ${esc(d[1])}</li>`).join("");
-  const tools = admin
+function cuerpoArr(p){ return Array.isArray(p.cuerpo) ? p.cuerpo : (p.cuerpo ? [p.cuerpo] : []); }
+function datoDe(p, re){
+  const d = (p.datos||[]).find(x=>re.test(String(x[0]||"").trim()));
+  return d ? String(d[1]) : "";
+}
+function extracto(p, n){
+  const primer = cuerpoArr(p)[0] || "";
+  return primer.length > n ? primer.slice(0, n)+"…" : primer;
+}
+function toolsHTML(p, admin){
+  return admin
     ? `<div class="admin-tools"><button class="tool-btn" data-edit="${p.id}">✏️ Editar</button><button class="tool-btn del" data-del="${p.id}">🗑️</button></div>` : "";
-  const cat = p.categoria ? `<span class="fcat">${esc(p.categoria)}</span>` : "";
-  let cta = "";
-  if(p.pagina==="servicios"){
-    const wnum = String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
-    let wapp = "";
-    if(wnum){
-      const txt = encodeURIComponent("Hola, vi el anuncio de «"+p.titulo+"» en la guía de la Ciénaga de Zapata y me interesa.");
-      wapp = `<a class="btn-wapp" href="https://wa.me/${wnum}?text=${txt}" target="_blank" rel="noopener">💬 WhatsApp</a>`;
-    }
-    const resBtn = `<button type="button" class="btn-reserva" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}">📅 Solicitar reserva</button>`;
-    cta = `<div class="srv-cta">${wapp}${resBtn}</div>`;
-  }
-  return `<article class="ficha rv vis" id="${esc(p.id)}">${tools}
-    <div class="fimg"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"></div>
-    <div class="fbody"><h2>${esc(p.titulo)}</h2>${cat}${paras}
-    ${datos?`<ul class="datos">${datos}</ul>`:""}${cta}</div></article>`;
 }
 
 /* Página de detalle: PAGINA definida antes del script */
@@ -39,36 +30,136 @@ async function renderPagina(){
   const cont = document.getElementById("fichas");
   if(!cont || typeof PAGINA === "undefined") return;
   if(PAGINA==="servicios"){ renderServicios(); return; }
-  try{
-    const posts = await getPosts();
-    const lista = posts.filter(p=>p.pagina===PAGINA);
-    const admin = document.body.classList.contains("admin");
-    cont.innerHTML = lista.map(p=>fichaHTML(p, admin)).join("");
-    const toc = document.getElementById("tocList");
-    if(toc) toc.innerHTML = lista.map(p=>`<li><a href="#${esc(p.id)}">${esc(p.titulo)}</a></li>`).join("");
-    // deep link con hash
-    if(location.hash){
-      const el = document.querySelector(location.hash);
-      if(el) setTimeout(()=>el.scrollIntoView({behavior:"smooth"}), 300);
-    }
-    if(window.CZAdmin) window.CZAdmin.bindTools(cont);
-  }catch(e){
-    cont.innerHTML = "<p style='opacity:.7'>No se pudo cargar el contenido. Revisa tu conexión e intenta de nuevo.</p>";
-  }
+  renderContenido();
 }
 
-/* ---------- Servicios: cuadrícula moderna tipo Airbnb ----------
+/* ---------- Páginas de contenido: cuadrícula de tarjetas + modal de detalle ---------- */
+let contPosts = [];
+
+function tarjetaContenido(p, admin){
+  return `<article class="cont-card" data-cont="${esc(p.id)}">${toolsHTML(p, admin)}
+    <div class="cont-img">${p.categoria?`<span class="cont-badge">${esc(p.categoria)}</span>`:""}<img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"></div>
+    <div class="cont-body"><h3>${esc(p.titulo)}</h3>
+    <p class="cont-extracto">${esc(extracto(p, 140))}</p>
+    <span class="cont-ver">Ver más →</span></div></article>`;
+}
+
+function renderContenido(){
+  const cont = document.getElementById("fichas");
+  if(!cont) return;
+  getPosts().then(posts=>{
+    contPosts = posts.filter(p=>p.pagina===PAGINA);
+    const toc = document.querySelector(".toc");
+    if(toc) toc.style.display = "none";
+    const admin = document.body.classList.contains("admin");
+    cont.className = "cont-grid";
+    cont.innerHTML = contPosts.length
+      ? contPosts.map(p=>tarjetaContenido(p, admin)).join("")
+      : `<p style="opacity:.7;padding:2rem .5rem">Aún no hay publicaciones en esta sección.</p>`;
+    if(window.CZAdmin) window.CZAdmin.bindTools(cont);
+    if(location.hash){
+      const id = location.hash.slice(1);
+      if(contPosts.some(p=>String(p.id)===id)) setTimeout(()=>abrirDetalleCont(id), 300);
+    }
+  }).catch(e=>{
+    cont.innerHTML = "<p style='opacity:.7'>No se pudo cargar el contenido. Revisa tu conexión e intenta de nuevo.</p>";
+  });
+}
+
+/* Modal de detalle para páginas de contenido */
+function montarModalDetalleCont(){
+  if(document.getElementById("modalDetalleCont")) return;
+  const v = document.createElement("div");
+  v.id = "modalDetalleCont";
+  v.className = "cont-detalle";
+  v.innerHTML =
+  '<div class="cd-caja" role="dialog" aria-modal="true">' +
+    '<button type="button" class="cd-x" id="cdCerrar" aria-label="Cerrar">✕</button>' +
+    '<div id="cdCont"></div>' +
+  '</div>';
+  document.body.appendChild(v);
+  v.addEventListener("click", e=>{ if(e.target===v) cerrarDetalleCont(); });
+  document.getElementById("cdCerrar").addEventListener("click", cerrarDetalleCont);
+}
+function abrirDetalleCont(id){
+  const p = contPosts.find(x=>String(x.id)===String(id));
+  if(!p) return;
+  const paras = cuerpoArr(p).map(t=>`<p>${esc(t)}</p>`).join("");
+  const datos = (p.datos||[]).map(d=>`<li><b>${esc(d[0])}:</b> ${esc(d[1])}</li>`).join("");
+  document.getElementById("cdCont").innerHTML =
+    `<div class="cd-foto"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}"></div>
+     <div class="cd-cuerpo"><h3>${esc(p.titulo)}</h3>
+     ${p.categoria?`<span class="cont-badge srv-badge-static">${esc(p.categoria)}</span>`:""}
+     ${paras}${datos?`<ul class="cd-datos">${datos}</ul>`:""}</div>`;
+  document.getElementById("modalDetalleCont").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+function cerrarDetalleCont(){
+  const m = document.getElementById("modalDetalleCont");
+  if(m) m.classList.remove("on");
+  const r = document.getElementById("modalReserva");
+  const s = document.getElementById("modalDetalleSrv");
+  if((!r || !r.classList.contains("on")) && (!s || !s.classList.contains("on")))
+    document.body.style.overflow = "";
+}
+document.addEventListener("click", e=>{
+  if(!e.target.closest) return;
+  const card = e.target.closest(".cont-card[data-cont]");
+  if(card && !e.target.closest(".tool-btn")) abrirDetalleCont(card.getAttribute("data-cont"));
+});
+document.addEventListener("keydown", e=>{
+  if(e.key !== "Escape") return;
+  const m = document.getElementById("modalDetalleCont");
+  if(m && m.classList.contains("on")) cerrarDetalleCont();
+});
+
+/* ---------- Buscador de la home ---------- */
+let homeTimer = null;
+function initBuscadorHome(){
+  const input = document.getElementById("homeBuscar");
+  const box = document.getElementById("homeResultados");
+  if(!input || !box) return;
+  const btn = document.getElementById("homeBuscarBtn");
+  const lanzar = ()=>buscarHome(input.value.trim(), box);
+  input.addEventListener("input", ()=>{ clearTimeout(homeTimer); homeTimer = setTimeout(lanzar, 350); });
+  input.addEventListener("keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); clearTimeout(homeTimer); lanzar(); } });
+  if(btn) btn.addEventListener("click", ()=>{ clearTimeout(homeTimer); lanzar(); });
+  document.querySelectorAll(".home-hints button").forEach(b=>b.addEventListener("click", ()=>{
+    input.value = b.textContent.trim(); lanzar();
+    document.getElementById("inicio").scrollIntoView({behavior:"smooth"});
+  }));
+}
+function buscarHome(q, box){
+  if(q.length < 2){ box.innerHTML = ""; return; }
+  const ql = q.toLowerCase();
+  getPosts().then(posts=>{
+    const res = posts.filter(p=>{
+      const hay = (p.titulo+" "+cuerpoArr(p).join(" ")+" "+(p.datos||[]).map(d=>String(d[0])+" "+String(d[1])).join(" ")).toLowerCase();
+      return hay.includes(ql);
+    }).slice(0, 12);
+    box.innerHTML =
+      `<p class="home-count">${res.length ? res.length+(res.length===1?" resultado":" resultados")+" para «"+esc(q)+"»" : "Sin resultados para «"+esc(q)+"». Prueba con otra palabra."}</p>` +
+      (res.length ? `<div class="cont-grid">`+res.map(p=>
+        `<a class="cont-card" href="${esc(p.pagina)}.html#${esc(p.id)}">
+          <div class="cont-img">${p.categoria?`<span class="cont-badge">${esc(p.categoria)}</span>`:""}<img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"><span class="cont-seccion">${esc(nombrePag(p.pagina))}</span></div>
+          <div class="cont-body"><h3>${esc(p.titulo)}</h3>
+          <p class="cont-extracto">${esc(extracto(p, 120))}</p>
+          <span class="cont-ver">Ver →</span></div></a>`
+      ).join("")+`</div>` : "");
+    const y = box.getBoundingClientRect().top + scrollY - 120;
+    scrollTo({top:y, behavior:"smooth"});
+  }).catch(e=>{
+    box.innerHTML = "<p style='opacity:.7'>No se pudo buscar. Revisa tu conexión.</p>";
+  });
+}
+
+/* ---------- Servicios: cuadrícula tipo Airbnb ----------
    Tarjetas compactas con búsqueda, píldoras de categoría y modal de detalle.
    Reutiliza el modal de reserva existente (data-reserva / data-titulo). */
 let srvPosts = [];
 let srvCat = "Todos";
 let srvBuscarBound = false;
 
-function cuerpoArr(p){ return Array.isArray(p.cuerpo) ? p.cuerpo : (p.cuerpo ? [p.cuerpo] : []); }
-function datoDe(p, re){
-  const d = (p.datos||[]).find(x=>re.test(String(x[0]||"").trim()));
-  return d ? String(d[1]) : "";
-}
 function srvWhats(p, clase, etiqueta){
   const wnum = String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
   if(!wnum) return "";
@@ -79,18 +170,14 @@ function srvWhats(p, clase, etiqueta){
 function tarjetaServicio(p, admin){
   const wapp = srvWhats(p, "srv-btnw", "💬");
   const resBtn = `<button type="button" class="srv-btnr" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}" title="Solicitar reserva">📅 Reservar</button>`;
-  const tools = admin
-    ? `<div class="admin-tools"><button class="tool-btn" data-edit="${p.id}">✏️ Editar</button><button class="tool-btn del" data-del="${p.id}">🗑️</button></div>` : "";
   const zona = datoDe(p, /^ubicaci[óo]n$/i);
   const anfit = datoDe(p, /^anfitri[óo]n$/i);
-  const primer = cuerpoArr(p)[0] || "";
-  const ext = primer.length > 120 ? primer.slice(0,120)+"…" : primer;
-  return `<article class="srv-card" data-srv="${esc(p.id)}">${tools}
+  return `<article class="srv-card" data-srv="${esc(p.id)}">${toolsHTML(p, admin)}
     <div class="srv-img">${p.categoria?`<span class="srv-badge">${esc(p.categoria)}</span>`:""}<img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"></div>
     <div class="srv-body"><h3>${esc(p.titulo)}</h3>
     ${zona?`<p class="srv-zona">📍 ${esc(zona)}</p>`:""}
     ${anfit?`<p class="srv-anfit">Anfitrión: ${esc(anfit)}</p>`:""}
-    <p class="srv-extracto">${esc(ext)}</p>
+    <p class="srv-extracto">${esc(extracto(p, 120))}</p>
     <div class="srv-cta">${wapp}${resBtn}</div></div></article>`;
 }
 
@@ -137,7 +224,7 @@ function aplicarFiltro(){
   if(window.CZAdmin) window.CZAdmin.bindTools(cont);
 }
 
-/* Modal de detalle (z-index 85: por debajo del modal de reserva, que usa 90) */
+/* Modal de detalle de Servicios (z-index 85: por debajo del modal de reserva, que usa 90) */
 function montarModalDetalle(){
   if(document.getElementById("modalDetalleSrv")) return;
   const v = document.createElement("div");
@@ -207,7 +294,7 @@ async function renderNovedades(){
       <article class="card rv vis">
         <div class="ph"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"><span class="tag">${esc(nombrePag(p.pagina))}</span></div>
         <div class="body"><h3>${esc(p.titulo)}</h3>
-        <p>${esc((p.cuerpo[0]||"").slice(0,140))}…</p>
+        <p>${esc((cuerpoArr(p)[0]||"").slice(0,140))}…</p>
         <a class="ver-mas" href="${esc(p.pagina)}.html#${esc(p.id)}">Leer más →</a></div>
       </article>`).join("");
   }catch(e){ cont.innerHTML = ""; }
@@ -218,7 +305,7 @@ function nombrePag(p){
           "historia":"Historia","gastronomia":"Gastronomía","guia":"Guía","servicios":"Servicios"}[p]||p;
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); chequearConn(); montarModalReserva(); montarModalDetalle(); });
+document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); chequearConn(); montarModalReserva(); montarModalDetalle(); montarModalDetalleCont(); initBuscadorHome(); });
 
 /* ---------- Solicitud de reserva (fichas de Servicios) ----------
    Sin calendarios ni pagos: el formulario arma el mensaje y lo envía

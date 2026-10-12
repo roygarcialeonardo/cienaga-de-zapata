@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ciénaga de Zapata · El corazón verde de Cuba</title>
-<meta name="description" content="Descubre la Ciénaga de Zapata en Matanzas, Cuba: el humedal más grande del Caribe. Playas, cenotes, cocodrilos, aves endémicas y rincones que casi nadie conoce.">
+<meta name="description" content="Guía de viaje de la Ciénaga de Zapata en Matanzas, Cuba: el humedal más grande del Caribe. Lugares, secretos, fauna, actividades, historia, gastronomía y servicios turísticos.">
 <meta property="og:title" content="Ciénaga de Zapata · El corazón verde de Cuba 🌿">
 <meta property="og:description" content="El humedal más grande del Caribe te espera: cenotes cristalinos, cocodrilos, el ave más pequeña del mundo y rincones que casi nadie conoce.">
 <meta property="og:image" content="https://roygarcialeonardo.github.io/cienaga-de-zapata/img/hero-humedal.webp">
@@ -25,36 +25,74 @@
     <a class="logo" href="#inicio"><span class="mark">🌿</span> Ciénaga de Zapata</a>
     <div class="nav-links">
       <a href="lugares.html">Lugares</a><a href="secretos.html">Secretos</a><a href="fauna-flora.html">Fauna</a>
-      <a href="actividades.html">Actividades</a><a href="historia.html">Historia</a><a href="guia.html">Guía</a><a href="servicios.html">Servicios</a>
+      <a href="actividades.html">Actividades</a><a href="historia.html">Historia</a><a href="gastronomia.html">Gastronomía</a>
+      <a href="guia.html">Guía</a><a href="servicios.html">Servicios</a>
     </div>
     <span id="connBadge" class="conn-badge" title="Estado de la conexión"><span id="connDot" class="conn-dot"></span><span id="connText">···</span></span>
   </div>
 </nav>
 
 <header class="hero" id="inicio">
-  <div class="hero-bg"></div><div class="hero-veil"></div>
   <div class="wrap hero-in">
     <span class="kicker rv">🌎 Reserva de la Biosfera · UNESCO</span>
     <h1 class="rv rv-d1">El corazón <span class="grad">verde</span> de Cuba te está esperando</h1>
-    <p class="lead rv rv-d2">La Ciénaga de Zapata, en Matanzas: el humedal más grande del Caribe insular. Cocodrilos, cenotes cristalinos, playas vírgenes y rincones que casi nadie conoce… hasta ahora.</p>
-    <div class="hero-cta rv rv-d3">
-      <a class="btn btn-sol" href="lugares.html">Explorar lugares 🗺️</a>
-      <a class="btn btn-ghost" href="secretos.html">Descubrir secretos 🤫</a>
+    <p class="lead rv rv-d2">La guía de viaje de la Ciénaga de Zapata, Matanzas: el humedal más grande del Caribe. Busca lugares, animales, actividades y servicios.</p>
+    <div class="home-buscar rv rv-d3">
+      <input type="search" id="homeBuscar" placeholder="¿Qué quieres descubrir? Ej: cocodrilo, buceo, casa de renta…" aria-label="Buscar en la guía">
+      <button type="button" id="homeBuscarBtn">🔍 Buscar</button>
     </div>
-    <div class="hero-badges rv rv-d3">
-      <span class="hbadge">🐊 Cocodrilo cubano</span><span class="hbadge">🐦 Zunzuncito</span>
-      <span class="hbadge">🪸 Buceo de clase mundial</span><span class="hbadge">🦩 Flamencos</span>
+    <div class="home-hints rv rv-d3">
+      <button type="button">Cueva de los Peces</button>
+      <button type="button">Zunzuncito</button>
+      <button type="button">Buceo</button>
+      <button type="button">Casa de renta</button>
+      <button type="button">Flamencos</button>
     </div>
+    <div id="homeResultados"></div>
   </div>
   <span class="scroll-hint">desliza ↓</span>
 </header>
 
-<div class="marquee"><div class="marquee-track" id="mqTrack">
-  <span>🌿 HUMEDAL MÁS GRANDE DEL CARIBE</span><span>🐊 COCODRILO CUBANO</span><span>🐦 EL AVE MÁS PEQUEÑA DEL MUNDO</span>
-  <span>🪸 30+ SITIOS DE BUCEO</span><span>🦩 FLAMENCOS</span><span>🏝️ BAHÍA DE COCHINOS</span><span>💎 CENOTES CRISTALINOS</span>
-  <span>🌿 HUMEDAL MÁS GRANDE DEL CARIBE</span><span>🐊 COCODRILO CUBANO</span><span>🐦 EL AVE MÁS PEQUEÑA DEL MUNDO</span>
-  <span>🪸 30+ SITIOS DE BUCEO</span><span>🦩 FLAMENCOS</span><span>🏝️ BAHÍA DE COCHINOS</span><span>💎 CENOTES CRISTALINOS</span>
-</div></div>
+<section class="categorias" id="explora">
+  <div class="wrap">
+    <h2 class="sec-title rv">Explora la <span class="grad">Ciénaga</span></h2>
+    <p class="sec-sub rv">Todo lo que necesitas para planear tu visita, organizado por temas.</p>
+    <div class="cat-grid">
+      <a class="cat-card rv" href="lugares.html">
+        <div class="ph"><img src="img/laguna-guama.webp" alt="Laguna del Tesoro" loading="lazy"></div>
+        <div class="body"><h3>🗺️ Lugares</h3><p>Lagunas, cenotes, playas y criaderos: los imprescindibles.</p><span class="ver">Explorar →</span></div></a>
+      <a class="cat-card rv rv-d1" href="secretos.html">
+        <div class="ph"><img src="img/sendero-manglar.webp" alt="Sendero entre manglares" loading="lazy"></div>
+        <div class="body"><h3>🤫 Secretos</h3><p>Rincones que casi nadie conoce: caletas, senderos y aldeas.</p><span class="ver">Descubrir →</span></div></a>
+      <a class="cat-card rv rv-d2" href="fauna-flora.html">
+        <div class="ph"><img src="img/tocororo.webp" alt="Tocororo" loading="lazy"></div>
+        <div class="body"><h3>🐊 Fauna y flora</h3><p>Cocodrilo cubano, zunzuncito, tocororo, flamencos y manatíes.</p><span class="ver">Conocer →</span></div></a>
+      <a class="cat-card rv" href="actividades.html">
+        <div class="ph"><img src="img/buceo-arrecife.webp" alt="Buceo en arrecife" loading="lazy"></div>
+        <div class="body"><h3>🤿 Actividades</h3><p>Buceo, snorkel, senderismo, avistamiento de aves y pesca.</p><span class="ver">Ver →</span></div></a>
+      <a class="cat-card rv rv-d1" href="historia.html">
+        <div class="ph"><img src="img/playa-giron.webp" alt="Playa Girón" loading="lazy"></div>
+        <div class="body"><h3>🏛️ Historia</h3><p>Taínos, piratas, carboneros y Bahía de Cochinos.</p><span class="ver">Leer →</span></div></a>
+      <a class="cat-card rv rv-d2" href="gastronomia.html">
+        <div class="ph"><img src="img/amanecer-laguna.webp" alt="Amanecer en la laguna" loading="lazy"></div>
+        <div class="body"><h3>🍲 Gastronomía</h3><p>Sabores costeros: trucha, langosta, caldo de pescado y más.</p><span class="ver">Probar →</span></div></a>
+      <a class="cat-card rv" href="guia.html">
+        <div class="ph"><img src="img/hero-humedal.webp" alt="Humedal al atardecer" loading="lazy"></div>
+        <div class="body"><h3>🧭 Guía del viajero</h3><p>Cómo llegar, mejor época, consejos y preguntas frecuentes.</p><span class="ver">Planear →</span></div></a>
+      <a class="cat-card rv rv-d1" href="servicios.html">
+        <div class="ph"><img src="img/cueva-peces.webp" alt="Cueva de los Peces" loading="lazy"></div>
+        <div class="body"><h3>🧰 Servicios</h3><p>Casas de renta, taxis, restaurantes y guías locales.</p><span class="ver">Reservar →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="novedades">
+  <div class="wrap">
+    <h2 class="sec-title rv">🌟 <span class="grad">Novedades</span> de la Ciénaga</h2>
+    <p class="sec-sub rv">Lo último publicado: nuevos rincones, datos y descubrimientos.</p>
+    <div class="nov-grid cards" id="novedades"></div>
+  </div>
+</section>
 
 <section class="stats">
   <div class="wrap">
@@ -67,232 +105,6 @@
       <div class="stat rv rv-d3"><b><span class="count" data-to="65">0</span>+</b><span>aves migratorias que invernan aquí</span></div>
       <div class="stat rv"><b><span class="count" data-to="30">0</span>+</b><span>puntos de buceo y snorkel</span></div>
       <div class="stat rv rv-d1"><b><span class="count" data-to="800">0</span> mil</b><span>visitantes al año</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="lugares" id="lugares">
-  <div class="wrap">
-    <h2 class="sec-title rv">Lugares que <span class="grad">debes conocer</span></h2>
-    <p class="sec-sub rv">Los imprescindibles de la Ciénaga: lagunas legendarias, cenotes de película y playas con historia.</p>
-    <div class="filters rv">
-      <button class="chip on" data-f="all">Todos</button>
-      <button class="chip" data-f="agua">💧 Agua dulce</button>
-      <button class="chip" data-f="mar">🌊 Mar y playa</button>
-      <button class="chip" data-f="naturaleza">🌿 Naturaleza</button>
-      <button class="chip" data-f="cultura">🏛️ Cultura</button>
-    </div>
-    <div class="cards">
-      <article class="card rv" data-cat="agua cultura">
-        <div class="ph"><img src="img/laguna-guama.webp" alt="Aldea taína en la Laguna del Tesoro" loading="lazy"><span class="tag">Imperdible</span></div>
-        <div class="body"><h3>Laguna del Tesoro y Guamá</h3>
-        <p>El mayor espejo de agua dulce de la zona (16 km²). Navega en lancha hasta la réplica de una aldea taína con 25 esculturas a tamaño natural. La leyenda dice que los indios arrojaron sus riquezas al fondo antes que entregarlas a los conquistadores.</p>
-        <span class="dato">🎣 Pesca deportiva de trucha · 🛶 Lancha desde Boca de Guamá</span></div>
-      </article>
-      <article class="card rv" data-cat="mar naturaleza">
-        <div class="ph"><img src="img/cueva-peces.webp" alt="Snorkel en la Cueva de los Peces" loading="lazy"><span class="tag">Snorkel top</span></div>
-        <div class="body"><h3>Cueva de los Peces</h3>
-        <p>Un cenote costero de 70 m de profundidad con paredes casi verticales y aguas cristalinas llenas de peces de colores. Uno de los mejores puntos de snorkel y buceo de Cuba, a minutos de Playa Larga.</p>
-        <span class="dato">🤿 Snorkel y buceo · 📍 Entre Playa Larga y Playa Girón</span></div>
-      </article>
-      <article class="card rv" data-cat="mar cultura">
-        <div class="ph"><img src="img/playa-giron.webp" alt="Playa Girón, Bahía de Cochinos" loading="lazy"><span class="tag">Historia viva</span></div>
-        <div class="body"><h3>Playa Girón</h3>
-        <p>Caribe turquesa con nombre de pirata francés del siglo XVII. Aquí se libró la Batalla de Bahía de Cochinos (1961); el Museo Girón guarda aviones, tanques y fotos de aquellos días. Y el buceo en sus arrecifes es espectacular.</p>
-        <span class="dato">🏛️ Museo Girón · 🪸 Centro de Buceo Azul</span></div>
-      </article>
-      <article class="card rv" data-cat="naturaleza agua">
-        <div class="ph"><img src="img/cocodrilo-cubano.webp" alt="Cocodrilo cubano" loading="lazy"><span class="tag">Solo aquí</span></div>
-        <div class="body"><h3>Boca de Guamá · Criadero de cocodrilos</h3>
-        <p>Uno de los mayores criaderos de cocodrilos de Iberoamérica, con miles de ejemplares de las dos especies cubanas: el cocodrilo cubano (hocico chato, endémico) y el americano. Punto de partida hacia la Laguna del Tesoro.</p>
-        <span class="dato">🐊 Miles de ejemplares · 🛶 Embarque a la laguna</span></div>
-      </article>
-      <article class="card rv" data-cat="naturaleza">
-        <div class="ph"><img src="img/flamencos-salinas.webp" alt="Flamencos en las Salinas de Brito" loading="lazy"><span class="tag">Paraíso de aves</span></div>
-        <div class="body"><h3>Las Salinas de Brito</h3>
-        <p>Uno de los refugios de aves más importantes de Cuba: flamencos, garzas y grullas, con 65 especies migratorias haciendo escala. Además, pesca al fly de macabí, sábalo y palometa en sus bajos.</p>
-        <span class="dato">🦩 Flamencos al amanecer · 🎣 Fly fishing</span></div>
-      </article>
-      <article class="card rv" data-cat="mar naturaleza">
-        <div class="ph"><img src="img/buceo-arrecife.webp" alt="Buceo en arrecife de Bahía de Cochinos" loading="lazy"><span class="tag">Buceo</span></div>
-        <div class="body"><h3>Playa Larga</h3>
-        <p>En el extremo de Bahía de Cochinos: sede del Parque Nacional, del Centro Internacional de Buceo Octopus (13 puntos de buceo desde la costa, buceo nocturno) y del Centro de Observación de Aves. Caleta Buena y Punta Perdiz, con sus piscinas naturales, están al lado.</p>
-        <span class="dato">🪸 13 puntos de buceo · 🐦 Observación de aves</span></div>
-      </article>
-    </div>
-  </div>
-<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="lugares.html">Ver guía completa de lugares →</a></div>
-  </div>
-</section>
-<section class="olvidados" id="secretos">
-  <div class="orb orb1"></div><div class="orb orb2"></div>
-  <div class="wrap">
-    <h2 class="sec-title rv">Rincones <span class="grad">que casi nadie conoce</span> 🤫</h2>
-    <p class="sec-sub rv">La Ciénaga guarda secretos que ni aparecen en las guías. Caletas de piratas, senderos sin multitudes, aldeas de carboneros y santuarios de aves endémicas. Esto es lo que la hace mágica de verdad.</p>
-    <div class="secreto">
-      <article class="rv"><span class="num">01</span><h3>Enigma de las Rocas</h3>
-        <p>Un sendero que recorre 3 cenotes del mayor sistema de cuevas inundadas de Cuba, nacido de una falla tectónica de 1.5 millones de años. El cenote mayor baja 86 m; en una piscina de 25 m conviven dos cocodrilos, un manjuarí (pez fósil viviente) y jicoteas.</p>
-        <span class="misterio">💎 Cenotes · 🐊 Cocodrilos</span></article>
-      <article class="rv rv-d1"><span class="num">02</span><h3>Casa del Zunzún</h3>
-        <p>La finca de Bernabé, a 5 minutos de Playa Larga, donde decenas de zunzunes —el ave más pequeña del mundo— liban a menos de 50 cm de ti. Gratuita (se deja propina) y conocida solo de boca en boca.</p>
-        <span class="misterio">🐦 Colibríes · 🆓 Entrada libre</span></article>
-      <article class="rv rv-d2"><span class="num">03</span><h3>Bermeja</h3>
-        <p>Un santuario donde los guías locales te muestran hasta 19 de las 24 aves endémicas de Cuba en una sola visita: tocororo, catey, cabrerito de la ciénaga y más. El paraíso de los pajareros.</p>
-        <span class="misterio">🔭 19 endémicas en un día</span></article>
-      <article class="rv"><span class="num">04</span><h3>Las caletas olvidadas</h3>
-        <p>Caleta Redonda (fábulas de piratas y tesoros), Caleta del Rosario (fuerte español del siglo XIX contra el tráfico de esclavos), Caleta Cocodrilos (único sitio aborigen neolítico de la isla)… y Sábalo, Mal Paso y Caletón, donde aún se ven las argollas donde amarraban los barcos piratas.</p>
-        <span class="misterio">🏴‍☠️ Piratas · 🏛️ Arqueología</span></article>
-      <article class="rv rv-d1"><span class="num">05</span><h3>Soplillar y Pálpite</h3>
-        <p>Antiguos bateyes de carboneros con la memoria viva de la ciénaga profunda. En Soplillar, Fidel Castro pasó la Nochebuena de 1959 cenando con familias carboneras; se conmemora cada 24 de diciembre.</p>
-        <span class="misterio">🔥 Cultura carbonera · 📖 Memoria</span></article>
-      <article class="rv rv-d2"><span class="num">06</span><h3>Santo Tomás y el río Hatiguanico</h3>
-        <p>Aldea junto al río que da nombre a la gallinuela de Santo Tomás, una de las aves con el hábitat más restringido del planeta. El Hatiguanico guarda manatíes y desemboca en la casi virgen Ensenada de la Broa.</p>
-        <span class="misterio">🌊 Río · 🐋 Manatíes</span></article>
-      <article class="rv"><span class="num">07</span><h3>Senderos Los Arroyones y Cinco Furnias</h3>
-        <p>Dos de los cinco senderos interpretativos oficiales que casi nadie promociona: bosque siempreverde, palmas, orquídeas y el famoso "diente de perro" cársico bajo tus pies.</p>
-        <span class="misterio">🥾 Senderismo · 🌺 Orquídeas</span></article>
-      <article class="rv rv-d1"><span class="num">08</span><h3>Caseríos del interior</h3>
-        <p>Guasasa, Cayo Ramona, Helechal, Batey Viejo, Quemado Grande… asentamientos de carboneros y pescadores donde vive la cultura cenaguera más auténtica, lejos de todo.</p>
-        <span class="misterio">🏡 Cuba profunda</span></article>
-      <article class="rv rv-d2"><span class="num">09</span><h3>Playa Gallina</h3>
-        <p>Una playa caribeña del litoral zapatero que apenas aparece en la prensa nacional y nadie promociona. Arena, mar turquesa y silencio.</p>
-        <span class="misterio">🏖️ Playa secreta</span></article>
-      <article class="rv"><span class="num">10</span><h3>Korimakao</h3>
-        <p>Proyecto comunitario y escuela de arte en la zona de Playa Larga: teatro, música y cultura hechos por y para los cenagueros. Un referente cultural poco difundido que vale la pena apoyar.</p>
-        <span class="misterio">🎭 Arte comunitario</span></article>
-    </div>
-    <div style="text-align:center;margin-top:2.2rem"><a class="btn btn-sol" href="secretos.html">Ver los 10 secretos →</a></div>
-  </div>
-</section>
-
-<section class="fauna" id="fauna">
-  <div class="wrap">
-    <h2 class="sec-title rv">Fauna <span class="grad">de otro planeta</span></h2>
-    <p class="sec-sub rv">Endémicos que no existen en ningún otro lugar del mundo. Pasa el cursor (o toca) cada tarjeta para descubrir su secreto.</p>
-    <div class="fauna-row">
-      <div class="animal rv"><img src="img/cocodrilo-cubano.webp" alt="Cocodrilo cubano" loading="lazy">
-        <div class="info"><h3>🐊 Cocodrilo cubano</h3><p class="curio">Endémico de Cuba, de hocico chato. Uno de los cocodrilos más amenazados del planeta; el criadero de Guamá los protege.</p></div></div>
-      <div class="animal rv rv-d1"><img src="img/zunzuncito.webp" alt="Zunzuncito" loading="lazy">
-        <div class="info"><h3>🐦 Zunzuncito</h3><p class="curio">¡El ave más pequeña del mundo! Pesa menos que una moneda y solo vive en Cuba. Lo verás en la Casa del Zunzún.</p></div></div>
-      <div class="animal rv rv-d2"><img src="img/tocororo.webp" alt="Tocororo" loading="lazy">
-        <div class="info"><h3>🇨🇺 Tocororo</h3><p class="curio">El ave nacional: su plumaje verde, blanco, rojo y azul reproduce los colores de la bandera cubana.</p></div></div>
-      <div class="animal rv"><img src="img/flamencos-salinas.webp" alt="Flamenco americano" loading="lazy">
-        <div class="info"><h3>🦩 Flamenco americano</h3><p class="curio">Concentraciones espectaculares en las Salinas de Brito, junto a 65 especies de aves migratorias.</p></div></div>
-      <div class="animal rv rv-d1"><img src="img/manati.webp" alt="Manatí" loading="lazy">
-        <div class="info"><h3>🐋 Manatí</h3><p class="curio">El gentil gigante en peligro de extinción. El río Hatiguanico guarda una de sus poblaciones más importantes.</p></div></div>
-      <div class="animal rv rv-d2"><img src="img/amanecer-laguna.webp" alt="Amanecer en la laguna" loading="lazy">
-        <div class="info"><h3>🌅 258 especies de aves</h3><p class="curio">Gallinuela de Santo Tomás, ferminia, cotorra cubana… varias con el hábitat más restringido del mundo.</p></div></div>
-    </div>
-  </div>
-<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="fauna-flora.html">Enciclopedia de fauna y flora →</a></div>
-  </div>
-</section>
-<section class="galeria">
-  <div class="wrap">
-    <h2 class="sec-title rv">La Ciénaga en <span class="grad">imágenes</span></h2>
-    <p class="sec-sub rv">Desliza y enamórate. Cada rincón tiene una historia que contar.</p>
-  </div>
-  <div class="gal-track rv">
-    <figure><img src="img/hero-humedal.webp" alt="Humedal al atardecer" loading="lazy"><figcaption>🌅 El humedal al atardecer</figcaption></figure>
-    <figure><img src="img/laguna-guama.webp" alt="Aldea taína" loading="lazy"><figcaption>🛖 Aldea taína de Guamá</figcaption></figure>
-    <figure><img src="img/cueva-peces.webp" alt="Cueva de los Peces" loading="lazy"><figcaption>💎 Cueva de los Peces</figcaption></figure>
-    <figure><img src="img/cocodrilo-cubano.webp" alt="Cocodrilo cubano" loading="lazy"><figcaption>🐊 Cocodrilo cubano</figcaption></figure>
-    <figure><img src="img/zunzuncito.webp" alt="Zunzuncito" loading="lazy"><figcaption>🐦 Zunzuncito, el ave más pequeña del mundo</figcaption></figure>
-    <figure><img src="img/tocororo.webp" alt="Tocororo" loading="lazy"><figcaption>🇨🇺 Tocororo, ave nacional</figcaption></figure>
-    <figure><img src="img/flamencos-salinas.webp" alt="Flamencos" loading="lazy"><figcaption>🦩 Flamencos en las Salinas</figcaption></figure>
-    <figure><img src="img/manati.webp" alt="Manatí" loading="lazy"><figcaption>🐋 Manatí del Hatiguanico</figcaption></figure>
-    <figure><img src="img/playa-giron.webp" alt="Playa Girón" loading="lazy"><figcaption>🏖️ Playa Girón</figcaption></figure>
-    <figure><img src="img/buceo-arrecife.webp" alt="Buceo" loading="lazy"><figcaption>🪸 Buceo en Bahía de Cochinos</figcaption></figure>
-    <figure><img src="img/sendero-manglar.webp" alt="Sendero de manglar" loading="lazy"><figcaption>🌿 Sendero entre manglares</figcaption></figure>
-    <figure><img src="img/amanecer-laguna.webp" alt="Amanecer en la laguna" loading="lazy"><figcaption>🌅 Amanecer en la laguna</figcaption></figure>
-  </div>
-<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="actividades.html">Ver actividades y servicios →</a></div>
-  </div>
-</section>
-<section class="novedades">
-  <div class="wrap">
-    <h2 class="sec-title rv">🌟 <span class="grad">Novedades</span> de la Ciénaga</h2>
-    <p class="sec-sub rv">Lo último publicado: nuevos rincones, datos y descubrimientos.</p>
-    <div class="nov-grid cards" id="novedades"></div>
-  </div>
-</section>
-
-<section class="actividades" id="actividades">
-  <div class="wrap">
-    <h2 class="sec-title rv">Qué <span class="grad">hacer</span> aquí</h2>
-    <p class="sec-sub rv" style="color:#3d554a">Del fondo del mar a la copa de los manglares: la Ciénaga se vive con todos los sentidos.</p>
-    <div class="act-grid">
-      <div class="act rv"><div class="ico">🤿</div><h3>Buceo</h3><p>Más de 30 sitios: paredes de coral, buceo nocturno y espeleobuceo en cenotes. La mayoría salen desde la orilla.</p></div>
-      <div class="act rv rv-d1"><div class="ico">🐠</div><h3>Snorkel</h3><p>Cueva de los Peces, Caleta Buena y Punta Perdiz: aguas cristalinas con peces de colores a pocos metros.</p></div>
-      <div class="act rv rv-d2"><div class="ico">🔭</div><h3>Avistamiento de aves</h3><p>Guías expertos en Bermeja y las Salinas. De noviembre a marzo llegan las migratorias del norte.</p></div>
-      <div class="act rv"><div class="ico">🥾</div><h3>Senderismo</h3><p>5 senderos interpretativos: Enigma de las Rocas, Los Arroyones, Cinco Furnias y más, entre manglar y diente de perro.</p></div>
-      <div class="act rv rv-d1"><div class="ico">🎣</div><h3>Pesca deportiva</h3><p>Trucha en la Laguna del Tesoro (captura y suelta) y fly fishing de macabí, sábalo y palometa en las Salinas.</p></div>
-      <div class="act rv rv-d2"><div class="ico">🛶</div><h3>Kayak y lancha</h3><p>Navega canales entre manglares, la Laguna del Tesoro y el río Hatiguanico al amanecer: pura magia.</p></div>
-    </div>
-  </div>
-<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="historia.html">Historia completa →</a></div>
-  </div>
-</section>
-<section class="cultura" id="cultura">
-  <div class="wrap">
-    <h2 class="sec-title rv">Una tierra con <span class="grad">historia</span></h2>
-    <p class="sec-sub rv">Mucho antes de ser un paraíso natural, la Ciénaga fue refugio de indios, piratas y carboneros.</p>
-    <div class="timeline">
-      <div class="tl-item rv"><div class="year">ANTES DE 1492</div><h3>Los primeros cenagueros</h3>
-        <p>Siboneyes y taínos habitaron estas tierras (cacicazgos de Yaguaramas y Hanábana). En Caleta Cocodrilos se halló el único sitio aborigen neolítico de la isla.</p></div>
-      <div class="tl-item rv"><div class="year">SIGLO XVII</div><h3>Refugio de piratas</h3>
-        <p>Corsarios y filibusteros usaron las caletas como escondite. El pirata francés Gilbert Girón dio nombre a Playa Girón; las argollas de amarre aún se ven en Sábalo y Caletón.</p></div>
-      <div class="tl-item rv"><div class="year">SIGLO XIX – 1958</div><h3>La era del carbón</h3>
-        <p>Generaciones de carboneros vivieron en bohíos entre el fango y los hornos. En 1958 la zona tenía la mortalidad infantil más alta de Cuba: miseria que la memoria cenaguera no olvida.</p></div>
-      <div class="tl-item rv"><div class="year">ABRIL 1961</div><h3>Bahía de Cochinos</h3>
-        <p>El desembarco fue derrotado en menos de 72 horas: la primera derrota militar de EE. UU. en América Latina. El Museo Girón lo cuenta con aviones, tanques y testimonios.</p></div>
-      <div class="tl-item rv"><div class="year">2000 – 2001</div><h3>Patrimonio de la humanidad</h3>
-        <p>La UNESCO la declara Reserva de la Biosfera (2000) y sitio Ramsar (2001). Hoy aspira a ser Patrimonio Mundial: el reconocimiento que este gigante merece.</p></div>
-    </div>
-  </div>
-<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="gastronomia.html">Guía gastronómica →</a></div>
-  </div>
-</section>
-<section class="gastro">
-  <div class="wrap">
-    <h2 class="sec-title rv">Sabores de <span class="grad">la Ciénaga</span></h2>
-    <p class="sec-sub rv">Cocina costera de pescadores: lo que el mar y la laguna dan cada día, directo al plato.</p>
-    <div class="platos">
-      <div class="plato rv"><div class="ico">🐟</div><h3>Trucha de la laguna</h3><p>La pesca deportiva más famosa de la zona, servida fresca en Guamá y Playa Larga.</p></div>
-      <div class="plato rv rv-d1"><div class="ico">🦞</div><h3>Langosta y camarones</h3><p>Del Caribe sur a tu mesa: a la parrilla, en arroz con mariscos o en coctel.</p></div>
-      <div class="plato rv rv-d2"><div class="ico">🐊</div><h3>Carne de cocodrilo</h3><p>El plato exótico del restaurante de Guamá. ¿Te atreves a probarlo?</p></div>
-      <div class="plato rv"><div class="ico">🍲</div><h3>Caldo de pescado</h3><p>Pargo, biajaiba y cherna del día, con el sazón criollo de las cocineras cenagueras.</p></div>
-      <div class="plato rv rv-d1"><div class="ico">🍚</div><h3>Congrí y tostones</h3><p>Los imprescindibles cubanos que acompañan cada comida en la zona.</p></div>
-      <div class="plato rv rv-d2"><div class="ico">🏡</div><h3>Finca Fiesta Campesina</h3><p>Parada agroturística en la entrada de la ciénaga con el restaurante "El Canelo" de comida criolla.</p></div>
-    </div>
-  </div>
-<div style="text-align:center;margin-top:2.4rem"><a class="btn btn-sol" href="guia.html">Guía del viajero completa →</a></div>
-  </div>
-</section>
-<section class="llegar" id="llegar">
-  <div class="wrap">
-    <h2 class="sec-title rv">Cómo <span class="grad">llegar</span></h2>
-    <p class="sec-sub rv" style="color:#3d554a">Más cerca de lo que imaginas: a un salto de La Habana y Varadero.</p>
-    <div class="llegar-grid">
-      <div class="panel rv">
-        <h3>🗺️ Distancias</h3>
-        <div class="ruta"><span>La Habana → La Boca</span><b>166 km</b></div>
-        <div class="ruta"><span>Varadero → La Boca</span><b>94 km</b></div>
-        <div class="ruta"><span>La Boca → Playa Larga</span><b>11 km</b></div>
-        <div class="ruta"><span>La Boca → Playa Girón</span><b>45 km</b></div>
-        <p style="margin-top:1rem;font-size:.92rem;color:#43584d">Por la Autopista Nacional hasta el entronque del Central Australia (km 142). Hay ómnibus Viazul con paradas en Playa Larga y Playa Girón, y excursiones organizadas (jeep safari 4x4) desde La Habana y Varadero.</p>
-        <div class="mapa"><iframe title="Mapa de la Ciénaga de Zapata" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-82.4%2C21.85%2C-80.85%2C22.65&amp;layer=mapnik&amp;marker=22.25%2C-81.62"></iframe></div>
-      </div>
-      <div class="panel rv rv-d1">
-        <h3>💡 Consejos de cenaguero</h3>
-        <ul class="tips">
-          <li><span><b>Mejor época:</b> noviembre a abril (temporada seca). Las aves migratorias llegan de noviembre a marzo.</span></li>
-          <li><span><b>Repelente sí o sí:</b> mosquitos y jejenes al atardecer, sobre todo en los senderos.</span></li>
-          <li><span><b>Calzado cerrado</b> para caminar sobre el "diente de perro" cársico.</span></li>
-          <li><span><b>Reserva anticipada</b> en temporada alta: buceo y alojamientos se llenan.</span></li>
-          <li><span><b>Madruga una vez:</b> el amanecer en la laguna, con la niebla sobre el agua, no tiene precio.</span></li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
@@ -310,14 +122,14 @@
     <div class="faq-item rv"><button class="faq-q">¿Qué hace única a la Ciénaga frente a otros destinos de Cuba? <span class="plus">+</span></button>
       <div class="faq-a"><p>Es el único lugar donde en un mismo día puedes bucear en un cenote, almorzar junto a cocodrilos, ver el ave más pequeña del mundo y terminar en una playa caribeña con historia. Ningún otro destino cubano concentra tanta naturaleza, historia y aventura juntas.</p></div></div>
     <div class="faq-item rv"><button class="faq-q">¿Hay dónde hospedarse? <span class="plus">+</span></button>
-      <div class="faq-a"><p>Sí: el Hotel Guamá (cabañas palafíticas sobre la laguna), hoteles en Playa Larga y Playa Girón, y casas de renta en los poblados. Reserva con tiempo en temporada alta (diciembre–abril).</p></div></div>
+      <div class="faq-a"><p>Sí: el Hotel Guamá (cabañas palafíticas sobre la laguna), hoteles en Playa Larga y Playa Girón, y casas de renta en los poblados. <a href="servicios.html" style="color:var(--verde-d);font-weight:700">Mira las opciones en Servicios</a> y reserva con tiempo en temporada alta (diciembre–abril).</p></div></div>
   </div>
 </section>
 
-<section class="faq" id="experiencias" style="background:#0a1f33">
+<section class="experiencias" id="experiencias">
   <div class="wrap">
     <h2 class="sec-title rv">💬 Experiencias de <span class="grad">viajeros</span></h2>
-    <p class="sec-sub rv">¿Ya visitaste la Ciénaga? Cuéntanos tu experiencia, sube tus fotos y ayuda a otros viajeros. 👇</p>
+    <p class="sec-sub rv">¿Ya visitaste la Ciénaga? Cuéntanos tu experiencia y ayuda a otros viajeros. 👇</p>
     <div id="comments" class="rv"></div>
   </div>
 </section>
@@ -325,7 +137,7 @@
 <section class="cta-final">
   <div class="wrap">
     <h2 class="big rv">La Ciénaga no se cuenta.<br><span class="grad">Se vive.</span></h2>
-    <p class="rv" style="opacity:.85;max-width:52ch;margin:0 auto 2rem">Comparte esta página con quien ame la naturaleza. Cada visita consciente ayuda a proteger este tesoro para las próximas generaciones. 🌿</p>
+    <p class="rv" style="color:var(--muted);max-width:52ch;margin:0 auto 2rem">Comparte esta guía con quien ame la naturaleza. Cada visita consciente ayuda a proteger este tesoro para las próximas generaciones. 🌿</p>
     <div class="share-row rv">
       <a class="share-btn share-wa" href="https://wa.me/?text=%F0%9F%8C%BF%20Descubre%20la%20Ci%C3%A9naga%20de%20Zapata%2C%20el%20coraz%C3%B3n%20verde%20de%20Cuba%3A%20https%3A%2F%2Froygarcialeonardo.github.io%2Fcienaga-de-zapata%2F" target="_blank" rel="noopener">📱 WhatsApp</a>
       <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froygarcialeonardo.github.io%2Fcienaga-de-zapata%2F" target="_blank" rel="noopener">📘 Facebook</a>
@@ -341,15 +153,22 @@
   <div class="wrap">
     <div class="foot-grid">
       <div><a class="logo" href="#inicio"><span class="mark">🌿</span> Ciénaga de Zapata</a>
-        <p class="nota">Página promocional sin fines de lucro para dar a conocer el humedal más grande del Caribe insular: sus lugares, su gente y su naturaleza. Matanzas, Cuba. 🇨🇺</p></div>
+        <p class="nota">Guía de viaje del humedal más grande del Caribe insular: sus lugares, su gente y su naturaleza. Matanzas, Cuba. 🇨🇺</p></div>
       <div><b>Explora</b><br><br>
-        <a href="#lugares" style="text-decoration:none;opacity:.75">Lugares</a><br>
-        <a href="#secretos" style="text-decoration:none;opacity:.75">Rincones secretos</a><br>
-        <a href="#fauna" style="text-decoration:none;opacity:.75">Fauna</a><br>
-        <a href="#llegar" style="text-decoration:none;opacity:.75">Cómo llegar</a><br>
-        <a href="servicios.html" style="text-decoration:none;opacity:.75">Servicios</a></div>
+        <a href="lugares.html" style="text-decoration:none">Lugares</a><br>
+        <a href="secretos.html" style="text-decoration:none">Rincones secretos</a><br>
+        <a href="fauna-flora.html" style="text-decoration:none">Fauna y flora</a><br>
+        <a href="actividades.html" style="text-decoration:none">Actividades</a></div>
+      <div><b>Planifica</b><br><br>
+        <a href="historia.html" style="text-decoration:none">Historia</a><br>
+        <a href="gastronomia.html" style="text-decoration:none">Gastronomía</a><br>
+        <a href="guia.html" style="text-decoration:none">Guía del viajero</a><br>
+        <a href="servicios.html" style="text-decoration:none">Servicios turísticos</a></div>
     </div>
-    <p class="nota">Hecho con 💚 para Cuba · Las imágenes son ilustraciones generadas con IA con fines promocionales.</p>
+    <div class="foot-bottom">
+      <span>Hecho con 💚 para Cuba · Las imágenes son ilustraciones generadas con IA con fines promocionales.</span>
+      <span>© 2026 Ciénaga de Zapata</span>
+    </div>
   </div>
 </footer>
 
@@ -369,22 +188,12 @@ const cio=new IntersectionObserver(es=>es.forEach(e=>{
     el.textContent=v.toLocaleString('es');if(p<1)requestAnimationFrame(tick)})(t0);
 }),{threshold:.4});
 document.querySelectorAll('.count').forEach(el=>cio.observe(el));
-// Filters
-document.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
-  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));ch.classList.add('on');
-  const f=ch.dataset.f;
-  document.querySelectorAll('#lugares .card').forEach(card=>{
-    card.classList.toggle('hide',f!=='all'&&!card.dataset.cat.split(' ').includes(f));
-  });
-}));
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
   const item=q.parentElement,a=item.querySelector('.faq-a'),open=item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
   if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
 }));
-// Subtle parallax on hero
-addEventListener('scroll',()=>{const h=document.querySelector('.hero-bg');if(h)h.style.translate=`0 ${scrollY*.18}px`},{passive:true});
 // Copy link
 const cp=document.getElementById('copyLink');
 if(cp)cp.addEventListener('click',async()=>{

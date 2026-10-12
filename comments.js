@@ -19,10 +19,10 @@ async function cargar(){
   const pagina = (typeof PAGINA!=="undefined") ? PAGINA : "home";
   box.innerHTML = `
     <div id="clist"><p style="opacity:.7">Cargando comentarios…</p></div>
-    <form id="cform" style="margin-top:1.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.3rem">
+    <form id="cform" style="margin-top:1.5rem;background:#faf8f1;border:1px solid #e3eae5;border-radius:16px;padding:1.3rem;color:#12291f">
       <b>✍️ Deja tu experiencia</b>
-      <input type="text" id="cnom" maxlength="60" placeholder="Tu nombre (opcional)" style="width:100%;margin:.8rem 0 .6rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#fff;padding:.7rem;font-family:inherit">
-      <textarea id="cmsg" maxlength="600" required placeholder="Cuéntanos cómo te fue en la Ciénaga… (máx. 600 caracteres)" style="width:100%;min-height:90px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#fff;padding:.7rem;font-family:inherit;resize:vertical"></textarea>
+      <input type="text" id="cnom" maxlength="60" placeholder="Tu nombre (opcional)" style="width:100%;margin:.8rem 0 .6rem;background:#fff;border:1px solid #c9d8cf;border-radius:10px;color:#12291f;padding:.7rem;font-family:inherit">
+      <textarea id="cmsg" maxlength="600" required placeholder="Cuéntanos cómo te fue en la Ciénaga… (máx. 600 caracteres)" style="width:100%;min-height:90px;background:#fff;border:1px solid #c9d8cf;border-radius:10px;color:#12291f;padding:.7rem;font-family:inherit;resize:vertical"></textarea>
       <input type="text" id="chp" style="display:none" tabindex="-1" autocomplete="off">
       <div style="margin-top:.8rem"><button class="btn btn-sol" type="submit" id="cbtn">Publicar comentario</button>
       <span id="cstat" style="margin-left:.8rem;font-size:.9rem"></span></div>
@@ -30,8 +30,8 @@ async function cargar(){
   const esAdmin = ()=> !!(window.CZAdmin && window.CZAdmin.dentro && window.CZAdmin.dentro());
   const pintar = items=>{
     document.getElementById("clist").innerHTML = items.length ? items.map(c=>`
-      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.2rem;margin-bottom:.8rem">
-        <b style="color:var(--amarillo)">${esc(c.nombre)}</b>
+      <div style="background:#fff;border:1px solid #e3eae5;border-radius:14px;padding:1rem 1.2rem;margin-bottom:.8rem;color:#12291f">
+        <b style="color:#008f5b">${esc(c.nombre)}</b>
         <span style="opacity:.55;font-size:.8rem"> · ${esc(c.fecha)}</span>
         ${esAdmin()?`<button data-fila="${c.fila}" class="cdel" title="Borrar comentario" style="float:right;background:none;border:none;cursor:pointer;font-size:1.1rem">🗑️</button>`:""}
         <p style="margin-top:.4rem">${esc(c.mensaje)}</p>
