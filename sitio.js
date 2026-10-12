@@ -742,3 +742,11 @@ async function chequearConn(){
   }catch(e){ pintarConn(false); }
 }
 })();
+
+/* ---------- PWA: registro del Service Worker ---------- */
+(function(){
+  if(!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){ /* sin conexión o sin soporte: el sitio sigue funcionando */ });
+  });
+})();
