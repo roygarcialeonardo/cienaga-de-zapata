@@ -385,3 +385,79 @@ footer .nota{opacity:.65;max-width:62ch;margin-top:1rem;font-size:.82rem;color:#
 .vj-hab{border:1.5px solid var(--borde);border-radius:12px;background:#fff;margin-bottom:.8rem;padding:.2rem .85rem}
 /* El atributo hidden debe imponerse aunque la clase defina otro display */
 [hidden]{display:none!important}
+
+/* ---------- Detalle estilo Holidu: secciones ---------- */
+.dt-basicos{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;background:var(--crema);
+  border:1px solid var(--borde);border-radius:var(--radio);padding:.9rem 1.3rem;margin-bottom:1.6rem;
+  font-weight:700;font-size:.95rem;color:var(--tinta)}
+.dt-sep{color:var(--muted);font-weight:400}
+.dt-dest{margin-bottom:2rem}
+.dt-dest h2,.dt-amen h2,.dt-dorms h2{font-size:1.4rem;margin-bottom:1rem}
+.dt-dest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.dt-dest-card{display:flex;gap:.9rem;background:#fff;border:1px solid var(--borde);border-radius:var(--radio);padding:1.1rem 1.2rem}
+.dt-dest-ico{font-size:1.6rem;flex:none}
+.dt-dest-card b{display:block;margin-bottom:.25rem}
+.dt-dest-card p{font-size:.9rem;color:var(--muted)}
+.dt-desc.dt-cortada{max-height:9.5rem;overflow:hidden;position:relative}
+.dt-desc.dt-cortada::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3.5rem;
+  background:linear-gradient(180deg,rgba(255,255,255,0),#fff)}
+.dt-desc.dt-abierta{max-height:none}
+.dt-desc.dt-abierta::after{display:none}
+.dt-vermas{background:none;border:none;color:var(--verde-d);font-weight:800;font-size:.95rem;cursor:pointer;
+  font-family:inherit;margin:.4rem 0 1rem;padding:0}
+.dt-vermas:hover{text-decoration:underline}
+.dt-amen{margin:2.2rem 0}
+.dt-amen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.7rem;margin-bottom:1.1rem}
+.dt-amen-item{display:flex;align-items:center;gap:.7rem;background:#fff;border:1px solid var(--borde);
+  border-radius:14px;padding:.75rem 1rem;font-size:.93rem;font-weight:600}
+.dt-amen-ico{font-size:1.3rem;flex:none}
+.dt-oculto{display:none}
+.dt-amen-mas{margin-top:.2rem}
+.dt-dorms{margin:2.2rem 0}
+.dt-dorms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.dt-dorm-card{background:#fff;border:1px solid var(--borde);border-radius:var(--radio);padding:1.2rem}
+.dt-dorm-ico{font-size:1.8rem;display:block;margin-bottom:.5rem}
+.dt-dorm-card b{display:block;margin-bottom:.25rem}
+.dt-dorm-card p{font-size:.9rem;color:var(--muted)}
+
+/* ---------- publicar.html: formulario de auto-registro ---------- */
+.pub-form{background:#fff;border:1px solid var(--borde);border-radius:var(--radio);
+  box-shadow:var(--sombra);padding:2rem;max-width:860px;margin:0 auto}
+.pub-form h2{font-size:1.35rem;margin:1.8rem 0 1rem;color:var(--tinta)}
+.pub-form h2:first-child{margin-top:0}
+.pub-opc{font-size:.85rem;color:var(--muted);font-weight:400}
+.pub-sub{font-size:.92rem;color:var(--muted);margin:-.6rem 0 1rem}
+.pub-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.pub-grid5{grid-template-columns:repeat(5,1fr)}
+.pub-form label{display:block;font-size:.85rem;font-weight:700;color:var(--tinta)}
+.pub-form input,.pub-form textarea,.pub-form select{width:100%;margin-top:.3rem;padding:.65rem .8rem;
+  border:1.5px solid var(--borde);border-radius:12px;font:inherit;font-weight:400;background:#fff;color:var(--tinta)}
+.pub-form input:focus,.pub-form textarea:focus,.pub-form select:focus{outline:none;border-color:var(--verde);
+  box-shadow:0 0 0 3px rgba(0,170,108,.15)}
+.pub-full{grid-column:1/-1}
+.pub-nota{font-size:.88rem;color:var(--muted);background:var(--verde-claro);border:1px solid var(--verde);
+  border-radius:12px;padding:.7rem 1rem;margin-top:.9rem}
+.pub-dest{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:.9rem}
+.pub-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.5rem;margin-bottom:1rem}
+.pub-checks label{display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.9rem;
+  background:var(--crema);border:1px solid var(--borde);border-radius:10px;padding:.55rem .8rem;cursor:pointer}
+.pub-checks input{width:auto;margin:0;accent-color:var(--verde)}
+.pub-dorm-row{display:grid;grid-template-columns:1fr 1fr auto;gap:.7rem;align-items:end;margin-bottom:.7rem}
+.pub-dorm-x{width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--borde);background:#fff;
+  color:#d33;font-size:1rem;cursor:pointer;font-family:inherit}
+.pub-dorm-x:hover{border-color:#d33}
+.pub-add{margin:.4rem 0 1rem}
+.pub-fotos{background:var(--crema);border:1px dashed var(--verde);border-radius:12px;padding:.9rem 1.1rem;
+  margin:1.4rem 0;font-size:.93rem}
+.pub-form .error{color:#d33;font-size:.9rem;font-weight:600;margin:.6rem 0}
+.pub-enviar{width:100%;margin-top:.6rem}
+.pub-ok{background:#fff;border:1px solid var(--borde);border-radius:var(--radio);box-shadow:var(--sombra);
+  padding:3rem 2rem;max-width:640px;margin:0 auto;text-align:center}
+.pub-ok h2{margin-bottom:.8rem}
+.pub-ok p{color:var(--muted);margin-bottom:1.2rem}
+@media(max-width:640px){.pub-grid,.pub-dest{grid-template-columns:1fr}.pub-grid5{grid-template-columns:1fr 1fr}
+  .pub-dorm-row{grid-template-columns:1fr auto}.pub-dorm-row label:first-child{grid-column:1/-1}.pub-form{padding:1.3rem}}
+
+/* ---------- Admin: rejilla de datos básicos ---------- */
+.adm-grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin-bottom:.4rem}
+@media(max-width:640px){.adm-grid5{grid-template-columns:1fr 1fr}}

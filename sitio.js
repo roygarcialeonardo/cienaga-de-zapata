@@ -140,7 +140,8 @@ function buscarHome(q, box){
     box.innerHTML =
       `<p class="home-count">${res.length ? res.length+(res.length===1?" resultado":" resultados")+" para «"+esc(q)+"»" : "Sin resultados para «"+esc(q)+"». Prueba con otra palabra."}</p>` +
       (res.length ? `<div class="cont-grid">`+res.map(p=>{
-        const href = p.pagina==="servicios" ? "detalle.html?id="+encodeURIComponent(p.id) : esc(p.pagina)+".html#"+esc(p.id);
+        const href = p.id==="s-anuncia" ? "publicar.html"
+          : p.pagina==="servicios" ? "detalle.html?id="+encodeURIComponent(p.id) : esc(p.pagina)+".html#"+esc(p.id);
         return `<a class="cont-card" href="${href}">
           <div class="cont-img">${p.categoria?`<span class="cont-badge">${esc(p.categoria)}</span>`:""}<img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"><span class="cont-seccion">${esc(nombrePag(p.pagina))}</span></div>
           <div class="cont-body"><h3>${esc(p.titulo)}</h3>
@@ -169,6 +170,14 @@ function srvWhats(p, clase, etiqueta){
 }
 
 function tarjetaServicio(p, admin){
+  /* Tarjeta especial: enlaza al formulario de auto-registro */
+  if(p.id === "s-anuncia"){
+    return `<article class="srv-card srv-anuncia" data-srv="${esc(p.id)}">${toolsHTML(p, admin)}
+    <div class="srv-img"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"></div>
+    <div class="srv-body"><h3>${esc(p.titulo)}</h3>
+    <p class="srv-extracto">${esc(extracto(p, 140))}</p>
+    <div class="srv-cta"><a class="btn btn-sol" href="publicar.html">📢 Anunciar mi negocio</a></div></div></article>`;
+  }
   const wapp = srvWhats(p, "srv-btnw", "💬");
   const resBtn = `<button type="button" class="srv-btnr" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}" data-categoria="${esc(p.categoria||"")}" title="Solicitar reserva">📅 Reservar</button>`;
   const zona = datoDe(p, /^ubicaci[óo]n$/i);
@@ -232,6 +241,70 @@ function aplicarFiltro(){
 let detalleTitulo = "";
 let detalleHabAplica = false;
 
+/* Icono por palabra clave para las amenidades */
+function iconoAmen(s){
+  const t = String(s||"").toLowerCase();
+  if(/piscina/.test(t)) return "🌊";
+  if(/wifi|wi-fi|internet/.test(t)) return "📶";
+  if(/aire|clima/.test(t)) return "❄️";
+  if(/barbacoa|parrilla/.test(t)) return "🍖";
+  if(/jacuzzi/.test(t)) return "🛁";
+  if(/aparc|parqueo|estacion/.test(t)) return "🅿️";
+  if(/jard[ií]n|patio/.test(t)) return "🌴";
+  if(/lavadora/.test(t)) return "🧺";
+  if(/nevera|refriger/.test(t)) return "🧊";
+  if(/cocina/.test(t)) return "🍳";
+  if(/\btv\b|tele/.test(t)) return "📺";
+  if(/agua caliente|ducha caliente/.test(t)) return "🚿";
+  return "✅";
+}
+
+/* Fila de datos básicos estilo Holidu: 👥 4 Personas · 🛏️ 2 Dormitorios · … */
+function basicosHTML(p){
+  const b = p.basicos || {};
+  const items = [];
+  const num = v => { const n = parseFloat(String(v).replace(",",".")); return isNaN(n) ? String(v) : n; };
+  if(b.personas) items.push("👥 " + esc(num(b.personas)) + " Persona" + (num(b.personas)==1?"":"s"));
+  if(b.dormitorios) items.push("🛏️ " + esc(num(b.dormitorios)) + " Dormitorio" + (num(b.dormitorios)==1?"":"s"));
+  if(b.banos) items.push("🛁 " + esc(num(b.banos)) + " Baño" + (num(b.banos)==1?"":"s"));
+  if(b.m2) items.push("📐 " + esc(num(b.m2)) + " m²");
+  if(b.tipo) items.push("🏠 " + esc(b.tipo));
+  return items.length ? '<div class="dt-basicos">' + items.join('<span class="dt-sep">·</span>') + "</div>" : "";
+}
+
+/* Aspectos destacados: hasta 3 tarjetas */
+function destacadosHTML(p){
+  const dest = (p.destacados||[]).filter(d=>d && (d.t || d.d)).slice(0, 3);
+  if(!dest.length) return "";
+  return '<section class="dt-dest"><h2>Aspectos destacados</h2><div class="dt-dest-grid">'
+    + dest.map(d=>'<div class="dt-dest-card"><span class="dt-dest-ico">✨</span><div><b>'
+      + esc(d.t||"") + "</b><p>" + esc(d.d||"") + "</p></div></div>").join("")
+    + "</div></section>";
+}
+
+/* Amenidades: cuadrícula "Acerca de la propiedad" + botón para ver todas */
+function amenidadesHTML(p){
+  const amens = (p.amenidades||[]).map(a=>String(a).trim()).filter(Boolean);
+  if(!amens.length) return "";
+  const items = amens.map((a,i)=>'<div class="dt-amen-item' + (i>=8 ? " dt-oculto" : "") + '"><span class="dt-amen-ico">'
+    + iconoAmen(a) + "</span>" + esc(a) + "</div>").join("");
+  const mas = amens.length > 8
+    ? '<button type="button" class="btn btn-ghost dt-amen-mas" id="dtAmenMas">Mostrar los ' + amens.length + " servicios</button>"
+    : "";
+  return '<section class="dt-amen"><h2>Acerca de la propiedad</h2><div class="dt-amen-grid" id="dtAmenGrid">'
+    + items + "</div>" + mas + "</section>";
+}
+
+/* Distribución de dormitorios */
+function dormitoriosHTML(p){
+  const dorms = (p.dormitorios||[]).filter(d=>d && (d.nombre || d.detalle));
+  if(!dorms.length) return "";
+  return '<section class="dt-dorms"><h2>Distribución de dormitorios</h2><div class="dt-dorms-grid">'
+    + dorms.map(d=>'<div class="dt-dorm-card"><span class="dt-dorm-ico">🛏️</span><b>'
+      + esc(d.nombre||"Dormitorio") + "</b><p>" + esc(d.detalle||"") + "</p></div>").join("")
+    + "</div></section>";
+}
+
 async function renderDetalle(){
   const cont = document.getElementById("detalle");
   if(!cont || typeof DETALLE === "undefined") return;
@@ -263,6 +336,15 @@ async function renderDetalle(){
   const wapp = esServicio ? srvWhats(p, "btn-wapp dt-wapp", "💬 WhatsApp") : "";
   const habAplica = esServicio && p.categoria === "Hospedaje";
   detalleHabAplica = habAplica;
+  /* Secciones estilo Holidu (solo se muestran si el post trae los datos) */
+  const secBasicos = esServicio ? basicosHTML(p) : "";
+  const secDestacados = esServicio ? destacadosHTML(p) : "";
+  const textoTotal = cuerpoArr(p).join("\n").length;
+  const descLarga = textoTotal > 450;
+  const descHTML = '<div class="dt-desc' + (descLarga ? " dt-cortada" : "") + '" id="dtDesc">' + paras + "</div>"
+    + (descLarga ? '<button type="button" class="dt-vermas" id="dtVerMas">Ver más ⌄</button>' : "");
+  const secAmen = esServicio ? amenidadesHTML(p) : "";
+  const secDorms = esServicio ? dormitoriosHTML(p) : "";
   const reservaCard = esServicio ?
   '<aside class="dt-reserva" aria-label="Solicitar reserva">'
   + '<h3>📅 Solicitar reserva</h3>'
@@ -294,8 +376,10 @@ async function renderDetalle(){
   + '<figure class="dt-foto"><img src="'+esc(p.imagen)+'" alt="'+esc(p.alt||p.titulo)+'"></figure>'
   + '<!-- futuro: más <figure class="dt-foto"> aquí para galería múltiple -->'
   + '</div>'
-  + '<div class="dt-cols"><div class="dt-main"><div class="dt-desc">'+paras+'</div>'
+  + secBasicos + secDestacados
+  + '<div class="dt-cols"><div class="dt-main">' + descHTML
   + (datos?'<ul class="dt-datos">'+datos+'</ul>':"")
+  + secAmen + secDorms
   + '</div>' + (esServicio?'<div class="dt-side">'+reservaCard+'</div>':"") + '</div>'
   + (rel.length?'<section class="dt-rel"><h2>También te puede interesar</h2><div class="srv-grid">'
     + rel.map(x=>esServicio?tarjetaServicio(x,false):tarjetaContenido(x,false)).join("")
@@ -307,6 +391,19 @@ async function renderDetalle(){
     contPosts = rel; /* para que el modal de contenido funcione en los relacionados */
     if(window.CZAdmin) window.CZAdmin.bindTools(cont);
   }
+  /* "Ver más" de la descripción */
+  const vm = document.getElementById("dtVerMas");
+  if(vm) vm.addEventListener("click", ()=>{
+    const d = document.getElementById("dtDesc");
+    const abierto = d.classList.toggle("dt-abierta");
+    vm.textContent = abierto ? "Ver menos ⌃" : "Ver más ⌄";
+  });
+  /* "Mostrar los N servicios" de amenidades */
+  const am = document.getElementById("dtAmenMas");
+  if(am) am.addEventListener("click", ()=>{
+    document.querySelectorAll("#dtAmenGrid .dt-oculto").forEach(x=>x.classList.remove("dt-oculto"));
+    am.hidden = true;
+  });
 }
 
 /* Validación y URL de WhatsApp compartidas por el modal y el formulario del detalle */
@@ -380,8 +477,11 @@ document.addEventListener("click", e=>{
     return;
   }
   const card = e.target.closest(".srv-card");
-  if(card && !e.target.closest("[data-reserva],.srv-btnw,.tool-btn"))
-    location.href = "detalle.html?id=" + encodeURIComponent(card.getAttribute("data-srv"));
+  if(card && !e.target.closest("[data-reserva],.srv-btnw,.tool-btn")){
+    const id = card.getAttribute("data-srv");
+    /* La tarjeta "Anuncia tu negocio" lleva al formulario de registro */
+    location.href = (id === "s-anuncia") ? "publicar.html" : "detalle.html?id=" + encodeURIComponent(id);
+  }
 });
 /* El modal de detalle antiguo de Servicios se eliminó: el detalle ahora vive en detalle.html */
 

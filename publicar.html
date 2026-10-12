@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuncia tu negocio | Ciénaga de Zapata</title>
+<meta name="description" content="Publica tu casa de renta, taxi, restaurante o servicio de guía en la guía de la Ciénaga de Zapata y recibe contactos directos de turistas por WhatsApp.">
+<link rel="canonical" href="https://roygarcialeonardo.github.io/cienaga-de-zapata/publicar.html">
+<meta property="og:title" content="Anuncia tu negocio | Ciénaga de Zapata 📢">
+<meta property="og:description" content="Aparece en la guía de la Ciénaga de Zapata y recibe contactos directos de turistas por WhatsApp.">
+<meta property="og:image" content="https://roygarcialeonardo.github.io/cienaga-de-zapata/img/hero-humedal.webp">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mark">🌿</span> Ciénaga de Zapata</a>
+    <div class="nav-links">
+      <a href="lugares.html">Lugares</a><a href="secretos.html">Secretos</a><a href="fauna-flora.html">Fauna</a>
+      <a href="actividades.html">Actividades</a><a href="historia.html">Historia</a><a href="gastronomia.html">Gastronomía</a><a href="guia.html">Guía</a><a href="servicios.html">Servicios</a>
+    </div>
+    <span id="connBadge" class="conn-badge" title="Estado de la conexión"><span id="connDot" class="conn-dot"></span><span id="connText">···</span></span>
+  </div>
+</nav>
+<header class="page-hero"><div class="wrap">
+  <div class="crumbs"><a href="index.html">Inicio</a> › Anuncia tu negocio</div>
+  <span class="kicker">📢 Para dueños de negocios</span>
+  <h1>Anuncia tu <span class='grad'>negocio</span></h1>
+  <p class="intro">¿Tienes una casa de renta, un taxi, un restaurante o eres guía local? Llena este formulario y tu negocio aparecerá en nuestra guía. Los turistas te contactarán directo por WhatsApp.</p>
+</div></header>
+<main><section style="padding:3rem 0"><div class="wrap">
+<form id="pubForm" class="pub-form" novalidate>
+  <h2>📋 Datos del negocio</h2>
+  <div class="pub-grid">
+    <label>Nombre del negocio *<input type="text" id="pubNombre" placeholder="Ej: Casa Villa Mar" autocomplete="organization"></label>
+    <label>Categoría *<select id="pubCategoria">
+      <option value="">— Elige —</option>
+      <option value="Hospedaje">🏠 Hospedaje (casa de renta, hostal, villa)</option>
+      <option value="Gastronomía">🍽️ Gastronomía (restaurante, cafetería)</option>
+      <option value="Transporte">🚕 Transporte (taxi, bote, alquiler)</option>
+      <option value="Guías">🧭 Guías (guía local, excursiones)</option>
+      <option value="Otros">✨ Otros</option>
+    </select></label>
+    <label>Zona / Ubicación *<input type="text" id="pubZona" placeholder="Ej: Caletón, Playa Larga"></label>
+    <label>Nombre del responsable *<input type="text" id="pubResponsable" placeholder="Tu nombre" autocomplete="name"></label>
+    <label>WhatsApp de contacto *<input type="tel" id="pubWhatsapp" placeholder="Ej: 5353704722" autocomplete="tel"></label>
+  </div>
+  <p class="pub-nota">🔒 El WhatsApp es solo para verificar tu negocio. No se publica en la guía: los turistas contactan a través de nuestro canal.</p>
+
+  <!-- Secciones solo para Hospedaje -->
+  <div id="secHospedaje" hidden>
+    <h2>🏠 Datos básicos del alojamiento</h2>
+    <div class="pub-grid pub-grid5">
+      <label>Personas<input type="number" id="pubPersonas" min="1" max="50" placeholder="4"></label>
+      <label>Dormitorios<input type="number" id="pubDormitorios" min="0" max="30" placeholder="2"></label>
+      <label>Baños<input type="number" id="pubBanos" min="0" max="30" placeholder="1"></label>
+      <label>m²<input type="number" id="pubM2" min="0" max="10000" placeholder="95"></label>
+      <label>Tipo<select id="pubTipo">
+        <option value="">—</option>
+        <option>Casa rural</option><option>Villa</option><option>Hostal</option>
+        <option>Apartamento</option><option>Otro</option>
+      </select></label>
+    </div>
+
+    <h2>✨ Aspectos destacados <span class="pub-opc">(opcional, hasta 3)</span></h2>
+    <p class="pub-sub">Lo mejor de tu negocio en pocas palabras, como lo verán los turistas.</p>
+    <div class="pub-dest" id="pubDest0"><label>Título 1<input type="text" id="pubDest0T" placeholder="Ej: Piscina privada"></label><label>Texto 1<input type="text" id="pubDest0D" placeholder="Ej: La estancia tiene piscina privada."></label></div>
+    <div class="pub-dest" id="pubDest1"><label>Título 2<input type="text" id="pubDest1T" placeholder="Ej: Cocina bien equipada"></label><label>Texto 2<input type="text" id="pubDest1D" placeholder="Ej: Prepara tus platos en una cocina completa."></label></div>
+    <div class="pub-dest" id="pubDest2"><label>Título 3<input type="text" id="pubDest2T" placeholder="Ej: Aparcamiento gratuito"></label><label>Texto 3<input type="text" id="pubDest2D" placeholder="Ej: Aparcamiento gratis en las instalaciones."></label></div>
+
+    <h2>📝 Descripción *</h2>
+    <label class="pub-full">Cuéntale al turista cómo es tu negocio<textarea id="pubDescripcion" rows="5" placeholder="Describe tu casa: habitaciones, ambiente, qué la hace especial, cercanía a la playa…"></textarea></label>
+
+    <h2>✅ Servicios / amenidades</h2>
+    <div class="pub-checks" id="pubAmenChecks">
+      <label><input type="checkbox" value="Piscina privada"> Piscina privada</label>
+      <label><input type="checkbox" value="Wifi"> Wifi</label>
+      <label><input type="checkbox" value="Aire acondicionado"> Aire acondicionado</label>
+      <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+      <label><input type="checkbox" value="Jacuzzi"> Jacuzzi</label>
+      <label><input type="checkbox" value="Aparcamiento"> Aparcamiento</label>
+      <label><input type="checkbox" value="Jardín"> Jardín</label>
+      <label><input type="checkbox" value="Lavadora"> Lavadora</label>
+      <label><input type="checkbox" value="Nevera"> Nevera</label>
+      <label><input type="checkbox" value="Cocina equipada"> Cocina equipada</label>
+      <label><input type="checkbox" value="TV"> TV</label>
+      <label><input type="checkbox" value="Agua caliente"> Agua caliente</label>
+    </div>
+    <label class="pub-full">Otros servicios (separados por comas)<input type="text" id="pubAmenOtros" placeholder="Ej: Terraza con vista al mar, Bicicletas"></label>
+
+    <h2>🛏️ Distribución de dormitorios</h2>
+    <div id="pubDorms"></div>
+    <button type="button" class="btn btn-ghost pub-add" id="pubAddDorm">＋ Añadir dormitorio</button>
+  </div>
+
+  <!-- Secciones para no-hospedaje -->
+  <div id="secNoHospedaje" hidden>
+    <h2>📝 Descripción *</h2>
+    <label class="pub-full">Cuéntale al turista qué ofreces<textarea id="pubDescripcion2" rows="5" placeholder="Describe tu servicio: qué incluye, experiencia, zona donde trabajas…"></textarea></label>
+    <h2>🕐 Horario o detalles <span class="pub-opc">(opcional)</span></h2>
+    <label class="pub-full"><input type="text" id="pubHorario" placeholder="Ej: Abierto de 8:00 a 22:00 · Servicio en toda la Ciénaga"></label>
+  </div>
+
+  <div class="pub-fotos">📷 <b>Fotos:</b> después de enviar este formulario, adjunta las fotos de tu negocio en el chat de WhatsApp que se abrirá.</div>
+
+  <p class="error" id="pubError" hidden></p>
+  <button type="submit" class="btn btn-sol pub-enviar">📩 Enviar solicitud por WhatsApp</button>
+</form>
+<div id="pubOk" class="pub-ok" hidden>
+  <h2>¡Gracias! 🎉</h2>
+  <p>Revisaremos tu negocio y te contactaremos por WhatsApp para publicarlo en la guía.</p>
+  <p><a class="btn btn-sol" href="servicios.html">Ver la guía de servicios</a></p>
+</div>
+</div></section></main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index.html"><span class="mark">🌿</span> Ciénaga de Zapata</a>
+        <p class="nota">Guía de viaje del humedal más grande del Caribe insular: sus lugares, su gente y su naturaleza. Matanzas, Cuba. 🇨🇺</p></div>
+      <div><b>Explora</b><br><br>
+        <a href="lugares.html" style="text-decoration:none">Lugares</a><br>
+        <a href="secretos.html" style="text-decoration:none">Rincones secretos</a><br>
+        <a href="fauna-flora.html" style="text-decoration:none">Fauna y flora</a><br>
+        <a href="actividades.html" style="text-decoration:none">Actividades</a></div>
+      <div><b>Planifica</b><br><br>
+        <a href="historia.html" style="text-decoration:none">Historia</a><br>
+        <a href="gastronomia.html" style="text-decoration:none">Gastronomía</a><br>
+        <a href="guia.html" style="text-decoration:none">Guía del viajero</a><br>
+        <a href="servicios.html" style="text-decoration:none">Servicios turísticos</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>Hecho con 💚 para Cuba · Las imágenes son ilustraciones generadas con IA con fines promocionales.</span>
+      <span>© 2026 Ciénaga de Zapata</span>
+    </div>
+  </div>
+</footer>
+<script src="config.js"></script>
+<script src="publicar.js"></script>
+<script src="admin.js"></script>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

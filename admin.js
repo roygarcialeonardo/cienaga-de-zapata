@@ -182,6 +182,11 @@ function formPost(p){
     ? `<p style="opacity:.8;font-size:.9rem">📄 Se publicará en: <b>${esc(nombrePag(EN_PAGINA))}</b></p>`
     : `<label>Página</label><select id="fPag">${PAGS.map(([v,t])=>`<option value="${v}"${p.pagina===v?" selected":""}>${t}</option>`).join("")}</select>`;
   const datosTxt=(p.datos||[]).map(d=>d[0]+": "+d[1]).join("\n");
+  const b0=p.basicos||{};
+  const destTxt=(p.destacados||[]).map(d=>(d.t||"")+((d.d)?" — "+d.d:"")).join("\n");
+  const amenTxt=(p.amenidades||[]).join("\n");
+  const dormTxt=(p.dormitorios||[]).map(d=>((d.nombre||"")+": "+(d.detalle||"")).trim()).join("\n");
+  const TIPOS=["","Casa rural","Villa","Hostal","Apartamento","Otro"];
   abrirModal(`<h3>${esNuevo?"＋ Nueva publicación":"✏️ Editar publicación"}</h3>${selPag}
     <label>Título</label><input type="text" id="fTit" value="${esc(p.titulo)}">
     <label>Imagen</label><input type="file" id="fImg" accept="image/*" style="color:#fff">
@@ -192,6 +197,20 @@ function formPost(p){
     <textarea id="fDatos" rows="4">${esc(datosTxt)}</textarea>
     <label>Categoría (ej: Hospedaje, Transporte, Gastronomía, Guías)</label>
     <input type="text" id="fCat" value="${esc(p.categoria||"")}">
+    <h4 style="margin:1.1rem 0 .4rem">🏠 Datos básicos (solo Hospedaje)</h4>
+    <div class="adm-grid5">
+      <label>Personas<input type="number" id="fPer" min="0" value="${esc(b0.personas??"")}"></label>
+      <label>Dormitorios<input type="number" id="fDor" min="0" value="${esc(b0.dormitorios??"")}"></label>
+      <label>Baños<input type="number" id="fBan" min="0" value="${esc(b0.banos??"")}"></label>
+      <label>m²<input type="number" id="fM2" min="0" value="${esc(b0.m2??"")}"></label>
+      <label>Tipo<select id="fTip">${TIPOS.map(t=>`<option value="${esc(t)}"${(b0.tipo||"")===t?" selected":""}>${esc(t||"—")}</option>`).join("")}</select></label>
+    </div>
+    <label>✨ Aspectos destacados (hasta 3, uno por línea: <i>Título — texto</i>)</label>
+    <textarea id="fDest" rows="3" placeholder="Piscina privada — La estancia tiene piscina privada.">${esc(destTxt)}</textarea>
+    <label>✅ Servicios / amenidades (uno por línea)</label>
+    <textarea id="fAmen" rows="4" placeholder="Piscina privada&#10;Wifi&#10;Aire acondicionado">${esc(amenTxt)}</textarea>
+    <label>🛏️ Dormitorios (uno por línea: <i>Nombre: detalle</i>)</label>
+    <textarea id="fDorm" rows="3" placeholder="Dormitorio 1: 2 camas dobles">${esc(dormTxt)}</textarea>
     <div class="row"><button class="btn btn-sol" id="fSave">💾 Publicar</button>
     <button class="btn btn-ghost" id="fCancel">Cancelar</button></div>
     <p id="fMsg" style="margin-top:.8rem;font-size:.9rem"></p>`);
@@ -213,6 +232,31 @@ function formPost(p){
       const datos=document.getElementById("fDatos").value.split("\n").map(s=>s.trim()).filter(Boolean)
         .map(l=>{const i=l.indexOf(":");return i>0?[l.slice(0,i).trim(),l.slice(i+1).trim()]:[l,""];});
       const categoria=document.getElementById("fCat").value.trim();
+      /* Campos nuevos: datos básicos, destacados, amenidades, dormitorios */
+      const gv=id=>{const el=document.getElementById(id);return el?el.value.trim():"";};
+      const basicos={};
+      if(gv("fPer"))basicos.personas=gv("fPer");
+      if(gv("fDor"))basicos.dormitorios=gv("fDor");
+      if(gv("fBan"))basicos.banos=gv("fBan");
+      if(gv("fM2"))basicos.m2=gv("fM2");
+      if(gv("fTip"))basicos.tipo=gv("fTip");
+      const partirTD=l=>{
+        let i=l.indexOf("—"); if(i<0)i=l.indexOf(":");
+        if(i>0)return{t:l.slice(0,i).trim(),d:l.slice(i+1).trim()};
+        i=l.indexOf(" - "); if(i>0)return{t:l.slice(0,i).trim(),d:l.slice(i+3).trim()};
+        return{t:l.trim(),d:""};
+      };
+      const destacados=gv("fDest").split("\n").map(s=>s.trim()).filter(Boolean).slice(0,3).map(partirTD);
+      const amenidades=gv("fAmen").split("\n").map(s=>s.trim()).filter(Boolean);
+      const dormitorios=gv("fDorm").split("\n").map(s=>s.trim()).filter(Boolean).map(l=>{
+        const i=l.indexOf(":");
+        return i>0?{nombre:l.slice(0,i).trim(),detalle:l.slice(i+1).trim()}:{nombre:l,detalle:""};
+      });
+      const extras={};
+      if(Object.keys(basicos).length)extras.basicos=basicos;
+      if(destacados.length)extras.destacados=destacados;
+      if(amenidades.length)extras.amenidades=amenidades;
+      if(dormitorios.length)extras.dormitorios=dormitorios;
       if(usaCMS()){
         let imgPath=p.imagen;
         if(nuevoFile){
@@ -221,8 +265,8 @@ function formPost(p){
           const up=await cmsApi("uploadImage",{nombre:opt.nombre, base64:opt.base64});
           if(!up.ok)throw new Error("subir imagen"); imgPath=up.path;
         }
-        const post={id:p.id||null, pagina, titulo, imagen:imgPath||"img/hero-humedal.webp",
-          alt:titulo, cuerpo, datos, categoria};
+        const post=Object.assign({id:p.id||null, pagina, titulo, imagen:imgPath||"img/hero-humedal.webp",
+          alt:titulo, cuerpo, datos, categoria}, extras);
         const j=await cmsApi("savePost",{post});
         if(!j.ok)throw new Error(j.error||"guardar");
       }else{
@@ -230,10 +274,15 @@ function formPost(p){
         if(nuevoFile) imgPath=await ghImagen(nuevoFile);
         const {sha,data}=await ghLeer("posts.json");
         const hoy=new Date().toISOString().slice(0,10);
-        if(esNuevo)data.push({id:"p"+Date.now(),pagina,titulo,imagen:imgPath||"img/hero-humedal.webp",
-          alt:titulo,cuerpo,datos,fecha:hoy,fijo:false,categoria});
+        if(esNuevo)data.push(Object.assign({id:"p"+Date.now(),pagina,titulo,imagen:imgPath||"img/hero-humedal.webp",
+          alt:titulo,cuerpo,datos,fecha:hoy,fijo:false,categoria}, extras));
         else{const i=data.findIndex(x=>x.id===p.id);
-          data[i]={...data[i],pagina,titulo,imagen:imgPath,cuerpo,datos,fecha:hoy,categoria};}
+          data[i]=Object.assign({}, data[i], {pagina,titulo,imagen:imgPath,cuerpo,datos,fecha:hoy,categoria}, extras,
+            /* si se vaciaron, eliminar las claves viejas */
+            Object.keys(basicos).length?{}:{basicos:undefined},
+            destacados.length?{}:{destacados:undefined},
+            amenidades.length?{}:{amenidades:undefined},
+            dormitorios.length?{}:{dormitorios:undefined});}
         await ghGuardar("posts.json",data,sha,(esNuevo?"Nueva":"Editar")+" publicación: "+titulo);
       }
       msg.textContent="✅ ¡Publicado! La página se actualizará en ~1 minuto.";
