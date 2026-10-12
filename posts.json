@@ -3218,5 +3218,362 @@
   "categoria": "Hospedaje",
   "fecha": "2026-10-12",
   "fijo": false
+ },
+ {
+  "id": "s-hs-61",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa Milagro y los Eddy",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "En el entronque de Playa Larga, Milagros recibe a los viajeros en Casa Milagro y los Eddy, una casa familiar de ambiente acogedor y trato cercano. Un buen punto de partida para recorrer la Ciénaga de Zapata y sus playas."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Milagros"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-62",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa Andrés y Carmen",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Andrés y Carmen abren las puertas de su casa en el poblado Mario López, a un paso de Playa Larga. Hospitalidad cubana de verdad, con desayunos caseros y consejos de primera mano sobre qué ver en la zona."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Mario López"
+   ],
+   [
+    "Anfitrión",
+    "Andrés"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-63",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Hostal Mis Rocas",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Maura atiende el Hostal Mis Rocas en Playa Larga, una opción tranquila para quienes buscan descansar cerca del mar. Ideal como base para el buceo y el snorkel de la zona."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Maura"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-64",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa María y Japón",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "En Caletón, Dayana recibe en Casa María y Japón, una casa particular con encanto local y ambiente familiar. Cerca de la playa y de los senderos del humedal."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Dayana"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-65",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Villa Eclipse",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Damaris es la anfitriona de Villa Eclipse, en el entronque de Playa Larga. Una villa cómoda y bien ubicada para moverse entre Playa Larga, Playa Girón y los puntos de interés de la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Damaris"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-66",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa El Francesito",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Leonardo atiende Casa El Francesito en Playa Larga, con el trato personal que caracteriza a las casas de renta cubanas. Perfecta para viajeros que quieren vivir la zona como un local."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Leonardo"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-67",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Hostal Milena y Adrián",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "En Caletón, Adrián recibe junto a su familia en el Hostal Milena y Adrián. Ambiente hogareño, buena comida criolla y ayuda para organizar excursiones por la Ciénaga de Zapata."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón"
+   ],
+   [
+    "Anfitrión",
+    "Adrian"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-68",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa Encanto",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Alejandro es el anfitrión de Casa Encanto, en plena Ciénaga de Zapata. Una casa con nombre bien puesto: el encanto del humedal se respira desde el portal."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Ciénaga de Zapata, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Alejandro"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-69",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa Lunamar",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "María Isabel recibe en Casa Lunamar, en el entronque de Playa Larga. Noches tranquilas bajo las estrellas y días de playa: el equilibrio perfecto para unas vacaciones en la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "María Isabel"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-70",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa El Shaddai",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Liset atiende Casa El Shaddai en Caletón, con calidez familiar y atención al detalle. Muy cerca de la playa y de los mejores puntos de snorkel de Playa Larga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Liset"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-71",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa El Manglar",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Maria recibe en Casa El Manglar, en el entronque de Playa Larga, rodeada del verde típico del humedal. Una estancia auténtica para quienes buscan naturaleza y tranquilidad."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Maria"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-72",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Hostal Caribe Kairos",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Hugo es el anfitrión del Hostal Caribe Kairos, en el entronque de Playa Larga. Espíritu caribeño, buena ubicación y el mejor asesor para armar tu itinerario por la zona."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque de Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Hugo"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-73",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Hostal El Camara",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Laritza atiende el Hostal El Camara en Playa Larga, una casa particular donde el viajero se siente en familia desde el primer día. Cerca de todo lo esencial del pueblo."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Laritza"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-74",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa Martín",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "En Caletón, Anabel recibe en Casa Martín, con la hospitalidad que hace famosa a la zona. Ideal para parejas y familias que buscan playa y descanso."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Caletón, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Anabel"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-75",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa Silvia y Homero",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Homero y Silvia abren su casa en la Ciénaga de Zapata a los viajeros que buscan autenticidad. Conversación, café cubano y los secretos mejor guardados del humedal."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Ciénaga de Zapata, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Homero"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-76",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Hostal Yolanda y Jorge",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Yandri recibe en el Hostal Yolanda y Jorge, en el entronque de Playa Larga. Tradición familiar en la atención al turista y una ubicación estratégica para recorrer la región."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Entronque, Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Yandri"
+   ]
+  ]
+ },
+ {
+  "id": "s-hs-77",
+  "pagina": "servicios",
+  "fecha": "2026-10-12",
+  "titulo": "Casa China y Fife",
+  "categoria": "Hospedaje",
+  "imagen": "img/playa-giron.webp",
+  "cuerpo": [
+   "Xiomara es la anfitriona de Casa China y Fife en Playa Larga, una casa con personalidad propia y trato familiar. Perfecta para sentirse como en casa lejos de casa."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Anfitrión",
+    "Xiomara"
+   ]
+  ]
  }
 ]
