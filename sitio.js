@@ -750,3 +750,237 @@ async function chequearConn(){
     navigator.serviceWorker.register('sw.js').catch(function(){ /* sin conexión o sin soporte: el sitio sigue funcionando */ });
   });
 })();
+
+/* ================= CAPA PREMIUM · UI/UX =================
+   Vanilla JS. Respeta prefers-reduced-motion. Sin dependencias. */
+(function(){
+"use strict";
+var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var FINE = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+
+/* --- 0. Reveal por scroll: corrige .rv (nada los hacía visibles) --- */
+function initReveal(){
+  var els = document.querySelectorAll(".rv:not(.vis)");
+  if(!els.length) return;
+  if(REDUCED || !("IntersectionObserver" in window)){
+    els.forEach(function(el){ el.classList.add("vis"); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add("vis"); io.unobserve(en.target); }
+    });
+  }, {threshold:.12, rootMargin:"0px 0px -6% 0px"});
+  els.forEach(function(el){ io.observe(el); });
+}
+
+/* --- 1. Hero cinematográfico: slideshow Ken Burns + titular por palabras --- */
+function initHero(){
+  var hero = document.querySelector(".hero");
+  if(!hero) return;
+  if(!REDUCED){
+    var imgs = ["img/hero-humedal.webp","img/flamencos-salinas.webp","img/amanecer-laguna.webp"];
+    imgs.forEach(function(s){ var i = new Image(); i.src = s; });
+    var wrap = document.createElement("div");
+    wrap.className = "kb-slides";
+    wrap.setAttribute("aria-hidden","true");
+    wrap.innerHTML = imgs.map(function(s){
+      return '<div class="kb-slide" style="background-image:url(\''+s+'\')"></div>';
+    }).join("");
+    hero.insertBefore(wrap, hero.firstChild);
+    /* Titular con fade-up desfasado por palabras */
+    var h1 = hero.querySelector("h1");
+    if(h1){
+      var frags = [];
+      Array.prototype.forEach.call(h1.childNodes, function(n){
+        var parts = n.textContent.split(/(\s+)/);
+        parts.forEach(function(part){
+          if(!part) return;
+          frags.push({txt:part, ws:/^\s+$/.test(part), cls:(n.nodeType===1 ? n.className : "")});
+        });
+      });
+      h1.innerHTML = "";
+      var wi = 0;
+      frags.forEach(function(f){
+        if(f.ws){ h1.appendChild(document.createTextNode(" ")); return; }
+        var sp = document.createElement("span");
+        sp.className = ("w " + f.cls).trim();
+        sp.textContent = f.txt;
+        sp.style.animationDelay = (wi * 0.09) + "s";
+        h1.appendChild(sp);
+        wi++;
+      });
+      h1.classList.remove("rv","rv-d1","rv-d2","rv-d3","vis");
+      h1.style.opacity = "1"; h1.style.transform = "none";
+    }
+  }
+  /* --- 4. Parallax suave del fondo del hero --- */
+  var slides = hero.querySelector(".kb-slides");
+  if(slides && !REDUCED){
+    var ticking = false;
+    window.addEventListener("scroll", function(){
+      if(ticking) return; ticking = true;
+      requestAnimationFrame(function(){
+        var y = window.scrollY;
+        if(y < hero.offsetHeight + 100) slides.style.transform = "translateY(" + (y * 0.22) + "px)";
+        ticking = false;
+      });
+    }, {passive:true});
+  }
+}
+
+/* --- 2. Navbar flotante: se compacta al hacer scroll --- */
+function initNav(){
+  var nav = document.querySelector("nav");
+  if(!nav) return;
+  var onScroll = function(){ nav.classList.toggle("compact", window.scrollY > 40); };
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+}
+
+/* --- 7. Menú hamburguesa en móvil (≤720px) --- */
+function initBurger(){
+  var navIn = document.querySelector(".nav-in");
+  var nav = document.querySelector("nav");
+  if(!navIn || !nav || navIn.querySelector(".nav-burger")) return;
+  var links = navIn.querySelector(".nav-links");
+  if(!links) return;
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "nav-burger";
+  b.setAttribute("aria-label","Abrir menú"); b.setAttribute("aria-expanded","false");
+  b.innerHTML = "<span></span><span></span><span></span>";
+  navIn.insertBefore(b, links);
+  var setOpen = function(open){
+    nav.classList.toggle("open", open);
+    b.setAttribute("aria-expanded", String(open));
+    b.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  };
+  b.addEventListener("click", function(e){ e.stopPropagation(); setOpen(!nav.classList.contains("open")); });
+  links.addEventListener("click", function(e){ if(e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") setOpen(false); });
+  document.addEventListener("click", function(e){ if(nav.classList.contains("open") && !nav.contains(e.target)) setOpen(false); });
+}
+
+/* --- 3. Tilt 3D sutil en tarjetas (solo cursor fino) --- */
+function initTilt(){
+  if(!FINE || REDUCED) return;
+  var current = null, raf = 0, lx = 0, ly = 0;
+  var apply = function(){
+    raf = 0;
+    if(!current) return;
+    var r = current.getBoundingClientRect();
+    var x = (lx - r.left) / r.width - 0.5;
+    var y = (ly - r.top) / r.height - 0.5;
+    current.style.transform = "perspective(800px) rotateX(" + (-y * 7).toFixed(2) + "deg) rotateY(" + (x * 9).toFixed(2) + "deg) translateY(-4px)";
+  };
+  document.addEventListener("mousemove", function(e){
+    var card = e.target && e.target.closest ? e.target.closest(".srv-card,.cont-card,.cat-card,.card") : null;
+    if(card !== current){
+      if(current) current.style.transform = "";
+      current = card;
+    }
+    if(!card) return;
+    lx = e.clientX; ly = e.clientY;
+    if(!raf) raf = requestAnimationFrame(apply);
+  }, {passive:true});
+  document.addEventListener("mouseout", function(e){
+    if(current && !(e.relatedTarget && current.contains(e.relatedTarget))){
+      current.style.transform = ""; current = null;
+    }
+  }, {passive:true});
+}
+
+/* --- 5. Lightbox para fotos (novedades, galería del detalle, modal de contenido) --- */
+function initLightbox(){
+  if(document.getElementById("lbx")) return;
+  var lb = document.createElement("div");
+  lb.id = "lbx"; lb.className = "lbx"; lb.setAttribute("aria-hidden","true");
+  lb.innerHTML = '<button type="button" class="lbx-x" aria-label="Cerrar">✕</button>'
+    + '<button type="button" class="lbx-prev" aria-label="Anterior">‹</button>'
+    + '<figure class="lbx-fig"><img alt=""><figcaption></figcaption></figure>'
+    + '<button type="button" class="lbx-next" aria-label="Siguiente">›</button>';
+  document.body.appendChild(lb);
+  var items = [], idx = 0;
+  var imgEl = lb.querySelector("img"), capEl = lb.querySelector("figcaption");
+  var prevB = lb.querySelector(".lbx-prev"), nextB = lb.querySelector(".lbx-next");
+  function show(i){
+    if(!items.length) return;
+    idx = (i + items.length) % items.length;
+    imgEl.src = items[idx].src; imgEl.alt = items[idx].alt || "";
+    capEl.textContent = items[idx].alt || "";
+    var multi = items.length > 1;
+    prevB.style.display = multi ? "" : "none";
+    nextB.style.display = multi ? "" : "none";
+  }
+  function open(list, start){
+    items = list; show(start);
+    lb.classList.add("on"); lb.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    lb.classList.remove("on"); lb.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  }
+  lb.querySelector(".lbx-x").addEventListener("click", close);
+  prevB.addEventListener("click", function(e){ e.stopPropagation(); show(idx - 1); });
+  nextB.addEventListener("click", function(e){ e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener("click", function(e){ if(e.target === lb) close(); });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("on")) return;
+    if(e.key === "Escape") close();
+    else if(e.key === "ArrowLeft") show(idx - 1);
+    else if(e.key === "ArrowRight") show(idx + 1);
+  });
+  document.addEventListener("click", function(e){
+    var img = e.target && e.target.closest ? e.target.closest("#novedades .card .ph img, .dt-galeria img, .cd-foto img") : null;
+    if(!img) return;
+    e.preventDefault();
+    var scope = img.closest(".dt-galeria, #modalDetalleCont, #novedades") || img;
+    var list = Array.prototype.map.call(scope.querySelectorAll("img"), function(i){
+      return {src: i.currentSrc || i.src, alt: i.alt};
+    });
+    var at = 0;
+    var me = img.currentSrc || img.src;
+    list.forEach(function(it, i){ if(it.src === me) at = i; });
+    open(list, at);
+  });
+}
+
+/* --- 6. Carrusel táctil de novedades: rueda + arrastre con ratón --- */
+function initNovStrip(){
+  var strip = document.getElementById("novedades");
+  if(!strip) return;
+  strip.addEventListener("wheel", function(e){
+    if(Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    var max = strip.scrollWidth - strip.clientWidth;
+    var nx = strip.scrollLeft + e.deltaY;
+    if(nx > 0 && nx < max){ e.preventDefault(); strip.scrollLeft = nx; }
+  }, {passive:false});
+  var down = false, sx = 0, sl = 0, moved = 0, suppress = false;
+  strip.addEventListener("pointerdown", function(e){
+    if(e.pointerType !== "mouse" || e.button !== 0) return;
+    down = true; moved = 0; sx = e.clientX; sl = strip.scrollLeft;
+  });
+  strip.addEventListener("pointermove", function(e){
+    if(!down) return;
+    var dx = e.clientX - sx;
+    moved = Math.max(moved, Math.abs(dx));
+    strip.scrollLeft = sl - dx;
+  });
+  strip.addEventListener("pointerup", function(){ if(down && moved > 6) suppress = true; down = false; });
+  strip.addEventListener("pointercancel", function(){ down = false; });
+  strip.addEventListener("click", function(e){
+    if(suppress){ e.preventDefault(); e.stopPropagation(); suppress = false; }
+  }, true);
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  initReveal();
+  initHero();
+  initNav();
+  initBurger();
+  initTilt();
+  initLightbox();
+  initNovStrip();
+});
+})();

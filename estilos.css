@@ -465,3 +465,99 @@ footer .nota{opacity:.65;max-width:62ch;margin-top:1rem;font-size:.82rem;color:#
 /* ---------- Admin: rejilla de datos básicos ---------- */
 .adm-grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin-bottom:.4rem}
 @media(max-width:640px){.adm-grid5{grid-template-columns:1fr 1fr}}
+
+/* ================= CAPA PREMIUM · UI/UX senior =================
+   Vanilla CSS/JS. Respeta prefers-reduced-motion (ver media query al final). */
+
+/* --- 1. Hero cinematográfico: slideshow Ken Burns --- */
+.kb-slides{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0c2b20}
+.kb-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;
+  animation:kbCycle 24s ease-in-out infinite;will-change:transform,opacity}
+.kb-slide:nth-child(2){animation-delay:8s}
+.kb-slide:nth-child(3){animation-delay:16s}
+@keyframes kbCycle{
+  0%{opacity:0;transform:scale(1.06)}
+  5%{opacity:1}
+  30%{opacity:1}
+  38%{opacity:0;transform:scale(1.16)}
+  100%{opacity:0;transform:scale(1.16)}
+}
+.hero::before{z-index:1}
+/* Titular con fade-up desfasado por palabras (inyectado por JS) */
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.55em);
+  animation:wUp .8s cubic-bezier(.2,.7,.2,1) forwards;will-change:transform,opacity}
+@keyframes wUp{to{opacity:1;transform:none}}
+
+/* --- 2. Navbar flotante glassmorphism --- */
+nav{top:.7rem;left:50%;transform:translateX(-50%);width:min(1200px,calc(100% - 1.4rem));
+  border-radius:20px;border:1px solid var(--borde);
+  box-shadow:0 12px 34px rgba(18,41,31,.10);transition:box-shadow .3s ease}
+nav .nav-in{transition:padding .3s ease}
+nav.compact{box-shadow:0 18px 44px rgba(18,41,31,.17)}
+nav.compact .nav-in{padding-top:.45rem;padding-bottom:.45rem}
+body:has(.admin-bar.on) nav{top:3.8rem}
+
+/* --- 7. Menú hamburguesa (solo móvil ≤720px) --- */
+.nav-burger{display:none;width:2.7rem;height:2.7rem;border-radius:50%;border:1.5px solid var(--borde);
+  background:#fff;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center;
+  margin-left:auto;flex:none;font-family:inherit}
+.nav-burger span{display:block;width:1.15rem;height:2px;background:var(--tinta);border-radius:2px;transition:.25s}
+nav.open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .nav-burger span:nth-child(2){opacity:0}
+nav.open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:720px){
+  .nav-burger{display:flex}
+  .nav-in{position:relative;flex-wrap:nowrap;gap:.7rem}
+  .nav-links{display:none;position:absolute;top:calc(100% + 10px);left:.5rem;right:.5rem;width:auto;
+    margin:0;flex-direction:column;align-items:stretch;gap:.15rem;overflow:visible;
+    background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border:1px solid var(--borde);border-radius:16px;padding:.55rem;box-shadow:var(--sombra-lg)}
+  nav.open .nav-links{display:flex;animation:navDrop .25s ease}
+  .nav-links a{background:none;padding:.72rem .95rem;font-size:.95rem;border-radius:10px;flex:none;white-space:normal}
+  .nav-links a:hover{background:var(--verde-claro)}
+  .conn-badge{margin-left:0;font-size:.62rem}
+}
+@keyframes navDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* --- 5. Lightbox --- */
+.lbx{position:fixed;inset:0;z-index:120;background:rgba(10,25,19,.92);display:none;place-items:center;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:zoom-out}
+.lbx.on{display:grid;animation:lbxIn .25s ease}
+@keyframes lbxIn{from{opacity:0}to{opacity:1}}
+.lbx-fig{max-width:min(92vw,1100px);max-height:88vh;margin:0;cursor:default}
+.lbx-fig img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.lbx-fig figcaption{color:#dcebe2;text-align:center;font-size:.88rem;margin-top:.7rem}
+.lbx-x,.lbx-prev,.lbx-next{position:absolute;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  color:#fff;border-radius:50%;cursor:pointer;transition:.2s;font-family:inherit;line-height:1}
+.lbx-x{top:1.1rem;right:1.1rem;width:2.8rem;height:2.8rem;font-size:1.2rem}
+.lbx-prev,.lbx-next{top:50%;transform:translateY(-50%);width:3rem;height:3rem;font-size:1.6rem}
+.lbx-prev{left:1rem}.lbx-next{right:1rem}
+.lbx-x:hover,.lbx-prev:hover,.lbx-next:hover{background:rgba(255,255,255,.28)}
+
+/* --- 6. Carrusel táctil de novedades --- */
+#novedades.nov-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1.1rem;
+  padding:.4rem 1.25rem 1rem;margin:0 -1.25rem;scrollbar-width:thin;cursor:grab}
+#novedades.nov-grid:active{cursor:grabbing}
+#novedades.nov-grid .card{flex:0 0 min(80vw,310px);scroll-snap-align:start}
+#novedades.nov-grid .card .ph{height:180px}
+
+/* --- 3. Tilt 3D (solo pointer:fine, vía JS) --- */
+@media(pointer:fine){
+  .srv-card,.cont-card,.cat-card,.card{transform-style:preserve-3d;will-change:transform}
+}
+
+/* --- 8. Microinteracciones --- */
+.btn:active,.srv-btnr:active,.srv-pill:active,.home-hints button:active,.home-buscar button:active{transform:scale(.96)}
+.srv-btnw:active,.btn-wapp:active{filter:brightness(.94)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+
+/* --- Reveal por scroll (IntersectionObserver, inyectado por JS) --- */
+.rv{will-change:transform,opacity}
+
+/* --- Respeta movimiento reducido --- */
+@media(prefers-reduced-motion:reduce){
+  .kb-slide{animation:none}
+  .kb-slide:first-child{opacity:1}
+  .hero h1 .w{animation:none;opacity:1;transform:none}
+  #novedades.nov-grid{scroll-snap-type:none}
+}
