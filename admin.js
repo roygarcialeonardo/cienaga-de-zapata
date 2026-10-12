@@ -192,8 +192,6 @@ function formPost(p){
     <textarea id="fDatos" rows="4">${esc(datosTxt)}</textarea>
     <label>Categoría (ej: Hospedaje, Transporte, Gastronomía, Guías)</label>
     <input type="text" id="fCat" value="${esc(p.categoria||"")}">
-    <label>WhatsApp (número con código de país, ej: 5351234567)</label>
-    <input type="text" id="fWapp" value="${esc(p.whatsapp||"")}" inputmode="tel">
     <div class="row"><button class="btn btn-sol" id="fSave">💾 Publicar</button>
     <button class="btn btn-ghost" id="fCancel">Cancelar</button></div>
     <p id="fMsg" style="margin-top:.8rem;font-size:.9rem"></p>`);
@@ -215,7 +213,6 @@ function formPost(p){
       const datos=document.getElementById("fDatos").value.split("\n").map(s=>s.trim()).filter(Boolean)
         .map(l=>{const i=l.indexOf(":");return i>0?[l.slice(0,i).trim(),l.slice(i+1).trim()]:[l,""];});
       const categoria=document.getElementById("fCat").value.trim();
-      const whatsapp=document.getElementById("fWapp").value.replace(/\D/g,"");
       if(usaCMS()){
         let imgPath=p.imagen;
         if(nuevoFile){
@@ -225,7 +222,7 @@ function formPost(p){
           if(!up.ok)throw new Error("subir imagen"); imgPath=up.path;
         }
         const post={id:p.id||null, pagina, titulo, imagen:imgPath||"img/hero-humedal.webp",
-          alt:titulo, cuerpo, datos, categoria, whatsapp};
+          alt:titulo, cuerpo, datos, categoria};
         const j=await cmsApi("savePost",{post});
         if(!j.ok)throw new Error(j.error||"guardar");
       }else{
@@ -234,9 +231,9 @@ function formPost(p){
         const {sha,data}=await ghLeer("posts.json");
         const hoy=new Date().toISOString().slice(0,10);
         if(esNuevo)data.push({id:"p"+Date.now(),pagina,titulo,imagen:imgPath||"img/hero-humedal.webp",
-          alt:titulo,cuerpo,datos,fecha:hoy,fijo:false,categoria,whatsapp});
+          alt:titulo,cuerpo,datos,fecha:hoy,fijo:false,categoria});
         else{const i=data.findIndex(x=>x.id===p.id);
-          data[i]={...data[i],pagina,titulo,imagen:imgPath,cuerpo,datos,fecha:hoy,categoria,whatsapp};}
+          data[i]={...data[i],pagina,titulo,imagen:imgPath,cuerpo,datos,fecha:hoy,categoria};}
         await ghGuardar("posts.json",data,sha,(esNuevo?"Nueva":"Editar")+" publicación: "+titulo);
       }
       msg.textContent="✅ ¡Publicado! La página se actualizará en ~1 minuto.";

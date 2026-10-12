@@ -1484,18 +1484,134 @@
   ]
  },
  {
-  "id": "s-casa-ejemplo",
+  "id": "s-casa-nelly-rubi",
   "pagina": "servicios",
-  "titulo": "Casa de renta «Villa Las Palmas» (ejemplo)",
-  "alt": "Casa de renta de ejemplo en Playa Larga",
+  "titulo": "Casa Nelly Rubi",
   "imagen": "img/playa-giron.webp",
-  "fecha": "2026-09-20",
-  "fijo": false,
-  "categoria": "Hospedaje",
-  "whatsapp": "5350000000",
+  "alt": "Casa Nelly Rubi",
   "cuerpo": [
-   "Casa de renta en Playa Larga con 3 habitaciones, a pocos pasos de la playa. Ideal para familias y grupos que quieren explorar la Ciénaga con comodidad.",
-   "⚠️ Este es un anuncio de ejemplo: será reemplazado por un negocio real. Si esta casa fuera tuya, aquí aparecerían tus fotos, tus precios y tu WhatsApp."
+   "Casa particular ubicada en Playa Girón, una de las zonas de playa más visitadas de la Ciénaga de Zapata. Los viajeros la destacan por el trato familiar y la cercanía al mar.",
+   "Ideal como base para recorrer la zona: el Museo de Playa Girón, la Cueva de los Peces y Punta Perdiz quedan a pocos minutos."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Girón"
+   ],
+   [
+    "Tipo",
+    "Casa particular"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hostal-asiel-garcia",
+  "pagina": "servicios",
+  "titulo": "Hostal Asiel García",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal Asiel García",
+  "cuerpo": [
+   "Hostal en Playa Girón dirigido por su propietario, con una de las valoraciones más altas de la zona entre los viajeros.",
+   "Ofrece habitaciones con baño privado en un ambiente tranquilo, a pasos de la playa y de los puntos de buceo."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Girón"
+   ],
+   [
+    "Tipo",
+    "Hostal"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hostal-luis",
+  "pagina": "servicios",
+  "titulo": "Hostal Luis",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal Luis",
+  "cuerpo": [
+   "Casa de hospedaje en Playa Girón recomendada en guías internacionales de viaje como TripAdvisor y Lonely Planet.",
+   "Sus anfitriones ayudan a organizar el transporte y las excursiones por la Ciénaga, lo que la hace práctica para quien visita por primera vez."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Girón"
+   ],
+   [
+    "Tipo",
+    "Casa particular"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-casa-tony-bb",
+  "pagina": "servicios",
+  "titulo": "Casa Tony B & B",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Tony B & B",
+  "cuerpo": [
+   "Casa de alquiler en Playa Girón a unos 150 metros del mar, con habitaciones con baño privado.",
+   "Sus anfitriones organizan excursiones por la zona: ideal para combinar playa y naturaleza sin moverse lejos."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Girón"
+   ],
+   [
+    "Tipo",
+    "Casa particular"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-rinconcito-amaury",
+  "pagina": "servicios",
+  "titulo": "El Rinconcito de Amaury",
+  "imagen": "img/playa-giron.webp",
+  "alt": "El Rinconcito de Amaury",
+  "cuerpo": [
+   "Casa particular en Playa Girón, una de las pocas de la zona que cuenta con piscina.",
+   "Buena ubicación cerca del museo y de la estación de ómnibus, práctica para moverse por la región."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Girón"
+   ],
+   [
+    "Tipo",
+    "Casa particular"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-casa-yoan-zoyli",
+  "pagina": "servicios",
+  "titulo": "Casa Yoan y Zoyli",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Casa Yoan y Zoyli",
+  "cuerpo": [
+   "Casa frente a la playa en Playa Larga, reconocida como superanfitrión por sus huéspedes.",
+   "Sus anfitriones gestionan actividades dentro del parque nacional: una ventaja para quienes buscan naturaleza y aventura."
   ],
   "datos": [
    [
@@ -1503,59 +1619,228 @@
     "Playa Larga"
    ],
    [
-    "Habitaciones",
-    "3"
+    "Tipo",
+    "Casa particular"
    ]
-  ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
  },
  {
-  "id": "s-taxi-ejemplo",
+  "id": "s-villa-turquesa",
   "pagina": "servicios",
-  "titulo": "Taxi «Rutas del Humedal» (ejemplo)",
-  "alt": "Taxi de ejemplo en la Ciénaga de Zapata",
+  "titulo": "Villa Turquesa",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Villa Turquesa",
+  "cuerpo": [
+   "Casa particular frente al mar en Playa Larga, con habitaciones con baño privado.",
+   "Sus anfitriones coordinan traslados y taxis, lo que facilita la llegada y los movimientos por la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Tipo",
+    "Casa particular"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-hostal-elio",
+  "pagina": "servicios",
+  "titulo": "Hostal Elio",
+  "imagen": "img/playa-giron.webp",
+  "alt": "Hostal Elio",
+  "cuerpo": [
+   "Hostal en la zona de Caletón, Playa Larga, con acceso directo a la playa.",
+   "Su anfitrión lleva una década recibiendo viajeros: una garantía de experiencia en la zona."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga (Caletón)"
+   ],
+   [
+    "Tipo",
+    "Hostal"
+   ]
+  ],
+  "categoria": "Hospedaje",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-restaurante-los-pinos",
+  "pagina": "servicios",
+  "titulo": "Restaurante Los Pinos",
+  "imagen": "img/hero-humedal.webp",
+  "alt": "Restaurante Los Pinos",
+  "cuerpo": [
+   "Restaurante en Playa Larga especializado en cocina cubana y caribeña, uno de los mejor valorados de la zona por los visitantes.",
+   "Buena parada para comer después de un día de playa o de excursiones por el humedal."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Tipo",
+    "Restaurante"
+   ]
+  ],
+  "categoria": "Gastronomía",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-restaurant-don-alexis",
+  "pagina": "servicios",
+  "titulo": "Restaurant Don Alexis",
+  "imagen": "img/hero-humedal.webp",
+  "alt": "Restaurant Don Alexis",
+  "cuerpo": [
+   "El restaurante número uno de Playa Larga según las opiniones de viajeros en TripAdvisor, con cocina caribeña y mariscos.",
+   "Una opción segura para probar los sabores del mar en plena Ciénaga de Zapata."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Tipo",
+    "Restaurante"
+   ]
+  ],
+  "categoria": "Gastronomía",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-chuchi-pescador",
+  "pagina": "servicios",
+  "titulo": "Chuchi El Pescador",
+  "imagen": "img/hero-humedal.webp",
+  "alt": "Chuchi El Pescador",
+  "cuerpo": [
+   "Restaurante de cocina caribeña y mariscos muy cerca de la playa en Playa Larga.",
+   "Con más de un centenar de opiniones de viajeros, es de los locales más frecuentados de la zona."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Tipo",
+    "Restaurante"
+   ]
+  ],
+  "categoria": "Gastronomía",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-dona-rosita",
+  "pagina": "servicios",
+  "titulo": "Dona Rosita Restaurante",
+  "imagen": "img/hero-humedal.webp",
+  "alt": "Dona Rosita Restaurante",
+  "cuerpo": [
+   "Restaurante familiar en Playa Larga con cocina caribeña e internacional, valorado con la máxima puntuación por sus comensales.",
+   "Ambiente acogedor, pensado para disfrutar en familia después de explorar la Ciénaga."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Tipo",
+    "Restaurante"
+   ]
+  ],
+  "categoria": "Gastronomía",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-cubataxis",
+  "pagina": "servicios",
+  "titulo": "CubaTaxis",
   "imagen": "img/sendero-manglar.webp",
-  "fecha": "2026-09-20",
-  "fijo": false,
-  "categoria": "Transporte",
-  "whatsapp": "5350000000",
+  "alt": "CubaTaxis",
   "cuerpo": [
-   "Servicio de taxi para traslados entre Playa Larga, Playa Girón y Boca de Guamá, además de excursiones por la zona. Viaja cómodo y con un chofer que conoce cada rincón del humedal.",
-   "⚠️ Este es un anuncio de ejemplo: será reemplazado por un negocio real."
+   "Plataforma de traslados con rutas entre La Habana y la zona de Playa Larga y Playa Girón.",
+   "Permite reservar el viaje con antelación: útil para llegar a la Ciénaga sin depender del transporte público."
   ],
   "datos": [
    [
-    "Zona",
-    "Playa Larga · Playa Girón · Boca de Guamá"
+    "Ubicación",
+    "La Habana ↔ Playa Larga / Playa Girón"
    ],
    [
-    "Servicio",
-    "Traslados y excursiones"
+    "Tipo",
+    "Plataforma de traslados"
    ]
-  ]
+  ],
+  "categoria": "Transporte",
+  "fecha": "2026-10-12",
+  "fijo": false
  },
  {
-  "id": "s-guia-ejemplo",
+  "id": "s-gocubago",
   "pagina": "servicios",
-  "titulo": "Guía local de senderismo (ejemplo)",
-  "alt": "Guía local de ejemplo en la Ciénaga",
-  "imagen": "img/zunzuncito.webp",
-  "fecha": "2026-09-20",
-  "fijo": false,
-  "categoria": "Guías",
-  "whatsapp": "5350000000",
+  "titulo": "GoCubaGo",
+  "imagen": "img/sendero-manglar.webp",
+  "alt": "GoCubaGo",
   "cuerpo": [
-   "Guía local para caminatas por los senderos del humedal y avistamiento de aves, incluyendo el zunzuncito, el ave más pequeña del mundo. Tours en español e inglés.",
-   "⚠️ Este es un anuncio de ejemplo: será reemplazado por un negocio real."
+   "Servicio de taxi colectivo y privado entre La Habana y las playas de la Ciénaga de Zapata.",
+   "El taxi colectivo es una alternativa económica para llegar a Playa Girón o Playa Larga, con reserva en línea."
   ],
   "datos": [
    [
-    "Idiomas",
-    "Español · Inglés"
+    "Ubicación",
+    "La Habana ↔ Playa Girón / Playa Larga"
    ],
    [
-    "Tours",
-    "Senderismo, aves, snorkel"
+    "Tipo",
+    "Taxi colectivo y privado"
    ]
-  ]
+  ],
+  "categoria": "Transporte",
+  "fecha": "2026-10-12",
+  "fijo": false
+ },
+ {
+  "id": "s-carlos-birdwatching",
+  "pagina": "servicios",
+  "titulo": "Carlo's Birdwatching Tours",
+  "imagen": "img/zunzuncito.webp",
+  "alt": "Carlo's Birdwatching Tours",
+  "cuerpo": [
+   "Guía local de Playa Girón especializado en avistamiento de aves de la Ciénaga de Zapata.",
+   "La Ciénaga es uno de los mejores lugares de Cuba para observar aves endémicas como el tocororo y el zunzuncito, y un guía local marca la diferencia."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Girón"
+   ],
+   [
+    "Tipo",
+    "Guía de avistamiento de aves"
+   ]
+  ],
+  "categoria": "Guías",
+  "fecha": "2026-10-12",
+  "fijo": false
  }
 ]

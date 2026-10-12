@@ -18,11 +18,11 @@ function fichaHTML(p, admin){
     ? `<div class="admin-tools"><button class="tool-btn" data-edit="${p.id}">✏️ Editar</button><button class="tool-btn del" data-del="${p.id}">🗑️</button></div>` : "";
   const cat = p.categoria ? `<span class="fcat">${esc(p.categoria)}</span>` : "";
   let wapp = "";
-  if(p.whatsapp){
-    const num = String(p.whatsapp).replace(/\D/g,"");
-    if(num){
-      const txt = encodeURIComponent("Hola, vi su anuncio en la guía de la Ciénaga de Zapata y me interesa.");
-      wapp = `<a class="btn-wapp" href="https://wa.me/${num}?text=${txt}" target="_blank" rel="noopener">💬 WhatsApp</a>`;
+  if(p.pagina==="servicios"){
+    const wnum = String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
+    if(wnum){
+      const txt = encodeURIComponent("Hola, vi el anuncio de «"+p.titulo+"» en la guía de la Ciénaga de Zapata y me interesa.");
+      wapp = `<a class="btn-wapp" href="https://wa.me/${wnum}?text=${txt}" target="_blank" rel="noopener">💬 WhatsApp</a>`;
     }
   }
   return `<article class="ficha rv vis" id="${esc(p.id)}">${tools}
