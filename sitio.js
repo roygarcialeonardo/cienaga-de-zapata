@@ -270,10 +270,11 @@ async function renderDetalle(){
   + '<form id="dtForm" novalidate>'
   + '<label>Nombre *<input type="text" id="dtNombre" autocomplete="name"></label>'
   + '<label>WhatsApp o email *<input type="text" id="dtContacto" autocomplete="tel"></label>'
-  + '<div class="dt-dos">'
+  + '<div class="dt-dos" id="dtFechas"' + (habAplica?"":" hidden") + '>'
   + '<label>Llegada *<input type="date" id="dtLlegada"></label>'
   + '<label>Salida *<input type="date" id="dtSalida"></label>'
   + '</div>'
+  + '<label id="dtDiaWrap"' + (habAplica?" hidden":"") + '>Día *<input type="date" id="dtDia"></label>'
   + viajerosHTML("dt")
   + (habAplica ? habHTML("dt", true) : "")
   + '<label>Mensaje (opcional)<textarea id="dtMensaje" rows="3" placeholder="Alguna petición especial…"></textarea></label>'
@@ -312,8 +313,12 @@ async function renderDetalle(){
 function validarReserva(v){
   if(!v.nombre) return {error:"Escribe tu nombre."};
   if(!v.contacto) return {error:"Escribe tu WhatsApp o email para contactarte."};
-  if(!v.llegada || !v.salida) return {error:"Elige las fechas de llegada y salida."};
-  if(v.llegada >= v.salida) return {error:"La fecha de salida debe ser posterior a la de llegada."};
+  if(v.hospedaje){
+    if(!v.llegada || !v.salida) return {error:"Elige las fechas de llegada y salida."};
+    if(v.llegada >= v.salida) return {error:"La fecha de salida debe ser posterior a la de llegada."};
+  }else{
+    if(!v.dia) return {error:"Elige el día."};
+  }
   if(!(v.ad >= 1)) return {error:"Debe viajar al menos 1 adulto."};
   return {ok:true};
 }
@@ -325,11 +330,15 @@ function reservaWAUrl(titulo, v){
     "Hola, quiero solicitar una reserva:",
     "— Negocio: " + titulo,
     "— Nombre: " + v.nombre,
-    "— Contacto: " + v.contacto,
-    "— Llegada: " + fechaCorta(v.llegada),
-    "— Salida: " + fechaCorta(v.salida),
-    "— Viajeros: " + nViaj + " (Adultos: " + (v.ad||0) + ", Niños: " + (v.nn||0) + ", Bebés: " + (v.bb||0) + ", Mascotas: " + (v.mc||0) + ")"
+    "— Contacto: " + v.contacto
   ];
+  if(v.hospedaje){
+    lineas.push("— Llegada: " + fechaCorta(v.llegada));
+    lineas.push("— Salida: " + fechaCorta(v.salida));
+  }else{
+    lineas.push("— Día: " + fechaCorta(v.dia));
+  }
+  lineas.push("— Viajeros: " + nViaj + " (Adultos: " + (v.ad||0) + ", Niños: " + (v.nn||0) + ", Bebés: " + (v.bb||0) + ", Mascotas: " + (v.mc||0) + ")");
   if(v.hab != null) lineas.push("— Habitaciones: " + v.hab);
   if(v.mensaje) lineas.push("— Mensaje: " + v.mensaje);
   return "https://wa.me/" + wnum + "?text=" + encodeURIComponent(lineas.join("\n"));
@@ -343,6 +352,8 @@ function enviarReservaDetalle(e){
     contacto: document.getElementById("dtContacto").value.trim(),
     llegada: document.getElementById("dtLlegada").value,
     salida: document.getElementById("dtSalida").value,
+    dia: document.getElementById("dtDia").value,
+    hospedaje: detalleHabAplica,
     ad: vjInt(vjEl,"ad"), nn: vjInt(vjEl,"nn"), bb: vjInt(vjEl,"bb"), mc: vjInt(vjEl,"mc"),
     hab: detalleHabAplica ? habNum("dt") : null,
     mensaje: document.getElementById("dtMensaje").value.trim()
@@ -516,10 +527,11 @@ function montarModalReserva(){
     '<form id="mrForm" novalidate>' +
       '<label>Nombre *<input type="text" id="mrNombre" required autocomplete="name"></label>' +
       '<label>WhatsApp o email *<input type="text" id="mrContacto" required autocomplete="tel"></label>' +
-      '<div class="mr-dos">' +
+      '<div class="mr-dos" id="mrFechas">' +
         '<label>Llegada *<input type="date" id="mrLlegada" required></label>' +
         '<label>Salida *<input type="date" id="mrSalida" required></label>' +
       '</div>' +
+      '<label id="mrDiaWrap" hidden>Día *<input type="date" id="mrDia"></label>' +
       viajerosHTML("mr") +
       habHTML("mr", false) +
       '<label>Mensaje (opcional)<textarea id="mrMensaje" rows="3" placeholder="Alguna petición especial…"></textarea></label>' +
@@ -537,6 +549,10 @@ function abrirModalReserva(titulo, categoria){
   reservaHab = (categoria === "Hospedaje");
   const hw = document.getElementById("mrHabWrap");
   if(hw) hw.hidden = !reservaHab;
+  const mf = document.getElementById("mrFechas");
+  if(mf) mf.hidden = !reservaHab;
+  const md = document.getElementById("mrDiaWrap");
+  if(md) md.hidden = reservaHab;
   document.getElementById("mrNegocio").innerHTML = "🏠 " + esc(titulo);
   const err = document.getElementById("mrError");
   err.hidden = true; err.textContent = "";
@@ -562,6 +578,8 @@ function enviarReserva(e){
     contacto: document.getElementById("mrContacto").value.trim(),
     llegada: document.getElementById("mrLlegada").value,
     salida: document.getElementById("mrSalida").value,
+    dia: document.getElementById("mrDia").value,
+    hospedaje: reservaHab,
     ad: vjInt(vjEl,"ad"), nn: vjInt(vjEl,"nn"), bb: vjInt(vjEl,"bb"), mc: vjInt(vjEl,"mc"),
     hab: reservaHab ? habNum("mr") : null,
     mensaje: document.getElementById("mrMensaje").value.trim()

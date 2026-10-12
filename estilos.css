@@ -383,3 +383,5 @@ footer .nota{opacity:.65;max-width:62ch;margin-top:1rem;font-size:.82rem;color:#
 .vj-btn:disabled{opacity:.28;cursor:default}
 .vj-num{min-width:1.3rem;text-align:center;font-weight:700;font-size:.95rem}
 .vj-hab{border:1.5px solid var(--borde);border-radius:12px;background:#fff;margin-bottom:.8rem;padding:.2rem .85rem}
+/* El atributo hidden debe imponerse aunque la clase defina otro display */
+[hidden]{display:none!important}
