@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalle | Ciénaga de Zapata</title>
+<meta name="description" content="Ficha detallada de un servicio turístico de la Ciénaga de Zapata: descripción, ubicación y solicitud de reserva por WhatsApp.">
+<link rel="canonical" href="https://roygarcialeonardo.github.io/cienaga-de-zapata/detalle.html">
+<meta property="og:title" content="Detalle | Ciénaga de Zapata 🌿">
+<meta property="og:description" content="Ficha detallada de un servicio turístico de la Ciénaga de Zapata: descripción, ubicación y solicitud de reserva por WhatsApp.">
+<meta property="og:image" content="https://roygarcialeonardo.github.io/cienaga-de-zapata/img/hero-humedal.webp">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mark">🌿</span> Ciénaga de Zapata</a>
+    <div class="nav-links">
+      <a href="lugares.html">Lugares</a><a href="secretos.html">Secretos</a><a href="fauna-flora.html">Fauna</a>
+      <a href="actividades.html">Actividades</a><a href="historia.html">Historia</a><a href="gastronomia.html">Gastronomía</a><a href="guia.html">Guía</a><a href="servicios.html">Servicios</a>
+    </div>
+    <span id="connBadge" class="conn-badge" title="Estado de la conexión"><span id="connDot" class="conn-dot"></span><span id="connText">···</span></span>
+  </div>
+</nav>
+<main><section class="dt-wrap"><div class="wrap">
+<div id="detalle"><p style="opacity:.7">Cargando…</p></div>
+<noscript><p>Activa JavaScript para ver este anuncio.</p></noscript>
+<div class="pag-nav"><a href="servicios.html">← Servicios turísticos</a><a href="index.html">Inicio →</a></div>
+</div></section></main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index.html"><span class="mark">🌿</span> Ciénaga de Zapata</a>
+        <p class="nota">Guía de viaje del humedal más grande del Caribe insular: sus lugares, su gente y su naturaleza. Matanzas, Cuba. 🇨🇺</p></div>
+      <div><b>Explora</b><br><br>
+        <a href="lugares.html" style="text-decoration:none">Lugares</a><br>
+        <a href="secretos.html" style="text-decoration:none">Rincones secretos</a><br>
+        <a href="fauna-flora.html" style="text-decoration:none">Fauna y flora</a><br>
+        <a href="actividades.html" style="text-decoration:none">Actividades</a></div>
+      <div><b>Planifica</b><br><br>
+        <a href="historia.html" style="text-decoration:none">Historia</a><br>
+        <a href="gastronomia.html" style="text-decoration:none">Gastronomía</a><br>
+        <a href="guia.html" style="text-decoration:none">Guía del viajero</a><br>
+        <a href="servicios.html" style="text-decoration:none">Servicios turísticos</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>Hecho con 💚 para Cuba · Las imágenes son ilustraciones generadas con IA con fines promocionales.</span>
+      <span>© 2026 Ciénaga de Zapata</span>
+    </div>
+  </div>
+</footer>
+<script src="config.js"></script>
+<script>const DETALLE=true;</script>
+<script src="sitio.js"></script>
+<script src="admin.js"></script>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

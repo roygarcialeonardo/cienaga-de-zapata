@@ -139,13 +139,14 @@ function buscarHome(q, box){
     }).slice(0, 12);
     box.innerHTML =
       `<p class="home-count">${res.length ? res.length+(res.length===1?" resultado":" resultados")+" para «"+esc(q)+"»" : "Sin resultados para «"+esc(q)+"». Prueba con otra palabra."}</p>` +
-      (res.length ? `<div class="cont-grid">`+res.map(p=>
-        `<a class="cont-card" href="${esc(p.pagina)}.html#${esc(p.id)}">
+      (res.length ? `<div class="cont-grid">`+res.map(p=>{
+        const href = p.pagina==="servicios" ? "detalle.html?id="+encodeURIComponent(p.id) : esc(p.pagina)+".html#"+esc(p.id);
+        return `<a class="cont-card" href="${href}">
           <div class="cont-img">${p.categoria?`<span class="cont-badge">${esc(p.categoria)}</span>`:""}<img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"><span class="cont-seccion">${esc(nombrePag(p.pagina))}</span></div>
           <div class="cont-body"><h3>${esc(p.titulo)}</h3>
           <p class="cont-extracto">${esc(extracto(p, 120))}</p>
-          <span class="cont-ver">Ver →</span></div></a>`
-      ).join("")+`</div>` : "");
+          <span class="cont-ver">Ver →</span></div></a>`;
+      }).join("")+`</div>` : "");
     const y = box.getBoundingClientRect().top + scrollY - 120;
     scrollTo({top:y, behavior:"smooth"});
   }).catch(e=>{
@@ -197,7 +198,8 @@ function renderServicios(){
     aplicarFiltro();
     if(location.hash){
       const id = location.hash.slice(1);
-      if(srvPosts.some(p=>String(p.id)===id)) setTimeout(()=>abrirDetalleServicio(id), 300);
+      /* Deep link antiguo: ahora el detalle vive en detalle.html */
+      if(srvPosts.some(p=>String(p.id)===id)) location.replace("detalle.html?id="+encodeURIComponent(id));
     }
   }).catch(e=>{
     cont.innerHTML = "<p style='opacity:.7'>No se pudo cargar el contenido. Revisa tu conexión e intenta de nuevo.</p>";
@@ -224,42 +226,128 @@ function aplicarFiltro(){
   if(window.CZAdmin) window.CZAdmin.bindTools(cont);
 }
 
-/* Modal de detalle de Servicios (z-index 85: por debajo del modal de reserva, que usa 90) */
-function montarModalDetalle(){
-  if(document.getElementById("modalDetalleSrv")) return;
-  const v = document.createElement("div");
-  v.id = "modalDetalleSrv";
-  v.className = "srv-detalle";
-  v.innerHTML =
-  '<div class="sd-caja" role="dialog" aria-modal="true">' +
-    '<button type="button" class="sd-x" id="sdCerrar" aria-label="Cerrar">✕</button>' +
-    '<div id="sdCont"></div>' +
-  '</div>';
-  document.body.appendChild(v);
-  v.addEventListener("click", e=>{ if(e.target===v) cerrarDetalleServicio(); });
-  document.getElementById("sdCerrar").addEventListener("click", cerrarDetalleServicio);
-}
-function abrirDetalleServicio(id){
-  const p = srvPosts.find(x=>String(x.id)===String(id));
-  if(!p) return;
+/* ---------- Página de detalle (detalle.html?id=...) ----------
+   El detalle de cada negocio vive aquí: migas, galería, descripción,
+   tarjeta de reserva (solo servicios) y relacionados. */
+let detalleTitulo = "";
+
+async function renderDetalle(){
+  const cont = document.getElementById("detalle");
+  if(!cont || typeof DETALLE === "undefined") return;
+  const id = new URLSearchParams(location.search).get("id");
+  let posts;
+  try{ posts = await getPosts(); }
+  catch(e){
+    cont.innerHTML = "<p class='dt-error'>No se pudo cargar el anuncio. Revisa tu conexión e intenta de nuevo.</p>";
+    return;
+  }
+  const p = posts.find(x=>String(x.id)===String(id));
+  if(!p){
+    document.title = "Anuncio no encontrado | Ciénaga de Zapata";
+    cont.innerHTML = '<div class="dt-nofound"><h2>😕 No encontramos este anuncio</h2>'
+      + '<p>Es posible que haya sido eliminado o que el enlace esté incompleto.</p>'
+      + '<p><a class="btn btn-sol" href="index.html">Volver al inicio</a> '
+      + '<a class="btn btn-ghost" href="servicios.html">Ver servicios</a></p></div>';
+    return;
+  }
+  detalleTitulo = p.titulo;
+  document.title = p.titulo + " | Ciénaga de Zapata";
+  const md = document.querySelector('meta[name="description"]');
+  if(md) md.setAttribute("content", extracto(p, 150));
+  const esServicio = p.pagina === "servicios";
+  const seccionHref = esServicio ? "servicios.html" : esc(p.pagina) + ".html";
+  const zona = datoDe(p, /^ubicaci[óo]n$/i);
   const paras = cuerpoArr(p).map(t=>`<p>${esc(t)}</p>`).join("");
   const datos = (p.datos||[]).map(d=>`<li><b>${esc(d[0])}:</b> ${esc(d[1])}</li>`).join("");
-  const wapp = srvWhats(p, "btn-wapp", "💬 WhatsApp");
-  const resBtn = `<button type="button" class="btn-reserva" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}">📅 Solicitar reserva</button>`;
-  document.getElementById("sdCont").innerHTML =
-    `<div class="sd-foto"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}"></div>
-     <div class="sd-cuerpo"><h3>${esc(p.titulo)}</h3>
-     ${p.categoria?`<span class="srv-badge srv-badge-static">${esc(p.categoria)}</span>`:""}
-     ${paras}${datos?`<ul class="sd-datos">${datos}</ul>`:""}
-     <div class="srv-cta">${wapp}${resBtn}</div></div>`;
-  document.getElementById("modalDetalleSrv").classList.add("on");
-  document.body.style.overflow = "hidden";
+  const wapp = esServicio ? srvWhats(p, "btn-wapp dt-wapp", "💬 WhatsApp") : "";
+  const reservaCard = esServicio ?
+  '<aside class="dt-reserva" aria-label="Solicitar reserva">'
+  + '<h3>📅 Solicitar reserva</h3>'
+  + '<p class="dt-reserva-sub">Completa tus datos y la solicitud llegará por WhatsApp.</p>'
+  + '<form id="dtForm" novalidate>'
+  + '<label>Nombre *<input type="text" id="dtNombre" autocomplete="name"></label>'
+  + '<label>WhatsApp o email *<input type="text" id="dtContacto" autocomplete="tel"></label>'
+  + '<div class="dt-dos">'
+  + '<label>Llegada *<input type="date" id="dtLlegada"></label>'
+  + '<label>Salida *<input type="date" id="dtSalida"></label>'
+  + '</div>'
+  + '<label>Huéspedes *<input type="number" id="dtHuespedes" min="1" step="1" value="2"></label>'
+  + '<label>Mensaje (opcional)<textarea id="dtMensaje" rows="3" placeholder="Alguna petición especial…"></textarea></label>'
+  + '<p class="error" id="dtError" hidden></p>'
+  + '<button type="submit" class="btn btn-sol dt-enviar">📩 Enviar por WhatsApp</button>'
+  + '</form>' + wapp + '</aside>' : "";
+  /* Relacionados: misma categoría (servicios) o misma página (contenido), hasta 4 */
+  const rel = posts.filter(x=>String(x.id)!==String(p.id) &&
+    (esServicio ? (x.pagina==="servicios" && x.categoria===p.categoria) : (x.pagina===p.pagina))).slice(0, 4);
+  cont.innerHTML =
+  '<nav class="dt-migas" aria-label="Migas"><a href="index.html">Inicio</a> › <a href="'+seccionHref+'">'+esc(nombrePag(p.pagina))+'</a> › <span>'+esc(p.titulo)+'</span></nav>'
+  + '<h1 class="dt-titulo">'+esc(p.titulo)+'</h1>'
+  + '<p class="dt-meta">'
+  + (p.categoria?'<span class="srv-badge srv-badge-static">'+esc(p.categoria)+'</span>':"")
+  + (zona?'<span class="dt-zona">📍 '+esc(zona)+'</span>':"") + '</p>'
+  + '<div class="dt-galeria" data-fotos="1">'
+  + '<figure class="dt-foto"><img src="'+esc(p.imagen)+'" alt="'+esc(p.alt||p.titulo)+'"></figure>'
+  + '<!-- futuro: más <figure class="dt-foto"> aquí para galería múltiple -->'
+  + '</div>'
+  + '<div class="dt-cols"><div class="dt-main"><div class="dt-desc">'+paras+'</div>'
+  + (datos?'<ul class="dt-datos">'+datos+'</ul>':"")
+  + '</div>' + (esServicio?'<div class="dt-side">'+reservaCard+'</div>':"") + '</div>'
+  + (rel.length?'<section class="dt-rel"><h2>También te puede interesar</h2><div class="srv-grid">'
+    + rel.map(x=>esServicio?tarjetaServicio(x,false):tarjetaContenido(x,false)).join("")
+    + '</div></section>':"");
+  if(esServicio){
+    const f = document.getElementById("dtForm");
+    if(f) f.addEventListener("submit", enviarReservaDetalle);
+  }else{
+    contPosts = rel; /* para que el modal de contenido funcione en los relacionados */
+    if(window.CZAdmin) window.CZAdmin.bindTools(cont);
+  }
 }
-function cerrarDetalleServicio(){
-  const m = document.getElementById("modalDetalleSrv");
-  if(m) m.classList.remove("on");
-  const r = document.getElementById("modalReserva");
-  if(!r || !r.classList.contains("on")) document.body.style.overflow = "";
+
+/* Validación y URL de WhatsApp compartidas por el modal y el formulario del detalle */
+function validarReserva(v){
+  if(!v.nombre) return {error:"Escribe tu nombre."};
+  if(!v.contacto) return {error:"Escribe tu WhatsApp o email para contactarte."};
+  if(!v.llegada || !v.salida) return {error:"Elige las fechas de llegada y salida."};
+  if(v.llegada >= v.salida) return {error:"La fecha de salida debe ser posterior a la de llegada."};
+  if(!(v.hues >= 1)) return {error:"Indica al menos 1 huésped."};
+  return {ok:true};
+}
+function reservaWAUrl(titulo, v){
+  const wnum = String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
+  if(!wnum) return "";
+  const lineas = [
+    "Hola, quiero solicitar una reserva:",
+    "— Negocio: " + titulo,
+    "— Nombre: " + v.nombre,
+    "— Contacto: " + v.contacto,
+    "— Llegada: " + fechaCorta(v.llegada),
+    "— Salida: " + fechaCorta(v.salida),
+    "— Huéspedes: " + v.hues
+  ];
+  if(v.mensaje) lineas.push("— Mensaje: " + v.mensaje);
+  return "https://wa.me/" + wnum + "?text=" + encodeURIComponent(lineas.join("\n"));
+}
+function enviarReservaDetalle(e){
+  e.preventDefault();
+  const err = document.getElementById("dtError");
+  const vals = {
+    nombre: document.getElementById("dtNombre").value.trim(),
+    contacto: document.getElementById("dtContacto").value.trim(),
+    llegada: document.getElementById("dtLlegada").value,
+    salida: document.getElementById("dtSalida").value,
+    hues: parseInt(document.getElementById("dtHuespedes").value, 10),
+    mensaje: document.getElementById("dtMensaje").value.trim()
+  };
+  const r = validarReserva(vals);
+  if(r.error){ err.textContent = r.error; err.hidden = false; return; }
+  err.hidden = true;
+  const url = reservaWAUrl(detalleTitulo, vals);
+  if(!url){ err.textContent = "No se pudo determinar el contacto. Intenta más tarde."; err.hidden = false; return; }
+  window.open(url, "_blank", "noopener");
+  toastReserva("¡Solicitud lista! Se abrirá WhatsApp para enviarla.");
+  document.getElementById("dtForm").reset();
+  document.getElementById("dtHuespedes").value = "2";
 }
 
 /* Clics: píldoras de categoría y apertura del detalle (fuera de botones) */
@@ -274,14 +362,9 @@ document.addEventListener("click", e=>{
   }
   const card = e.target.closest(".srv-card");
   if(card && !e.target.closest("[data-reserva],.srv-btnw,.tool-btn"))
-    abrirDetalleServicio(card.getAttribute("data-srv"));
+    location.href = "detalle.html?id=" + encodeURIComponent(card.getAttribute("data-srv"));
 });
-document.addEventListener("keydown", e=>{
-  if(e.key !== "Escape") return;
-  const r = document.getElementById("modalReserva");
-  if(r && r.classList.contains("on")) return; /* el otro handler la cierra */
-  cerrarDetalleServicio();
-});
+/* El modal de detalle antiguo de Servicios se eliminó: el detalle ahora vive en detalle.html */
 
 /* Home: novedades (últimas N de todas las páginas) */
 async function renderNovedades(){
@@ -290,13 +373,16 @@ async function renderNovedades(){
   try{
     const posts = await getPosts();
     const ult = posts.slice().sort((a,b)=>String(b.fecha).localeCompare(String(a.fecha))).slice(0,4);
-    cont.innerHTML = ult.map(p=>`
+    cont.innerHTML = ult.map(p=>{
+      const href = p.pagina==="servicios" ? "detalle.html?id="+encodeURIComponent(p.id) : esc(p.pagina)+".html#"+esc(p.id);
+      return `
       <article class="card rv vis">
         <div class="ph"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"><span class="tag">${esc(nombrePag(p.pagina))}</span></div>
         <div class="body"><h3>${esc(p.titulo)}</h3>
         <p>${esc((cuerpoArr(p)[0]||"").slice(0,140))}…</p>
-        <a class="ver-mas" href="${esc(p.pagina)}.html#${esc(p.id)}">Leer más →</a></div>
-      </article>`).join("");
+        <a class="ver-mas" href="${href}">Leer más →</a></div>
+      </article>`;
+    }).join("");
   }catch(e){ cont.innerHTML = ""; }
 }
 
@@ -305,7 +391,7 @@ function nombrePag(p){
           "historia":"Historia","gastronomia":"Gastronomía","guia":"Guía","servicios":"Servicios"}[p]||p;
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); chequearConn(); montarModalReserva(); montarModalDetalle(); montarModalDetalleCont(); initBuscadorHome(); });
+document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); renderDetalle(); chequearConn(); montarModalReserva(); montarModalDetalleCont(); initBuscadorHome(); });
 
 /* ---------- Solicitud de reserva (fichas de Servicios) ----------
    Sin calendarios ni pagos: el formulario arma el mensaje y lo envía
@@ -360,32 +446,19 @@ function fechaCorta(iso){
 function enviarReserva(e){
   e.preventDefault();
   const err = document.getElementById("mrError");
-  const nombre = document.getElementById("mrNombre").value.trim();
-  const contacto = document.getElementById("mrContacto").value.trim();
-  const llegada = document.getElementById("mrLlegada").value;
-  const salida = document.getElementById("mrSalida").value;
-  const hues = parseInt(document.getElementById("mrHuespedes").value, 10);
-  const mensaje = document.getElementById("mrMensaje").value.trim();
-  function falla(t){ err.textContent = t; err.hidden = false; return false; }
-  if(!nombre) return falla("Escribe tu nombre.");
-  if(!contacto) return falla("Escribe tu WhatsApp o email para contactarte.");
-  if(!llegada || !salida) return falla("Elige las fechas de llegada y salida.");
-  if(llegada >= salida) return falla("La fecha de salida debe ser posterior a la de llegada.");
-  if(!(hues >= 1)) return falla("Indica al menos 1 huésped.");
+  const vals = {
+    nombre: document.getElementById("mrNombre").value.trim(),
+    contacto: document.getElementById("mrContacto").value.trim(),
+    llegada: document.getElementById("mrLlegada").value,
+    salida: document.getElementById("mrSalida").value,
+    hues: parseInt(document.getElementById("mrHuespedes").value, 10),
+    mensaje: document.getElementById("mrMensaje").value.trim()
+  };
+  const r = validarReserva(vals);
+  if(r.error){ err.textContent = r.error; err.hidden = false; return; }
   err.hidden = true;
-  const wnum = String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
-  if(!wnum) return falla("No se pudo determinar el contacto. Intenta más tarde.");
-  const lineas = [
-    "Hola, quiero solicitar una reserva:",
-    "— Negocio: " + reservaTitulo,
-    "— Nombre: " + nombre,
-    "— Contacto: " + contacto,
-    "— Llegada: " + fechaCorta(llegada),
-    "— Salida: " + fechaCorta(salida),
-    "— Huéspedes: " + hues
-  ];
-  if(mensaje) lineas.push("— Mensaje: " + mensaje);
-  const url = "https://wa.me/" + wnum + "?text=" + encodeURIComponent(lineas.join("\n"));
+  const url = reservaWAUrl(reservaTitulo, vals);
+  if(!url){ err.textContent = "No se pudo determinar el contacto. Intenta más tarde."; err.hidden = false; return; }
   cerrarModalReserva();
   window.open(url, "_blank", "noopener");
   toastReserva("¡Solicitud lista! Se abrirá WhatsApp para enviarla.");
