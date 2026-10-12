@@ -1458,5 +1458,104 @@
   ],
   "fecha": "2026-10-06",
   "fijo": false
+ },
+ {
+  "id": "s-anuncia",
+  "pagina": "servicios",
+  "titulo": "📢 Anuncia tu negocio aquí",
+  "alt": "Anuncia tu negocio en la guía de la Ciénaga de Zapata",
+  "imagen": "img/hero-humedal.webp",
+  "fecha": "2026-10-12",
+  "fijo": false,
+  "categoria": "Anuncios",
+  "cuerpo": [
+   "¿Tienes una casa de renta, un taxi, un restaurante o eres guía local en la Ciénaga de Zapata? Aparece en esta guía y recibe contactos directos de turistas por WhatsApp, sin intermediarios.",
+   "Para anunciarte escríbenos por Telegram y te explicamos las opciones: https://t.me/slipknot1993cuba"
+  ],
+  "datos": [
+   [
+    "Contacto",
+    "Telegram: https://t.me/slipknot1993cuba"
+   ],
+   [
+    "Costo",
+    "Pregunta por las opciones"
+   ]
+  ]
+ },
+ {
+  "id": "s-casa-ejemplo",
+  "pagina": "servicios",
+  "titulo": "Casa de renta «Villa Las Palmas» (ejemplo)",
+  "alt": "Casa de renta de ejemplo en Playa Larga",
+  "imagen": "img/playa-giron.webp",
+  "fecha": "2026-09-20",
+  "fijo": false,
+  "categoria": "Hospedaje",
+  "whatsapp": "5350000000",
+  "cuerpo": [
+   "Casa de renta en Playa Larga con 3 habitaciones, a pocos pasos de la playa. Ideal para familias y grupos que quieren explorar la Ciénaga con comodidad.",
+   "⚠️ Este es un anuncio de ejemplo: será reemplazado por un negocio real. Si esta casa fuera tuya, aquí aparecerían tus fotos, tus precios y tu WhatsApp."
+  ],
+  "datos": [
+   [
+    "Ubicación",
+    "Playa Larga"
+   ],
+   [
+    "Habitaciones",
+    "3"
+   ]
+  ]
+ },
+ {
+  "id": "s-taxi-ejemplo",
+  "pagina": "servicios",
+  "titulo": "Taxi «Rutas del Humedal» (ejemplo)",
+  "alt": "Taxi de ejemplo en la Ciénaga de Zapata",
+  "imagen": "img/sendero-manglar.webp",
+  "fecha": "2026-09-20",
+  "fijo": false,
+  "categoria": "Transporte",
+  "whatsapp": "5350000000",
+  "cuerpo": [
+   "Servicio de taxi para traslados entre Playa Larga, Playa Girón y Boca de Guamá, además de excursiones por la zona. Viaja cómodo y con un chofer que conoce cada rincón del humedal.",
+   "⚠️ Este es un anuncio de ejemplo: será reemplazado por un negocio real."
+  ],
+  "datos": [
+   [
+    "Zona",
+    "Playa Larga · Playa Girón · Boca de Guamá"
+   ],
+   [
+    "Servicio",
+    "Traslados y excursiones"
+   ]
+  ]
+ },
+ {
+  "id": "s-guia-ejemplo",
+  "pagina": "servicios",
+  "titulo": "Guía local de senderismo (ejemplo)",
+  "alt": "Guía local de ejemplo en la Ciénaga",
+  "imagen": "img/zunzuncito.webp",
+  "fecha": "2026-09-20",
+  "fijo": false,
+  "categoria": "Guías",
+  "whatsapp": "5350000000",
+  "cuerpo": [
+   "Guía local para caminatas por los senderos del humedal y avistamiento de aves, incluyendo el zunzuncito, el ave más pequeña del mundo. Tours en español e inglés.",
+   "⚠️ Este es un anuncio de ejemplo: será reemplazado por un negocio real."
+  ],
+  "datos": [
+   [
+    "Idiomas",
+    "Español · Inglés"
+   ],
+   [
+    "Tours",
+    "Senderismo, aves, snorkel"
+   ]
+  ]
  }
 ]

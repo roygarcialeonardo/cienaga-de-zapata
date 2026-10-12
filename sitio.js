@@ -16,10 +16,19 @@ function fichaHTML(p, admin){
   const datos = (p.datos||[]).map(d=>`<li><b>${esc(d[0])}:</b> ${esc(d[1])}</li>`).join("");
   const tools = admin
     ? `<div class="admin-tools"><button class="tool-btn" data-edit="${p.id}">✏️ Editar</button><button class="tool-btn del" data-del="${p.id}">🗑️</button></div>` : "";
+  const cat = p.categoria ? `<span class="fcat">${esc(p.categoria)}</span>` : "";
+  let wapp = "";
+  if(p.whatsapp){
+    const num = String(p.whatsapp).replace(/\D/g,"");
+    if(num){
+      const txt = encodeURIComponent("Hola, vi su anuncio en la guía de la Ciénaga de Zapata y me interesa.");
+      wapp = `<a class="btn-wapp" href="https://wa.me/${num}?text=${txt}" target="_blank" rel="noopener">💬 WhatsApp</a>`;
+    }
+  }
   return `<article class="ficha rv vis" id="${esc(p.id)}">${tools}
     <div class="fimg"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"></div>
-    <div class="fbody"><h2>${esc(p.titulo)}</h2>${paras}
-    ${datos?`<ul class="datos">${datos}</ul>`:""}</div></article>`;
+    <div class="fbody"><h2>${esc(p.titulo)}</h2>${cat}${paras}
+    ${datos?`<ul class="datos">${datos}</ul>`:""}${wapp}</div></article>`;
 }
 
 /* Página de detalle: PAGINA definida antes del script */
@@ -63,7 +72,7 @@ async function renderNovedades(){
 
 function nombrePag(p){
   return {"lugares":"Lugares","secretos":"Secretos","fauna-flora":"Fauna","actividades":"Actividades",
-          "historia":"Historia","gastronomia":"Gastronomía","guia":"Guía"}[p]||p;
+          "historia":"Historia","gastronomia":"Gastronomía","guia":"Guía","servicios":"Servicios"}[p]||p;
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); chequearConn(); });
