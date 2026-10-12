@@ -313,3 +313,54 @@ body.admin .ficha{position:relative}
 .toast-reserva{position:fixed;left:50%;bottom:1.4rem;transform:translate(-50%,20px);z-index:95;background:#0a3524;border:1px solid var(--turquesa);color:#fff;font-weight:600;padding:.8rem 1.3rem;border-radius:999px;opacity:0;pointer-events:none;transition:.3s;max-width:92vw;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .toast-reserva.on{opacity:1;transform:translate(-50%,0)}
 @media(max-width:520px){.mr-dos{grid-template-columns:1fr}}
+
+/* ---------- SERVICIOS: cuadrícula moderna tipo Airbnb ----------
+   Solo afecta a servicios.html (clases .srv-*); .ficha de las demás páginas intacta. */
+.srv-filtros{margin:2.4rem 0 1.6rem;display:flex;flex-direction:column;gap:1rem}
+.srv-buscar{width:100%;max-width:580px;padding:.85rem 1.3rem;border-radius:999px;border:1.5px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font-size:1rem;font-family:inherit}
+.srv-buscar::placeholder{color:rgba(255,255,255,.5)}
+.srv-buscar:focus{outline:none;border-color:var(--turquesa);box-shadow:0 0 0 3px rgba(0,224,198,.18)}
+.srv-buscar::-webkit-search-cancel-button{filter:invert(1);cursor:pointer}
+.srv-top{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.srv-pills{display:flex;gap:.55rem;flex-wrap:wrap}
+.srv-pill{border:1.5px solid rgba(255,255,255,.25);background:transparent;color:#fff;font-weight:700;padding:.5rem 1.15rem;border-radius:999px;cursor:pointer;font-size:.9rem;font-family:inherit;transition:.2s}
+.srv-pill:hover{border-color:var(--turquesa)}
+.srv-pill.on{background:var(--turquesa);border-color:var(--turquesa);color:#06231a}
+.srv-count{font-size:.85rem;opacity:.65;font-weight:600}
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem;margin:0 0 3rem}
+.srv-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column;position:relative}
+.srv-card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(0,0,0,.42);border-color:rgba(0,224,198,.5)}
+.srv-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0a3524;flex:none}
+.srv-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.srv-card:hover .srv-img img{transform:scale(1.06)}
+.srv-badge{position:absolute;top:.8rem;left:.8rem;z-index:2;background:rgba(6,35,26,.88);color:#a7fff4;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .8rem;border-radius:999px}
+.srv-badge-static{position:static;display:inline-block;margin:.2rem 0 .8rem}
+.srv-body{padding:1.1rem 1.2rem 1.25rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.srv-body h3{font-size:1.12rem;line-height:1.25}
+.srv-zona{font-size:.88rem;font-weight:600;opacity:.85}
+.srv-anfit{font-size:.85rem;opacity:.68}
+.srv-extracto{font-size:.9rem;opacity:.75;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.srv-card .srv-cta{margin-top:.8rem}
+.srv-btnw,.srv-btnr{flex:1;text-align:center;text-decoration:none;font-weight:800;padding:.62rem .8rem;border-radius:999px;font-size:.92rem;transition:.2s;border:none;cursor:pointer;font-family:inherit;display:inline-block}
+.srv-btnw{background:#25D366;color:#fff;box-shadow:0 4px 14px rgba(37,211,102,.32)}
+.srv-btnw:hover{filter:brightness(1.1);color:#fff}
+.srv-btnr{background:linear-gradient(135deg,var(--turquesa),var(--turquesa-d));color:#06231a;box-shadow:0 4px 14px rgba(0,224,198,.3)}
+.srv-btnr:hover{filter:brightness(1.1)}
+.srv-card .admin-tools{position:absolute;top:.7rem;right:.7rem;display:none;gap:.4rem;z-index:3}
+body.admin .srv-card .admin-tools{display:flex}
+/* Modal de detalle (z-index 85: por debajo del modal de reserva, que usa 90) */
+.srv-detalle{position:fixed;inset:0;z-index:85;background:rgba(0,0,0,.72);display:none;place-items:center;padding:1rem;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.srv-detalle.on{display:grid}
+.sd-caja{position:relative;width:100%;max-width:640px;max-height:92vh;overflow-y:auto;background:var(--selva2);border:1px solid rgba(255,255,255,.14);border-radius:20px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.sd-foto{aspect-ratio:16/9;overflow:hidden;background:#0a3524}
+.sd-foto img{width:100%;height:100%;object-fit:cover}
+.sd-cuerpo{padding:1.6rem}
+.sd-cuerpo h3{font-size:1.5rem;margin-bottom:.3rem;padding-right:2.2rem}
+.sd-cuerpo p{margin-bottom:.8rem;opacity:.88}
+.sd-datos{list-style:none;background:rgba(255,255,255,.05);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0}
+.sd-datos li{margin-bottom:.45rem;font-size:.93rem}
+.sd-datos li b{color:var(--turquesa)}
+.sd-x{position:absolute;top:.9rem;right:.9rem;z-index:2;width:2.1rem;height:2.1rem;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.45);color:#fff;font-size:1rem;cursor:pointer;line-height:1}
+.sd-x:hover{background:rgba(255,255,255,.2)}
+.sd-caja .srv-cta{margin-top:1.1rem}
+@media(max-width:640px){.srv-grid{grid-template-columns:1fr}.sd-cuerpo{padding:1.2rem}.sd-cuerpo h3{font-size:1.3rem}}

@@ -38,6 +38,7 @@ function fichaHTML(p, admin){
 async function renderPagina(){
   const cont = document.getElementById("fichas");
   if(!cont || typeof PAGINA === "undefined") return;
+  if(PAGINA==="servicios"){ renderServicios(); return; }
   try{
     const posts = await getPosts();
     const lista = posts.filter(p=>p.pagina===PAGINA);
@@ -55,6 +56,145 @@ async function renderPagina(){
     cont.innerHTML = "<p style='opacity:.7'>No se pudo cargar el contenido. Revisa tu conexión e intenta de nuevo.</p>";
   }
 }
+
+/* ---------- Servicios: cuadrícula moderna tipo Airbnb ----------
+   Tarjetas compactas con búsqueda, píldoras de categoría y modal de detalle.
+   Reutiliza el modal de reserva existente (data-reserva / data-titulo). */
+let srvPosts = [];
+let srvCat = "Todos";
+let srvBuscarBound = false;
+
+function cuerpoArr(p){ return Array.isArray(p.cuerpo) ? p.cuerpo : (p.cuerpo ? [p.cuerpo] : []); }
+function datoDe(p, re){
+  const d = (p.datos||[]).find(x=>re.test(String(x[0]||"").trim()));
+  return d ? String(d[1]) : "";
+}
+function srvWhats(p, clase, etiqueta){
+  const wnum = String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
+  if(!wnum) return "";
+  const txt = encodeURIComponent("Hola, vi el anuncio de «"+p.titulo+"» en la guía de la Ciénaga de Zapata y me interesa.");
+  return `<a class="${clase}" href="https://wa.me/${wnum}?text=${txt}" target="_blank" rel="noopener" title="Contactar por WhatsApp">${etiqueta}</a>`;
+}
+
+function tarjetaServicio(p, admin){
+  const wapp = srvWhats(p, "srv-btnw", "💬");
+  const resBtn = `<button type="button" class="srv-btnr" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}" title="Solicitar reserva">📅 Reservar</button>`;
+  const tools = admin
+    ? `<div class="admin-tools"><button class="tool-btn" data-edit="${p.id}">✏️ Editar</button><button class="tool-btn del" data-del="${p.id}">🗑️</button></div>` : "";
+  const zona = datoDe(p, /^ubicaci[óo]n$/i);
+  const anfit = datoDe(p, /^anfitri[óo]n$/i);
+  const primer = cuerpoArr(p)[0] || "";
+  const ext = primer.length > 120 ? primer.slice(0,120)+"…" : primer;
+  return `<article class="srv-card" data-srv="${esc(p.id)}">${tools}
+    <div class="srv-img">${p.categoria?`<span class="srv-badge">${esc(p.categoria)}</span>`:""}<img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}" loading="lazy"></div>
+    <div class="srv-body"><h3>${esc(p.titulo)}</h3>
+    ${zona?`<p class="srv-zona">📍 ${esc(zona)}</p>`:""}
+    ${anfit?`<p class="srv-anfit">Anfitrión: ${esc(anfit)}</p>`:""}
+    <p class="srv-extracto">${esc(ext)}</p>
+    <div class="srv-cta">${wapp}${resBtn}</div></div></article>`;
+}
+
+function renderServicios(){
+  const cont = document.getElementById("fichas");
+  if(!cont) return;
+  getPosts().then(posts=>{
+    srvPosts = posts.filter(p=>p.pagina==="servicios");
+    const toc = document.querySelector(".toc");
+    if(toc) toc.style.display = "none";
+    const cats = ["Todos"];
+    srvPosts.forEach(p=>{ if(p.categoria && !cats.includes(p.categoria)) cats.push(p.categoria); });
+    const pills = document.getElementById("srvPills");
+    if(pills) pills.innerHTML = cats.map(c=>`<button type="button" class="srv-pill${c===srvCat?" on":""}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
+    const busc = document.getElementById("srvBuscar");
+    if(busc && !srvBuscarBound){ busc.addEventListener("input", aplicarFiltro); srvBuscarBound = true; }
+    aplicarFiltro();
+    if(location.hash){
+      const id = location.hash.slice(1);
+      if(srvPosts.some(p=>String(p.id)===id)) setTimeout(()=>abrirDetalleServicio(id), 300);
+    }
+  }).catch(e=>{
+    cont.innerHTML = "<p style='opacity:.7'>No se pudo cargar el contenido. Revisa tu conexión e intenta de nuevo.</p>";
+  });
+}
+
+function aplicarFiltro(){
+  const cont = document.getElementById("fichas");
+  if(!cont) return;
+  const q = ((document.getElementById("srvBuscar")||{}).value||"").toLowerCase().trim();
+  const admin = document.body.classList.contains("admin");
+  const lista = srvPosts.filter(p=>{
+    if(srvCat!=="Todos" && p.categoria!==srvCat) return false;
+    if(!q) return true;
+    const hay = (p.titulo+" "+cuerpoArr(p).join(" ")+" "+(p.datos||[]).map(d=>String(d[0])+" "+String(d[1])).join(" ")).toLowerCase();
+    return hay.includes(q);
+  });
+  cont.className = "srv-grid";
+  cont.innerHTML = lista.length
+    ? lista.map(p=>tarjetaServicio(p, admin)).join("")
+    : `<p style="opacity:.75;padding:2rem .5rem">No se encontraron negocios con ese criterio. Prueba con otra búsqueda o categoría.</p>`;
+  const n = document.getElementById("srvCount");
+  if(n) n.textContent = lista.length + (lista.length===1 ? " negocio" : " negocios");
+  if(window.CZAdmin) window.CZAdmin.bindTools(cont);
+}
+
+/* Modal de detalle (z-index 85: por debajo del modal de reserva, que usa 90) */
+function montarModalDetalle(){
+  if(document.getElementById("modalDetalleSrv")) return;
+  const v = document.createElement("div");
+  v.id = "modalDetalleSrv";
+  v.className = "srv-detalle";
+  v.innerHTML =
+  '<div class="sd-caja" role="dialog" aria-modal="true">' +
+    '<button type="button" class="sd-x" id="sdCerrar" aria-label="Cerrar">✕</button>' +
+    '<div id="sdCont"></div>' +
+  '</div>';
+  document.body.appendChild(v);
+  v.addEventListener("click", e=>{ if(e.target===v) cerrarDetalleServicio(); });
+  document.getElementById("sdCerrar").addEventListener("click", cerrarDetalleServicio);
+}
+function abrirDetalleServicio(id){
+  const p = srvPosts.find(x=>String(x.id)===String(id));
+  if(!p) return;
+  const paras = cuerpoArr(p).map(t=>`<p>${esc(t)}</p>`).join("");
+  const datos = (p.datos||[]).map(d=>`<li><b>${esc(d[0])}:</b> ${esc(d[1])}</li>`).join("");
+  const wapp = srvWhats(p, "btn-wapp", "💬 WhatsApp");
+  const resBtn = `<button type="button" class="btn-reserva" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}">📅 Solicitar reserva</button>`;
+  document.getElementById("sdCont").innerHTML =
+    `<div class="sd-foto"><img src="${esc(p.imagen)}" alt="${esc(p.alt||p.titulo)}"></div>
+     <div class="sd-cuerpo"><h3>${esc(p.titulo)}</h3>
+     ${p.categoria?`<span class="srv-badge srv-badge-static">${esc(p.categoria)}</span>`:""}
+     ${paras}${datos?`<ul class="sd-datos">${datos}</ul>`:""}
+     <div class="srv-cta">${wapp}${resBtn}</div></div>`;
+  document.getElementById("modalDetalleSrv").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+function cerrarDetalleServicio(){
+  const m = document.getElementById("modalDetalleSrv");
+  if(m) m.classList.remove("on");
+  const r = document.getElementById("modalReserva");
+  if(!r || !r.classList.contains("on")) document.body.style.overflow = "";
+}
+
+/* Clics: píldoras de categoría y apertura del detalle (fuera de botones) */
+document.addEventListener("click", e=>{
+  if(!e.target.closest) return;
+  const pill = e.target.closest(".srv-pill");
+  if(pill){
+    srvCat = pill.getAttribute("data-cat") || "Todos";
+    document.querySelectorAll(".srv-pill").forEach(b=>b.classList.toggle("on", b===pill));
+    aplicarFiltro();
+    return;
+  }
+  const card = e.target.closest(".srv-card");
+  if(card && !e.target.closest("[data-reserva],.srv-btnw,.tool-btn"))
+    abrirDetalleServicio(card.getAttribute("data-srv"));
+});
+document.addEventListener("keydown", e=>{
+  if(e.key !== "Escape") return;
+  const r = document.getElementById("modalReserva");
+  if(r && r.classList.contains("on")) return; /* el otro handler la cierra */
+  cerrarDetalleServicio();
+});
 
 /* Home: novedades (últimas N de todas las páginas) */
 async function renderNovedades(){
@@ -78,7 +218,7 @@ function nombrePag(p){
           "historia":"Historia","gastronomia":"Gastronomía","guia":"Guía","servicios":"Servicios"}[p]||p;
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); chequearConn(); montarModalReserva(); });
+document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); chequearConn(); montarModalReserva(); montarModalDetalle(); });
 
 /* ---------- Solicitud de reserva (fichas de Servicios) ----------
    Sin calendarios ni pagos: el formulario arma el mensaje y lo envía
