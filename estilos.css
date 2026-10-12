@@ -362,3 +362,24 @@ footer .nota{opacity:.65;max-width:62ch;margin-top:1rem;font-size:.82rem;color:#
   .dt-cols{grid-template-columns:1fr}
   .dt-side{position:static}
 }
+
+/* ---------- SELECTOR DE VIAJEROS (estilo Airbnb) ---------- */
+.vj{border:1.5px solid var(--borde);border-radius:12px;background:#f7faf8;margin-bottom:.8rem;overflow:hidden}
+.vj-cab{width:100%;display:flex;align-items:center;gap:.6rem;background:#fff;border:none;
+  padding:.7rem .85rem;cursor:pointer;font-family:inherit;color:var(--tinta);text-align:left;font-size:1rem}
+.vj-cab-t{font-weight:700;font-size:.85rem}
+.vj-cab-n{margin-left:auto;color:var(--muted);font-size:.88rem}
+.vj-flecha{color:var(--muted);font-size:1.15rem;line-height:1;transition:transform .25s}
+.vj-cab[aria-expanded="true"] .vj-flecha{transform:rotate(180deg)}
+.vj-panel{border-top:1px solid var(--borde);padding:.2rem .85rem .7rem;background:#fff}
+.vj-fila{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--borde)}
+.vj-fila:last-child{border-bottom:none}
+.vj-fila b{display:block;font-size:.92rem;color:var(--tinta)}
+.vj-fila span{display:block;font-size:.78rem;color:var(--muted)}
+.vj-step{display:flex;align-items:center;gap:.75rem;flex:none}
+.vj-btn{width:2rem;height:2rem;border-radius:50%;border:1.5px solid var(--borde);background:#fff;
+  color:var(--tinta);font-size:1.05rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s;font-family:inherit}
+.vj-btn:hover:not(:disabled){border-color:var(--verde);color:var(--verde-d)}
+.vj-btn:disabled{opacity:.28;cursor:default}
+.vj-num{min-width:1.3rem;text-align:center;font-weight:700;font-size:.95rem}
+.vj-hab{border:1.5px solid var(--borde);border-radius:12px;background:#fff;margin-bottom:.8rem;padding:.2rem .85rem}

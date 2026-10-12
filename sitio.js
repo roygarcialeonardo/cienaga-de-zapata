@@ -170,7 +170,7 @@ function srvWhats(p, clase, etiqueta){
 
 function tarjetaServicio(p, admin){
   const wapp = srvWhats(p, "srv-btnw", "💬");
-  const resBtn = `<button type="button" class="srv-btnr" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}" title="Solicitar reserva">📅 Reservar</button>`;
+  const resBtn = `<button type="button" class="srv-btnr" data-reserva="${esc(p.id)}" data-titulo="${esc(p.titulo)}" data-categoria="${esc(p.categoria||"")}" title="Solicitar reserva">📅 Reservar</button>`;
   const zona = datoDe(p, /^ubicaci[óo]n$/i);
   const anfit = datoDe(p, /^anfitri[óo]n$/i);
   return `<article class="srv-card" data-srv="${esc(p.id)}">${toolsHTML(p, admin)}
@@ -230,6 +230,7 @@ function aplicarFiltro(){
    El detalle de cada negocio vive aquí: migas, galería, descripción,
    tarjeta de reserva (solo servicios) y relacionados. */
 let detalleTitulo = "";
+let detalleHabAplica = false;
 
 async function renderDetalle(){
   const cont = document.getElementById("detalle");
@@ -260,6 +261,8 @@ async function renderDetalle(){
   const paras = cuerpoArr(p).map(t=>`<p>${esc(t)}</p>`).join("");
   const datos = (p.datos||[]).map(d=>`<li><b>${esc(d[0])}:</b> ${esc(d[1])}</li>`).join("");
   const wapp = esServicio ? srvWhats(p, "btn-wapp dt-wapp", "💬 WhatsApp") : "";
+  const habAplica = esServicio && p.categoria === "Hospedaje";
+  detalleHabAplica = habAplica;
   const reservaCard = esServicio ?
   '<aside class="dt-reserva" aria-label="Solicitar reserva">'
   + '<h3>📅 Solicitar reserva</h3>'
@@ -271,7 +274,8 @@ async function renderDetalle(){
   + '<label>Llegada *<input type="date" id="dtLlegada"></label>'
   + '<label>Salida *<input type="date" id="dtSalida"></label>'
   + '</div>'
-  + '<label>Huéspedes *<input type="number" id="dtHuespedes" min="1" step="1" value="2"></label>'
+  + viajerosHTML("dt")
+  + (habAplica ? habHTML("dt", true) : "")
   + '<label>Mensaje (opcional)<textarea id="dtMensaje" rows="3" placeholder="Alguna petición especial…"></textarea></label>'
   + '<p class="error" id="dtError" hidden></p>'
   + '<button type="submit" class="btn btn-sol dt-enviar">📩 Enviar por WhatsApp</button>'
@@ -310,12 +314,13 @@ function validarReserva(v){
   if(!v.contacto) return {error:"Escribe tu WhatsApp o email para contactarte."};
   if(!v.llegada || !v.salida) return {error:"Elige las fechas de llegada y salida."};
   if(v.llegada >= v.salida) return {error:"La fecha de salida debe ser posterior a la de llegada."};
-  if(!(v.hues >= 1)) return {error:"Indica al menos 1 huésped."};
+  if(!(v.ad >= 1)) return {error:"Debe viajar al menos 1 adulto."};
   return {ok:true};
 }
 function reservaWAUrl(titulo, v){
   const wnum = String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
   if(!wnum) return "";
+  const nViaj = (v.ad||0) + (v.nn||0);
   const lineas = [
     "Hola, quiero solicitar una reserva:",
     "— Negocio: " + titulo,
@@ -323,20 +328,23 @@ function reservaWAUrl(titulo, v){
     "— Contacto: " + v.contacto,
     "— Llegada: " + fechaCorta(v.llegada),
     "— Salida: " + fechaCorta(v.salida),
-    "— Huéspedes: " + v.hues
+    "— Viajeros: " + nViaj + " (Adultos: " + (v.ad||0) + ", Niños: " + (v.nn||0) + ", Bebés: " + (v.bb||0) + ", Mascotas: " + (v.mc||0) + ")"
   ];
+  if(v.hab != null) lineas.push("— Habitaciones: " + v.hab);
   if(v.mensaje) lineas.push("— Mensaje: " + v.mensaje);
   return "https://wa.me/" + wnum + "?text=" + encodeURIComponent(lineas.join("\n"));
 }
 function enviarReservaDetalle(e){
   e.preventDefault();
   const err = document.getElementById("dtError");
+  const vjEl = document.querySelector("#dtForm .vj");
   const vals = {
     nombre: document.getElementById("dtNombre").value.trim(),
     contacto: document.getElementById("dtContacto").value.trim(),
     llegada: document.getElementById("dtLlegada").value,
     salida: document.getElementById("dtSalida").value,
-    hues: parseInt(document.getElementById("dtHuespedes").value, 10),
+    ad: vjInt(vjEl,"ad"), nn: vjInt(vjEl,"nn"), bb: vjInt(vjEl,"bb"), mc: vjInt(vjEl,"mc"),
+    hab: detalleHabAplica ? habNum("dt") : null,
     mensaje: document.getElementById("dtMensaje").value.trim()
   };
   const r = validarReserva(vals);
@@ -347,7 +355,7 @@ function enviarReservaDetalle(e){
   window.open(url, "_blank", "noopener");
   toastReserva("¡Solicitud lista! Se abrirá WhatsApp para enviarla.");
   document.getElementById("dtForm").reset();
-  document.getElementById("dtHuespedes").value = "2";
+  vjReset(document.getElementById("dtForm"));
 }
 
 /* Clics: píldoras de categoría y apertura del detalle (fuera de botones) */
@@ -393,10 +401,108 @@ function nombrePag(p){
 
 document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); renderDetalle(); chequearConn(); montarModalReserva(); montarModalDetalleCont(); initBuscadorHome(); });
 
+/* ---------- Bloque de viajeros estilo Airbnb (compartido por el modal y el detalle) ----------
+   Viajeros: Adultos / Niños / Bebés / Mascotas con steppers. Habitaciones solo en Hospedaje. */
+function vjFila(nombre, sub, key, val, min){
+  return '<div class="vj-fila"><div><b>'+nombre+'</b>'+(sub?'<span>'+sub+'</span>':"")+'</div>'
+  + '<div class="vj-step"><button type="button" class="vj-btn" data-vj="menos" data-key="'+key+'" aria-label="Menos"'+(val<=min?" disabled":"")+'>−</button>'
+  + '<span class="vj-num" data-num="'+key+'">'+val+'</span>'
+  + '<button type="button" class="vj-btn" data-vj="mas" data-key="'+key+'" aria-label="Más">+</button></div></div>';
+}
+function viajerosHTML(pref){
+  return '<div class="vj" data-ad="1" data-nn="0" data-bb="0" data-mc="0">'
+  + '<button type="button" class="vj-cab" id="'+pref+'VjCab" aria-expanded="false">'
+  + '<span class="vj-cab-t">Viajeros</span>'
+  + '<span class="vj-cab-n" id="'+pref+'VjN">1 viajero</span>'
+  + '<span class="vj-flecha">⌄</span></button>'
+  + '<div class="vj-panel" id="'+pref+'VjPanel" hidden>'
+  + vjFila("Adultos","A partir de 13 años","ad",1,0)
+  + vjFila("Niños","De 2 a 12 años","nn",0,0)
+  + vjFila("Bebés","Menos de 2 años","bb",0,0)
+  + vjFila("Mascotas","","mc",0,0)
+  + '</div></div>';
+}
+function habHTML(pref, visible){
+  return '<div class="vj-hab" id="'+pref+'HabWrap"'+(visible?"":" hidden")+'>'
+  + '<div class="vj-fila"><div><b>Habitaciones</b><span>¿Cuántas habitaciones necesitas?</span></div>'
+  + '<div class="vj-step"><button type="button" class="vj-btn" data-hab="menos" aria-label="Menos habitaciones" disabled>−</button>'
+  + '<span class="vj-num" id="'+pref+'HabN">1</span>'
+  + '<button type="button" class="vj-btn" data-hab="mas" aria-label="Más habitaciones">+</button></div></div></div>';
+}
+function vjPintar(vj){
+  const vals = {ad:parseInt(vj.getAttribute("data-ad"),10)||0, nn:parseInt(vj.getAttribute("data-nn"),10)||0,
+                bb:parseInt(vj.getAttribute("data-bb"),10)||0, mc:parseInt(vj.getAttribute("data-mc"),10)||0};
+  ["ad","nn","bb","mc"].forEach(k=>{
+    const num = vj.querySelector('[data-num="'+k+'"]');
+    if(num) num.textContent = vals[k];
+    const menos = vj.querySelector('[data-vj="menos"][data-key="'+k+'"]');
+    if(menos) menos.disabled = vals[k] <= 0;
+  });
+  const t = vals.ad + vals.nn;
+  const cab = vj.querySelector(".vj-cab-n");
+  if(cab) cab.textContent = t + (t===1 ? " viajero" : " viajeros");
+}
+function vjInt(vj, k){ return vj ? (parseInt(vj.getAttribute("data-"+k),10)||0) : 0; }
+function habNum(pref){ const el = document.getElementById(pref+"HabN"); return el ? (parseInt(el.textContent,10)||1) : 1; }
+function vjReset(scope){
+  const vj = scope.querySelector(".vj");
+  if(vj){
+    vj.setAttribute("data-ad","1"); vj.setAttribute("data-nn","0");
+    vj.setAttribute("data-bb","0"); vj.setAttribute("data-mc","0");
+    const panel = vj.querySelector(".vj-panel"); if(panel) panel.hidden = true;
+    const cab = vj.querySelector(".vj-cab"); if(cab) cab.setAttribute("aria-expanded","false");
+    vjPintar(vj);
+  }
+  const hab = scope.querySelector(".vj-hab");
+  if(hab){
+    const num = hab.querySelector(".vj-num"); if(num) num.textContent = "1";
+    const menos = hab.querySelector('[data-hab="menos"]'); if(menos) menos.disabled = true;
+    const mas = hab.querySelector('[data-hab="mas"]'); if(mas) mas.disabled = false;
+  }
+}
+/* Delegación global de los steppers: funciona en el modal y en el detalle */
+document.addEventListener("click", e=>{
+  if(!e.target.closest) return;
+  const b = e.target.closest("[data-vj]");
+  if(b){
+    const vj = b.closest(".vj"); if(!vj) return;
+    const key = b.getAttribute("data-key");
+    let val = parseInt(vj.getAttribute("data-"+key),10)||0;
+    val += (b.getAttribute("data-vj")==="mas") ? 1 : -1;
+    if(val < 0) val = 0;
+    if(val > 30) val = 30;
+    vj.setAttribute("data-"+key, val);
+    vjPintar(vj);
+    return;
+  }
+  const hb = e.target.closest("[data-hab]");
+  if(hb){
+    const wrap = hb.closest(".vj-hab"); if(!wrap) return;
+    const num = wrap.querySelector(".vj-num"); if(!num) return;
+    let v = parseInt(num.textContent,10)||1;
+    v += (hb.getAttribute("data-hab")==="mas") ? 1 : -1;
+    v = Math.max(1, Math.min(10, v));
+    num.textContent = v;
+    const menos = wrap.querySelector('[data-hab="menos"]'); if(menos) menos.disabled = v<=1;
+    const mas = wrap.querySelector('[data-hab="mas"]'); if(mas) mas.disabled = v>=10;
+    return;
+  }
+  const cab = e.target.closest(".vj-cab");
+  if(cab){
+    const panel = cab.parentElement.querySelector(".vj-panel");
+    if(panel){
+      const abrir = panel.hidden;
+      panel.hidden = !abrir;
+      cab.setAttribute("aria-expanded", String(abrir));
+    }
+  }
+});
+
 /* ---------- Solicitud de reserva (fichas de Servicios) ----------
    Sin calendarios ni pagos: el formulario arma el mensaje y lo envía
    al WhatsApp de Leonardo, que confirma manualmente con el negocio. */
 let reservaTitulo = "";
+let reservaHab = false;
 function montarModalReserva(){
   if(document.getElementById("modalReserva")) return;
   const v = document.createElement("div");
@@ -414,7 +520,8 @@ function montarModalReserva(){
         '<label>Llegada *<input type="date" id="mrLlegada" required></label>' +
         '<label>Salida *<input type="date" id="mrSalida" required></label>' +
       '</div>' +
-      '<label>Huéspedes *<input type="number" id="mrHuespedes" min="1" step="1" value="2" required></label>' +
+      viajerosHTML("mr") +
+      habHTML("mr", false) +
       '<label>Mensaje (opcional)<textarea id="mrMensaje" rows="3" placeholder="Alguna petición especial…"></textarea></label>' +
       '<p class="error" id="mrError" hidden></p>' +
       '<button type="submit" class="btn btn-sol mr-enviar">📩 Enviar por WhatsApp</button>' +
@@ -425,8 +532,11 @@ function montarModalReserva(){
   document.getElementById("mrCerrar").addEventListener("click", cerrarModalReserva);
   document.getElementById("mrForm").addEventListener("submit", enviarReserva);
 }
-function abrirModalReserva(titulo){
+function abrirModalReserva(titulo, categoria){
   reservaTitulo = titulo;
+  reservaHab = (categoria === "Hospedaje");
+  const hw = document.getElementById("mrHabWrap");
+  if(hw) hw.hidden = !reservaHab;
   document.getElementById("mrNegocio").innerHTML = "🏠 " + esc(titulo);
   const err = document.getElementById("mrError");
   err.hidden = true; err.textContent = "";
@@ -446,12 +556,14 @@ function fechaCorta(iso){
 function enviarReserva(e){
   e.preventDefault();
   const err = document.getElementById("mrError");
+  const vjEl = document.querySelector("#mrForm .vj");
   const vals = {
     nombre: document.getElementById("mrNombre").value.trim(),
     contacto: document.getElementById("mrContacto").value.trim(),
     llegada: document.getElementById("mrLlegada").value,
     salida: document.getElementById("mrSalida").value,
-    hues: parseInt(document.getElementById("mrHuespedes").value, 10),
+    ad: vjInt(vjEl,"ad"), nn: vjInt(vjEl,"nn"), bb: vjInt(vjEl,"bb"), mc: vjInt(vjEl,"mc"),
+    hab: reservaHab ? habNum("mr") : null,
     mensaje: document.getElementById("mrMensaje").value.trim()
   };
   const r = validarReserva(vals);
@@ -463,7 +575,7 @@ function enviarReserva(e){
   window.open(url, "_blank", "noopener");
   toastReserva("¡Solicitud lista! Se abrirá WhatsApp para enviarla.");
   document.getElementById("mrForm").reset();
-  document.getElementById("mrHuespedes").value = "2";
+  vjReset(document.getElementById("mrForm"));
 }
 function toastReserva(msg){
   let t = document.getElementById("toastReserva");
@@ -481,7 +593,7 @@ function toastReserva(msg){
 /* Delegación global: funciona aunque las fichas se re-rendericen */
 document.addEventListener("click", e=>{
   const b = e.target.closest ? e.target.closest("[data-reserva]") : null;
-  if(b) abrirModalReserva(b.getAttribute("data-titulo") || "");
+  if(b) abrirModalReserva(b.getAttribute("data-titulo") || "", b.getAttribute("data-categoria") || "");
 });
 document.addEventListener("keydown", e=>{
   if(e.key === "Escape"){
