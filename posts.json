@@ -194,13 +194,13 @@
  {
   "id": "enigma",
   "pagina": "secretos",
-  "titulo": "Enigma de las Rocas",
+  "titulo": "Enigma de las Rocas · El corazón sumergido de la Ciénaga",
   "imagen": "img/sendero-manglar.webp",
   "alt": "Sendero entre manglares",
   "cuerpo": [
-   "Un sendero interpretativo que recorre 3 cenotes del mayor sistema de cuevas inundadas de Cuba: 10,000 hectáreas terrestres y 400 marinas, originado por una falla tectónica de 1.5 millones de años que se extiende 70 km por la costa sur.",
-   "El cenote mayor alcanza 86 metros de profundidad. En una piscina natural de 25 metros conviven dos cocodrilos, un manjuarí —pez fósil viviente de la era mesozoica, que en Cuba solo existe aquí— y varias jicoteas.",
-   "Es espeleobuceo de clase mundial en un entorno casi virgen, muy lejos de las multitudes."
+   "Hay lugares que se visitan y lugares que se descienden. Enigma de las Rocas es de los segundos: un sendero interpretativo que te lleva por tres cenotes del mayor sistema de cuevas inundadas de Cuba, nacido de una falla tectónica de 1.5 millones de años que se extiende 70 km por la costa sur. Entre tierra y mar suma 10,000 hectáreas terrestres y 400 marinas de misterio azul.",
+   "El cenote mayor baja hasta los 86 metros de profundidad, y en una piscina natural de 25 metros conviven dos cocodrilos, varias jicoteas y el manjuarí, ese pez fósil viviente de la era mesozoica que en Cuba solo existe aquí. Flotar en esas aguas cristalinas, rodeado de formaciones cársicas esculpidas durante milenios, es espeleobuceo de clase mundial en un entorno casi virgen, muy lejos de las multitudes.",
+   "Ven con traje de baño, toalla y espíritu de explorador. El acceso es con guía especializado y reserva anticipada, y la mejor luz para fotos entra a media mañana, cuando el sol se cuela entre la vegetación y enciende el agua desde adentro."
   ],
   "datos": [
    [
@@ -226,13 +226,13 @@
  {
   "id": "zunzun",
   "pagina": "secretos",
-  "titulo": "Casa del Zunzún · Casa de los Colibríes",
+  "titulo": "Casa del Zunzún · Donde los colibríes te miran a los ojos",
   "imagen": "img/zunzuncito.webp",
   "alt": "Zunzuncito libando",
   "cuerpo": [
-   "La finca de Bernabé, a 5 minutos de Playa Larga, donde decenas de zunzunes —el ave más pequeña del mundo, endémica de Cuba— liban a menos de 50 cm de los visitantes. Una experiencia íntima imposible en ningún zoológico.",
-   "La entrada es gratuita (se deja propina) y el lugar es conocido solo de boca en boca: no aparece en casi ninguna guía.",
-   "Lleva cámara con buen zoom y paciencia: los zunzunes son rápidos pero curiosos, y se acercan una y otra vez."
+   "En la finca de Bernabé, a solo 5 minutos de Playa Larga, ocurre todos los días un pequeño milagro tropical: decenas de zunzunes —el ave más pequeña del mundo, endémica de Cuba— revolotean entre las flores y se acercan a menos de 50 cm de los visitantes. No hay vitrina ni jaula de por medio: es la naturaleza en estado puro, a la distancia de un suspiro.",
+   "Este rincón es famoso solo de boca en boca y no aparece en casi ninguna guía, así que la experiencia se siente íntima y auténtica. La entrada es libre y se agradece una propina que ayuda a mantener este paraíso.",
+   "Las mañanas soleadas son el mejor momento, cuando los zunzunes liban con más energía. Lleva cámara con buen zoom, muévete despacio y ten paciencia: son rapidísimos pero curiosos, y volverán una y otra vez a inspeccionarte de cerca."
   ],
   "datos": [
    [
@@ -258,13 +258,13 @@
  {
   "id": "bermeja",
   "pagina": "secretos",
-  "titulo": "Bermeja · Santuario de endémicas",
+  "titulo": "Bermeja · El paraíso secreto de las aves endémicas",
   "imagen": "img/tocororo.webp",
   "alt": "Tocororo en Bermeja",
   "cuerpo": [
-   "Un punto de observación donde los guías locales muestran hasta 19 de las 24 especies de aves endémicas de Cuba en una sola visita: tocororo, catey, cotorra cubana, cabrerito de la ciénaga, gavilán colilargo y paloma perdiz, entre otras.",
-   "Para los pajareros es el equivalente a un 'gran slam' caribeño en una mañana. Los guías conocen cada percha y cada canto.",
-   "A diferencia de otros puntos, aquí el avistamiento es casi garantizado gracias al conocimiento local."
+   "Si te gustan las aves, Bermeja te va a robar el corazón. En este punto de observación los guías locales logran mostrar hasta 19 de las 24 especies de aves endémicas de Cuba en una sola visita: el tocororo con los colores de la bandera, el catey bullicioso, la cotorra cubana, el diminuto cabrerito de la ciénaga, el gavilán colilargo y la esquiva paloma perdiz, entre otras.",
+   "Para los pajareros es el equivalente caribeño de un «gran slam» en una sola mañana. Los guías conocen cada percha, cada canto y cada rincón del bosque, y aquí el avistamiento es casi garantizado gracias a ese conocimiento local que no se compra en ninguna tienda.",
+   "Llega antes del amanecer para escuchar el coro del bosque despertando, viste colores discretos y trae binoculares y tu lista de endémicas para ir tachando. En invierno, además, se suman las migratorias del norte."
   ],
   "datos": [
    [
@@ -290,13 +290,13 @@
  {
   "id": "caletas",
   "pagina": "secretos",
-  "titulo": "Las caletas olvidadas",
+  "titulo": "Las caletas olvidadas · Piratas, tesoros y secretos del litoral",
   "imagen": "img/playa-giron.webp",
   "alt": "Litoral de caletas",
   "cuerpo": [
-   "El litoral zapatero está bordado por una decena de caletas, cada una con su historia. Caleta Redonda es la más mística: fábulas de piratas, apariciones y tesoros enterrados transmitidas de padres a hijos.",
-   "Junto a Caleta del Rosario se alzó en el siglo XIX un fuerte español contra el tráfico ilegal de esclavos; las caletas fueron puertos clandestinos. En Caleta Cocodrilos, el grupo espeleológico Manuel Santos Parga halló el único sitio de aborígenes neolíticos (agricultores-ceramistas) de toda la isla.",
-   "Caletas Sábalo, Mal Paso y Caletón fueron refugios de piratas y embarcaderos comerciales: los cenagueros viejos juran que aún se ven las argollas donde amarraban los barcos."
+   "El litoral zapatero está bordado por una decena de caletas, y cada una guarda su propia historia entre la arena clara y el mar turquesa. Caleta Redonda es la más mística: los viejos cuentan fábulas de piratas, apariciones y tesoros enterrados que han pasado de padres a hijos por generaciones.",
+   "Junto a Caleta del Rosario se alzó en el siglo XIX un fuerte español contra el tráfico ilegal de esclavos, y muchas caletas fueron puertos clandestinos. En Caleta Cocodrilos, el grupo espeleológico Manuel Santos Parga descubrió el único sitio de aborígenes neolíticos agricultores-ceramistas de toda la isla. Y en Sábalo, Mal Paso y Caletón —refugios de piratas y embarcaderos comerciales— los cenagueros viejos juran que aún se ven las argollas donde amarraban los barcos.",
+   "Ven a hacer snorkel en sus aguas tranquilas, a explorar y a fotografiar, pero sobre todo ven a escuchar: pregúntale a los pescadores viejos por las historias de cada caleta. El mar está más calmado de noviembre a abril, y a algunas caletas solo se llega con guía o en 4x4."
   ],
   "datos": [
    [
@@ -322,13 +322,13 @@
  {
   "id": "soplillar",
   "pagina": "secretos",
-  "titulo": "Soplillar y Pálpite",
+  "titulo": "Soplillar y Pálpite · La memoria viva de los carboneros",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Amanecer en la ciénaga interior",
   "cuerpo": [
-   "Antiguos bateyes de carboneros en el interior de la ciénaga, con la memoria viva de la Cuba profunda. Soplillar es famoso porque Fidel Castro pasó allí la Nochebuena de 1959 cenando con las familias Méndez Armengual y García Montano; se conmemora cada 24 de diciembre.",
-   "Pálpite, caserío carbonero, fue símbolo de la miseria prerrevolucionaria: bohíos, hornos de carbón y una vida durísima que hoy es memoria y orgullo local.",
-   "Visitarlos es entender la ciénaga más allá del turismo: su gente, su trabajo y su historia."
+   "Lejos de las playas, en el interior de la ciénaga, laten Soplillar y Pálpite: antiguos bateyes de carboneros donde vive la memoria de la Cuba profunda. Soplillar es famoso porque Fidel Castro pasó allí la Nochebuena de 1959 cenando con las familias Méndez Armengual y García Montano, una fecha que la comunidad conmemora cada 24 de diciembre.",
+   "Pálpite, caserío carbonero, fue símbolo de la miseria prerrevolucionaria: bohíos, hornos de carbón y una vida durísima que hoy es memoria y orgullo local. Caminar entre esos bateyes es entender la ciénaga más allá del turismo: su gente, su trabajo y su historia.",
+   "Visítalos con respeto y sensibilidad, porque son comunidades vivas, no museos. Escucha sus historias, compra local y deja que la hospitalidad cenaguera haga el resto."
   ],
   "datos": [
    [
@@ -354,13 +354,13 @@
  {
   "id": "tomas",
   "pagina": "secretos",
-  "titulo": "Santo Tomás y el río Hatiguanico",
+  "titulo": "Santo Tomás · Navegar el río de los manatíes",
   "imagen": "img/manati.webp",
   "alt": "Manatí en el río",
   "cuerpo": [
-   "Aldea junto al río Hatiguanico que da nombre a la gallinuela de Santo Tomás, dueña de uno de los hábitats más restringidos del planeta. Es zona núcleo de conservación del Parque Nacional.",
-   "El Hatiguanico guarda poblaciones importantes de manatí, en peligro de extinción, y desemboca en la Ensenada de la Broa: el límite sur de la ciénaga, casi sin infraestructura turística y de una virginidad asombrosa.",
-   "Navegar el río al amanecer, entre manglares y niebla, es una de las experiencias más puras de la ciénaga."
+   "Junto al río Hatiguanico duerme la aldea de Santo Tomás, que da nombre a la gallinuela de Santo Tomás, dueña de uno de los hábitats más restringidos del planeta. Es zona núcleo de conservación del Parque Nacional, y se nota: la naturaleza aquí manda.",
+   "El Hatiguanico guarda poblaciones importantes del manatí, en peligro de extinción, y desemboca en la Ensenada de la Broa, el límite sur de la ciénaga: un territorio casi sin infraestructura turística y de una virginidad asombrosa.",
+   "Navegar el río al amanecer, entre manglares y jirones de niebla, mientras las aves despiertan y un manatí emerge a respirar a lo lejos, es una de las experiencias más puras que regala la ciénaga. Se accede con guía y en zona regulada: sigue siempre sus indicaciones."
   ],
   "datos": [
    [
@@ -386,13 +386,13 @@
  {
   "id": "senderos",
   "pagina": "secretos",
-  "titulo": "Los Arroyones y Cinco Furnias",
+  "titulo": "Los Arroyones y Cinco Furnias · Senderos que casi nadie conoce",
   "imagen": "img/sendero-manglar.webp",
   "alt": "Sendero de manglar",
   "cuerpo": [
-   "Dos de los cinco senderos interpretativos oficiales… que casi nadie promociona. Recorren bosque siempreverde micrófilo costero entre almácigos, guayacanes y lirios de costa, con orquídeas en temporada.",
-   "El suelo es el famoso 'diente de perro' cársico: roca afilada esculpida por el agua durante milenios. Calzado cerrado obligatorio.",
-   "Son senderos tranquilos, sin grupos grandes: ideales para quien busca la ciénaga en silencio."
+   "De los cinco senderos interpretativos oficiales de la ciénaga, Los Arroyones y Cinco Furnias son los que casi nadie promociona… y quizá por eso son los más mágicos. Recorren el bosque siempreverde micrófilo costero entre almácigos retorcidos, guayacanes centenarios y lirios de costa, con orquídeas silvestres en temporada.",
+   "El suelo es el famoso «diente de perro» cársico: roca afilada esculpida por el agua durante milenios, así que el calzado cerrado es obligatorio. A cambio, tendrás el bosque para ti: son senderos tranquilos, sin grupos grandes, ideales para escuchar a la ciénaga en silencio.",
+   "Sal temprano para aprovechar la luz y la fauna, y lleva repelente, agua y tu cámara. Con guía del Parque Nacional, cada planta y cada canto tienen una historia que contar."
   ],
   "datos": [
    [
@@ -418,13 +418,13 @@
  {
   "id": "caserios",
   "pagina": "secretos",
-  "titulo": "Caseríos del interior",
+  "titulo": "Caseríos del interior · La Cuba profunda te abre su puerta",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Caserío al amanecer",
   "cuerpo": [
-   "Guasasa, Cayo Ramona, Helechal, Batey Viejo, Quemado Grande… asentamientos de carboneros y pescadores dispersos por el interior, donde vive la cultura cenaguera más auténtica.",
-   "Aquí la décima campesina sigue viva (como la de Otaño y su 'Isla del Coco'), se cocina en leña y el tiempo pasa de otra manera.",
-   "No son destinos turísticos convencionales: son encuentros humanos. Ve con respeto, compra local y escucha sus historias."
+   "Guasasa, Cayo Ramona, Helechal, Batey Viejo, Quemado Grande… Nombres que no salen en los folletos, pero donde vive la cultura cenaguera más auténtica: asentamientos de carboneros y pescadores dispersos por el interior del humedal.",
+   "Aquí la décima campesina sigue viva —como la de Otaño y su «Isla del Coco»—, se cocina en leña, el café se cuela despacio y el tiempo pasa de otra manera. No son destinos turísticos convencionales: son encuentros humanos que te cambian la mirada.",
+   "Ve solo con contacto local o guía, con respeto y con ganas de escuchar. Lleva algo para compartir, compra lo que te ofrezcan y pide permiso antes de fotografiar: la hospitalidad cenaguera se devuelve con hospitalidad."
   ],
   "datos": [
    [
@@ -450,13 +450,13 @@
  {
   "id": "gallina",
   "pagina": "secretos",
-  "titulo": "Playa Gallina",
+  "titulo": "Playa Gallina · El Caribe como era antes",
   "imagen": "img/playa-giron.webp",
   "alt": "Playa caribeña virgen",
   "cuerpo": [
-   "Una playa caribeña del litoral zapatero que apenas aparece en la prensa nacional y que nadie promociona. Arena clara, mar turquesa y un silencio que ya no existe en casi ningún destino de playa.",
-   "Sin servicios, sin multitudes, sin vendedores: la playa como era antes del turismo masivo.",
-   "Llega temprano, lleva todo lo que necesites y llévate tu basura: que siga virgen depende de quienes la visitan."
+   "Hay playas famosas y hay playas verdaderas. Playa Gallina, en el litoral zapatero, apenas aparece en la prensa nacional y nadie la promociona: arena clara, mar turquesa y un silencio profundo que ya no existe en casi ningún destino de playa.",
+   "Sin servicios, sin multitudes, sin vendedores: es la playa como era antes del turismo masivo, donde el único sonido es el oleaje y el único plan es no tener ningún plan.",
+   "Llega temprano, lleva todo lo que necesites —agua, comida, sombra— y llévate tu basura de vuelta. Que siga virgen depende de quienes la visitan: deja la playa mejor de como la encontraste."
   ],
   "datos": [
    [
@@ -482,13 +482,13 @@
  {
   "id": "korimakao",
   "pagina": "secretos",
-  "titulo": "Korimakao · Arte comunitario",
+  "titulo": "Korimakao · El arte que nace de la ciénaga",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Atardecer en Playa Larga",
   "cuerpo": [
-   "Proyecto comunitario y escuela de arte en la zona de Playa Larga: teatro, música y formación artística hecha por y para los cenagueros. Un referente cultural poco difundido fuera de la zona.",
-   "Sus presentaciones mezclan la tradición campesina con creación contemporánea, y son una ventana única a la identidad cenaguera actual.",
-   "Apoyar a Korimakao es apoyar que la cultura local siga viva y creciendo."
+   "En la zona de Playa Larga florece Korimakao, un proyecto comunitario y escuela de arte hecho por y para los cenagueros: teatro, música y formación artística con raíces profundas en la tierra que los vio nacer. Es un referente cultural poco difundido fuera de la zona, y descubrirlo se siente como un privilegio.",
+   "Sus presentaciones mezclan la tradición campesina con la creación contemporánea, y son una ventana única a la identidad cenaguera de hoy: viva, creativa y orgullosa.",
+   "Si coincides con una función, no te la pierdas. Asistir, difundir y colaborar es la mejor forma de apoyar que la cultura local siga creciendo."
   ],
   "datos": [
    [
@@ -514,13 +514,13 @@
  {
   "id": "cocodrilo",
   "pagina": "fauna-flora",
-  "titulo": "Cocodrilo cubano",
+  "titulo": "Cocodrilo cubano · El rey vivaz del humedal",
   "imagen": "img/cocodrilo-cubano.webp",
   "alt": "Cocodrilo cubano",
   "cuerpo": [
-   "El cocodrilo cubano (Crocodylus rhombifer), de hocico chato y carácter vivaz, es endémico de Cuba y uno de los cocodrilos más amenazados del mundo. La Ciénaga de Zapata es su último gran refugio.",
-   "Convive con el cocodrilo americano (de hocico agudo), más grande y de distribución más amplia. El criadero de Boca de Guamá protege miles de ejemplares de ambas especies con programas de reproducción.",
-   "A diferencia de otros cocodrilos, el cubano es un cazador activo y sorprendentemente ágil en tierra. Verlo en libertad, con guía, es inolvidable… y seguro."
+   "De hocico chato, mirada atenta y carácter vivaz, el cocodrilo cubano (Crocodylus rhombifer) no existe en ningún otro lugar del planeta: es endémico de Cuba y uno de los cocodrilos más amenazados del mundo. La Ciénaga de Zapata es su último gran refugio, y eso convierte cada encuentro en un privilegio.",
+   "Comparte las aguas con su primo mayor, el cocodrilo americano de hocico agudo, más grande y de distribución más amplia. En el criadero de Boca de Guamá, miles de ejemplares de ambas especies crecen protegidos gracias a programas de reproducción que mantienen viva la esperanza de la especie.",
+   "A diferencia de otros cocodrilos, el cubano es un cazador activo y sorprendentemente ágil en tierra. Verlo en libertad, siempre con guía y a distancia prudente, es inolvidable… y completamente seguro."
   ],
   "datos": [
    [
@@ -542,13 +542,13 @@
  {
   "id": "zunzuncito",
   "pagina": "fauna-flora",
-  "titulo": "Zunzuncito",
+  "titulo": "Zunzuncito · El ave más pequeña del mundo",
   "imagen": "img/zunzuncito.webp",
   "alt": "Zunzuncito",
   "cuerpo": [
-   "El zunzuncito o colibrí zunzuncito (Mellisuga helenae) es el ave más pequeña del mundo: mide unos 5-6 cm y pesa menos de 2 gramos, menos que una moneda.",
-   "Es endémico de Cuba y uno de los símbolos de la ciénaga. Los machos lucen un collar iridiscente rojo fuego; las hembras son más discretas.",
-   "Su corazón late más de 1,000 veces por minuto y bate las alas unas 80 veces por segundo: verlo libar a medio metro de ti, en la Casa del Zunzún, es magia pura."
+   "Imagínate un ave que pesa menos que una moneda y cabe en la palma de tu mano: el zunzuncito o colibrí zunzuncito (Mellisuga helenae) mide apenas 5 o 6 centímetros y es el ave más pequeña del planeta. Y es cubano: no vive en ningún otro país.",
+   "Los machos lucen un collar iridiscente de un rojo fuego que enciende el jardín cuando les da el sol; las hembras, más discretas, son igual de veloces. Su corazón late más de 1,000 veces por minuto y sus alas baten unas 80 veces por segundo: la naturaleza en modo turbo.",
+   "En la Casa del Zunzún puedes verlo libar a medio metro de ti, suspendido en el aire como por arte de magia. Lleva tu cámara lista y respira despacio: la magia dura segundos, pero se queda para siempre."
   ],
   "datos": [
    [
@@ -570,13 +570,13 @@
  {
   "id": "tocororo",
   "pagina": "fauna-flora",
-  "titulo": "Tocororo · Ave nacional",
+  "titulo": "Tocororo · El ave que viste los colores de Cuba",
   "imagen": "img/tocororo.webp",
   "alt": "Tocororo",
   "cuerpo": [
-   "El tocororo (Priotelus temnurus), ave nacional de Cuba, parece diseñado con la bandera: espalda verde iridiscente, pecho blanco, vientre rojo y corona azul.",
-   "Es un ave tranquila que se deja observar en los bosques de la ciénaga, especialmente en Bermeja. Su canto es un 'toco-toco-tocoro' que le da nombre.",
-   "Verlo en libertad es uno de esos momentos que justifican el viaje por sí solos."
+   "Parece diseñado a propósito con la bandera cubana: espalda verde iridiscente, pecho blanco inmaculado, vientre rojo intenso y corona azul. El tocororo (Priotelus temnurus), ave nacional de Cuba, es una de las aves más hermosas del Caribe.",
+   "Es un ave tranquila y confiada que se deja observar en los bosques de la ciénaga, especialmente en Bermeja. Al amanecer entona su canto inconfundible —un «toco-toco-tocoro» que le dio su nombre— y el bosque entero parece contener la respiración.",
+   "Verlo en libertad, con la luz dorada de la mañana entre las hojas, es uno de esos momentos que justifican el viaje por sí solos. Lleva binoculares y déjate guiar por su canto."
   ],
   "datos": [
    [
@@ -598,13 +598,13 @@
  {
   "id": "flamenco",
   "pagina": "fauna-flora",
-  "titulo": "Flamenco americano",
+  "titulo": "Flamenco americano · Cuando el amanecer se viste de rosa",
   "imagen": "img/flamencos-salinas.webp",
   "alt": "Flamencos",
   "cuerpo": [
-   "El flamenco americano (Phoenicopterus ruber) forma concentraciones espectaculares en las Salinas de Brito, tiñendo de rosa los espejos de agua al amanecer.",
-   "Su color viene de los carotenoides de las algas y crustáceos que come. Vuelan en formaciones perfectas que parecen coreografiadas.",
-   "Las Salinas son además escala de 65 especies de aves migratorias: un festín para fotógrafos."
+   "Hay amaneceres que se miran y amaneceres que se viven. En las Salinas de Brito, cuando el sol asoma, cientos de flamencos americanos (Phoenicopterus ruber) tiñen de rosa los espejos de agua: un espectáculo que parece pintado a mano.",
+   "Su color rosado viene de los carotenoides de las algas y crustáceos que comen, y cuando alzan el vuelo lo hacen en formaciones perfectas que parecen coreografiadas. Las Salinas, además, reciben 65 especies de aves migratorias: un festín para fotógrafos y soñadores.",
+   "Ve al amanecer, cuando la luz es dorada y las aves están más activas. Si tienes teleobjetivo y trípode, este es su momento de gloria."
   ],
   "datos": [
    [
@@ -626,13 +626,13 @@
  {
   "id": "manati",
   "pagina": "fauna-flora",
-  "titulo": "Manatí antillano",
+  "titulo": "Manatí antillano · El gentil gigante del río",
   "imagen": "img/manati.webp",
   "alt": "Manatí",
   "cuerpo": [
-   "El manatí (Trichechus manatus), el 'gentil gigante', está en peligro de extinción. El río Hatiguanico guarda una de sus poblaciones más importantes de Cuba.",
-   "Puede medir 3 metros y pesar 500 kg, pero se alimenta solo de plantas acuáticas y es completamente inofensivo. Verlo emerger a respirar en la niebla del amanecer es sobrecogedor.",
-   "Su mayor amenaza son las redes de pesca y las embarcaciones rápidas: por eso el avistamiento se hace con guías y normas estrictas."
+   "El manatí (Trichechus manatus) es el «gentil gigante» de las aguas cubanas: puede medir 3 metros y pesar 500 kilos, pero se alimenta solo de plantas acuáticas y es completamente inofensivo. Está en peligro de extinción, y el río Hatiguanico guarda una de sus poblaciones más importantes de Cuba.",
+   "Verlo emerger a respirar entre la niebla del amanecer, lento y sereno, es sobrecogedor: el tiempo parece detenerse en ese instante.",
+   "Su mayor amenaza son las redes de pesca y las embarcaciones rápidas, por eso el avistamiento se hace únicamente con guías autorizados y normas estrictas: observación pasiva, sin tocar ni perseguir. Respetarlo es protegerlo."
   ],
   "datos": [
    [
@@ -654,13 +654,13 @@
  {
   "id": "manjuari",
   "pagina": "fauna-flora",
-  "titulo": "Manjuarí · Fósil viviente",
+  "titulo": "Manjuarí · Un fósil viviente de 100 millones de años",
   "imagen": "img/cueva-peces.webp",
   "alt": "Cenote",
   "cuerpo": [
-   "El manjuarí (Atractosteus tristoechus) es un pez fósil viviente de la era mesozoica, con escamas óseas como una armadura. En Cuba solo existe en la Ciénaga de Zapata.",
-   "Puede superar el metro de longitud y respira aire atmosférico además de branquias: un superviviente de 100 millones de años.",
-   "Vive en los cenotes del sistema Enigma de las Rocas, donde convive con cocodrilos y jicoteas en una piscina natural de 25 metros."
+   "El manjuarí (Atractosteus tristoechus) nadaba en los ríos cuando los dinosaurios dominaban la tierra, y apenas ha cambiado desde entonces: escamas óseas como una armadura medieval y la capacidad de respirar aire atmosférico además de usar branquias. Un superviviente de 100 millones de años.",
+   "En Cuba solo existe en la Ciénaga de Zapata, donde puede superar el metro de longitud. Vive en los cenotes del sistema Enigma de las Rocas, compartiendo una piscina natural de 25 metros con cocodrilos y jicoteas, como en una escena del pasado remoto.",
+   "Observarlo en esas aguas cristalinas es asomarse a la prehistoria sin máquina del tiempo. Se visita con guía, en el mismo recorrido de los cenotes."
   ],
   "datos": [
    [
@@ -682,13 +682,13 @@
  {
   "id": "aves",
   "pagina": "fauna-flora",
-  "titulo": "Aves endémicas y migratorias",
+  "titulo": "Aves · 258 razones para mirar al cielo",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Amanecer con aves",
   "cuerpo": [
-   "La ciénaga registra 258 especies de aves. Entre las endémicas destacan la gallinuela de Santo Tomás y la ferminia, con algunos de los hábitats más restringidos del mundo; la cotorra cubana, el catey, el cabrerito de la ciénaga, el gavilán colilargo y la paloma perdiz.",
-   "De noviembre a marzo llegan más de 65 especies migratorias norteamericanas a invernar: patos, garzas y rapaces se suman al espectáculo.",
-   "Bermeja es el punto estrella: hasta 19 endémicas en una sola visita con guía local."
+   "La Ciénaga de Zapata registra 258 especies de aves: un número que quita el aliento. Entre las endémicas destacan la gallinuela de Santo Tomás y la ferminia, con algunos de los hábitats más restringidos del mundo, junto a la cotorra cubana, el catey, el cabrerito de la ciénaga, el gavilán colilargo y la paloma perdiz.",
+   "De noviembre a marzo, más de 65 especies migratorias norteamericanas llegan a invernar: patos, garzas y rapaces se suman al espectáculo y el cielo se llena de vida.",
+   "Bermeja es el punto estrella —hasta 19 endémicas en una sola visita con guía local—, pero cada sendero, cada laguna y cada amanecer regalan su propio concierto. Trae binoculares y madruga: las aves premian a los tempraneros."
   ],
   "datos": [
    [
@@ -710,13 +710,13 @@
  {
   "id": "flora",
   "pagina": "fauna-flora",
-  "titulo": "Flora: los cuatro mangles",
+  "titulo": "Los cuatro mangles · El bosque que camina sobre el agua",
   "imagen": "img/sendero-manglar.webp",
   "alt": "Manglar",
   "cuerpo": [
-   "La ciénaga alberga ~1,000 especies de plantas autóctonas en 110 familias: 130 endémicas cubanas, 6 locales y 14 raras o en peligro.",
-   "Sus cuatro mangles —rojo (raíces zancudas), prieto, patabán y yana— forman manglares centenarios que protegen la costa y crían peces. El herbazal de ciénaga (cortadera, palmanaca, arraiján) y el bosque siempreverde (almácigo, guayacán) completan el mosaico.",
-   "El 56% del pantano es bosque, y el paisaje cársico —con cenotes y 'diente de perro'— es el sistema de drenaje más complejo de Cuba."
+   "La ciénaga es un jardín colosal: unas 1,000 especies de plantas autóctonas en 110 familias, con 130 endémicas cubanas, 6 locales y 14 raras o en peligro. Un tesoro verde que la mayoría de los visitantes apenas empieza a descubrir.",
+   "Sus cuatro mangles —el rojo de raíces zancudas que parecen patas de araña, el prieto, el patabán y la yana— forman manglares centenarios que protegen la costa y sirven de cuna a los peces. El herbazal de ciénaga, con cortadera, palmanaca y arraiján, y el bosque siempreverde de almácigos y guayacanes completan el mosaico.",
+   "El 56% del pantano es bosque, y bajo tus pies corre el sistema de drenaje cársico más complejo de Cuba, con cenotes y «diente de perro». Recórrelo con guía del Parque: cada raíz y cada hoja tienen una historia."
   ],
   "datos": [
    [
@@ -738,13 +738,13 @@
  {
   "id": "buceo",
   "pagina": "actividades",
-  "titulo": "Buceo",
+  "titulo": "Buceo · El Caribe bajo la superficie",
   "imagen": "img/buceo-arrecife.webp",
   "alt": "Buceo en arrecife",
   "cuerpo": [
-   "Más de 30 sitios de buceo, la mayoría accesibles desde la orilla: paredes de coral, jardines de gorgonias y esponjas, y cuevas inundadas para espeleobuceo certificado.",
-   "El Centro Internacional de Buceo Octopus (Playa Larga) opera 13 puntos costeros, buceo nocturno y cursos de iniciación. El Centro Azul (Playa Girón) y El Pirata (Caleta Buena, 19 puntos) completan la oferta.",
-   "La visibilidad suele superar los 25 metros y la temperatura del agua ronda los 26-28°C todo el año."
+   "Debajo del turquesa que ves desde la orilla hay otro mundo: más de 30 sitios de buceo, la mayoría accesibles directamente desde la costa, con paredes de coral que caen al azul profundo, jardines de gorgonias y esponjas de colores imposibles, y cuevas inundadas para espeleobuceo certificado.",
+   "El Centro Internacional de Buceo Octopus, en Playa Larga, opera 13 puntos costeros, buceo nocturno —morenas, pulpos y destellos de bioluminiscencia— y cursos de iniciación para quienes sueñan con respirar bajo el agua por primera vez. El Centro Azul, en Playa Girón, y El Pirata, en Caleta Buena con 19 puntos, completan la oferta.",
+   "La visibilidad suele superar los 25 metros y el agua ronda los 26 a 28 grados todo el año: un abrazo tibio. De noviembre a abril el mar está más calmado, ideal para tu primera inmersión."
   ],
   "datos": [
    [
@@ -770,13 +770,13 @@
  {
   "id": "snorkel",
   "pagina": "actividades",
-  "titulo": "Snorkel",
+  "titulo": "Snorkel · El arrecife al alcance de todos",
   "imagen": "img/cueva-peces.webp",
   "alt": "Snorkel",
   "cuerpo": [
-   "Cueva de los Peces (cenote de 70 m), Caleta Buena (piscina natural de arrecife) y Punta Perdiz (corales a metros de la orilla) forman el triángulo de oro del snorkel cubano.",
-   "No necesitas ser buzo: con máscara y aletas ves peces de colores, corales y esponjas en aguas cristalinas y protegidas.",
-   "Llega temprano a la Cueva de los Peces para evitar los grupos de las excursiones."
+   "No hace falta ser buzo para nadar entre peces de colores: la Cueva de los Peces —un cenote de 70 metros de profundidad—, Caleta Buena con su piscina natural de arrecife y Punta Perdiz con corales a metros de la orilla forman el triángulo de oro del snorkel cubano.",
+   "Con una máscara y unas aletas, en aguas cristalinas y protegidas, verás corales, esponjas y cardúmenes que parecen confeti vivo. Es el plan perfecto en familia y para principiantes: el mar aquí es generoso.",
+   "Llega temprano a la Cueva de los Peces para disfrutarla antes de los grupos de excursiones, y lleva tu propio equipo si puedes: el alquiler se agota en temporada alta."
   ],
   "datos": [
    [
@@ -798,13 +798,13 @@
  {
   "id": "aves",
   "pagina": "actividades",
-  "titulo": "Avistamiento de aves",
+  "titulo": "Avistamiento de aves · La meca del Caribe",
   "imagen": "img/flamencos-salinas.webp",
   "alt": "Flamencos",
   "cuerpo": [
-   "Con 258 especies registradas, la ciénaga es la meca del birdwatching caribeño. Bermeja (hasta 19 endémicas en un día), las Salinas de Brito (flamencos y migratorias) y el Centro Internacional de Observación de Aves (Playa Larga) son los puntos clave.",
-   "Los guías locales son imprescindibles: conocen cada canto y cada percha. De noviembre a marzo se suman 65+ especies migratorias.",
-   "La Casa del Zunzún ofrece el encuentro más íntimo: colibríes a medio metro."
+   "Con 258 especies registradas, la Ciénaga de Zapata es la meca del birdwatching caribeño, y cada amanecer es una función nueva. Bermeja —hasta 19 endémicas en un solo día—, las Salinas de Brito con sus flamencos rosados y el Centro Internacional de Observación de Aves en Playa Larga son los puntos clave.",
+   "Los guías locales son imprescindibles: conocen cada canto, cada percha y cada escondite del bosque, y convierten una caminata en una cacería de tesoros emplumados. De noviembre a marzo se suman más de 65 especies migratorias del norte.",
+   "Y para el encuentro más íntimo de todos, visita la Casa del Zunzún: colibríes a medio metro de tu cara. Trae binoculares, viste colores discretos y madruga."
   ],
   "datos": [
    [
@@ -826,13 +826,13 @@
  {
   "id": "senderismo",
   "pagina": "actividades",
-  "titulo": "Senderismo",
+  "titulo": "Senderismo · Caminar entre manglares milenarios",
   "imagen": "img/sendero-manglar.webp",
   "alt": "Sendero",
   "cuerpo": [
-   "Cinco senderos interpretativos oficiales: Enigma de las Rocas (cenotes), Los Arroyones, Cinco Furnias y otros entre manglar centenario, bosque siempreverde y diente de perro cársico.",
-   "Los recorridos van de 1 a 4 horas, con guías del Parque Nacional que explican flora, fauna y geología.",
-   "Calzado cerrado obligatorio: el diente de perro es roca afilada. Repelente y agua, siempre."
+   "Cinco senderos interpretativos oficiales te esperan entre manglar centenario, bosque siempreverde y el afilado «diente de perro» cársico: Enigma de las Rocas con sus cenotes azules, Los Arroyones, Cinco Furnias y más rutas que se abren con guía.",
+   "Los recorridos van de 1 a 4 horas, y los guías del Parque Nacional convierten cada paso en una lección viva de flora, fauna y geología: orquídeas en temporada, cantos que aprenderás a reconocer y raíces que parecen esculturas.",
+   "El calzado cerrado es obligatorio —la roca cársica corta de verdad—, y el repelente y el agua nunca sobran. Sal temprano: el bosque despierta contigo."
   ],
   "datos": [
    [
@@ -854,13 +854,13 @@
  {
   "id": "pesca",
   "pagina": "actividades",
-  "titulo": "Pesca deportiva",
+  "titulo": "Pesca deportiva · El duelo con la trucha",
   "imagen": "img/laguna-guama.webp",
   "alt": "Laguna",
   "cuerpo": [
-   "La trucha de la Laguna del Tesoro es la pesca deportiva más famosa de la zona, en modalidad captura y suelta. En las Salinas, el fly fishing de macabí, sábalo y palometa atrae a pescadores de todo el mundo.",
-   "Se pesca con guías locales que conocen cada bajo y cada canal. Licencias y equipos se gestionan en los centros.",
-   "Pesca responsable: tallas mínimas y vedas que los guías conocen al dedillo."
+   "La trucha de la Laguna del Tesoro es la pesca deportiva más famosa de la zona: potente, astuta y generosa, en modalidad de captura y suelta para que el duelo se repita. En las Salinas, el fly fishing de macabí, sábalo y palometa atrae a pescadores de todo el mundo.",
+   "Se pesca con guías locales que conocen cada bajo y cada canal como la palma de su mano. Licencias y equipos se gestionan en los centros, y las normas se respetan a rajatabla: tallas mínimas y vedas que los guías conocen al dedillo.",
+   "Pescar aquí es medirte con la naturaleza en su casa y devolverle el trofeo al agua. Una experiencia de las que se cuentan por años."
   ],
   "datos": [
    [
@@ -882,13 +882,13 @@
  {
   "id": "kayak",
   "pagina": "actividades",
-  "titulo": "Kayak y lancha",
+  "titulo": "Kayak y lancha · Amanecer entre manglares",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Kayak al amanecer",
   "cuerpo": [
-   "Navegar los canales entre manglares al amanecer —con la niebla sobre el agua y las aves despertando— es la experiencia más mágica y barata de la ciénaga.",
-   "Las lanchas a Guamá salen de Boca de Guamá (4 km de canal + 3 km de laguna). El río Hatiguanico ofrece navegación fluvial entre manatíes.",
-   "Hay alquiler de kayaks en Playa Larga y excursiones guiadas en varios puntos."
+   "Hay una hora mágica en la ciénaga y se vive desde el agua: al amanecer, la niebla flota sobre los canales entre manglares, las aves despiertan a tu alrededor y el remo apenas rompe el espejo. Es la experiencia más hermosa —y más económica— de todo el humedal.",
+   "Las lanchas hacia Guamá parten de Boca de Guamá entre el criadero de cocodrilos: 4 km de canal y 3 km de laguna hasta la aldea taína. Y el río Hatiguanico ofrece navegación fluvial en territorio de manatíes.",
+   "Hay alquiler de kayaks en Playa Larga y excursiones guiadas en varios puntos. Es apto para principiantes: si puedes remar despacio y mirar alrededor, ya sabes todo lo necesario."
   ],
   "datos": [
    [
@@ -910,13 +910,13 @@
  {
   "id": "tainos",
   "pagina": "historia",
-  "titulo": "Los primeros cenagueros",
+  "titulo": "Los primeros cenagueros · Taínos y siboneyes",
   "imagen": "img/laguna-guama.webp",
   "alt": "Aldea taína",
   "cuerpo": [
-   "Antes de Colón, siboneyes y taínos habitaron estas tierras, organizados en los cacicazgos de Yaguaramas y Hanábana. Vivían de la pesca, la caza y la agricultura en los bordes del humedal.",
-   "En Caleta Cocodrilos, el grupo espeleológico Manuel Santos Parga halló el único sitio de aborígenes neolíticos (agricultores-ceramistas) de toda la isla: un hallazgo arqueológico de primer orden.",
-   "Guamá recrea su mundo con 25 esculturas de Rita Longa: Dayamí, Abey el cazador de cocodrilos, Cajimo, Maguanay, Yaima y el cacique Guamá."
+   "Mucho antes de Colón, siboneyes y taínos ya llamaban hogar a estas tierras, organizados en los cacicazgos de Yaguaramas y Hanábana. Vivían de la pesca, la caza y la agricultura en los bordes del humedal, en armonía con un paisaje que conocían al detalle.",
+   "En Caleta Cocodrilos, el grupo espeleológico Manuel Santos Parga descubrió el único sitio de aborígenes neolíticos agricultores-ceramistas de toda la isla: un hallazgo arqueológico de primer orden que reescribió lo que sabíamos de los primeros cubanos.",
+   "En Guamá, 25 esculturas de Rita Longa recrean su mundo: Dayamí, Abey el cazador de cocodrilos, Cajimo, Maguanay, Yaima y el cacique Guamá. Y la leyenda dice que su tesoro duerme en el fondo de la laguna… ¿te atreves a buscarlo con la mirada?"
   ],
   "datos": [
    [
@@ -938,13 +938,13 @@
  {
   "id": "piratas",
   "pagina": "historia",
-  "titulo": "Refugio de piratas",
+  "titulo": "Refugio de piratas · Corsarios del Caribe",
   "imagen": "img/playa-giron.webp",
   "alt": "Costa de piratas",
   "cuerpo": [
-   "Durante la colonia, las caletas del litoral fueron refugio de corsarios y filibusteros que acechaban el tráfico entre La Habana y el Caribe. El francés Gilbert Girón se refugió aquí en el siglo XVII y dio nombre a Playa Girón.",
-   "Caleta Redonda guarda fábulas de tesoros enterrados y apariciones; Sábalo, Mal Paso y Caletón conservan —dicen los viejos— las argollas donde amarraban los barcos.",
-   "Junto a Caleta del Rosario se alzó en el siglo XIX un fuerte español contra el tráfico ilegal de esclavos: las caletas también fueron puertos clandestinos."
+   "Durante la colonia, las caletas del litoral zapatero fueron refugio de corsarios y filibusteros que acechaban el tráfico entre La Habana y el resto del Caribe. El francés Gilbert Girón se escondió en estas costas en el siglo XVII… y terminó dándole nombre a Playa Girón.",
+   "Caleta Redonda guarda fábulas de tesoros enterrados y apariciones que aún erizan la piel; en Sábalo, Mal Paso y Caletón, los viejos juran que todavía se ven las argollas donde amarraban los barcos piratas.",
+   "Y junto a Caleta del Rosario se alzó en el siglo XIX un fuerte español contra el tráfico ilegal de esclavos: estas caletas también fueron puertos clandestinos. Camina por esa arena y escucha: la historia aquí susurra."
   ],
   "datos": [
    [
@@ -966,13 +966,13 @@
  {
   "id": "carbon",
   "pagina": "historia",
-  "titulo": "La era del carbón",
+  "titulo": "La era del carbón · De la miseria al orgullo",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Batey carbonero",
   "cuerpo": [
-   "Durante siglos, generaciones de carboneros vivieron en bohíos entre el fango y los hornos de carbón vegetal. Era un trabajo durísimo y mal pagado: en 1958 la zona tenía la mortalidad infantil más alta de Cuba.",
-   "Soplillar y Pálpite conservan esa memoria: bateyes, hornos y familias que aún cuentan cómo era la vida. En Soplillar, Fidel Castro pasó la Nochebuena de 1959 cenando con las familias Méndez Armengual y García Montano; se conmemora cada 24 de diciembre.",
-   "Hoy los descendientes son guías, pescadores y guardianes del humedal: la miseria se convirtió en orgullo."
+   "Durante siglos, generaciones de carboneros vivieron en bohíos entre el fango y los hornos de carbón vegetal. Era un trabajo durísimo y mal pagado: en 1958 esta zona tenía la mortalidad infantil más alta de Cuba.",
+   "Soplillar y Pálpite conservan esa memoria viva: los bateyes, los hornos y las familias que aún cuentan cómo era la vida. En Soplillar, la Nochebuena de 1959 se cenó con una visita inesperada que la historia no olvida, y la comunidad la conmemora cada 24 de diciembre.",
+   "Hoy los descendientes de aquellos carboneros son guías, pescadores y guardianes del humedal. La miseria se convirtió en orgullo, y conocer su historia es la forma más honesta de conocer la ciénaga."
   ],
   "datos": [
    [
@@ -994,13 +994,13 @@
  {
   "id": "cochinos",
   "pagina": "historia",
-  "titulo": "Bahía de Cochinos · 1961",
+  "titulo": "Bahía de Cochinos · Abril de 1961",
   "imagen": "img/playa-giron.webp",
   "alt": "Bahía de Cochinos",
   "cuerpo": [
-   "En abril de 1961, Playa Girón y Playa Larga fueron el escenario del desembarco de Bahía de Cochinos, derrotado en menos de 72 horas. Fue la primera derrota militar de Estados Unidos en América Latina.",
-   "El Museo Girón conserva armas, fotos, documentos, un avión Sea Fury y un tanque en sus exteriores, además de testimonios de combatientes.",
-   "La historia convive con el paraíso: el mismo mar turquesa donde hoy se bucea fue testigo de aquellos días."
+   "En abril de 1961, las arenas de Playa Girón y Playa Larga fueron escenario del desembarco de Bahía de Cochinos, derrotado en menos de 72 horas: la primera derrota militar de Estados Unidos en América Latina.",
+   "El Museo Girón conserva las huellas de aquellos días: armas, fotos, documentos y testimonios de combatientes, además de un avión Sea Fury y un tanque en sus exteriores que impresionan a grandes y chicos.",
+   "La historia convive aquí con el paraíso: el mismo mar turquesa donde hoy se bucea entre corales fue testigo de la historia. Visita el museo por la mañana y nada por la tarde: la ciénaga te regala las dos caras."
   ],
   "datos": [
    [
@@ -1022,13 +1022,13 @@
  {
   "id": "unesco",
   "pagina": "historia",
-  "titulo": "Reconocimiento mundial",
+  "titulo": "Reconocimiento mundial · Un tesoro protegido por la UNESCO",
   "imagen": "img/hero-humedal.webp",
   "alt": "Humedal",
   "cuerpo": [
-   "El Parque Nacional se creó en 1971. En 2000 la UNESCO declaró a la Ciénaga Reserva de la Biosfera y en 2001 fue designada sitio Ramsar (humedal de importancia internacional). Hoy aspira a ser Patrimonio Mundial.",
-   "Con ~4,500 km², es el humedal más grande del Caribe insular y uno de los mayores de América Latina. Está hermanada con la Ría Lagartos de México.",
-   "Recibe unos 800,000 visitantes al año y sostiene a ~9,000 habitantes en el municipio más extenso y menos denso de Cuba."
+   "El Parque Nacional nació en 1971, pero el mundo tardó poco en rendirse ante este humedal: en 2000 la UNESCO lo declaró Reserva de la Biosfera y en 2001 fue designado sitio Ramsar, humedal de importancia internacional. Hoy la Ciénaga aspira a lo más alto: ser Patrimonio Mundial.",
+   "Con unos 4,500 km², es el humedal más grande del Caribe insular y uno de los mayores de América Latina, hermanado con la Ría Lagartos de México. Recibe alrededor de 800,000 visitantes al año y sostiene a unos 9,000 habitantes en el municipio más extenso y menos densamente poblado de Cuba.",
+   "Estos reconocimientos no son medallas en una vitrina: son un compromiso con la naturaleza que tú también firmas al visitarla con respeto."
   ],
   "datos": [
    [
@@ -1054,13 +1054,13 @@
  {
   "id": "cultura",
   "pagina": "historia",
-  "titulo": "Cultura viva",
+  "titulo": "Cultura viva · Décimas, bohíos y hospitalidad",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Cultura cenaguera",
   "cuerpo": [
-   "La décima campesina sigue viva en la ciénaga: poetas como Otaño y su 'Isla del Coco' mantienen la tradición del repentismo. La cultura carbonera —el horno, el bohío, la faena— es memoria y presente.",
-   "Korimakao, proyecto comunitario y escuela de arte en Playa Larga, mezcla teatro, música y formación: arte hecho por y para los cenagueros.",
-   "Las fiestas locales, la cocina de leña y la hospitalidad completan una cultura que el visitante respetuoso puede vivir de cerca."
+   "La décima campesina sigue viva en la ciénaga: poetas como Otaño y su «Isla del Coco» mantienen encendida la tradición del repentismo, esos versos improvisados que nacen del alma guajira. La cultura carbonera —el horno, el bohío, la faena— es memoria y presente a la vez.",
+   "Korimakao, proyecto comunitario y escuela de arte en Playa Larga, mezcla teatro, música y formación artística: arte hecho por y para los cenagueros, con los pies en la tierra y la mirada en el futuro.",
+   "Súmale las fiestas locales, la cocina de leña y una hospitalidad que desarma. El visitante respetuoso no solo mira esta cultura: la vive de cerca, entre décimas y café."
   ],
   "datos": [
    [
@@ -1082,13 +1082,13 @@
  {
   "id": "trucha",
   "pagina": "gastronomia",
-  "titulo": "Trucha de la Laguna del Tesoro",
+  "titulo": "Trucha de la Laguna · La reina de la mesa cenaguera",
   "imagen": "img/laguna-guama.webp",
   "alt": "Trucha",
   "cuerpo": [
-   "La especialidad de la zona: trucha fresca de la laguna, la misma que los pescadores deportivos capturan (y sueltan) cada día. A la parrilla, al ajillo o en salsa criolla.",
-   "Es el plato que todo visitante debe probar al menos una vez: no hay trucha como la de la laguna, dicen los cenagueros.",
-   "La sirven en el complejo Guamá, en Playa Larga y en los restaurantes de Playa Girón."
+   "Hay un plato que resume la ciénaga en un bocado: la trucha fresca de la Laguna del Tesoro, la misma que los pescadores deportivos capturan —y devuelven— cada día. A la parrilla, al ajillo o en salsa criolla, su carne firme y delicada no se parece a ninguna otra.",
+   "«No hay trucha como la de la laguna», dicen los cenagueros, y tienen razón: es el plato que todo visitante debe probar al menos una vez.",
+   "La sirven en el complejo Guamá, en Playa Larga y en los restaurantes de Playa Girón. Pídela con tostones y una cerveza bien fría, frente al agua si puedes."
   ],
   "datos": [
    [
@@ -1110,13 +1110,13 @@
  {
   "id": "mariscos",
   "pagina": "gastronomia",
-  "titulo": "Langosta, camarones y pescado del día",
+  "titulo": "Del Caribe a tu mesa · Langosta y pesca del día",
   "imagen": "img/playa-giron.webp",
   "alt": "Mariscos",
   "cuerpo": [
-   "Del Caribe sur a tu mesa: langosta a la parrilla, camarones al ajillo, pargo, biajaiba y cherna del día. El arroz con mariscos es el plato festivo por excelencia.",
-   "Los restaurantes de Playa Girón y Playa Larga trabajan con la pesca del día de los pescadores locales: frescura garantizada.",
-   "El coctel de camarón, bien frío, es el aperitivo perfecto después del snorkel."
+   "Del Caribe sur directo a tu mesa: langosta a la parrilla con su mantequilla derretida, camarones al ajillo que perfuman la mesa entera, pargo, biajaiba y cherna del día. Y el rey de las celebraciones: el arroz con mariscos, festivo y generoso.",
+   "Los restaurantes de Playa Girón y Playa Larga trabajan con la pesca del día de los pescadores locales, así que la frescura está garantizada: del anzuelo al plato en horas.",
+   "Después del snorkel, nada como un coctel de camarón bien frío como aperitivo. El mar también se saborea."
   ],
   "datos": [
    [
@@ -1138,13 +1138,13 @@
  {
   "id": "cocodrilo",
   "pagina": "gastronomia",
-  "titulo": "Carne de cocodrilo",
+  "titulo": "Carne de cocodrilo · El plato más atrevido",
   "imagen": "img/cocodrilo-cubano.webp",
   "alt": "Cocodrilo",
   "cuerpo": [
-   "El plato más exótico de la ciénaga, servido en el restaurante del complejo Guamá. La carne de cocodrilo —de ejemplares del criadero, con manejo regulado— tiene textura entre el pollo y el pescado.",
-   "Se prepara a la parrilla o en salsa. No es un plato de todos los días: es una experiencia para contar.",
-   "¿Te atreves? La mayoría de los que la prueban repiten."
+   "El plato más exótico de la ciénaga se sirve en el restaurante del complejo Guamá: carne de cocodrilo, de ejemplares del criadero bajo manejo regulado, con una textura sorprendente entre el pollo y el pescado.",
+   "Se prepara a la parrilla o en salsa, y no es un plato de todos los días: es una experiencia para contar, de esas que se presumen en la sobremesa.",
+   "¿Te atreves? La mayoría de los que la prueban, repiten. Solo para valientes… y curiosos."
   ],
   "datos": [
    [
@@ -1166,13 +1166,13 @@
  {
   "id": "caldo",
   "pagina": "gastronomia",
-  "titulo": "Caldo de pescado cenaguero",
+  "titulo": "Caldo de pescado · El alma de la cocina cenaguera",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Caldo",
   "cuerpo": [
-   "El alma de la cocina local: caldo de pescado con pargo o cherna, viandas, ají y el sazón de las cocineras cenagueras. Levanta muertos, dicen.",
-   "Es el plato de los pescadores después de la faena y el remedio perfecto tras un día de buceo.",
-   "Cada casa tiene su receta; la base es siempre la misma: pescado fresquísimo y paciencia."
+   "El alma de la cocina local cabe en un plato hondo: caldo de pescado con pargo o cherna del día, viandas, ají y el sazón inconfundible de las cocineras cenagueras. «Levanta muertos», dicen por aquí, y no exageran.",
+   "Es el plato de los pescadores después de la faena y el remedio perfecto tras un día de buceo: caliente, honesto y reparador.",
+   "Cada casa tiene su receta secreta, pero la base es siempre la misma: pescado fresquísimo y paciencia. Acompáñalo con casabe o arroz blanco."
   ],
   "datos": [
    [
@@ -1194,13 +1194,13 @@
  {
   "id": "criolla",
   "pagina": "gastronomia",
-  "titulo": "La base criolla",
+  "titulo": "Sabor criollo · Congrí, tostones y café",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Comida criolla",
   "cuerpo": [
-   "Congrí, tostones, yuca con mojo y ensalada: los imprescindibles cubanos que acompañan cada comida. En la ciénaga se cocinan como en ningún otro lado: con leña y sin prisa.",
-   "La Finca Fiesta Campesina, en la entrada de la ciénaga, muestra la flora y fauna cubana en vivo y su restaurante 'El Canelo' sirve comida criolla de referencia.",
-   "No te vayas sin probar un café cubano bien cargado después del almuerzo."
+   "Congrí desgranado, tostones crujientes, yuca con mojo y ensalada fresca: los imprescindibles cubanos que acompañan cada comida. En la ciénaga se cocinan como en ningún otro lado: con leña, sin prisa y con ese humo que lo impregna todo de sabor.",
+   "La Finca Fiesta Campesina, en la entrada de la ciénaga, muestra la flora y fauna cubana en vivo, y su restaurante «El Canelo» sirve comida criolla de referencia: la parada obligada del buen comer.",
+   "Y no te vayas sin el ritual final: un café cubano bien cargado después del almuerzo. Así se cierra una comida cenaguera."
   ],
   "datos": [
    [
@@ -1222,13 +1222,13 @@
  {
   "id": "donde",
   "pagina": "gastronomia",
-  "titulo": "Dónde comer",
+  "titulo": "Dónde comer · La ruta del buen paladar",
   "imagen": "img/playa-giron.webp",
   "alt": "Restaurantes",
   "cuerpo": [
-   "Complejo Guamá: el restaurante sobre la laguna, con trucha y el exótico cocodrilo. Playa Larga: la mayor concentración de restaurantes y paladares, para todos los bolsillos. Playa Girón: pescado del día frente al mar.",
-   "Finca Fiesta Campesina (entrada de la ciénaga): parada obligada con 'El Canelo'. En los caseríos, si te invitan a comer, acepta: la cocina de leña no se olvida.",
-   "Consejo: pregunta siempre por 'la pesca del día' antes de pedir."
+   "Complejo Guamá: el restaurante sobre la laguna, con la trucha emblemática y el exótico cocodrilo para los atrevidos. Playa Larga: la mayor concentración de restaurantes y paladares, para todos los gustos. Playa Girón: pescado del día con los pies casi en la arena, frente al mar.",
+   "Finca Fiesta Campesina, en la entrada de la ciénaga, es parada obligada con su restaurante «El Canelo». Y un consejo de oro: en los caseríos, si te invitan a comer, acepta sin dudarlo; la cocina de leña de una casa cenaguera no se olvida jamás.",
+   "Pregunta siempre por «la pesca del día» antes de pedir: es la garantía de lo más fresco de la casa."
   ],
   "datos": [
    [
@@ -1254,13 +1254,13 @@
  {
   "id": "llegar",
   "pagina": "guia",
-  "titulo": "Cómo llegar",
+  "titulo": "Cómo llegar · Tu ruta a la ciénaga",
   "imagen": "img/hero-humedal.webp",
   "alt": "Carretera",
   "cuerpo": [
-   "En carro: por la Autopista Nacional hasta el entronque del Central Australia (km 142), y de ahí a La Boca, puerta de la ciénaga. Distancias: La Habana–La Boca 166 km; Varadero–La Boca 94 km; La Boca–Playa Larga 11 km; La Boca–Playa Girón 45 km.",
-   "En ómnibus: Viazul tiene paradas en Playa Larga y Playa Girón. En tours: jeep safari 4x4 y excursiones de un día desde La Habana y Varadero, con guía, almuerzo y actividades incluidas.",
-   "Dentro de la ciénaga, las distancias son cortas pero las carreteras secundarias pueden estar en mal estado: un 4x4 o un chofer local son la mejor inversión."
+   "En carro es sencillo: toma la Autopista Nacional hasta el entronque del Central Australia (km 142) y de ahí sigue a La Boca, la puerta de entrada de la ciénaga. Las distancias son amables: La Habana–La Boca 166 km, Varadero–La Boca 94 km, La Boca–Playa Larga 11 km y La Boca–Playa Girón 45 km.",
+   "En ómnibus, Viazul tiene paradas en Playa Larga y Playa Girón. Y si prefieres no manejar, los tours en jeep safari 4x4 y las excursiones de un día desde La Habana y Varadero incluyen guía, almuerzo y actividades: la forma más cómoda de estrenar la ciénaga.",
+   "Dentro del humedal las distancias son cortas, pero las carreteras secundarias pueden estar en mal estado: un 4x4 o un chofer local conocedor son la mejor inversión del viaje."
   ],
   "datos": [
    [
@@ -1286,13 +1286,13 @@
  {
   "id": "hospedaje",
   "pagina": "guia",
-  "titulo": "Dónde dormir",
+  "titulo": "Dónde dormir · Del palafito a la casa de renta",
   "imagen": "img/laguna-guama.webp",
   "alt": "Cabañas",
   "cuerpo": [
-   "Hotel Guamá: cabañas palafíticas sobre la Laguna del Tesoro. Dormir sobre el agua, con el canto de las aves al amanecer, es una experiencia única en Cuba.",
-   "Playa Larga y Playa Girón concentran hoteles y casas de renta para todos los bolsillos: desde habitaciones sencillas hasta hoteles de buceo con todo incluido.",
-   "En temporada alta (diciembre–abril) reserva con semanas de anticipación: el alojamiento bueno se agota."
+   "¿Dormir sobre el agua? En el Hotel Guamá es posible: cabañas palafíticas sobre la Laguna del Tesoro donde despertarás con el canto de las aves y la niebla flotando sobre la laguna. Una experiencia única en Cuba.",
+   "Playa Larga y Playa Girón concentran hoteles y casas de renta para todos los gustos: desde habitaciones sencillas y acogedoras hasta hoteles de buceo con todo incluido. Las casas de renta, además, te regalan lo mejor: el trato de una familia cenaguera.",
+   "En temporada alta, de diciembre a abril, reserva con semanas de anticipación: el alojamiento bueno vuela."
   ],
   "datos": [
    [
@@ -1318,13 +1318,13 @@
  {
   "id": "epoca",
   "pagina": "guia",
-  "titulo": "Mejor época",
+  "titulo": "Mejor época · Cuándo vivir la ciénaga al máximo",
   "imagen": "img/flamencos-salinas.webp",
   "alt": "Flamencos",
   "cuerpo": [
-   "Temporada seca (noviembre–abril): menos lluvia, mar más calmado, mosquitos bajo control. Es la mejor época general y la temporada alta.",
-   "Para aves migratorias: noviembre–marzo, cuando 65+ especies del norte invernan aquí. Para flamencos: todo el año, mejor al amanecer.",
-   "Temporada de lluvia (mayo–octubre): más mosquitos y chubascos, pero menos turistas, precios más bajos y la ciénaga en su máximo verdor."
+   "La temporada seca, de noviembre a abril, es la apuesta segura: menos lluvia, mar más calmado y mosquitos bajo control. Es la mejor época en general… y por eso también la temporada alta.",
+   "¿Vienes por las aves? De noviembre a marzo más de 65 especies migratorias del norte invernan aquí, y el cielo se convierte en un desfile. ¿Flamencos? Todo el año, pero vete al amanecer a las Salinas: el rosa contra el sol naciente no tiene precio.",
+   "En la temporada de lluvia, de mayo a octubre, hay más mosquitos y chubascos pasajeros, pero también menos turistas y la ciénaga en su máximo verdor: la selva en todo su esplendor."
   ],
   "datos": [
    [
@@ -1346,13 +1346,13 @@
  {
   "id": "llevar",
   "pagina": "guia",
-  "titulo": "Qué llevar",
+  "titulo": "Qué llevar · La mochila del cenaguero",
   "imagen": "img/sendero-manglar.webp",
   "alt": "Sendero",
   "cuerpo": [
-   "Repelente (el artículo más importante de la lista), protector solar, gorra y gafas de sol. Calzado cerrado obligatorio para los senderos de diente de perro; sandalias solo para la playa.",
-   "Equipo de snorkel propio si tienes (el alquiler se agota), binoculares para aves, cámara con zoom y una mochila impermeable para la lancha.",
-   "Efectivo en CUP: muchos servicios locales no aceptan tarjetas. Y una botella reutilizable: hay agua por todas partes."
+   "El artículo más importante de la lista tiene seis patas: el repelente. Sin él, los jejenes te recordarán cada atardecer. Súmale protector solar, gorra y gafas de sol: el sol caribeño no perdona.",
+   "El calzado cerrado es obligatorio para los senderos de «diente de perro» —la roca cársica corta de verdad—; deja las sandalias solo para la playa. Si tienes equipo de snorkel propio, tráelo (el alquiler se agota), y unos binoculares te abrirán el mundo de las aves.",
+   "Completa con cámara con zoom, mochila impermeable para la lancha, efectivo en CUP —muchos servicios locales no aceptan tarjetas— y una botella reutilizable. La ciénaga te lo agradecerá."
   ],
   "datos": [
    [
@@ -1378,14 +1378,14 @@
  {
   "id": "itinerario",
   "pagina": "guia",
-  "titulo": "Itinerario sugerido · 3 días",
+  "titulo": "3 días perfectos · El itinerario cenaguero",
   "imagen": "img/cueva-peces.webp",
   "alt": "Cenote",
   "cuerpo": [
-   "Día 1 – Mar: mañana de snorkel en Cueva de los Peces y Caleta Buena; tarde en Playa Girón con el Museo Girón; atardecer en la playa.",
-   "Día 2 – Laguna: lancha desde Boca de Guamá (criadero de cocodrilos) a la Laguna del Tesoro y la aldea taína; almuerzo con trucha en Guamá; tarde de kayak al atardecer.",
-   "Día 3 – Interior: amanecer en las Salinas de Brito (flamencos) o Bermeja (endémicas); sendero Enigma de las Rocas o Los Arroyones; Casa del Zunzún antes de partir.",
-   "Con más días: añade Santo Tomás, las caletas olvidadas y un día de buceo."
+   "Día 1, mar: mañana de snorkel en la Cueva de los Peces y Caleta Buena, tarde en Playa Girón entre el Museo Girón y la playa, y atardecer con los pies en la arena. El Caribe en estado puro.",
+   "Día 2, laguna: lancha desde Boca de Guamá —saluda a los cocodrilos del criadero— hasta la Laguna del Tesoro y la aldea taína; almuerzo con trucha en Guamá y kayak al atardecer, cuando la laguna se vuelve espejo.",
+   "Día 3, interior: amanecer en las Salinas de Brito entre flamencos o en Bermeja entre endémicas; sendero Enigma de las Rocas o Los Arroyones; y la Casa del Zunzún antes de partir, para despedirte entre colibríes.",
+   "¿Tienes más días? Añade Santo Tomás y su río de manatíes, las caletas olvidadas y un día completo de buceo. La ciénaga siempre guarda algo más."
   ],
   "datos": [
    [
@@ -1411,14 +1411,13 @@
  {
   "id": "consejos",
   "pagina": "guia",
-  "titulo": "Consejos de cenaguero",
+  "titulo": "Consejos de cenaguero · Para viajar como local",
   "imagen": "img/amanecer-laguna.webp",
   "alt": "Amanecer",
   "cuerpo": [
-   "Madruga al menos una vez: el amanecer en la laguna, con la niebla sobre el agua y las aves despertando, no tiene precio y no sale en las fotos de nadie.",
-   "Contrata guías locales siempre que puedas: conocen los rincones secretos, y tu dinero se queda en la comunidad.",
-   "Respeta la naturaleza: no toques corales, no persigas manatíes, no dejes basura. La ciénaga te lo agradecerá.",
-   "Habla con la gente: pescadores, carboneros, guías. Las mejores historias de la ciénaga no están en internet."
+   "Madruga al menos una vez: el amanecer en la laguna, con la niebla sobre el agua y las aves despertando, no tiene precio… y no sale en las fotos de nadie. Hay que vivirlo.",
+   "Contrata guías locales siempre que puedas: conocen los rincones secretos que no salen en internet, y tu dinero se queda en la comunidad que cuida este paraíso.",
+   "Respeta la naturaleza como si fuera tu casa: no toques los corales, no persigas a los manatíes, no dejes basura. Y habla con la gente —pescadores, carboneros, guías—: las mejores historias de la ciénaga no están en internet, están en sus voces."
   ],
   "datos": [
    [
