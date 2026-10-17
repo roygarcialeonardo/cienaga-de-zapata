@@ -359,9 +359,10 @@ async function renderDetalle(){
   + '<label id="dtDiaWrap"' + (habAplica?" hidden":"") + '>Día *<input type="date" id="dtDia"></label>'
   + viajerosHTML("dt")
   + (habAplica ? habHTML("dt", true) : "")
+  + extrasHTML(p.categoria)
   + '<label>Mensaje (opcional)<textarea id="dtMensaje" rows="3" placeholder="Alguna petición especial…"></textarea></label>'
   + '<p class="error" id="dtError" hidden></p>'
-  + '<button type="submit" class="btn btn-sol dt-enviar">📩 Enviar por WhatsApp</button>'
+  + '<button type="submit" class="btn btn-sol dt-enviar">🎫 Ver resumen y voucher</button>'
   + '</form>' + wapp + '</aside>' : "";
   /* Relacionados: misma categoría (servicios) o misma página (contenido), hasta 4 */
   const rel = posts.filter(x=>String(x.id)!==String(p.id) &&
@@ -424,7 +425,7 @@ function reservaWAUrl(titulo, v){
   if(!wnum) return "";
   const nViaj = (v.ad||0) + (v.nn||0);
   const lineas = [
-    "Hola, quiero solicitar una reserva:",
+    "Hola, quiero solicitar una reserva" + (v.codigo ? " (código " + v.codigo + ")" : "") + ":",
     "— Negocio: " + titulo,
     "— Nombre: " + v.nombre,
     "— Contacto: " + v.contacto
@@ -437,6 +438,7 @@ function reservaWAUrl(titulo, v){
   }
   lineas.push("— Viajeros: " + nViaj + " (Adultos: " + (v.ad||0) + ", Niños: " + (v.nn||0) + ", Bebés: " + (v.bb||0) + ", Mascotas: " + (v.mc||0) + ")");
   if(v.hab != null) lineas.push("— Habitaciones: " + v.hab);
+  if(v.extras && v.extras.length) lineas.push("— Extras: " + v.extras.join(", "));
   if(v.mensaje) lineas.push("— Mensaje: " + v.mensaje);
   return "https://wa.me/" + wnum + "?text=" + encodeURIComponent(lineas.join("\n"));
 }
@@ -458,12 +460,11 @@ function enviarReservaDetalle(e){
   const r = validarReserva(vals);
   if(r.error){ err.textContent = r.error; err.hidden = false; return; }
   err.hidden = true;
-  const url = reservaWAUrl(detalleTitulo, vals);
-  if(!url){ err.textContent = "No se pudo determinar el contacto. Intenta más tarde."; err.hidden = false; return; }
-  window.open(url, "_blank", "noopener");
-  toastReserva("¡Solicitud lista! Se abrirá WhatsApp para enviarla.");
-  document.getElementById("dtForm").reset();
-  vjReset(document.getElementById("dtForm"));
+  if(!reservaWAUrl(detalleTitulo, vals)){ err.textContent = "No se pudo determinar el contacto. Intenta más tarde."; err.hidden = false; return; }
+  vals.extras = extrasSel(document.getElementById("dtForm"));
+  vals.codigo = genCodigoReserva();
+  vals.negocio = detalleTitulo;
+  mostrarVoucher("dt", vals);
 }
 
 /* Clics: píldoras de categoría y apertura del detalle (fuera de botones) */
@@ -510,7 +511,7 @@ function nombrePag(p){
           "historia":"Historia","gastronomia":"Gastronomía","guia":"Guía","servicios":"Servicios"}[p]||p;
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{ renderPagina(); renderNovedades(); renderDetalle(); chequearConn(); montarModalReserva(); montarModalDetalleCont(); initBuscadorHome(); });
+document.addEventListener("DOMContentLoaded", ()=>{ initTema(); renderPagina(); renderNovedades(); renderDetalle(); chequearConn(); montarModalReserva(); montarModalDetalleCont(); montarAsistente(); initBuscadorHome(); });
 
 /* ---------- Bloque de viajeros estilo Airbnb (compartido por el modal y el detalle) ----------
    Viajeros: Adultos / Niños / Bebés / Mascotas con steppers. Habitaciones solo en Hospedaje. */
@@ -634,9 +635,10 @@ function montarModalReserva(){
       '<label id="mrDiaWrap" hidden>Día *<input type="date" id="mrDia"></label>' +
       viajerosHTML("mr") +
       habHTML("mr", false) +
+      '<div id="mrExtras"></div>' +
       '<label>Mensaje (opcional)<textarea id="mrMensaje" rows="3" placeholder="Alguna petición especial…"></textarea></label>' +
       '<p class="error" id="mrError" hidden></p>' +
-      '<button type="submit" class="btn btn-sol mr-enviar">📩 Enviar por WhatsApp</button>' +
+      '<button type="submit" class="btn btn-sol mr-enviar">🎫 Ver resumen y voucher</button>' +
     '</form>' +
   '</div>';
   document.body.appendChild(v);
@@ -654,6 +656,10 @@ function abrirModalReserva(titulo, categoria){
   const md = document.getElementById("mrDiaWrap");
   if(md) md.hidden = reservaHab;
   document.getElementById("mrNegocio").innerHTML = "🏠 " + esc(titulo);
+  document.getElementById("mrExtras").innerHTML = extrasOpsHTML(categoria);
+  const vz0 = document.getElementById("mrVoucher");
+  if(vz0) vz0.hidden = true;
+  document.getElementById("mrForm").hidden = false;
   const err = document.getElementById("mrError");
   err.hidden = true; err.textContent = "";
   document.getElementById("modalReserva").classList.add("on");
@@ -687,13 +693,11 @@ function enviarReserva(e){
   const r = validarReserva(vals);
   if(r.error){ err.textContent = r.error; err.hidden = false; return; }
   err.hidden = true;
-  const url = reservaWAUrl(reservaTitulo, vals);
-  if(!url){ err.textContent = "No se pudo determinar el contacto. Intenta más tarde."; err.hidden = false; return; }
-  cerrarModalReserva();
-  window.open(url, "_blank", "noopener");
-  toastReserva("¡Solicitud lista! Se abrirá WhatsApp para enviarla.");
-  document.getElementById("mrForm").reset();
-  vjReset(document.getElementById("mrForm"));
+  if(!reservaWAUrl(reservaTitulo, vals)){ err.textContent = "No se pudo determinar el contacto. Intenta más tarde."; err.hidden = false; return; }
+  vals.extras = extrasSel(document.getElementById("mrForm"));
+  vals.codigo = genCodigoReserva();
+  vals.negocio = reservaTitulo;
+  mostrarVoucher("mr", vals);
 }
 function toastReserva(msg){
   let t = document.getElementById("toastReserva");
@@ -740,6 +744,196 @@ async function chequearConn(){
     const j=await r.json();
     pintarConn(!!(j&&j.ok));
   }catch(e){ pintarConn(false); }
+}
+/* ============================================================
+   TROPICAL LUXURY · tema, extras inteligentes, voucher con QR
+   y asistente virtual por reglas (100% offline).
+   ============================================================ */
+
+/* ---------- Tema Noche Tropical / Día de Sol ---------- */
+function aplicarTema(t){
+  document.documentElement.setAttribute("data-theme", t);
+  const mc = document.querySelector('meta[name="theme-color"]');
+  if(mc) mc.setAttribute("content", t === "noche" ? "#07120d" : "#fdf9ef");
+  document.querySelectorAll("[data-theme-toggle]").forEach(b=>{
+    b.textContent = t === "noche" ? "☀️" : "🌙";
+    b.setAttribute("aria-label", t === "noche" ? "Cambiar a modo día" : "Cambiar a modo noche tropical");
+  });
+}
+function initTema(){
+  let t = "noche";
+  try{ t = localStorage.getItem("cz-theme") || "noche"; }catch(e){}
+  aplicarTema(t);
+  document.querySelectorAll("[data-theme-toggle]").forEach(b=>b.addEventListener("click", ()=>{
+    t = document.documentElement.getAttribute("data-theme") === "noche" ? "dia" : "noche";
+    aplicarTema(t);
+    try{ localStorage.setItem("cz-theme", t); }catch(e){}
+  }));
+}
+
+/* ---------- Extras inteligentes (upselling por reglas) ---------- */
+const CZ_EXTRAS = {
+  "Hospedaje": ["🚐 Transporte privado", "🤿 Tour de snorkel", "🍽️ Cena a la orilla del mar"],
+  "Transporte": ["🧭 Guía local", "🏝️ Tour de un día", "🍹 Coctelería de bienvenida"],
+  "Gastronomía": ["🍹 Coctelería de bienvenida", "🎶 Música en vivo", "🚐 Transporte privado"],
+  "Actividades": ["🚐 Transporte privado", "🍽️ Almuerzo típico", "📸 Sesión de fotos"],
+  "_dflt": ["🚐 Transporte privado", "🧭 Guía local", "🤿 Tour de snorkel"]
+};
+function extrasPara(cat){ return CZ_EXTRAS[cat] || CZ_EXTRAS._dflt; }
+function extrasOpsHTML(categoria){
+  return '<p class="mr-extras-t">🌟 ¿Agrego algo más a tu solicitud? <span>Sin costo extra por preguntar</span></p>'
+    + '<div class="mr-extras-ops">'
+    + extrasPara(categoria).map(o=>'<label class="mr-extra"><input type="checkbox" value="'+esc(o)+'"><span>'+esc(o)+'</span></label>').join("")
+    + '</div>';
+}
+function extrasHTML(categoria){ return '<div class="mr-extras">'+extrasOpsHTML(categoria)+'</div>'; }
+function extrasSel(form){
+  const out = [];
+  if(form) form.querySelectorAll(".mr-extra input:checked").forEach(i=>out.push(i.value));
+  return out;
+}
+
+/* ---------- Voucher con código QR ---------- */
+function genCodigoReserva(){
+  const abc = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  let s = "";
+  for(let i=0;i<6;i++) s += abc[Math.floor(Math.random()*abc.length)];
+  return "CZ-" + s;
+}
+function voucherTexto(v){
+  /* Compacto y ASCII: la librería QR no maneja textos largos */
+  const f = v.hospedaje ? (fechaCorta(v.llegada) + "-" + fechaCorta(v.salida)) : fechaCorta(v.dia);
+  return [v.codigo, v.negocio, v.nombre, f, ((v.ad||0)+(v.nn||0)) + " viajeros"].join(" | ");
+}
+function voucherHTML(v){
+  const fechas = v.hospedaje
+    ? "Llegada: " + fechaCorta(v.llegada) + " · Salida: " + fechaCorta(v.salida)
+    : "Día: " + fechaCorta(v.dia);
+  const nViaj = (v.ad||0) + (v.nn||0);
+  return '<div class="voucher">'
+    + '<p class="voucher-ok">✅ ¡Solicitud lista para enviar!</p>'
+    + '<h4>' + esc(v.negocio) + '</h4>'
+    + '<div class="voucher-qr" role="img" aria-label="Código QR de la reserva"></div>'
+    + '<p class="voucher-codigo">Código <b>' + esc(v.codigo) + '</b></p>'
+    + '<p class="voucher-guarda">Guárdalo: con este código Leonardo identifica tu reserva al confirmar.</p>'
+    + '<ul class="voucher-datos">'
+    + '<li><b>Nombre:</b> ' + esc(v.nombre) + '</li>'
+    + '<li><b>Fechas:</b> ' + esc(fechas) + '</li>'
+    + '<li><b>Viajeros:</b> ' + nViaj + ' (Ad: ' + (v.ad||0) + ', Ni: ' + (v.nn||0) + ', Beb: ' + (v.bb||0) + (v.mc ? ', Mascotas: ' + v.mc : '') + ')</li>'
+    + (v.hab != null ? '<li><b>Habitaciones:</b> ' + v.hab + '</li>' : '')
+    + ((v.extras && v.extras.length) ? '<li><b>Extras:</b> ' + esc(v.extras.join(", ")) + '</li>' : '')
+    + '</ul>'
+    + '<button type="button" class="btn btn-sol voucher-enviar" data-voucher-enviar>📩 Enviar por WhatsApp</button>'
+    + '<button type="button" class="voucher-volver" data-voucher-volver>← Revisar datos</button>'
+    + '</div>';
+}
+function mostrarVoucher(pref, vals){
+  const form = document.getElementById(pref + "Form");
+  let vz = document.getElementById(pref + "Voucher");
+  if(!vz){
+    vz = document.createElement("div");
+    vz.id = pref + "Voucher";
+    vz.className = "mr-voucher";
+    form.after(vz);
+  }
+  vz.innerHTML = voucherHTML(vals);
+  const qrEl = vz.querySelector(".voucher-qr");
+  try{
+    if(window.QRCode) new QRCode(qrEl, { text: voucherTexto(vals), width: 150, height: 150, correctLevel: QRCode.CorrectLevel.L });
+    else qrEl.innerHTML = '<p style="padding:1rem;font-weight:700">' + esc(vals.codigo) + '</p>';
+  }catch(e){ qrEl.innerHTML = '<p style="padding:1rem;font-weight:700">' + esc(vals.codigo) + '</p>'; }
+  form.hidden = true;
+  vz.hidden = false;
+  vz.querySelector("[data-voucher-enviar]").addEventListener("click", ()=>voucherEnviar(pref, vals));
+  vz.querySelector("[data-voucher-volver]").addEventListener("click", ()=>{ vz.hidden = true; form.hidden = false; });
+}
+function voucherEnviar(pref, vals){
+  const url = reservaWAUrl(vals.negocio, vals);
+  if(!url){ toastReserva("No se pudo determinar el contacto. Intenta más tarde."); return; }
+  if(pref === "mr") cerrarModalReserva();
+  window.open(url, "_blank", "noopener");
+  toastReserva("¡Enviado! Leonardo te confirmará por WhatsApp.");
+  const form = document.getElementById(pref + "Form");
+  const vz = document.getElementById(pref + "Voucher");
+  if(form){ form.reset(); vjReset(form); form.hidden = false; }
+  if(vz) vz.hidden = true;
+}
+
+/* ---------- Asistente virtual por reglas (offline) ---------- */
+const CZ_FAQ = [
+  { k: ["reserv", "apart"], r: "Para reservar: abre la ficha del negocio, toca 📅 Reservar, completa tus datos y envía la solicitud por WhatsApp. Leonardo te confirma personalmente. Recibirás un código de reserva (CZ-XXXXXX)." },
+  { k: ["precio", "costo", "cuant", "tarifa", "vale"], r: "Los precios los confirma Leonardo directamente por WhatsApp, según la fecha y el negocio. Toca el botón verde de WhatsApp de la ficha que te interese." },
+  { k: ["cancel"], r: "Para cancelar o cambiar una reserva, escríbele a Leonardo por WhatsApp con tu código de reserva y lo coordinan sin problema." },
+  { k: ["mascota", "perro"], r: "Depende de cada casa. Marca la opción de mascotas en tu solicitud o pregúntale a Leonardo por WhatsApp antes de reservar." },
+  { k: ["llevo", "llevar", "equipaje", "ropa", "traje"], r: "Repelente, protector solar, gorra, agua y zapatos cómodos. Si vas a la playa o a un cenote, lleva traje de baño. 🌿" },
+  { k: ["llego", "llegar", "transporte", "taxi", "omnibus", "como voy"], r: "Puedes llegar en taxi o transporte privado desde tu ciudad. Si necesitas traslado, márcalo en los extras al hacer tu reserva." },
+  { k: ["clima", "cuando", "epoca", "temporada", "lluvia"], r: "La Ciénaga se disfruta todo el año. La temporada más fresca y seca es de diciembre a abril." },
+  { k: ["pago", "pagar", "usd", "cup", "efectivo"], r: "El pago se coordina con Leonardo por WhatsApp al confirmar tu reserva. Sin pagos en línea: simple y directo." },
+  { k: ["snorkel", "buceo", "bucear"], r: "Hay tours de snorkel en la zona. Márcalo en los extras de tu reserva y Leonardo te lo coordina. 🤿" },
+  { k: ["hola", "buenas", "saludos", "que tal"], r: "¡Hola! 🌿 Pregúntame cómo reservar, precios, cancelaciones o qué llevar a la Ciénaga de Zapata." }
+];
+function czNorm(s){
+  return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+function czPush(quien, texto){
+  const box = document.getElementById("czMsgs");
+  if(!box) return;
+  const d = document.createElement("div");
+  d.className = "cz-msg " + quien;
+  d.textContent = texto;
+  box.appendChild(d);
+  box.scrollTop = box.scrollHeight;
+}
+function czResponder(q){
+  const n = czNorm(q);
+  let r = "Buena pregunta. Para eso lo mejor es escribirle directo a Leonardo por WhatsApp y te responde personalmente. ¿Te ayudo con tu reserva? 🌿";
+  for(const item of CZ_FAQ){
+    if(item.k.some(k=>n.includes(czNorm(k)))){ r = item.r; break; }
+  }
+  czPush("b", r);
+}
+function montarAsistente(){
+  if(document.getElementById("czFab")) return;
+  const fab = document.createElement("button");
+  fab.id = "czFab"; fab.type = "button"; fab.className = "cz-fab";
+  fab.setAttribute("aria-label", "Abrir asistente de ayuda");
+  fab.textContent = "💬";
+  const panel = document.createElement("div");
+  panel.id = "czPanel"; panel.className = "cz-panel"; panel.hidden = true;
+  panel.setAttribute("role", "dialog");
+  panel.setAttribute("aria-label", "Asistente de la Ciénaga");
+  panel.innerHTML =
+    '<div class="cz-cab"><b>🌿 Asistente de la Ciénaga</b><button type="button" class="cz-x" aria-label="Cerrar">✕</button></div>'
+    + '<div class="cz-msgs" id="czMsgs" aria-live="polite"></div>'
+    + '<div class="cz-chips" id="czChips"></div>'
+    + '<form class="cz-form" id="czForm"><input id="czInput" type="text" placeholder="Escribe tu duda…" autocomplete="off" aria-label="Escribe tu duda"><button type="submit" aria-label="Enviar">➤</button></form>';
+  document.body.appendChild(fab);
+  document.body.appendChild(panel);
+  fab.addEventListener("click", ()=>{
+    panel.hidden = !panel.hidden;
+    if(!panel.hidden && !panel._ini){
+      panel._ini = true;
+      czPush("b", "¡Hola! 🌿 Soy el asistente de la Ciénaga. Pregúntame cómo reservar, precios, qué llevar… o toca un tema:");
+    }
+  });
+  panel.querySelector(".cz-x").addEventListener("click", ()=>{ panel.hidden = true; });
+  const chips = [["¿Cómo reservo?", "como reservo"], ["Precios", "precios"], ["Cancelación", "cancelacion"], ["Mascotas", "mascotas"], ["¿Qué llevo?", "que llevo"], ["¿Cómo llego?", "como llego"]];
+  const chEl = panel.querySelector("#czChips");
+  chips.forEach(c=>{
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "cz-chip"; b.textContent = c[0];
+    b.addEventListener("click", ()=>czResponder(c[1]));
+    chEl.appendChild(b);
+  });
+  panel.querySelector("#czForm").addEventListener("submit", e=>{
+    e.preventDefault();
+    const inp = panel.querySelector("#czInput");
+    const q = inp.value.trim();
+    if(!q) return;
+    czPush("u", q);
+    inp.value = "";
+    setTimeout(()=>czResponder(q), 350);
+  });
 }
 })();
 
@@ -984,3 +1178,4 @@ document.addEventListener("DOMContentLoaded", function(){
   initNovStrip();
 });
 })();
+
