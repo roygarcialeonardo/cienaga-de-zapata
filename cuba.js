@@ -31,7 +31,21 @@ function decoHTML(){
     `<span class="mapa-deco-e" style="${pos[i]}">${e}</span>`).join("") + `</div>`;
 }
 
-let _provs = null, _lugares = null, _posts = null;
+let _provs = null, _lugares = null, _posts = null, _equipos = null;
+async function getEquipos(){
+  if(_equipos) return _equipos;
+  try{
+    const r = await fetch("equipos.json", {cache:"no-store"});
+    _equipos = r.ok ? await r.json() : [];
+  }catch(e){ _equipos = []; }
+  return _equipos;
+}
+function setFavicon(url){
+  if(!url) return;
+  let l = document.querySelector('link[rel="icon"]');
+  if(!l){ l = document.createElement("link"); l.rel = "icon"; document.head.appendChild(l); }
+  l.type = "image/png"; l.href = url;
+}
 async function getProvs(){
   if(_provs) return _provs;
   const r = await fetch("provincias.json", {cache:"no-store"});
@@ -198,7 +212,7 @@ async function renderProvincia(){
   const cont = document.getElementById("provincia");
   if(!cont) return;
   const slug = qs("slug");
-  const [provs, lugares, posts] = await Promise.all([getProvs(), getLugares(), getPosts()]);
+  const [provs, lugares, posts, equipos] = await Promise.all([getProvs(), getLugares(), getPosts(), getEquipos()]);
   const prov = provPorSlug(slug, provs);
   if(!prov){
     cont.innerHTML = `<div class="dt-nofound"><h2>Provincia no encontrada</h2>
@@ -207,6 +221,8 @@ async function renderProvincia(){
     return;
   }
   document.title = prov.nombre + " | Guía de Cuba";
+  const equipo = equipos.find(e=>e.provincia===prov.slug);
+  if(equipo && equipo.favicon) setFavicon(equipo.favicon);
   const lug = lugares.filter(l=>l.provincia===prov.slug);
   const negs = posts.filter(p=>p.pagina==="servicios" && p.provincia===prov.slug);
   const porCat = cat => negs.filter(n=>n.categoria===cat && n.id!=="s-anuncia");
@@ -242,14 +258,33 @@ async function renderProvincia(){
   }
 
   const col = PROV_COLOR[prov.slug] || "#3ddc97";
+  const eqCol1 = equipo ? equipo.colores[0] : col;
+  const eqCol2 = equipo && equipo.colores[1] ? equipo.colores[1] : col;
+  const secEquipo = equipo ? `<section class="cuba-sec equipo-sec" style="--eq1:${esc(eqCol1)};--eq2:${esc(eqCol2)}">
+    <h2>⚾ El equipo de la casa</h2>
+    <div class="equipo-card">
+      <img class="equipo-mascota" src="${esc(equipo.mascota)}" alt="Mascota de ${esc(equipo.equipo)}" loading="lazy">
+      <div class="equipo-info">
+        <h3>${esc(equipo.equipo)}</h3>
+        <p class="equipo-apodo">“${esc(equipo.apodo)}”</p>
+        <div class="equipo-datos">
+          <span>🏟️ ${esc(equipo.estadio)}</span>
+          <span>🏆 ${equipo.titulos} ${equipo.titulos===1?"título":"títulos"}</span>
+        </div>
+        ${equipo.dato?`<p class="equipo-dato">${esc(equipo.dato)}</p>`:""}
+        <div class="equipo-colores">${equipo.colores.map(c=>`<span style="background:${esc(c)}" title="${esc(c)}"></span>`).join("")}</div>
+      </div>
+    </div>
+  </section>` : "";
+
   cont.innerHTML =
     `<nav class="dt-migas"><a href="index.html">Inicio</a> › <a href="provincias.html">Cuba</a> › <span>${esc(prov.nombre)}</span></nav>
      <span class="kicker">🇨🇺 Provincia</span>
-     <h1 class="dt-titulo" style="--prov-c:${col}">${esc(prov.nombre)}</h1>
+     <h1 class="dt-titulo" style="--prov-c:${esc(eqCol1)}">${esc(prov.nombre)}</h1>
      <p class="dt-meta"><span class="dt-zona">${prov.municipios.length} municipios</span>
      <span>·</span><span>${lug.length} lugares famosos</span>
      <span>·</span><span>${negs.filter(n=>n.id!=="s-anuncia").length} negocios</span></p>
-     ${secLugares}${secNegs}${mapaHTML}`;
+     ${secEquipo}${secLugares}${secNegs}${mapaHTML}`;
 
   const mp = document.getElementById("mapaProv");
   if(mp){

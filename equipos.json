@@ -1,0 +1,227 @@
+[
+ {
+  "apodo": "Vegueros",
+  "colores": [
+   "#0a7a3d",
+   "#ffd400"
+  ],
+  "dato": "La tierra del mejor tabaco también produce peloteros: Pinar es cuna de lanzadores legendarios y su afición llena el Capitán San Luis como pocos estadios en Cuba.",
+  "equipo": "Vegueros de Pinar del Río",
+  "estadio": "Capitán San Luis",
+  "provincia": "pinar-del-rio",
+  "titulos": 4,
+  "mascota": "img/equipos/equipo-pinar-del-rio.webp",
+  "favicon": "img/equipos/favicon-pinar-del-rio.png"
+ },
+ {
+  "apodo": "Cazadores",
+  "colores": [
+   "#d21f26",
+   "#1a3faa"
+  ],
+  "dato": "La provincia más joven del béisbol cubano: sus Cazadores nunca han ganado un título, pero ya jugaron una final y sueñan con la primera corona.",
+  "equipo": "Cazadores de Artemisa",
+  "estadio": "26 de Julio",
+  "provincia": "artemisa",
+  "titulos": 0,
+  "mascota": "img/equipos/equipo-artemisa.webp",
+  "favicon": "img/equipos/favicon-artemisa.png"
+ },
+ {
+  "apodo": "Leones",
+  "colores": [
+   "#1a3faa",
+   "#ffffff"
+  ],
+  "dato": "Los 12 veces campeones visten el azul más famoso de Cuba; su rivalidad con Santiago de Cuba es el clásico de clásicos de la pelota nacional.",
+  "equipo": "Industriales de La Habana",
+  "estadio": "Latinoamericano",
+  "provincia": "la-habana",
+  "titulos": 12,
+  "mascota": "img/equipos/equipo-la-habana.webp",
+  "favicon": "img/equipos/favicon-la-habana.png"
+ },
+ {
+  "apodo": "Huracanes",
+  "colores": [
+   "#d21f26",
+   "#111111"
+  ],
+  "dato": "Nacidos en 2011 junto con la provincia, los Huracanes visten de rojo y negro y ya saben lo que es pelear una postemporada.",
+  "equipo": "Huracanes de Mayabeque",
+  "estadio": "Nelson Fernández",
+  "provincia": "mayabeque",
+  "titulos": 0,
+  "mascota": "img/equipos/equipo-mayabeque.webp",
+  "favicon": "img/equipos/favicon-mayabeque.png"
+ },
+ {
+  "apodo": "Cocodrilos",
+  "colores": [
+   "#d21f26",
+   "#ffd400"
+  ],
+  "dato": "Los Cocodrilos rompieron una sequía de décadas con el título de 2020 y repitieron en 2025: hoy son los campeones defensores de la Serie Nacional.",
+  "equipo": "Cocodrilos de Matanzas",
+  "estadio": "Victoria de Girón",
+  "provincia": "matanzas",
+  "titulos": 2,
+  "mascota": "img/equipos/equipo-matanzas.webp",
+  "favicon": "img/equipos/favicon-matanzas.png"
+ },
+ {
+  "apodo": "Elefantes",
+  "colores": [
+   "#0a7a3d",
+   "#ffffff"
+  ],
+  "dato": "La Perla del Sur presume un elefante de casi siete metros a la entrada de su estadio, aunque la corona nacional todavía se les resiste.",
+  "equipo": "Elefantes de Cienfuegos",
+  "estadio": "5 de Septiembre",
+  "provincia": "cienfuegos",
+  "titulos": 0,
+  "mascota": "img/equipos/equipo-cienfuegos.webp",
+  "favicon": "img/equipos/favicon-cienfuegos.png"
+ },
+ {
+  "apodo": "Leopardos",
+  "colores": [
+   "#f97316",
+   "#ffffff"
+  ],
+  "dato": "Herederos de los Leopardos de Santa Clara de la era profesional, visten de naranja y presumen cinco coronas nacionales.",
+  "equipo": "Leopardos de Villa Clara",
+  "estadio": "Augusto César Sandino",
+  "provincia": "villa-clara",
+  "titulos": 5,
+  "mascota": "img/equipos/equipo-villa-clara.webp",
+  "favicon": "img/equipos/favicon-villa-clara.png"
+ },
+ {
+  "apodo": "Gallos",
+  "colores": [
+   "#1a3faa",
+   "#ffffff"
+  ],
+  "dato": "Los Gallos cantaron una sola vez, en 1979, pero su tierra dio a los Gourriel y a Antonio Muñoz, el Gigante del Escambray.",
+  "equipo": "Gallos de Sancti Spíritus",
+  "estadio": "José Antonio Huelga",
+  "provincia": "sancti-spiritus",
+  "titulos": 1,
+  "mascota": "img/equipos/equipo-sancti-spiritus.webp",
+  "favicon": "img/equipos/favicon-sancti-spiritus.png"
+ },
+ {
+  "apodo": "Tigres",
+  "colores": [
+   "#7ec8e3",
+   "#d21f26"
+  ],
+  "dato": "De cenicienta a potencia: tras 30 años sin figurar, los Tigres de la piña ganaron tres títulos en cinco años (2012, 2015 y 2016).",
+  "equipo": "Tigres de Ciego de Ávila",
+  "estadio": "José Ramón Cepero",
+  "provincia": "ciego-de-avila",
+  "titulos": 3,
+  "mascota": "img/equipos/equipo-ciego-de-avila.webp",
+  "favicon": "img/equipos/favicon-ciego-de-avila.png"
+ },
+ {
+  "apodo": "Toros",
+  "colores": [
+   "#1a3faa",
+   "#ffffff",
+   "#d21f26"
+  ],
+  "dato": "Los Toros de la Llanura nunca han ganado la Serie, pero su afición tricolor es de las más fieles del país.",
+  "equipo": "Toros de Camagüey",
+  "estadio": "Cándido González",
+  "provincia": "camaguey",
+  "titulos": 0,
+  "mascota": "img/equipos/equipo-camaguey.webp",
+  "favicon": "img/equipos/favicon-camaguey.png"
+ },
+ {
+  "apodo": "Leñadores",
+  "colores": [
+   "#0a7a3d",
+   "#d21f26"
+  ],
+  "dato": "Los Leñadores talaron la historia: primer título en 2019 y bicampeonato 2023-2024, con Danel Castro como símbolo eterno.",
+  "equipo": "Leñadores de Las Tunas",
+  "estadio": "Julio Antonio Mella",
+  "provincia": "las-tunas",
+  "titulos": 3,
+  "mascota": "img/equipos/equipo-las-tunas.webp",
+  "favicon": "img/equipos/favicon-las-tunas.png"
+ },
+ {
+  "apodo": "Alazanes",
+  "colores": [
+   "#1a3faa",
+   "#d21f26"
+  ],
+  "dato": "Los Alazanes galoparon cuatro coronas en seis años (2017-2022) con Alfredo Despaigne como estandarte.",
+  "equipo": "Alazanes de Granma",
+  "estadio": "Mártires de Barbados",
+  "provincia": "granma",
+  "titulos": 4,
+  "mascota": "img/equipos/equipo-granma.webp",
+  "favicon": "img/equipos/favicon-granma.png"
+ },
+ {
+  "apodo": "Cachorros",
+  "colores": [
+   "#ffffff",
+   "#1a2f6e"
+  ],
+  "dato": "Los Cachorros mordieron una sola vez, en 2002: el único título de la Ciudad de los Parques, con la Loma de la Cruz en su escudo.",
+  "equipo": "Cachorros de Holguín",
+  "estadio": "Calixto García",
+  "provincia": "holguin",
+  "titulos": 1,
+  "mascota": "img/equipos/equipo-holguin.webp",
+  "favicon": "img/equipos/favicon-holguin.png"
+ },
+ {
+  "apodo": "Avispas",
+  "colores": [
+   "#d21f26",
+   "#111111"
+  ],
+  "dato": "Las Avispas pican con ocho títulos; el Guillermón Moncada ruge como pocos estadios cuando Santiago e Industriales se enfrentan.",
+  "equipo": "Avispas de Santiago de Cuba",
+  "estadio": "Guillermón Moncada",
+  "provincia": "santiago-de-cuba",
+  "titulos": 8,
+  "mascota": "img/equipos/equipo-santiago-de-cuba.webp",
+  "favicon": "img/equipos/favicon-santiago-de-cuba.png"
+ },
+ {
+  "apodo": "Indios",
+  "colores": [
+   "#f97316",
+   "#1a3faa"
+  ],
+  "dato": "Los Indios Guerreros del Guaso nunca han sido campeones, pero pelean cada juego en el Nguyen Van Troi, el estadio más oriental de Cuba.",
+  "equipo": "Indios de Guantánamo",
+  "estadio": "Nguyen Van Troi",
+  "provincia": "guantanamo",
+  "titulos": 0,
+  "mascota": "img/equipos/equipo-guantanamo.webp",
+  "favicon": "img/equipos/favicon-guantanamo.png"
+ },
+ {
+  "apodo": "Piratas",
+  "colores": [
+   "#7ec8e3",
+   "#0a7a3d"
+  ],
+  "dato": "Los Piratas navegan con una de las nóminas más jóvenes del torneo y el pino de la Isla en su escudo; la corona sigue siendo su tesoro perdido.",
+  "equipo": "Piratas de la Isla de la Juventud",
+  "estadio": "Cristóbal Labra",
+  "provincia": "isla-de-la-juventud",
+  "titulos": 0,
+  "mascota": "img/equipos/equipo-isla-de-la-juventud.webp",
+  "favicon": "img/equipos/favicon-isla-de-la-juventud.png"
+ }
+]

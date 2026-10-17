@@ -855,3 +855,21 @@ html[data-theme="dia"] .mapa-etiqueta{background:#0e2a1c}
 .prov-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--prov-c,#3ddc97)}
 .prov-card-n{color:var(--prov-c,#3ddc97)}
 .dt-titulo{--prov-c:#e6b84d}
+
+/* ---------- Equipo de pelota de la provincia ---------- */
+.equipo-card{display:flex;gap:1.6rem;align-items:center;background:var(--tl-card);
+  border:1px solid var(--tl-borde);border-radius:24px;padding:1.8rem;position:relative;overflow:hidden;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--sombra)}
+.equipo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--eq1,#e6b84d),var(--eq2,#3ddc97))}
+.equipo-mascota{width:140px;height:140px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  border:4px solid var(--eq1,#e6b84d);box-shadow:0 10px 28px rgba(0,0,0,.35);background:#fff}
+.equipo-info{flex:1;min-width:0}
+.equipo-info h3{font-size:1.35rem;margin-bottom:.15rem}
+.equipo-apodo{color:var(--eq1,#e6b84d);font-weight:800;font-size:1.05rem;margin-bottom:.7rem}
+.equipo-datos{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.87rem;color:var(--muted);font-weight:600;margin-bottom:.7rem}
+.equipo-dato{font-size:.92rem;color:var(--muted);font-style:italic;margin-bottom:.9rem}
+.equipo-colores{display:flex;gap:.5rem}
+.equipo-colores span{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.45);box-shadow:0 2px 6px rgba(0,0,0,.25)}
+@media(max-width:560px){.equipo-card{flex-direction:column;text-align:center;padding:1.5rem}
+.equipo-mascota{width:120px;height:120px}.equipo-datos{justify-content:center}.equipo-colores{justify-content:center}}
