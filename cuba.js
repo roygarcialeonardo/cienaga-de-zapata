@@ -71,6 +71,12 @@ function centroide(d){
 const OFFSETS = [[0,0],[26,-8],[-26,-6],[14,20],[-14,20],[30,12],[-30,12],[0,-26]];
 
 /* ---------- Mapa SVG colorido ---------- */
+function vbDeBbox(b, pad){
+  pad = pad || 0.06;
+  const w = b[2]-b[0], h = b[3]-b[1];
+  const px = w*pad, py = h*pad;
+  return `${(b[0]-px).toFixed(1)} ${(b[1]-py).toFixed(1)} ${(w+px*2).toFixed(1)} ${(h+py*2).toFixed(1)}`;
+}
 function svgMapa(paths, vb, opts){
   opts = opts || {};
   const colores = opts.colores || {};
@@ -160,7 +166,7 @@ async function renderProvincias(){
   if(mapCont && window.CZ_CUBA){
     const paths = {};
     Object.entries(window.CZ_CUBA).forEach(([slug, info])=>{ paths[slug] = info; });
-    const vb = Object.values(window.CZ_CUBA)[0].vb;
+    const vb = window.CZ_VB || "0 0 1000 343";
     /* pines: hasta 3 lugares por provincia, en el centroide de su municipio */
     const munsPaths = {};
     Object.entries(window.CZ_PROVMAP||{}).forEach(([ps, mp])=>Object.assign(munsPaths, mp));
@@ -224,7 +230,8 @@ async function renderProvincia(){
   let mapaHTML = "";
   if(window.CZ_PROVMAP && window.CZ_PROVMAP[prov.slug]){
     const paths = window.CZ_PROVMAP[prov.slug];
-    const vb = Object.values(paths)[0].vb;
+    const vb = (window.CZ_CUBA[prov.slug] && window.CZ_CUBA[prov.slug].bbox)
+      ? vbDeBbox(window.CZ_CUBA[prov.slug].bbox) : window.CZ_VB;
     const extra = pinesSVG(lug, paths, 4);
     mapaHTML = `<section class="cuba-sec"><h2>🗺️ Municipios</h2>
       <p class="sec-sub">Toca un municipio para ver sus lugares y servicios. Los ${"dibujitos"} marcan lugares famosos.</p>
@@ -297,7 +304,7 @@ async function renderMunicipio(){
   const provPaths = (window.CZ_PROVMAP||{})[prov.slug];
   if(provPaths && provPaths[mun.slug]){
     const mp = {}; mp[mun.slug] = provPaths[mun.slug];
-    const vb = provPaths[mun.slug].vb;
+    const vb = provPaths[mun.slug].bbox ? vbDeBbox(provPaths[mun.slug].bbox, 0.15) : window.CZ_VB;
     const extra = pinesSVG(lug, mp, 6);
     miniMapa = `<section class="cuba-sec"><h2>🗺️ Mapa de ${esc(mun.nombre)}</h2>
       <div id="mapaMun" class="cuba-mapa mapa-mun">${decoHTML()}${svgMapa(mp, vb, {colores:{[mun.slug]:PROV_COLOR[prov.slug]||"#3ddc97"}, extra})}</div>
@@ -336,7 +343,7 @@ async function renderHomeMapa(){
   const [lugares] = await Promise.all([getLugares()]);
   const paths = {};
   Object.entries(window.CZ_CUBA).forEach(([slug, info])=>{ paths[slug] = info; });
-  const vb = Object.values(window.CZ_CUBA)[0].vb;
+  const vb = window.CZ_VB || "0 0 1000 343";
   const munsPaths = {};
   Object.entries(window.CZ_PROVMAP||{}).forEach(([ps, mp])=>Object.assign(munsPaths, mp));
   const porProv = {};
