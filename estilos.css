@@ -830,3 +830,28 @@ html[data-theme="dia"] .mapa-path:hover{fill:rgba(185,127,31,.4)}
 .home-cuba{padding:4rem 0}
 .home-cuba .cuba-mapa{margin-top:1.6rem}
 .home-cuba-cta{text-align:center;margin-top:1.2rem}
+
+/* ---------- Mapa ilustrado de Cuba ---------- */
+.cuba-mapa{position:relative;overflow:hidden}
+.mapa-color{stroke:rgba(255,255,255,.55);stroke-width:1.6;cursor:pointer;transition:.2s}
+.mapa-color:hover{fill-opacity:1;stroke:#fff;stroke-width:2.4}
+html[data-theme="dia"] .mapa-color{stroke:rgba(20,40,30,.35)}
+html[data-theme="dia"] .mapa-color:hover{stroke:#fff}
+.mapa-pin{font-size:22px;cursor:pointer;paint-order:stroke;stroke:rgba(0,0,0,.35);stroke-width:3px}
+.mapa-pin:hover{font-size:28px}
+.mapa-etiqueta{position:absolute;top:.8rem;left:50%;transform:translateX(-50%) scale(.9);background:#10241a;
+  color:#fff;font-weight:700;font-size:.9rem;padding:.5rem 1.1rem;border-radius:999px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:5;max-width:92%}
+html[data-theme="dia"] .mapa-etiqueta{background:#0e2a1c}
+.mapa-etiqueta.on{opacity:1;transform:translateX(-50%) scale(1)}
+.mapa-deco{position:absolute;inset:0;pointer-events:none;z-index:4}
+.mapa-deco-e{position:absolute;font-size:1.5rem;opacity:.9;animation:flota 5s ease-in-out infinite}
+.mapa-deco-e:nth-child(2n){animation-delay:1.2s;font-size:1.2rem}
+.mapa-deco-e:nth-child(3n){animation-delay:2.4s}
+@keyframes flota{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(5deg)}}
+.mapa-mun{max-width:520px;margin:0 auto}
+.mapa-mun .mapa-pin{font-size:30px}
+.prov-card{position:relative;overflow:hidden}
+.prov-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--prov-c,#3ddc97)}
+.prov-card-n{color:var(--prov-c,#3ddc97)}
+.dt-titulo{--prov-c:#e6b84d}
