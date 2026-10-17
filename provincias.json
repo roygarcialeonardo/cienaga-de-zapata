@@ -1,0 +1,770 @@
+[
+ {
+  "slug": "artemisa",
+  "nombre": "Artemisa",
+  "municipios": [
+   {
+    "slug": "alquizar",
+    "nombre": "Alquízar"
+   },
+   {
+    "slug": "artemisa",
+    "nombre": "Artemisa"
+   },
+   {
+    "slug": "bahia-honda",
+    "nombre": "Bahía Honda"
+   },
+   {
+    "slug": "bauta",
+    "nombre": "Bauta"
+   },
+   {
+    "slug": "caimito",
+    "nombre": "Caimito"
+   },
+   {
+    "slug": "candelaria",
+    "nombre": "Candelaria"
+   },
+   {
+    "slug": "guanajay",
+    "nombre": "Guanajay"
+   },
+   {
+    "slug": "guira-de-melena",
+    "nombre": "Güira de Melena"
+   },
+   {
+    "slug": "mariel",
+    "nombre": "Mariel"
+   },
+   {
+    "slug": "san-antonio-de-los-banos",
+    "nombre": "San Antonio de los Baños"
+   },
+   {
+    "slug": "san-cristobal",
+    "nombre": "San Cristóbal"
+   }
+  ]
+ },
+ {
+  "slug": "camaguey",
+  "nombre": "Camagüey",
+  "municipios": [
+   {
+    "slug": "camaguey",
+    "nombre": "Camagüey"
+   },
+   {
+    "slug": "carlos-manuel-de-cespedes",
+    "nombre": "Carlos Manuel de Céspedes"
+   },
+   {
+    "slug": "esmeralda",
+    "nombre": "Esmeralda"
+   },
+   {
+    "slug": "florida",
+    "nombre": "Florida"
+   },
+   {
+    "slug": "guaimaro",
+    "nombre": "Guáimaro"
+   },
+   {
+    "slug": "jimaguayu",
+    "nombre": "Jimaguayú"
+   },
+   {
+    "slug": "minas",
+    "nombre": "Minas"
+   },
+   {
+    "slug": "najasa",
+    "nombre": "Najasa"
+   },
+   {
+    "slug": "nuevitas",
+    "nombre": "Nuevitas"
+   },
+   {
+    "slug": "santa-cruz-del-sur",
+    "nombre": "Santa Cruz del Sur"
+   },
+   {
+    "slug": "sibanicu",
+    "nombre": "Sibanicú"
+   },
+   {
+    "slug": "sierra-de-cubitas",
+    "nombre": "Sierra de Cubitas"
+   },
+   {
+    "slug": "vertientes",
+    "nombre": "Vertientes"
+   }
+  ]
+ },
+ {
+  "slug": "ciego-de-avila",
+  "nombre": "Ciego de Ávila",
+  "municipios": [
+   {
+    "slug": "baragua",
+    "nombre": "Baraguá"
+   },
+   {
+    "slug": "bolivia",
+    "nombre": "Bolivia"
+   },
+   {
+    "slug": "chambas",
+    "nombre": "Chambas"
+   },
+   {
+    "slug": "ciego-de-avila",
+    "nombre": "Ciego de Ávila"
+   },
+   {
+    "slug": "ciro-redondo",
+    "nombre": "Ciro Redondo"
+   },
+   {
+    "slug": "florencia",
+    "nombre": "Florencia"
+   },
+   {
+    "slug": "majagua",
+    "nombre": "Majagua"
+   },
+   {
+    "slug": "moron",
+    "nombre": "Morón"
+   },
+   {
+    "slug": "primero-de-enero",
+    "nombre": "Primero de Enero"
+   },
+   {
+    "slug": "venezuela",
+    "nombre": "Venezuela"
+   }
+  ]
+ },
+ {
+  "slug": "cienfuegos",
+  "nombre": "Cienfuegos",
+  "municipios": [
+   {
+    "slug": "abreus",
+    "nombre": "Abreus"
+   },
+   {
+    "slug": "aguada-de-pasajeros",
+    "nombre": "Aguada de Pasajeros"
+   },
+   {
+    "slug": "cienfuegos",
+    "nombre": "Cienfuegos"
+   },
+   {
+    "slug": "cruces",
+    "nombre": "Cruces"
+   },
+   {
+    "slug": "cumanayagua",
+    "nombre": "Cumanayagua"
+   },
+   {
+    "slug": "lajas",
+    "nombre": "Lajas"
+   },
+   {
+    "slug": "palmira",
+    "nombre": "Palmira"
+   },
+   {
+    "slug": "rodas",
+    "nombre": "Rodas"
+   }
+  ]
+ },
+ {
+  "slug": "granma",
+  "nombre": "Granma",
+  "municipios": [
+   {
+    "slug": "bartolome-maso",
+    "nombre": "Bartolomé Masó"
+   },
+   {
+    "slug": "bayamo",
+    "nombre": "Bayamo"
+   },
+   {
+    "slug": "bue-y-arriba",
+    "nombre": "Bue y Arriba"
+   },
+   {
+    "slug": "campechuela",
+    "nombre": "Campechuela"
+   },
+   {
+    "slug": "cauto-cristo",
+    "nombre": "Cauto Cristo"
+   },
+   {
+    "slug": "guisa",
+    "nombre": "Guisa"
+   },
+   {
+    "slug": "jiguani",
+    "nombre": "Jiguaní"
+   },
+   {
+    "slug": "manzanillo",
+    "nombre": "Manzanillo"
+   },
+   {
+    "slug": "media-luna",
+    "nombre": "Media Luna"
+   },
+   {
+    "slug": "niquero",
+    "nombre": "Niquero"
+   },
+   {
+    "slug": "pilon",
+    "nombre": "Pilón"
+   },
+   {
+    "slug": "rio-cauto",
+    "nombre": "Río Cauto"
+   },
+   {
+    "slug": "yara",
+    "nombre": "Yara"
+   }
+  ]
+ },
+ {
+  "slug": "guantanamo",
+  "nombre": "Guantánamo",
+  "municipios": [
+   {
+    "slug": "baracoa",
+    "nombre": "Baracoa"
+   },
+   {
+    "slug": "caimanera",
+    "nombre": "Caimanera"
+   },
+   {
+    "slug": "el-salvador",
+    "nombre": "El Salvador"
+   },
+   {
+    "slug": "guantanamo",
+    "nombre": "Guantánamo"
+   },
+   {
+    "slug": "imias",
+    "nombre": "Imías"
+   },
+   {
+    "slug": "maisi",
+    "nombre": "Maisí"
+   },
+   {
+    "slug": "manuel-tames",
+    "nombre": "Manuel Tames"
+   },
+   {
+    "slug": "niceto-perez",
+    "nombre": "Niceto Pérez"
+   },
+   {
+    "slug": "san-antonio-del-sur",
+    "nombre": "San Antonio del Sur"
+   },
+   {
+    "slug": "yateras",
+    "nombre": "Yateras"
+   }
+  ]
+ },
+ {
+  "slug": "holguin",
+  "nombre": "Holguín",
+  "municipios": [
+   {
+    "slug": "antilla",
+    "nombre": "Antilla"
+   },
+   {
+    "slug": "banes",
+    "nombre": "Banes"
+   },
+   {
+    "slug": "baguanos",
+    "nombre": "Báguanos"
+   },
+   {
+    "slug": "cacocum",
+    "nombre": "Cacocum"
+   },
+   {
+    "slug": "calixto-garcia",
+    "nombre": "Calixto García"
+   },
+   {
+    "slug": "cueto",
+    "nombre": "Cueto"
+   },
+   {
+    "slug": "frank-pais",
+    "nombre": "Frank País"
+   },
+   {
+    "slug": "gibara",
+    "nombre": "Gibara"
+   },
+   {
+    "slug": "holguin",
+    "nombre": "Holguín"
+   },
+   {
+    "slug": "mayari",
+    "nombre": "Mayarí"
+   },
+   {
+    "slug": "moa",
+    "nombre": "Moa"
+   },
+   {
+    "slug": "rafael-freyre",
+    "nombre": "Rafael Freyre"
+   },
+   {
+    "slug": "sagua-de-tanamo",
+    "nombre": "Sagua de Tánamo"
+   },
+   {
+    "slug": "urbano-noris",
+    "nombre": "Urbano Noris"
+   }
+  ]
+ },
+ {
+  "slug": "isla-de-la-juventud",
+  "nombre": "Isla de la Juventud",
+  "municipios": [
+   {
+    "slug": "isla-de-la-juventud",
+    "nombre": "Isla de la Juventud"
+   }
+  ]
+ },
+ {
+  "slug": "la-habana",
+  "nombre": "La Habana",
+  "municipios": [
+   {
+    "slug": "arroyo-naranjo",
+    "nombre": "Arroyo Naranjo"
+   },
+   {
+    "slug": "boyeros",
+    "nombre": "Boyeros"
+   },
+   {
+    "slug": "centro-habana",
+    "nombre": "Centro Habana"
+   },
+   {
+    "slug": "cerro",
+    "nombre": "Cerro"
+   },
+   {
+    "slug": "cotorro",
+    "nombre": "Cotorro"
+   },
+   {
+    "slug": "diez-de-octubre",
+    "nombre": "Diez de Octubre"
+   },
+   {
+    "slug": "guanabacoa",
+    "nombre": "Guanabacoa"
+   },
+   {
+    "slug": "la-habana-vieja",
+    "nombre": "La Habana Vieja"
+   },
+   {
+    "slug": "la-habana-del-este",
+    "nombre": "La Habana del Este"
+   },
+   {
+    "slug": "la-lisa",
+    "nombre": "La Lisa"
+   },
+   {
+    "slug": "marianao",
+    "nombre": "Marianao"
+   },
+   {
+    "slug": "playa",
+    "nombre": "Playa"
+   },
+   {
+    "slug": "plaza-de-la-revolucion",
+    "nombre": "Plaza de la Revolución"
+   },
+   {
+    "slug": "regla",
+    "nombre": "Regla"
+   },
+   {
+    "slug": "san-miguel-del-padron",
+    "nombre": "San Miguel del Padrón"
+   }
+  ]
+ },
+ {
+  "slug": "las-tunas",
+  "nombre": "Las Tunas",
+  "municipios": [
+   {
+    "slug": "amancio",
+    "nombre": "Amancio"
+   },
+   {
+    "slug": "colombia",
+    "nombre": "Colombia"
+   },
+   {
+    "slug": "jesus-menendez",
+    "nombre": "Jesús Menéndez"
+   },
+   {
+    "slug": "jobabo",
+    "nombre": "Jobabo"
+   },
+   {
+    "slug": "las-tunas",
+    "nombre": "Las Tunas"
+   },
+   {
+    "slug": "majibacoa",
+    "nombre": "Majibacoa"
+   },
+   {
+    "slug": "manati",
+    "nombre": "Manatí"
+   },
+   {
+    "slug": "puerto-padre",
+    "nombre": "Puerto Padre"
+   }
+  ]
+ },
+ {
+  "slug": "matanzas",
+  "nombre": "Matanzas",
+  "municipios": [
+   {
+    "slug": "calimete",
+    "nombre": "Calimete"
+   },
+   {
+    "slug": "cienaga-de-zapata",
+    "nombre": "Ciénaga de Zapata"
+   },
+   {
+    "slug": "colon",
+    "nombre": "Colón"
+   },
+   {
+    "slug": "cardenas",
+    "nombre": "Cárdenas"
+   },
+   {
+    "slug": "jague-y-grande",
+    "nombre": "Jagüe y Grande"
+   },
+   {
+    "slug": "jovellanos",
+    "nombre": "Jovellanos"
+   },
+   {
+    "slug": "limonar",
+    "nombre": "Limonar"
+   },
+   {
+    "slug": "los-arabos",
+    "nombre": "Los Arabos"
+   },
+   {
+    "slug": "marti",
+    "nombre": "Martí"
+   },
+   {
+    "slug": "matanzas",
+    "nombre": "Matanzas"
+   },
+   {
+    "slug": "pedro-betancourt",
+    "nombre": "Pedro Betancourt"
+   },
+   {
+    "slug": "perico",
+    "nombre": "Perico"
+   },
+   {
+    "slug": "union-de-reyes",
+    "nombre": "Unión de Reyes"
+   }
+  ]
+ },
+ {
+  "slug": "mayabeque",
+  "nombre": "Mayabeque",
+  "municipios": [
+   {
+    "slug": "batabano",
+    "nombre": "Batabanó"
+   },
+   {
+    "slug": "bejucal",
+    "nombre": "Bejucal"
+   },
+   {
+    "slug": "guines",
+    "nombre": "Güines"
+   },
+   {
+    "slug": "jaruco",
+    "nombre": "Jaruco"
+   },
+   {
+    "slug": "madruga",
+    "nombre": "Madruga"
+   },
+   {
+    "slug": "melena-del-sur",
+    "nombre": "Melena del Sur"
+   },
+   {
+    "slug": "nueva-paz",
+    "nombre": "Nueva Paz"
+   },
+   {
+    "slug": "quivican",
+    "nombre": "Quivicán"
+   },
+   {
+    "slug": "san-jose-de-las-lajas",
+    "nombre": "San José de las Lajas"
+   },
+   {
+    "slug": "san-nicolas",
+    "nombre": "San Nicolás"
+   },
+   {
+    "slug": "santa-cruz-del-norte",
+    "nombre": "Santa Cruz del Norte"
+   }
+  ]
+ },
+ {
+  "slug": "pinar-del-rio",
+  "nombre": "Pinar del Río",
+  "municipios": [
+   {
+    "slug": "consolacion-del-sur",
+    "nombre": "Consolación del Sur"
+   },
+   {
+    "slug": "guane",
+    "nombre": "Guane"
+   },
+   {
+    "slug": "la-palma",
+    "nombre": "La Palma"
+   },
+   {
+    "slug": "los-palacios",
+    "nombre": "Los Palacios"
+   },
+   {
+    "slug": "mantua",
+    "nombre": "Mantua"
+   },
+   {
+    "slug": "minas-de-matahambre",
+    "nombre": "Minas de Matahambre"
+   },
+   {
+    "slug": "pinar-del-rio",
+    "nombre": "Pinar del Río"
+   },
+   {
+    "slug": "san-juan-y-martinez",
+    "nombre": "San Juan y Martínez"
+   },
+   {
+    "slug": "san-luis-pinar-del-rio",
+    "nombre": "San Luis"
+   },
+   {
+    "slug": "sandino",
+    "nombre": "Sandino"
+   },
+   {
+    "slug": "vinales",
+    "nombre": "Viñales"
+   }
+  ]
+ },
+ {
+  "slug": "sancti-spiritus",
+  "nombre": "Sancti Spíritus",
+  "municipios": [
+   {
+    "slug": "cabaiguan",
+    "nombre": "Cabaiguán"
+   },
+   {
+    "slug": "fomento",
+    "nombre": "Fomento"
+   },
+   {
+    "slug": "jatibonico",
+    "nombre": "Jatibonico"
+   },
+   {
+    "slug": "la-sierpe",
+    "nombre": "La Sierpe"
+   },
+   {
+    "slug": "sancti-spiritus",
+    "nombre": "Sancti Spíritus"
+   },
+   {
+    "slug": "taguasco",
+    "nombre": "Taguasco"
+   },
+   {
+    "slug": "trinidad",
+    "nombre": "Trinidad"
+   },
+   {
+    "slug": "yaguajay",
+    "nombre": "Yaguajay"
+   }
+  ]
+ },
+ {
+  "slug": "santiago-de-cuba",
+  "nombre": "Santiago de Cuba",
+  "municipios": [
+   {
+    "slug": "contramaestre",
+    "nombre": "Contramaestre"
+   },
+   {
+    "slug": "guama",
+    "nombre": "Guamá"
+   },
+   {
+    "slug": "mella",
+    "nombre": "Mella"
+   },
+   {
+    "slug": "palma-soriano",
+    "nombre": "Palma Soriano"
+   },
+   {
+    "slug": "san-luis-santiago-de-cuba",
+    "nombre": "San Luis"
+   },
+   {
+    "slug": "santiago-de-cuba",
+    "nombre": "Santiago de Cuba"
+   },
+   {
+    "slug": "segundo-frente",
+    "nombre": "Segundo Frente"
+   },
+   {
+    "slug": "songo-la-maya",
+    "nombre": "Songo-La Maya"
+   },
+   {
+    "slug": "tercer-frente",
+    "nombre": "Tercer Frente"
+   }
+  ]
+ },
+ {
+  "slug": "villa-clara",
+  "nombre": "Villa Clara",
+  "municipios": [
+   {
+    "slug": "caibarien",
+    "nombre": "Caibarién"
+   },
+   {
+    "slug": "camajuani",
+    "nombre": "Camajuaní"
+   },
+   {
+    "slug": "cifuentes",
+    "nombre": "Cifuentes"
+   },
+   {
+    "slug": "corralillo",
+    "nombre": "Corralillo"
+   },
+   {
+    "slug": "encrucijada",
+    "nombre": "Encrucijada"
+   },
+   {
+    "slug": "manicaragua",
+    "nombre": "Manicaragua"
+   },
+   {
+    "slug": "placetas",
+    "nombre": "Placetas"
+   },
+   {
+    "slug": "quemado-de-guines",
+    "nombre": "Quemado de Güines"
+   },
+   {
+    "slug": "ranchuelo",
+    "nombre": "Ranchuelo"
+   },
+   {
+    "slug": "remedios",
+    "nombre": "Remedios"
+   },
+   {
+    "slug": "sagua-la-grande",
+    "nombre": "Sagua la Grande"
+   },
+   {
+    "slug": "santa-clara",
+    "nombre": "Santa Clara"
+   },
+   {
+    "slug": "santo-domingo",
+    "nombre": "Santo Domingo"
+   }
+  ]
+ }
+]

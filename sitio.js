@@ -935,6 +935,9 @@ function montarAsistente(){
     setTimeout(()=>czResponder(q), 350);
   });
 }
+
+/* API pública para cuba.js (páginas nacionales) */
+window.CZ = Object.assign(window.CZ || {}, { esc, tarjetaServicio, getPosts });
 })();
 
 /* ---------- PWA: registro del Service Worker ---------- */

@@ -11,6 +11,46 @@ function wnum(){
   return String((window.CZ_CONFIG||{}).WHATSAPP_CONTACTO||"").replace(/\D/g,"");
 }
 
+/* ---------- Provincias y municipios (guía nacional) ---------- */
+let CZ_PROVS = [];
+async function cargarProvs(){
+  try{
+    const r = await fetch("provincias.json", {cache:"no-store"});
+    CZ_PROVS = await r.json();
+  }catch(e){ CZ_PROVS = []; }
+  const sp = $("pubProvincia"), sm = $("pubMunicipio");
+  CZ_PROVS.forEach(p=>{
+    const o = document.createElement("option");
+    o.value = p.slug; o.textContent = p.nombre;
+    sp.appendChild(o);
+  });
+  sp.addEventListener("change", ()=>{
+    const prov = CZ_PROVS.find(p=>p.slug===sp.value);
+    sm.innerHTML = "";
+    if(!prov){
+      sm.disabled = true;
+      sm.innerHTML = '<option value="">— Elige provincia primero —</option>';
+      return;
+    }
+    sm.disabled = false;
+    sm.innerHTML = '<option value="">— Elige —</option>';
+    prov.municipios.forEach(m=>{
+      const o = document.createElement("option");
+      o.value = m.slug; o.textContent = m.nombre;
+      sm.appendChild(o);
+    });
+  });
+}
+function provNombre(slug){
+  const p = CZ_PROVS.find(p=>p.slug===slug);
+  return p ? p.nombre : slug;
+}
+function munNombre(pslug, mslug){
+  const p = CZ_PROVS.find(p=>p.slug===pslug);
+  const m = p ? (p.municipios||[]).find(m=>m.slug===mslug) : null;
+  return m ? m.nombre : mslug;
+}
+
 /* ---------- Secciones condicionales por categoría ---------- */
 function toggleSecciones(){
   const cat = val("pubCategoria");
@@ -39,12 +79,15 @@ function escAttr(s){
 /* ---------- Construcción del mensaje ---------- */
 function armarMensaje(){
   const nombre = val("pubNombre"), cat = val("pubCategoria"), zona = val("pubZona"),
-        resp = val("pubResponsable"), wsp = val("pubWhatsapp");
+        resp = val("pubResponsable"), wsp = val("pubWhatsapp"),
+        pslug = val("pubProvincia"), mslug = val("pubMunicipio");
   const L = [
-    "📢 NUEVO NEGOCIO — Guía Ciénaga de Zapata",
+    "📢 NUEVO NEGOCIO — Guía de Cuba",
     "— Nombre: " + nombre,
     "— Categoría: " + cat,
     "— Zona: " + zona,
+    "— Provincia: " + provNombre(pslug) + " (" + pslug + ")",
+    "— Municipio: " + munNombre(pslug, mslug) + " (" + mslug + ")",
     "— Responsable: " + resp,
     "— WhatsApp (verificación): " + wsp,
     ""
@@ -92,6 +135,8 @@ function validar(){
   if(!val("pubNombre")) return "Escribe el nombre del negocio.";
   if(!val("pubCategoria")) return "Elige la categoría del negocio.";
   if(!val("pubZona")) return "Escribe la zona o ubicación.";
+  if(!val("pubProvincia")) return "Elige la provincia.";
+  if(!val("pubMunicipio")) return "Elige el municipio.";
   if(!val("pubResponsable")) return "Escribe el nombre del responsable.";
   if(!val("pubWhatsapp")) return "Escribe un WhatsApp de contacto para verificarte.";
   if(val("pubCategoria") === "Hospedaje"){
@@ -103,6 +148,7 @@ function validar(){
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
+  cargarProvs();
   $("pubCategoria").addEventListener("change", toggleSecciones);
   $("pubAddDorm").addEventListener("click", ()=>addDorm("",""));
   addDorm("", ""); /* una fila inicial */

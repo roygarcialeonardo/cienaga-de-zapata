@@ -759,3 +759,74 @@ html[data-theme="noche"] .dt-foto{box-shadow:0 24px 60px rgba(0,0,0,.5)}
 body:has(.wa-float) .cz-fab{bottom:5.4rem}
 body:has(.wa-float) .cz-panel{bottom:9.6rem}
 @media(max-width:640px){body:has(.wa-float) .cz-fab{bottom:5rem}body:has(.wa-float) .cz-panel{bottom:9.2rem}}
+
+/* ============================================================
+   GUÍA NACIONAL DE CUBA · mapa, provincias, municipios
+   ============================================================ */
+.cuba-mapa-wrap{margin:1rem 0 2.5rem;text-align:center}
+.cuba-mapa{background:var(--tl-card);border:1px solid var(--tl-borde);border-radius:24px;
+  padding:1.2rem;box-shadow:var(--sombra);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.cuba-mapa-hint{color:var(--muted);font-size:.9rem;margin-top:.8rem}
+.mapa-svg{width:100%;height:auto;display:block}
+.mapa-path{fill:rgba(61,220,151,.14);stroke:var(--tl-oro);stroke-width:1.4;cursor:pointer;transition:.2s}
+.mapa-path:hover{fill:rgba(230,184,77,.45);stroke-width:2.2}
+.mapa-path:active{fill:rgba(230,184,77,.65)}
+html[data-theme="dia"] .mapa-path{fill:rgba(14,154,102,.12)}
+html[data-theme="dia"] .mapa-path:hover{fill:rgba(185,127,31,.4)}
+.mapa-cuba{max-height:62vh}
+.mapa-prov{max-width:640px;margin:0 auto}
+
+/* Tarjetas de provincia */
+.prov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem;margin-bottom:3rem}
+.prov-card{display:block;text-decoration:none;background:var(--tl-card);border:1px solid var(--tl-borde);
+  border-radius:18px;padding:1.3rem 1.4rem;transition:.25s;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.prov-card:hover{transform:translateY(-4px);border-color:var(--tl-oro);box-shadow:var(--sombra-lg)}
+.prov-card-n{display:block;font-family:var(--tl-serifa);font-size:1.25rem;font-weight:600;margin-bottom:.3rem}
+.prov-card-d{display:block;font-size:.85rem;color:var(--muted)}
+.prov-card-ir{display:inline-block;margin-top:.7rem;font-weight:800;font-size:.88rem;color:var(--tl-oro)}
+
+/* Tarjetas de lugares famosos */
+.cuba-sec{margin:2.6rem 0}
+.cuba-sec h2{font-size:1.5rem;margin-bottom:1.1rem}
+.lugar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.1rem}
+.lugar-card{background:var(--tl-card);border:1px solid var(--tl-borde);border-radius:18px;padding:1.25rem;
+  position:relative;overflow:hidden;transition:.25s;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.lugar-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--tl-verde),var(--tl-oro))}
+.lugar-card:hover{transform:translateY(-4px);box-shadow:var(--sombra-lg)}
+.lugar-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.lugar-emoji{font-size:1.7rem}
+.lugar-cat{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--tl-oro)}
+.lugar-card h3{font-size:1.12rem;margin-bottom:.25rem}
+.lugar-ub{font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:.5rem}
+.lugar-desc{font-size:.9rem;color:var(--muted)}
+
+/* Pestañas por categoría */
+.cuba-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.3rem}
+.cuba-tab{border:1.5px solid var(--borde);background:transparent;color:var(--tinta);font-weight:700;
+  padding:.6rem 1.3rem;border-radius:999px;cursor:pointer;font-size:.92rem;font-family:inherit;transition:.2s}
+.cuba-tab:hover{border-color:var(--tl-oro)}
+.cuba-tab.on{background:linear-gradient(135deg,var(--tl-oro),var(--tl-oro-d));border-color:var(--tl-oro);color:#241804}
+.cuba-tabbody{min-height:200px}
+
+/* Carruseles */
+.carrusel{display:flex;gap:1.1rem;overflow-x:auto;padding:.4rem .1rem 1.2rem;scroll-snap-type:x mandatory;
+  scrollbar-width:thin}
+.carrusel>*{flex:0 0 min(300px,82vw);scroll-snap-align:start}
+
+/* Municipios */
+.mun-grid{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.2rem}
+.mun-chip{text-decoration:none;border:1px solid var(--borde);color:var(--tinta);font-weight:600;
+  padding:.5rem 1.05rem;border-radius:999px;font-size:.88rem;transition:.2s;background:var(--tl-card)}
+.mun-chip:hover{border-color:var(--tl-oro);color:var(--tl-oro);transform:translateY(-2px)}
+
+/* CTA auto-registro */
+.cta-anuncia{text-align:center;border:1.5px dashed var(--tl-oro);border-radius:20px;padding:2rem 1.5rem;
+  background:color-mix(in srgb,var(--tl-oro) 6%,transparent)}
+.cta-anuncia p{color:var(--muted);margin-bottom:1.1rem}
+.cta-anuncia b{color:var(--tinta)}
+
+/* Sección mapa en el home */
+.home-cuba{padding:4rem 0}
+.home-cuba .cuba-mapa{margin-top:1.6rem}
+.home-cuba-cta{text-align:center;margin-top:1.2rem}

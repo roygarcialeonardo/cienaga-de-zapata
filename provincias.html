@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explora Cuba por provincias | Ciénaga de Zapata</title>
+<meta name="description" content="Mapa interactivo de Cuba: elige una provincia y descubre sus lugares más visitados, casas de renta, restaurantes y taxis con reserva por WhatsApp.">
+<link rel="canonical" href="https://roygarcialeonardo.github.io/cienaga-de-zapata/provincias.html">
+<meta property="og:title" content="Explora Cuba por provincias 🇨🇺">
+<meta property="og:description" content="Mapa interactivo de Cuba: lugares, casas de renta, restaurantes y taxis por provincia y municipio.">
+<meta property="og:image" content="https://roygarcialeonardo.github.io/cienaga-de-zapata/img/hero-humedal.webp">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fraunces:opsz,wght@9..144,400..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#07120d">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cz-theme')||'noche')}catch(e){document.documentElement.setAttribute('data-theme','noche')}</script>
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mark">🌿</span> Ciénaga de Zapata</a>
+    <div class="nav-links">
+      <a href="provincias.html">🇨🇺 Cuba</a><a href="lugares.html">Lugares</a><a href="secretos.html">Secretos</a><a href="fauna-flora.html">Fauna</a>
+      <a href="actividades.html">Actividades</a><a href="historia.html">Historia</a><a href="gastronomia.html">Gastronomía</a><a href="guia.html">Guía</a><a href="servicios.html">Servicios</a>
+    </div>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">🌙</button>
+    <span id="connBadge" class="conn-badge" title="Estado de la conexión"><span id="connDot" class="conn-dot"></span><span id="connText">···</span></span>
+  </div>
+</nav>
+<header class="page-hero"><div class="wrap">
+  <div class="crumbs"><a href="index.html">Inicio</a> › Cuba</div>
+  <span class="kicker">🇨🇺 Guía nacional</span>
+  <h1>Explora <span class='grad'>Cuba</span></h1>
+  <p class="intro">Toca una provincia en el mapa y descubre sus lugares más visitados, casas de renta, restaurantes y taxis. Reserva todo por WhatsApp.</p>
+</div></header>
+<main><section style="padding-top:2rem"><div class="wrap">
+<div class="cuba-mapa-wrap">
+  <div id="mapaCuba" class="cuba-mapa" role="img" aria-label="Mapa interactivo de Cuba por provincias"><p style="opacity:.7">Cargando mapa…</p></div>
+  <p class="cuba-mapa-hint">👆 Toca una provincia para ver sus lugares y servicios</p>
+</div>
+<h2 class="sec-title" style="margin-top:1rem">Provincias</h2>
+<div id="provGrid" class="prov-grid"><p style="opacity:.7">Cargando…</p></div>
+<noscript><p>Activa JavaScript para ver el mapa y las provincias.</p></noscript>
+<div class="pag-nav"><a href="index.html">← Inicio</a><a href="servicios.html">Servicios →</a></div>
+</div></section></main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index.html"><span class="mark">🌿</span> Ciénaga de Zapata</a>
+        <p class="nota">Guía de viaje de Cuba: sus lugares, su gente y su naturaleza. 🇨🇺</p></div>
+      <div><b>Explora</b><br><br>
+        <a href="provincias.html" style="text-decoration:none">🇨🇺 Cuba por provincias</a><br>
+        <a href="lugares.html" style="text-decoration:none">Lugares</a><br>
+        <a href="fauna-flora.html" style="text-decoration:none">Fauna y flora</a><br>
+        <a href="actividades.html" style="text-decoration:none">Actividades</a></div>
+      <div><b>Planifica</b><br><br>
+        <a href="guia.html" style="text-decoration:none">Guía del viajero</a><br>
+        <a href="servicios.html" style="text-decoration:none">Servicios turísticos</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>Hecho con 💚 para Cuba</span>
+      <span>© 2026 Ciénaga de Zapata</span>
+    </div>
+  </div>
+</footer>
+<script src="config.js"></script>
+<script>const PAGINA="provincias";</script>
+<script src="qrcode.min.js"></script>
+<script src="mapas.js"></script>
+<script src="sitio.js"></script>
+<script src="cuba.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

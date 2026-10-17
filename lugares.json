@@ -1,0 +1,706 @@
+[
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Un valle verde salpicado de mogotes que parecen montañas en miniatura, declarado Patrimonio de la Humanidad. Recorrerlo a pie, a caballo o en bicicleta es asomarse al campo cubano más fotogénico.",
+  "id": "lugar-vinales-valle",
+  "municipio": "vinales",
+  "nombre": "Valle de Viñales",
+  "provincia": "pinar-del-rio"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "Una pintura gigante sobre la pared de un mogote que cuenta la historia de la vida en la Tierra. Se aprecia mejor desde el mirador, con el valle extendiéndose abajo.",
+  "id": "lugar-vinales-mural",
+  "municipio": "vinales",
+  "nombre": "Mural de la Prehistoria",
+  "provincia": "pinar-del-rio"
+ },
+ {
+  "categoria": "Aventura",
+  "descripcion": "Una cueva atravesada por un río subterráneo que se recorre primero a pie y después en bote. Afuera el mogote guarda silencio; adentro, el agua manda.",
+  "id": "lugar-vinales-cueva-indio",
+  "municipio": "vinales",
+  "nombre": "Cueva del Indio",
+  "provincia": "pinar-del-rio"
+ },
+ {
+  "categoria": "Aventura",
+  "descripcion": "El sistema cavernario más grande de Cuba, con galerías de varios niveles y formaciones que parecen esculturas. Solo se visita con guía, y vale cada paso.",
+  "id": "lugar-vinales-santo-tomas",
+  "municipio": "vinales",
+  "nombre": "Gran Caverna de Santo Tomás",
+  "provincia": "pinar-del-rio"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Una playa virgen de arena blanca a la que se llega por un pedraplén entre manglares. Sin hoteles grandes ni multitudes: mar turquesa y tranquilidad.",
+  "id": "lugar-jutias",
+  "municipio": "minas-de-matahambre",
+  "nombre": "Cayo Jutías",
+  "provincia": "pinar-del-rio"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Un cayo pequeño y tranquilo frente a la costa norte pinareña, famoso por su barrera coralina. Ideal para el snorkel y para desconectar del mundo.",
+  "id": "lugar-levisa",
+  "municipio": "la-palma",
+  "nombre": "Cayo Levisa",
+  "provincia": "pinar-del-rio"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Reserva de la biosfera en el extremo occidental de Cuba, con playas vírgenes como María la Gorda y fondos marinos entre los mejores del país para bucear.",
+  "id": "lugar-guanahacabibes",
+  "municipio": "sandino",
+  "nombre": "Península de Guanahacabibes",
+  "provincia": "pinar-del-rio"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Una comunidad rural en plena Sierra del Rosario donde el turismo se mezcla con la vida campesina. Senderos, baños en el río San Juan y el mejor café de la zona.",
+  "id": "lugar-terrazas",
+  "municipio": "candelaria",
+  "nombre": "Las Terrazas",
+  "provincia": "artemisa"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Conocida como el arcoíris de Cuba, Soroa combina un orquideario con cientos de especies y una cascada donde bañarse es casi obligatorio.",
+  "id": "lugar-soroa",
+  "municipio": "candelaria",
+  "nombre": "Soroa y el Salto",
+  "provincia": "artemisa"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "El único museo del mundo dedicado al humor gráfico, en la tierra de los grandes caricaturistas cubanos. Una visita corta, divertida y diferente.",
+  "id": "lugar-museo-humor",
+  "municipio": "san-antonio-de-los-banos",
+  "nombre": "Museo del Humor",
+  "provincia": "artemisa"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "Las ruinas del cafetal más famoso del siglo XIX cubano, entre palmas y piedras centenarias. Un paseo tranquilo por la historia del café en Cuba.",
+  "id": "lugar-angerona",
+  "municipio": "artemisa",
+  "nombre": "Cafetal Angerona",
+  "provincia": "artemisa"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Una playa de pueblo a pocos minutos de La Habana, con ambiente local y comida criolla. Perfecta para una escapada de un día.",
+  "id": "lugar-playa-baracoa",
+  "municipio": "bauta",
+  "nombre": "Playa Baracoa",
+  "provincia": "artemisa"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "Ocho kilómetros de muro frente al mar donde La Habana se reúne al atardecer. Caminarlo entero es entender la ciudad de un tirón.",
+  "id": "lugar-malecon-habana",
+  "municipio": "plaza-de-la-revolucion",
+  "nombre": "El Malecón habanero",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La fortaleza que vigila la entrada de la bahía desde el siglo XVII, con el faro más fotografiado de Cuba. Desde aquí se ve La Habana entera.",
+  "id": "lugar-morro-habana",
+  "municipio": "la-habana-del-este",
+  "nombre": "Castillo del Morro",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "El casco colonial mejor conservado del Caribe, Patrimonio de la Humanidad. Cuatro plazas, calles empedradas y cinco siglos de historia en cada esquina.",
+  "id": "lugar-habana-vieja",
+  "municipio": "la-habana-vieja",
+  "nombre": "Habana Vieja",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La cúpula más imponente de La Habana, con su diamante de 25 quilates marcando el kilómetro cero del país. Símbolo indiscutible de la capital.",
+  "id": "lugar-capitolio",
+  "municipio": "la-habana-vieja",
+  "nombre": "Capitolio Nacional",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La explanada donde late la historia contemporánea de Cuba, con el memorial a José Martí y los rostros del Che y Camilo en las fachadas.",
+  "id": "lugar-plaza-revolucion",
+  "municipio": "plaza-de-la-revolucion",
+  "nombre": "Plaza de la Revolución",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "La franja de playas de Santa María, Boca Ciega y Guanabo, a veinte minutos del centro. La escapada playera de los habaneros.",
+  "id": "lugar-playas-este",
+  "municipio": "la-habana-del-este",
+  "nombre": "Playas del Este",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "La joya barroca de la Plaza de la Catedral, con su fachada asimétrica inconfundible. Entra aunque sea por cinco minutos: el silencio impresiona.",
+  "id": "lugar-catedral-habana",
+  "municipio": "la-habana-vieja",
+  "nombre": "Catedral de La Habana",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "La casa donde Ernest Hemingway escribió sus grandes novelas, conservada tal como la dejó. El yate Pilar sigue en el jardín.",
+  "id": "lugar-finca-vigia",
+  "municipio": "san-miguel-del-padron",
+  "nombre": "Finca Vigía",
+  "provincia": "la-habana"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Un parque natural de mogotes y cuevas con miradores sobre el valle. Subir sus escalinatas de piedra es el plan de domingo de media provincia.",
+  "id": "lugar-escaleras-jaruco",
+  "municipio": "jaruco",
+  "nombre": "Escaleras de Jaruco",
+  "provincia": "mayabeque"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Una playa tranquila entre La Habana y Varadero, con arrecife cercano y ambiente familiar. De las mejores para el snorkel sin salir de occidente.",
+  "id": "lugar-jibacoa",
+  "municipio": "santa-cruz-del-norte",
+  "nombre": "Playa Jibacoa",
+  "provincia": "mayabeque"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "El mirador sobre el puente más alto de Cuba, con el valle de Yumurí al fondo. Parada obligada para una piña colada con vista.",
+  "id": "lugar-bacunayagua",
+  "municipio": "santa-cruz-del-norte",
+  "nombre": "Mirador de Bacunayagua",
+  "provincia": "mayabeque"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "La fiesta popular más antigua de Cuba, cada diciembre en Bejucal. Comparsas, carrozas y dos bandos que compiten por el mejor desfile.",
+  "id": "lugar-charangas",
+  "municipio": "bejucal",
+  "nombre": "Charangas de Bejucal",
+  "provincia": "mayabeque"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Veinte kilómetros de arena blanca y mar turquesa: la playa más famosa de Cuba. Más allá de los hoteles, el pueblo guarda su encanto de siempre.",
+  "id": "lugar-varadero",
+  "municipio": "cardenas",
+  "nombre": "Varadero",
+  "provincia": "matanzas"
+ },
+ {
+  "categoria": "Aventura",
+  "descripcion": "Las cuevas turísticas más antiguas de Cuba, descubiertas en 1861. Un kilómetro de galerías con estalactitas que parecen encaje de piedra.",
+  "id": "lugar-bellamar",
+  "municipio": "matanzas",
+  "nombre": "Cuevas de Bellamar",
+  "provincia": "matanzas"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La playa del desembarco de 1961, hoy tranquila y con un museo que cuenta la historia. El mar aquí también es bueno para bucear.",
+  "id": "lugar-giron",
+  "municipio": "cienaga-de-zapata",
+  "nombre": "Playa Girón",
+  "provincia": "matanzas"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "El humedal más grande del Caribe insular: cocodrilos, flamencos y manatíes entre canales y lagunas. Un paraíso para los amantes de la naturaleza.",
+  "id": "lugar-cienaga-zapata",
+  "municipio": "cienaga-de-zapata",
+  "nombre": "Ciénaga de Zapata",
+  "provincia": "matanzas"
+ },
+ {
+  "categoria": "Aventura",
+  "descripcion": "Una cueva en Varadero con pictografías aborígenes y murciélagos incluidos. La visita guiada dura menos de una hora y sorprende.",
+  "id": "lugar-ambrosio",
+  "municipio": "cardenas",
+  "nombre": "Cueva de Ambrosio",
+  "provincia": "matanzas"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "El valle que abraza a la ciudad de Matanzas, con el río serpenteando entre lomas verdes. Se aprecia mejor desde los miradores del puente Bacunayagua.",
+  "id": "lugar-yumuri",
+  "municipio": "matanzas",
+  "nombre": "Valle de Yumurí",
+  "provincia": "matanzas"
+ },
+ {
+  "categoria": "Aventura",
+  "descripcion": "Un cenote de agua cristalina escondido cerca de Varadero. Nadar aquí, entre estalactitas, es una experiencia única.",
+  "id": "lugar-saturno",
+  "municipio": "cardenas",
+  "nombre": "Cueva Saturno",
+  "provincia": "matanzas"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "Un palacete de estilo morisco frente a la bahía, construido por un magnate azucarero. Sube a la azotea: la vista de la bahía no tiene precio.",
+  "id": "lugar-palacio-valle",
+  "municipio": "cienfuegos",
+  "nombre": "Palacio de Valle",
+  "provincia": "cienfuegos"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "Uno de los teatros más bellos de Cuba, con butacas de madera y un telón que es obra de arte. Si hay función, no te la pierdas.",
+  "id": "lugar-teatro-terry",
+  "municipio": "cienfuegos",
+  "nombre": "Teatro Tomás Terry",
+  "provincia": "cienfuegos"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Cascadas y pozas de agua transparente en plena Sierra del Escambray. El sendero es exigente, pero cada poza es una recompensa.",
+  "id": "lugar-nicho",
+  "municipio": "cumanayagua",
+  "nombre": "El Nicho",
+  "provincia": "cienfuegos"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "El corazón de la Perla del Sur, rodeado de edificios neoclásicos que le valieron el título de Patrimonio de la Humanidad.",
+  "id": "lugar-parque-marti-cfg",
+  "municipio": "cienfuegos",
+  "nombre": "Parque José Martí",
+  "provincia": "cienfuegos"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Uno de los jardines botánicos tropicales más antiguos de América, con palmas de todo el mundo. Un remanso verde a minutos de la ciudad.",
+  "id": "lugar-jardin-botanico-cfg",
+  "municipio": "cienfuegos",
+  "nombre": "Jardín Botánico de Cienfuegos",
+  "provincia": "cienfuegos"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La fortaleza del siglo XVIII que defendía la bahía de los piratas, al otro lado del agua. Se llega en lancha y el viaje ya vale la pena.",
+  "id": "lugar-castillo-jagua",
+  "municipio": "cienfuegos",
+  "nombre": "Castillo de Jagua",
+  "provincia": "cienfuegos"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "El mausoleo y museo dedicado al Che, con su estatua icónica. Visita obligada para entender la historia reciente de Cuba.",
+  "id": "lugar-memorial-che",
+  "municipio": "santa-clara",
+  "nombre": "Memorial Che Guevara",
+  "provincia": "villa-clara"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "El cayo más famoso de la cayería norte de Villa Clara, con playas de arena finísima. Se llega por un pedraplén de 48 kilómetros sobre el mar.",
+  "id": "lugar-cayo-santa-maria",
+  "municipio": "caibarien",
+  "nombre": "Cayo Santa María",
+  "provincia": "villa-clara"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "Una de las ciudades más antiguas de Cuba, famosa por sus Parrandas de diciembre. Su iglesia y sus plazas conservan el aire colonial intacto.",
+  "id": "lugar-remedios",
+  "municipio": "remedios",
+  "nombre": "Remedios",
+  "provincia": "villa-clara"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "Los vagones descarrilados por el Che en 1958, convertidos en museo al aire libre. La batalla que decidió la Revolución, contada en rieles.",
+  "id": "lugar-tren-blindado",
+  "municipio": "santa-clara",
+  "nombre": "Tren Blindado",
+  "provincia": "villa-clara"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "El único lago de montaña de Cuba, entre las lomas del Escambray. Paseos en bote, pesca y paisajes que no parecen cubanos.",
+  "id": "lugar-hanabanilla",
+  "municipio": "manicaragua",
+  "nombre": "Lago Hanabanilla",
+  "provincia": "villa-clara"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "La plaza central de Santa Clara, con su glorieta y su ambiente de ciudad universitaria. El punto de partida para recorrer la ciudad.",
+  "id": "lugar-parque-vidal",
+  "municipio": "santa-clara",
+  "nombre": "Parque Vidal",
+  "provincia": "villa-clara"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La ciudad museo de Cuba: calles empedradas, casas de colores y el tiempo detenido en el siglo XIX. Patrimonio de la Humanidad.",
+  "id": "lugar-trinidad",
+  "municipio": "trinidad",
+  "nombre": "Trinidad",
+  "provincia": "sancti-spiritus"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "El valle de los antiguos ingenios azucareros, con la torre Manaca Iznaga como vigía. El tren turístico lo recorre entre cañaverales.",
+  "id": "lugar-valle-ingenios",
+  "municipio": "trinidad",
+  "nombre": "Valle de los Ingenios",
+  "provincia": "sancti-spiritus"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "El paraíso natural del Escambray: cascadas, senderos y el famoso Salto del Caburní. El aire aquí huele a pino y a aventura.",
+  "id": "lugar-topes",
+  "municipio": "trinidad",
+  "nombre": "Topes de Collantes",
+  "provincia": "sancti-spiritus"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "La mejor playa del sur central de Cuba, a minutos de Trinidad. Arena blanca, mar tranquilo y atardeceres de postal.",
+  "id": "lugar-ancon",
+  "municipio": "trinidad",
+  "nombre": "Playa Ancón",
+  "provincia": "sancti-spiritus"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "El puente de piedra sobre el río Yayabo, símbolo de una de las villas más antiguas de Cuba. Cruzarlo es viajar al siglo XIX.",
+  "id": "lugar-yayabo",
+  "municipio": "sancti-spiritus",
+  "nombre": "Puente Yayabo",
+  "provincia": "sancti-spiritus"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Aguas mineromedicinales en medio de la naturaleza, famosas en toda Cuba. Un chapuzón aquí se siente como terapia.",
+  "id": "lugar-san-jose-lago",
+  "municipio": "yaguajay",
+  "nombre": "Balneario San José del Lago",
+  "provincia": "sancti-spiritus"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "El cayo de los flamencos rosados y las playas interminables. El pedraplén que lo une a tierra firme es una obra de ingeniería sobre el mar.",
+  "id": "lugar-cayo-coco",
+  "municipio": "moron",
+  "nombre": "Cayo Coco",
+  "provincia": "ciego-de-avila"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "El cayo más al norte de la cayería, con dunas y médanos de arena fina. Por aquí pescaba Hemingway, y se entiende por qué.",
+  "id": "lugar-cayo-guillermo",
+  "municipio": "moron",
+  "nombre": "Cayo Guillermo",
+  "provincia": "ciego-de-avila"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Considerada una de las mejores playas de Cuba: arena blanca, agua cristalina y palmeras inclinadas sobre el mar. Llega temprano.",
+  "id": "lugar-playa-pilar",
+  "municipio": "moron",
+  "nombre": "Playa Pilar",
+  "provincia": "ciego-de-avila"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "La laguna natural más grande de Cuba, de aguas blanquecinas por la caliza. Paraíso de aves y de atardeceres tranquilos.",
+  "id": "lugar-laguna-leche",
+  "municipio": "moron",
+  "nombre": "Laguna de la Leche",
+  "provincia": "ciego-de-avila"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "La escultura del gallo que canta al amanecer, símbolo de la ciudad de Morón. La leyenda dice que desplumaron al original por cantar a deshora.",
+  "id": "lugar-gallo-moron",
+  "municipio": "moron",
+  "nombre": "El Gallo de Morón",
+  "provincia": "ciego-de-avila"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "Un laberinto de calles diseñado para confundir piratas, hoy Patrimonio de la Humanidad. Busca los tinajones: están por todas partes.",
+  "id": "lugar-centro-camaguey",
+  "municipio": "camaguey",
+  "nombre": "Centro histórico de Camagüey",
+  "provincia": "camaguey"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "La playa principal de Camagüey, con una barrera coralina ideal para bucear. Menos masificada que Varadero y con encanto propio.",
+  "id": "lugar-santa-lucia",
+  "municipio": "nuevitas",
+  "nombre": "Playa Santa Lucía",
+  "provincia": "camaguey"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Un cayo casi virgen al norte de Nuevitas, con faro histórico y playas solitarias. Para quienes buscan el Caribe sin multitudes.",
+  "id": "lugar-cayo-sabinal",
+  "municipio": "nuevitas",
+  "nombre": "Cayo Sabinal",
+  "provincia": "camaguey"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "El parque urbano más grande de Cuba, en pleno Camagüey. Los domingos se llena de familias, música y ambiente festivo.",
+  "id": "lugar-casino-campestre",
+  "municipio": "camaguey",
+  "nombre": "Casino Campestre",
+  "provincia": "camaguey"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La plaza más fotogénica de Camagüey, con su iglesia amarilla y casas coloniales restauradas. El corazón del centro histórico.",
+  "id": "lugar-san-juan-dios",
+  "municipio": "camaguey",
+  "nombre": "Plaza San Juan de Dios",
+  "provincia": "camaguey"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "La playa más conocida de Las Tunas, de aguas tranquilas y arena clara. El orgullo playero de la provincia.",
+  "id": "lugar-covarrubias",
+  "municipio": "puerto-padre",
+  "nombre": "Playa Covarrubias",
+  "provincia": "las-tunas"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "La capital tunera está decorada con esculturas a cielo abierto por todas sus avenidas. Un museo urbano que se recorre caminando.",
+  "id": "lugar-tunas-esculturas",
+  "municipio": "las-tunas",
+  "nombre": "Las Tunas, ciudad de las esculturas",
+  "provincia": "las-tunas"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "Donde desembarcaron los expedicionarios del Granma en 1956, hoy Patrimonio de la Humanidad. Terrazas marinas fósiles y un museo que cuenta la historia.",
+  "id": "lugar-desembarco",
+  "municipio": "niquero",
+  "nombre": "Parque Nacional Desembarco del Granma",
+  "provincia": "granma"
+ },
+ {
+  "categoria": "Aventura",
+  "descripcion": "El techo de Cuba: 1 974 metros entre nubes y bosque. Subirlo es un reto de dos días que todo montañero cubano quiere tachar.",
+  "id": "lugar-turquino",
+  "municipio": "bartolome-maso",
+  "nombre": "Pico Turquino",
+  "provincia": "granma"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La ciudad donde nació el Himno Nacional y que prefirió arder antes que rendirse. Su centro histórico respira independencia por cada calle.",
+  "id": "lugar-bayamo",
+  "municipio": "bayamo",
+  "nombre": "Bayamo",
+  "provincia": "granma"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "El cuartel general del Ejército Rebelde en la Sierra Maestra, conservado como museo. Llegar hasta aquí ya es una aventura.",
+  "id": "lugar-plata",
+  "municipio": "bartolome-maso",
+  "nombre": "Comandancia de La Plata",
+  "provincia": "granma"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "El faro en la punta sur de Cuba, donde las terrazas marinas caen al Caribe. Paisaje árido, mar bravo y atardeceres espectaculares.",
+  "id": "lugar-cabo-cruz",
+  "municipio": "niquero",
+  "nombre": "Cabo Cruz",
+  "provincia": "granma"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "La playa de Pilón, de arena oscura y palmeras, con la Sierra Maestra de telón de fondo. Auténtica y poco turística.",
+  "id": "lugar-portillo",
+  "municipio": "pilon",
+  "nombre": "Marea del Portillo",
+  "provincia": "granma"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "La playa de la bahía en forma de herradura que enamora desde hace décadas. La favorita de Holguín, con mar calmo y arena dorada.",
+  "id": "lugar-guardalavaca",
+  "municipio": "banes",
+  "nombre": "Guardalavaca",
+  "provincia": "holguin"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "La Villa Blanca de los Cangrejos, sede del Festival de Cine de Gibara. Calles coloniales, murallas y el mejor ambiente bohemio del oriente.",
+  "id": "lugar-gibara",
+  "municipio": "gibara",
+  "nombre": "Gibara",
+  "provincia": "holguin"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "La colina con la cruz que vigila Holguín desde 1790. Sube sus 458 escalones al atardecer: la ciudad entera se despliega abajo.",
+  "id": "lugar-loma-cruz",
+  "municipio": "holguin",
+  "nombre": "Loma de la Cruz",
+  "provincia": "holguin"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Un antiguo coto convertido en paraíso natural, con animales exóticos en semilibertad. Safaris criollos a minutos de la bahía de Nipe.",
+  "id": "lugar-cayo-saetia",
+  "municipio": "mayari",
+  "nombre": "Cayo Saetía",
+  "provincia": "holguin"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "La cascada más alta de Cuba, con más de cien metros de caída en plena sierra. El sendero hasta el mirador es tan bonito como el salto.",
+  "id": "lugar-guayabo",
+  "municipio": "mayari",
+  "nombre": "Salto del Guayabo",
+  "provincia": "holguin"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Una de las playas insignia de Holguín, de arena fina y mar calmo. La puerta de entrada a los cayos del norte oriental.",
+  "id": "lugar-pesquero",
+  "municipio": "rafael-freyre",
+  "nombre": "Playa Pesquero",
+  "provincia": "holguin"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La fortaleza de San Pedro de la Roca, Patrimonio de la Humanidad, guardando la bahía más hermosa de Cuba. Al atardecer suena el cañonazo.",
+  "id": "lugar-morro-santiago",
+  "municipio": "santiago-de-cuba",
+  "nombre": "Castillo del Morro",
+  "provincia": "santiago-de-cuba"
+ },
+ {
+  "categoria": "Cultura",
+  "descripcion": "El santuario de la Virgen de la Caridad, patrona de Cuba, en lo alto de las lomas. Lugar de peregrinación y de vistas inolvidables del oriente.",
+  "id": "lugar-cobre",
+  "municipio": "santiago-de-cuba",
+  "nombre": "Basílica del Cobre",
+  "provincia": "santiago-de-cuba"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "El corazón de Santiago: la plaza donde la ciudad se encuentra, entre la catedral y el ayuntamiento. Siéntate y mira pasar la historia.",
+  "id": "lugar-cespedes",
+  "municipio": "santiago-de-cuba",
+  "nombre": "Parque Céspedes",
+  "provincia": "santiago-de-cuba"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Una roca gigante en la cima de la sierra, con mirador a más de mil metros de altura. En días claros se divisa Haití.",
+  "id": "lugar-gran-piedra",
+  "municipio": "santiago-de-cuba",
+  "nombre": "Gran Piedra",
+  "provincia": "santiago-de-cuba"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "Donde descansan José Martí y los héroes de Cuba. La guardia de honor y el cambio de guardia conmueven a quien lo visita.",
+  "id": "lugar-santa-ifigenia",
+  "municipio": "santiago-de-cuba",
+  "nombre": "Cementerio Santa Ifigenia",
+  "provincia": "santiago-de-cuba"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "Reserva de la biosfera con el Valle de la Prehistoria —dinosaurios de piedra a tamaño real— y playas cercanas. Diversión para toda la familia.",
+  "id": "lugar-baconao",
+  "municipio": "santiago-de-cuba",
+  "nombre": "Baconao",
+  "provincia": "santiago-de-cuba"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La casa más antigua de Cuba, del primer gobernador español. Su balcón de madera es la imagen misma del Santiago colonial.",
+  "id": "lugar-velazquez",
+  "municipio": "santiago-de-cuba",
+  "nombre": "Casa de Diego Velázquez",
+  "provincia": "santiago-de-cuba"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "La primera villa de Cuba, aislada entre montañas y mar durante siglos. Chocolate, cucurucho y el Yunque vigilando: Baracoa es otro país.",
+  "id": "lugar-baracoa",
+  "municipio": "baracoa",
+  "nombre": "Baracoa",
+  "provincia": "guantanamo"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "La montaña de cima plana que sirve de faro a los navegantes desde tiempos de Colón. Subirla es caminar entre la vegetación más antigua de Cuba.",
+  "id": "lugar-yunque",
+  "municipio": "baracoa",
+  "nombre": "El Yunque",
+  "provincia": "guantanamo"
+ },
+ {
+  "categoria": "Ciudad",
+  "descripcion": "El paseo marítimo de la Ciudad Primada, con el mar rompiendo a un lado y las montañas al otro. El mejor lugar para ver atardecer en Baracoa.",
+  "id": "lugar-malecon-baracoa",
+  "municipio": "baracoa",
+  "nombre": "Malecón de Baracoa",
+  "provincia": "guantanamo"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Una caleta de arena blanca entre cocoteros, a minutos de Baracoa. Pequeña, tranquila y de las más bonitas del oriente cubano.",
+  "id": "lugar-maguana",
+  "municipio": "baracoa",
+  "nombre": "Playa Maguana",
+  "provincia": "guantanamo"
+ },
+ {
+  "categoria": "Naturaleza",
+  "descripcion": "El faro en el extremo oriental de Cuba, donde la isla se acaba y empieza el Atlántico. Viento, acantilados y sensación de fin del mundo.",
+  "id": "lugar-faro-maisi",
+  "municipio": "maisi",
+  "nombre": "Faro de Punta de Maisí",
+  "provincia": "guantanamo"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "Parque nacional marino con algunos de los mejores fondos de buceo del Caribe. Coral, tortugas y un agua de un azul imposible.",
+  "id": "lugar-punta-frances",
+  "municipio": "isla-de-la-juventud",
+  "nombre": "Punta Francés",
+  "provincia": "isla-de-la-juventud"
+ },
+ {
+  "categoria": "Historia",
+  "descripcion": "La cárcel panóptica donde estuvo preso Fidel Castro tras el Moncada, hoy museo. Un lugar sobrecogedor que cuenta una parte clave de la historia.",
+  "id": "lugar-presidio",
+  "municipio": "isla-de-la-juventud",
+  "nombre": "Presidio Modelo",
+  "provincia": "isla-de-la-juventud"
+ },
+ {
+  "categoria": "Playa",
+  "descripcion": "La playa de arenas negras más famosa de Cuba, por su alto contenido de minerales. Única en el país y de una belleza extraña.",
+  "id": "lugar-bibijagua",
+  "municipio": "isla-de-la-juventud",
+  "nombre": "Playa Bibijagua",
+  "provincia": "isla-de-la-juventud"
+ }
+]
