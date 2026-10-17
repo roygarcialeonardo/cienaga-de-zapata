@@ -561,3 +561,201 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   .hero h1 .w{animation:none;opacity:1;transform:none}
   #novedades.nov-grid{scroll-snap-type:none}
 }
+
+/* ============================================================
+   TROPICAL LUXURY · "Noche Tropical" / "Día de Sol"
+   Capa de tema + componentes premium. Re-mapea las variables
+   base y añade overrides con especificidad; no toca las
+   reglas originales.
+   ============================================================ */
+:root{
+  --tl-oro:#e6b84d; --tl-oro-d:#c9972f;
+  --tl-serifa:'Fraunces','Bricolage Grotesque',Georgia,serif;
+}
+/* ---------- NOCHE TROPICAL (por defecto) ---------- */
+html[data-theme="noche"]{
+  --tl-bg:#07120d; --tl-bg2:#0b1c13; --tl-card:rgba(15,32,22,.78);
+  --tl-tinta:#edf5ef; --tl-muted:#a3bcab; --tl-borde:rgba(230,184,77,.16);
+  --tl-verde:#3ddc97; --tl-verde-d:#25c07e; --tl-verdeclaro:rgba(61,220,151,.12);
+  --tl-input:#0d1f15;
+  --bg:var(--tl-bg); --crema:var(--tl-bg2); --tinta:var(--tl-tinta); --muted:var(--tl-muted);
+  --borde:var(--tl-borde); --verde:var(--tl-verde); --verde-d:var(--tl-verde-d);
+  --verde-claro:var(--tl-verdeclaro);
+  --sombra:0 20px 55px rgba(0,0,0,.5); --sombra-lg:0 26px 65px rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+/* ---------- DÍA DE SOL ---------- */
+html[data-theme="dia"]{
+  --tl-bg:#fdf9ef; --tl-bg2:#f6efdd; --tl-card:rgba(255,255,255,.85);
+  --tl-tinta:#1e2f26; --tl-muted:#68796d; --tl-borde:#e7dcc2;
+  --tl-verde:#0e9a66; --tl-verde-d:#0b7a51; --tl-verdeclaro:#e4f4ea;
+  --tl-input:#ffffff;
+  --bg:var(--tl-bg); --crema:var(--tl-bg2); --tinta:var(--tl-tinta); --muted:var(--tl-muted);
+  --borde:var(--tl-borde); --verde:var(--tl-verde); --verde-d:var(--tl-verde-d);
+  --verde-claro:var(--tl-verdeclaro);
+  --sombra:0 18px 44px rgba(80,60,20,.12); --sombra-lg:0 22px 50px rgba(80,60,20,.16);
+  color-scheme:light;
+}
+/* ---------- Tipografía editorial ---------- */
+h1,h2,h3,.sec-title,.dt-titulo,.page-hero h1,.cta-final .big{font-family:var(--tl-serifa);letter-spacing:0}
+::selection{background:var(--tl-oro);color:#231603}
+
+/* ---------- Botón de tema ---------- */
+.theme-toggle{background:var(--verde-claro);border:1px solid var(--borde);border-radius:999px;
+  width:2.4rem;height:2.4rem;display:grid;place-items:center;font-size:1.15rem;cursor:pointer;
+  transition:.25s;flex:none;font-family:inherit}
+.theme-toggle:hover{transform:rotate(18deg) scale(1.08);border-color:var(--tl-oro)}
+
+/* ---------- Superficies duras en modo noche ---------- */
+html[data-theme="noche"] nav{background:rgba(7,18,13,.8);border-bottom:1px solid var(--tl-borde)}
+html[data-theme="noche"] .srv-card,html[data-theme="noche"] .cont-card{background:var(--tl-card);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+html[data-theme="noche"] .srv-card:hover,html[data-theme="noche"] .cont-card:hover{border-color:var(--tl-oro)}
+html[data-theme="noche"] .srv-pill{background:rgba(255,255,255,.04)}
+html[data-theme="noche"] .srv-buscar{background:rgba(255,255,255,.05)}
+html[data-theme="noche"] .srv-buscar::placeholder{color:#7d9484}
+html[data-theme="noche"] .pag-nav a{background:var(--tl-card)}
+html[data-theme="noche"] .mr-caja{background:linear-gradient(165deg,#0e2317 0%,#08130d 100%)}
+html[data-theme="noche"] .mr-caja input,html[data-theme="noche"] .mr-caja textarea{background:var(--tl-input)}
+html[data-theme="noche"] .mr-x{background:rgba(255,255,255,.07)}
+html[data-theme="noche"] .dt-reserva{background:var(--tl-card);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+html[data-theme="noche"] .dt-reserva input,html[data-theme="noche"] .dt-reserva textarea{background:var(--tl-input)}
+html[data-theme="noche"] .vj{background:var(--tl-input)}
+html[data-theme="noche"] .vj-cab,html[data-theme="noche"] .vj-panel{background:transparent}
+html[data-theme="noche"] .vj-btn{background:rgba(255,255,255,.06)}
+html[data-theme="noche"] .vj-hab{background:var(--tl-input)}
+html[data-theme="noche"] .sd-caja,html[data-theme="noche"] .cd-caja{background:#0d2015}
+html[data-theme="noche"] .sd-x,html[data-theme="noche"] .cd-x{background:rgba(255,255,255,.08)}
+html[data-theme="noche"] .sd-cuerpo p{color:var(--tl-muted)}
+html[data-theme="noche"] .dt-dest-card,html[data-theme="noche"] .dt-amen-item{background:var(--tl-card)}
+html[data-theme="noche"] .dt-desc.dt-cortada::after{background:linear-gradient(180deg,transparent,var(--tl-bg))}
+html[data-theme="noche"] .faq-item{background:var(--tl-card)}
+html[data-theme="noche"] .toast-reserva{background:#0e2317;color:var(--tl-tinta);border:1px solid var(--tl-oro)}
+html[data-theme="noche"] .btn-ghost{background:transparent}
+html[data-theme="noche"] .home-buscar{background:rgba(10,25,17,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+html[data-theme="noche"] .home-buscar input{background:transparent;color:var(--tl-tinta)}
+html[data-theme="noche"] .home-buscar input::placeholder{color:#7d9484}
+html[data-theme="noche"] .experiencias{background:var(--tl-bg2)}
+html[data-theme="noche"] .cta-final{background:linear-gradient(120deg,#0b1c13,#07120d)}
+html[data-theme="noche"] .share-copy{background:rgba(255,255,255,.05)}
+html[data-theme="noche"] .admin-float{background:#0e2317}
+html[data-theme="noche"] .admin-bar{background:#0d2015}
+html[data-theme="noche"] .modal{background:#0d2015}
+html[data-theme="noche"] .modal input[type=text],html[data-theme="noche"] .modal textarea,
+html[data-theme="noche"] .modal select{background:var(--tl-input)}
+html[data-theme="noche"] .cat-card{background:var(--tl-card)}
+html[data-theme="noche"] .toc{box-shadow:var(--sombra)}
+
+/* ---------- CTAs dorados en modo noche ---------- */
+html[data-theme="noche"] .btn-sol,html[data-theme="noche"] .btn-reserva,
+html[data-theme="noche"] .srv-btnr,html[data-theme="noche"] .mr-enviar,html[data-theme="noche"] .dt-enviar{
+  background:linear-gradient(135deg,#f2cd72 0%,var(--tl-oro) 55%,var(--tl-oro-d) 100%);
+  color:#241804;box-shadow:0 8px 24px rgba(230,184,77,.35)}
+html[data-theme="noche"] .btn-sol:hover,html[data-theme="noche"] .btn-reserva:hover,
+html[data-theme="noche"] .srv-btnr:hover{filter:brightness(1.07);transform:translateY(-2px);color:#241804}
+html[data-theme="noche"] .voucher-enviar{color:#241804}
+
+/* ---------- Hero tropical (página de servicios) ---------- */
+.page-hero{position:relative;overflow:hidden;padding:7.5rem 0 3.5rem}
+html[data-theme="noche"] .page-hero{background:url('img/hero-humedal.webp') center/cover}
+html[data-theme="noche"] .page-hero::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(7,18,13,.86) 0%,rgba(7,18,13,.55) 55%,var(--tl-bg) 100%)}
+html[data-theme="noche"] .page-hero::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 45% at 80% 20%,rgba(230,184,77,.14),transparent 70%)}
+html[data-theme="noche"] .page-hero .wrap{position:relative;z-index:1}
+html[data-theme="dia"] .page-hero{background:linear-gradient(180deg,#fbf3df 0%,var(--tl-bg) 100%)}
+.page-hero .kicker{box-shadow:0 4px 14px rgba(0,0,0,.12)}
+
+/* ---------- Checkout flotante: panel lateral ---------- */
+.modal-reserva{padding:0;justify-items:end}
+.mr-caja{height:100dvh;max-height:none;max-width:450px;margin:0;border-radius:28px 0 0 28px;
+  border-right:none;transform:translateX(106%);transition:transform .42s cubic-bezier(.32,.72,.24,1);
+  display:flex;flex-direction:column}
+.modal-reserva.on .mr-caja{transform:none}
+.mr-caja form{overflow-y:auto;flex:1;min-height:0}
+@media(max-width:640px){
+  .modal-reserva{justify-items:stretch;align-items:end}
+  .mr-caja{max-width:none;width:100%;height:94dvh;border-radius:28px 28px 0 0;border-right:1px solid var(--borde);
+    transform:translateY(106%)}
+  .modal-reserva.on .mr-caja{transform:none}
+  .mr-caja::before{content:'';width:44px;height:5px;border-radius:99px;background:var(--borde);
+    margin:0 auto .8rem;flex:none}
+}
+
+/* ---------- Extras inteligentes (upselling) ---------- */
+.mr-extras{margin:.2rem 0 1rem;padding:1rem;border:1px dashed var(--tl-oro);border-radius:16px;
+  background:color-mix(in srgb,var(--tl-oro) 7%,transparent)}
+.mr-extras-t{font-size:.88rem;font-weight:800;margin-bottom:.7rem;color:var(--tinta)}
+.mr-extras-t span{display:block;font-weight:400;font-size:.76rem;color:var(--muted)}
+.mr-extras-ops{display:flex;flex-direction:column;gap:.5rem}
+.mr-extra{display:flex!important;align-items:center;gap:.65rem;margin:0!important;cursor:pointer;
+  font-weight:600!important;font-size:.9rem!important;padding:.55rem .7rem;border-radius:12px;
+  border:1px solid var(--borde);transition:.2s;background:transparent}
+.mr-extra:hover{border-color:var(--tl-oro)}
+.mr-extra input{width:1.15rem;height:1.15rem;accent-color:var(--tl-oro);margin:0!important;flex:none}
+.mr-extra:has(input:checked){border-color:var(--tl-oro);background:color-mix(in srgb,var(--tl-oro) 12%,transparent)}
+
+/* ---------- Voucher con QR ---------- */
+.mr-voucher{overflow-y:auto;flex:1;min-height:0}
+.voucher{text-align:center;padding:.4rem .2rem}
+.voucher-ok{font-weight:800;color:var(--verde-d);margin-bottom:.4rem}
+.voucher h4{font-family:var(--tl-serifa);font-size:1.35rem;margin-bottom:1rem}
+.voucher-qr{display:inline-block;background:#fff;padding:.7rem;border-radius:16px;margin-bottom:.8rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.voucher-qr img,.voucher-qr canvas{display:block}
+.voucher-codigo{font-size:1.05rem;margin-bottom:.3rem}
+.voucher-codigo b{color:var(--tl-oro);letter-spacing:.08em;font-size:1.25rem}
+.voucher-guarda{font-size:.8rem;color:var(--muted);margin-bottom:1rem;max-width:34ch;margin-inline:auto}
+.voucher-datos{list-style:none;text-align:left;background:var(--verde-claro);border:1px solid var(--borde);
+  border-radius:14px;padding:1rem 1.2rem;margin:0 0 1.2rem;font-size:.9rem}
+.voucher-datos li{margin-bottom:.35rem}
+.voucher-datos li:last-child{margin-bottom:0}
+.voucher-enviar{width:100%;margin-bottom:.6rem}
+.voucher-volver{background:none;border:none;color:var(--muted);font-weight:700;cursor:pointer;
+  font-size:.88rem;font-family:inherit;padding:.4rem}
+.voucher-volver:hover{color:var(--tinta);text-decoration:underline}
+
+/* ---------- Asistente virtual (por reglas, offline) ---------- */
+.cz-fab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:65;width:3.6rem;height:3.6rem;border-radius:50%;
+  border:1px solid var(--tl-oro);background:linear-gradient(135deg,#0e2317,#07120d);color:#fff;font-size:1.5rem;
+  cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.4);transition:.25s;display:grid;place-items:center;font-family:inherit}
+html[data-theme="dia"] .cz-fab{background:linear-gradient(135deg,#0e9a66,#0b7a51)}
+.cz-fab:hover{transform:scale(1.1) rotate(8deg)}
+.cz-panel{position:fixed;right:1.2rem;bottom:5.4rem;z-index:66;width:min(360px,calc(100vw - 2.4rem));
+  height:480px;max-height:70dvh;display:flex;flex-direction:column;overflow:hidden;
+  background:var(--tl-card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--tl-borde);border-radius:22px;box-shadow:var(--sombra-lg)}
+.cz-panel[hidden]{display:none}
+.cz-cab{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem;
+  border-bottom:1px solid var(--borde);font-size:.95rem}
+.cz-x{background:none;border:1px solid var(--borde);border-radius:50%;width:1.9rem;height:1.9rem;
+  cursor:pointer;color:var(--tinta);font-size:.85rem;font-family:inherit}
+.cz-msgs{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.6rem;min-height:0}
+.cz-msg{max-width:88%;padding:.65rem .9rem;border-radius:16px;font-size:.88rem;line-height:1.45}
+.cz-msg.b{background:var(--verde-claro);border:1px solid var(--borde);align-self:flex-start;border-bottom-left-radius:6px}
+.cz-msg.u{background:linear-gradient(135deg,var(--tl-oro),var(--tl-oro-d));color:#241804;font-weight:600;
+  align-self:flex-end;border-bottom-right-radius:6px}
+html[data-theme="dia"] .cz-msg.u{color:#241804}
+.cz-chips{display:flex;gap:.45rem;flex-wrap:wrap;padding:.6rem .9rem;border-top:1px solid var(--borde)}
+.cz-chip{border:1px solid var(--tl-oro);background:transparent;color:var(--tinta);border-radius:999px;
+  padding:.4rem .8rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;transition:.2s}
+.cz-chip:hover{background:var(--tl-oro);color:#241804}
+.cz-form{display:flex;gap:.5rem;padding:.7rem .9rem;border-top:1px solid var(--borde)}
+.cz-form input{flex:1;border:1.5px solid var(--borde);border-radius:999px;padding:.6rem 1rem;font-size:.9rem;
+  font-family:inherit;background:var(--tl-input);color:var(--tinta);min-width:0}
+.cz-form input:focus{outline:none;border-color:var(--tl-oro)}
+.cz-form button{border:none;border-radius:50%;width:2.5rem;height:2.5rem;flex:none;cursor:pointer;
+  background:linear-gradient(135deg,var(--tl-oro),var(--tl-oro-d));color:#241804;font-size:1rem;font-family:inherit}
+@media(max-width:640px){.cz-fab{right:.9rem;bottom:.9rem}.cz-panel{right:.9rem;bottom:5rem}}
+
+/* ---------- Detalle: tarjeta de reserva premium ---------- */
+.dt-reserva{position:relative;overflow:hidden}
+.dt-reserva::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--tl-verde),var(--tl-oro),var(--tl-verde))}
+html[data-theme="noche"] .dt-foto{box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.dt-titulo{font-weight:600}
+.srv-badge{background:linear-gradient(135deg,var(--tl-oro),var(--tl-oro-d));color:#241804}
+/* Evitar choque con el botón flotante de compartir (wa-float) */
+body:has(.wa-float) .cz-fab{bottom:5.4rem}
+body:has(.wa-float) .cz-panel{bottom:9.6rem}
+@media(max-width:640px){body:has(.wa-float) .cz-fab{bottom:5rem}body:has(.wa-float) .cz-panel{bottom:9.2rem}}

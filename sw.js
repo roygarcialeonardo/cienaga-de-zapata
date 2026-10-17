@@ -2,7 +2,7 @@
    - Cache-first: CSS, JS, imágenes, manifest (rápido y offline).
    - Network-first: HTML y posts.json (el contenido se actualiza siempre que haya conexión).
    Cambia VERSION para forzar la actualización en los teléfonos ya instalados. */
-const VERSION = 'cz-v1';
+const VERSION = 'cz-v2';
 const CACHE = 'cienaga-' + VERSION;
 
 const CORE = [
@@ -10,6 +10,7 @@ const CORE = [
   'index.html',
   'estilos.css',
   'sitio.js',
+  'qrcode.min.js',
   'manifest.json',
   'img/icon-192.png',
   'img/icon-512.png',

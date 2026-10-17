@@ -14,8 +14,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fraunces:opsz,wght@9..144,400..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilos.css">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cz-theme')||'noche')}catch(e){document.documentElement.setAttribute('data-theme','noche')}</script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#00aa6c">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -32,6 +33,7 @@
       <a href="lugares.html">Lugares</a><a href="secretos.html">Secretos</a><a href="fauna-flora.html">Fauna</a>
       <a href="actividades.html">Actividades</a><a href="historia.html">Historia</a><a href="gastronomia.html">Gastronomía</a><a href="guia.html">Guía</a><a href="servicios.html">Servicios</a>
     </div>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">🌙</button>
     <span id="connBadge" class="conn-badge" title="Estado de la conexión"><span id="connDot" class="conn-dot"></span><span id="connText">···</span></span>
   </div>
 </nav>
@@ -75,6 +77,7 @@
 </footer>
 <script src="config.js"></script>
 <script>const PAGINA="servicios";</script>
+<script src="qrcode.min.js"></script>
 <script src="sitio.js"></script>
 <script src="admin.js"></script>
 <script>
